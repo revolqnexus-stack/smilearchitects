@@ -1,6 +1,6 @@
 import { getDoctors } from '@/lib/supabase/queries';
 import Link from 'next/link';
-import AdminLayout from '@/components/admin/AdminLayout';
+import AdminShell from '@/components/admin/AdminShell';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,7 +10,7 @@ export default async function DoctorsListPage() {
   const doctors = await getDoctors();
 
   return (
-    <AdminLayout>
+    <AdminShell>
       <div>
         <div style={{
           display: 'flex',
@@ -159,6 +159,6 @@ export default async function DoctorsListPage() {
           </div>
         )}
       </div>
-    </AdminLayout>
+    </AdminShell>
   );
 }

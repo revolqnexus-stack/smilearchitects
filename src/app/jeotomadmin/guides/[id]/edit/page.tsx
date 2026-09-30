@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
 import { type DentalGuide } from '@/lib/supabase/queries';
 import AdminShell from '@/components/admin/AdminShell';
 import ImagePicker from '@/components/admin/ImagePicker';
@@ -37,15 +36,15 @@ export default function EditGuidePage() {
 
   const fetchGuide = async () => {
     try {
-      const { data, error } = await supabase
-        .from('dental_guides')
-        .select('*')
-        .eq('id', guideId)
-        .single();
+      const response = await fetch(`/api/cms/guides/${guideId}`);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch guide');
+      }
 
-      if (error) throw error;
-
-      const guide = data as DentalGuide;
+      const guide = await response.json();
+      
       if (guide) {
         setSlug(guide.slug);
         setTitle(guide.title);
@@ -63,7 +62,7 @@ export default function EditGuidePage() {
       }
     } catch (err) {
       console.error('Error fetching guide:', err);
-      setError('Failed to load guide');
+      setError(err instanceof Error ? err.message : 'Failed to load guide');
     } finally {
       setFetching(false);
     }
@@ -77,10 +76,10 @@ export default function EditGuidePage() {
     try {
       const tagsArray = tags.split(',').map(t => t.trim()).filter(t => t);
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from('dental_guides')
-        .update({
+      const response = await fetch(`/api/cms/guides/${guideId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           slug,
           title,
           excerpt: excerpt || null,
@@ -95,10 +94,13 @@ export default function EditGuidePage() {
           status,
           published_at: publishedAt ? new Date(publishedAt).toISOString() : null,
           updated_at: new Date().toISOString(),
-        })
-        .eq('id', guideId);
+        }),
+      });
 
-      if (updateError) throw updateError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to update guide');
+      }
 
       router.push('/jeotomadmin/guides');
     } catch (err: unknown) {
@@ -116,16 +118,18 @@ export default function EditGuidePage() {
 
     setLoading(true);
     try {
-      const { error: deleteError } = await supabase
-        .from('dental_guides')
-        .delete()
-        .eq('id', guideId);
+      const response = await fetch(`/api/cms/guides/${guideId}`, {
+        method: 'DELETE',
+      });
 
-      if (deleteError) throw deleteError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete guide');
+      }
 
       router.push('/jeotomadmin/guides');
     } catch (err) {
-      setError('Failed to delete guide');
+      setError(err instanceof Error ? err.message : 'Failed to delete guide');
       setLoading(false);
       setDeleteConfirm(false);
     }

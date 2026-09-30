@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
-import { type Doctor } from '@/lib/supabase/queries';
 import AdminShell from '@/components/admin/AdminShell';
 import ImagePicker from '@/components/admin/ImagePicker';
 
@@ -44,15 +42,15 @@ export default function EditDoctorPage() {
 
   const fetchDoctor = async () => {
     try {
-      const { data, error } = await supabase
-        .from('doctors')
-        .select('*')
-        .eq('id', doctorId)
-        .single();
+      const response = await fetch(`/api/cms/doctors/${doctorId}`);
 
-      if (error) throw error;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch doctor');
+      }
 
-      const doctor = data as Doctor;
+      const doctor = await response.json();
+
       if (doctor) {
         setName(doctor.name);
         setQualifications(doctor.qualifications);
@@ -76,7 +74,7 @@ export default function EditDoctorPage() {
       }
     } catch (err) {
       console.error('Error fetching doctor:', err);
-      setError('Failed to load doctor');
+      setError(err instanceof Error ? err.message : 'Failed to load doctor');
     } finally {
       setFetching(false);
     }
@@ -108,9 +106,10 @@ export default function EditDoctorPage() {
       }
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from('doctors')
-        .update({
+      const response = await fetch(`/api/cms/doctors/${doctorId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name,
           qualifications,
           specialty,
@@ -131,10 +130,13 @@ export default function EditDoctorPage() {
           seo_description: seoDescription || null,
           published,
           updated_at: new Date().toISOString(),
-        })
-        .eq('id', doctorId);
+        }),
+      });
 
-      if (updateError) throw updateError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to update doctor');
+      }
 
       router.push('/jeotomadmin/doctors');
     } catch (err: unknown) {
@@ -152,16 +154,18 @@ export default function EditDoctorPage() {
 
     setLoading(true);
     try {
-      const { error: deleteError } = await supabase
-        .from('doctors')
-        .delete()
-        .eq('id', doctorId);
+      const response = await fetch(`/api/cms/doctors/${doctorId}`, {
+        method: 'DELETE',
+      });
 
-      if (deleteError) throw deleteError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete doctor');
+      }
 
       router.push('/jeotomadmin/doctors');
     } catch (err) {
-      setError('Failed to delete doctor');
+      setError(err instanceof Error ? err.message : 'Failed to delete doctor');
       setLoading(false);
       setDeleteConfirm(false);
     }

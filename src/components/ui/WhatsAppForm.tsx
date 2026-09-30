@@ -2,19 +2,26 @@
 
 import { useState } from "react";
 import { WhatsAppIcon } from "@/components/ui/icons";
-import { CLINIC } from "@/lib/site-config";
+import { useBranch } from "@/components/providers/BranchProvider";
+import { BRANCH_LIST, type BranchId, getBranch } from "@/lib/branches";
+import { buildLeadWhatsAppMessage, trackEvent, whatsAppUrl } from "@/lib/analytics";
 
 interface WhatsAppFormProps {
   /** Optional custom heading */
   heading?: string;
   /** Dark mode - white text on dark backgrounds */
   darkMode?: boolean;
+  /** Name, phone, treatment, branch only */
+  quick?: boolean;
 }
 
-export default function WhatsAppForm({ 
+export default function WhatsAppForm({
   heading = "Book via WhatsApp",
-  darkMode = false 
+  darkMode = false,
+  quick = false,
 }: WhatsAppFormProps) {
+  const { branchId: contextBranchId } = useBranch();
+  const [branchId, setBranchId] = useState<BranchId>(contextBranchId);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [treatment, setTreatment] = useState("");
@@ -23,31 +30,28 @@ export default function WhatsAppForm({
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Build WhatsApp message
-    let whatsappMessage = `Hi! I'd like to book an appointment at Smile Architects.\n\n`;
-    whatsappMessage += `*Name:* ${name}\n`;
-    whatsappMessage += `*Phone:* ${phone}\n`;
-    if (treatment) whatsappMessage += `*Treatment:* ${treatment}\n`;
-    if (preferredDate) whatsappMessage += `*Preferred Date:* ${preferredDate}\n`;
-    if (message) whatsappMessage += `*Additional Notes:* ${message}\n`;
-
-    // WhatsApp URL
-    const whatsappNumber = CLINIC.contact.phone.replace(/\D/g, ""); // Remove non-digits
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    // Open WhatsApp
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-
-    // GA4 event
-    if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
-      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "whatsapp_appointment_click", {
-        treatment: treatment || "not_specified",
-      });
+    const branch = getBranch(branchId);
+    const whatsappMessage = buildLeadWhatsAppMessage({
+      name,
+      phone,
+      treatment: treatment || undefined,
+      branchLabel: branch.label,
+    });
+    if (!quick && preferredDate) {
+      const extra = `\nPreferred date: ${preferredDate}`;
+      window.open(whatsAppUrl(branch.contact.phone, whatsappMessage + extra), "_blank", "noopener,noreferrer");
+    } else if (!quick && message) {
+      window.open(whatsAppUrl(branch.contact.phone, whatsappMessage + `\nNotes: ${message}`), "_blank", "noopener,noreferrer");
+    } else {
+      window.open(whatsAppUrl(branch.contact.phone, whatsappMessage), "_blank", "noopener,noreferrer");
     }
 
-    // Reset form
+    trackEvent("whatsapp_lead_submit", {
+      branch: branchId,
+      treatment: treatment || "not_specified",
+      form: quick ? "quick" : "full",
+    });
+
     setName("");
     setPhone("");
     setTreatment("");
@@ -107,6 +111,40 @@ export default function WhatsAppForm({
       </p>
 
       <form onSubmit={handleWhatsAppSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+        <div>
+          <label
+            htmlFor="wa-branch"
+            style={{
+              display: "block",
+              fontSize: "0.875rem",
+              color: textLabel,
+              marginBottom: "0.5rem",
+              fontFamily: "var(--font-sans)",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Preferred branch <span style={{ color: requiredAsterisk }}>*</span>
+          </label>
+          <select
+            id="wa-branch"
+            required
+            value={branchId}
+            onChange={(e) => setBranchId(e.target.value as BranchId)}
+            style={{
+              ...inputStyle,
+              cursor: "pointer",
+              colorScheme: darkMode ? "dark" : "light",
+            }}
+          >
+            {BRANCH_LIST.map((b) => (
+              <option key={b.id} value={b.id}>
+                {b.label} — {b.id === "pala" ? "Pala, Kottayam" : "Punkunnam, Thrissur"}
+              </option>
+            ))}
+          </select>
+        </div>
         {/* Name */}
         <div>
           <label 
@@ -218,7 +256,8 @@ export default function WhatsAppForm({
           </select>
         </div>
 
-        {/* Preferred Date */}
+        {!quick ? (
+        <>
         <div>
           <label 
             htmlFor="wa-date" 
@@ -282,8 +321,9 @@ export default function WhatsAppForm({
             onBlur={(e) => { e.target.style.borderColor = borderColor; }}
           />
         </div>
+        </>
+        ) : null}
 
-        {/* WhatsApp Submit Button */}
         <button
           type="submit"
           disabled={!name || !phone}

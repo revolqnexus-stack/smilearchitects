@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { CLINIC, TREATMENTS } from "@/lib/site-config";
+import { useBranch } from "@/components/providers/BranchProvider";
+import { TREATMENTS } from "@/lib/site-config";
 
 interface FormState {
   name: string;
@@ -26,6 +27,7 @@ export default function AppointmentForm({
   heading = "Book an Appointment",
   surface = "dark",
 }: AppointmentFormProps) {
+  const { branch } = useBranch();
   const [form, setForm] = useState<FormState>({ name: "", phone: "", treatment: "", date: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
@@ -38,7 +40,10 @@ export default function AppointmentForm({
     e.preventDefault();
     setStatus("sending");
     if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
-      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "appointment_submit", { treatment: form.treatment });
+      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "appointment_submit", {
+        treatment: form.treatment,
+        branch: branch.id,
+      });
     }
     await new Promise((r) => setTimeout(r, 800));
     setStatus("success");
@@ -85,9 +90,9 @@ export default function AppointmentForm({
         </h2>
       )}
       <p style={{ color: bodyColor, fontSize: "0.9375rem", marginBottom: "1.75rem", lineHeight: 1.65 }}>
-        Call{" "}
-        <a href={`tel:${CLINIC.contact.phone}`} style={{ color: accentColor, fontWeight: 600 }}>
-          {CLINIC.contact.phoneDisplay}
+        {branch.label} clinic — call{" "}
+        <a href={`tel:${branch.contact.phone}`} style={{ color: accentColor, fontWeight: 600 }}>
+          {branch.contact.phoneDisplay}
         </a>{" "}
         or complete the form and the team will confirm your appointment.
       </p>

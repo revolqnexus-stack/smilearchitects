@@ -21,12 +21,23 @@ import {
   HoverScale,
   ImageReveal,
 } from "@/components/motion/REVOLQComponents";
+import HeroLocationEyebrow from "@/components/ui/HeroLocationEyebrow";
+import BranchLocationSection from "@/components/sections/BranchLocationSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Dentist in Pala, Kottayam District | Smile Architects",
+  title: "Best Dental Clinic in Pala & Kottayam District",
   description:
-    "Smile Architects — Multispeciality Dental Clinic & Advanced Orthodontic Centre in Pala, Kottayam District, Kerala. MDS Orthodontist, dental implants, lingual braces, smile design and more. Call +91 9446 999 333.",
+    "Smile Architects — trusted multispeciality dental clinic in Pala (Palai), Kottayam District & Thrissur branch. MDS orthodontist, implants, braces, lingual braces & smile design. Call +91 9446 999 333.",
   canonical: "/",
+  keywords: [
+    "best dental clinic Pala",
+    "best dental clinic Kottayam",
+    "best dental clinic Thrissur",
+    "dentist Pala",
+    "orthodontist Kottayam",
+    "dental clinic Palai Kerala",
+    "Smile Architects",
+  ],
 });
 
 const FEATURED_TREATMENTS = TREATMENTS.filter((t) => t.featured);
@@ -96,12 +107,7 @@ export default function HomePage() {
 
               {/* Eyebrow */}
               <RevealUp delay={0.05}>
-                <p className="hero-eyebrow">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ display: "inline", marginRight: "6px", verticalAlign: "middle" }}>
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(255,255,255,0.7)" />
-                  </svg>
-                  Pala, Kottayam, Kerala
-                </p>
+                <HeroLocationEyebrow />
               </RevealUp>
 
               {/* Headline */}
@@ -116,7 +122,12 @@ export default function HomePage() {
               {/* Description */}
               <RevealUp delay={0.25}>
                 <p className="hero-desc">
-                  Multispeciality dental clinic &amp; advanced orthodontics led by{" "}
+                  Multispeciality dental clinic &amp; advanced orthodontics in{" "}
+                  <strong style={{ fontWeight: 600 }}>Pala</strong> and{" "}
+                  <Link href="/thrissur" className="hero-desc-link">
+                    Thrissur (Punkunnam branch)
+                  </Link>
+                  , led by{" "}
                   <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS.
                 </p>
               </RevealUp>
@@ -211,6 +222,24 @@ export default function HomePage() {
             font-weight: 600;
             font-family: var(--font-utility);
             margin-bottom: 1.25rem;
+          }
+          .hero-eyebrow-link {
+            color: var(--color-jonquil);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(234, 200, 0, 0.45);
+          }
+          .hero-eyebrow-link:hover {
+            text-decoration-color: var(--color-jonquil);
+          }
+          .hero-desc-link {
+            color: var(--color-jonquil);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+          }
+          .hero-desc-link:hover {
+            opacity: 0.92;
           }
 
           /* ── Headline ── */
@@ -833,8 +862,11 @@ export default function HomePage() {
                   <Link href="/areas-served/kottayam" className="btn btn-primary">
                     Patients from Kottayam
                   </Link>
-                  <Link href="/areas-served/thrissur" className="btn btn-ghost">
-                    Patients from Thrissur
+                  <Link href="/local/kottayam" className="btn btn-ghost">
+                    Best dental clinic — Kottayam
+                  </Link>
+                  <Link href="/local/thrissur" className="btn btn-ghost">
+                    Best dental clinic — Thrissur
                   </Link>
                 </div>
               </StaggerReveal>
@@ -1032,190 +1064,7 @@ export default function HomePage() {
         `}</style>
       </section>
 
-      {/* ── LOCATION ───────────────────────────────────────────── */}
-      <section aria-labelledby="location-heading" className="section-padding section-white" style={{ position: "relative" }}>
-        {/* FAQ → Location top gradient whisper */}
-        <div aria-hidden="true" style={{
-          position: "absolute", top: 0, left: 0, right: 0, height: 160,
-          background: "radial-gradient(ellipse at 50% 0%, rgba(215,231,190,0.18), transparent 60%)",
-          pointerEvents: "none", zIndex: 0,
-        }} />
-        <div className="container-xl">
-          <div className="location-editorial">
-
-            {/* Left: text */}
-            <RevealUp delay={0.05} className="location-editorial-text">
-              <div className="accent-line" />
-              <p className="eyebrow">Find Us</p>
-              <h2 id="location-heading" className="location-editorial-heading">
-                Dental clinic in Pala,<br />Kottayam
-              </h2>
-
-              <address className="location-address-block" style={{ fontStyle: "normal" }}>
-                <div className="location-address-item">
-                  <span className="location-address-label">Address</span>
-                  <span className="location-address-value">
-                    {CLINIC.address.street}<br />
-                    {CLINIC.address.city}, {CLINIC.address.district}<br />
-                    {CLINIC.address.state} – {CLINIC.address.pincode}
-                  </span>
-                </div>
-                <div className="location-address-divider" />
-                <div className="location-address-item">
-                  <span className="location-address-label">Landmark</span>
-                  <span className="location-address-value">{CLINIC.address.landmark}</span>
-                </div>
-                <div className="location-address-divider" />
-                <div className="location-address-item">
-                  <span className="location-address-label">Hours</span>
-                  <span className="location-address-value">Mon–Sat: 9:30 AM – 8:00 PM<br />Sunday: Closed</span>
-                </div>
-                <div className="location-address-divider" />
-                <div className="location-address-item">
-                  <span className="location-address-label">Phone</span>
-                  <a href={`tel:${CLINIC.contact.phone}`} className="location-phone-link">
-                    {CLINIC.contact.phoneDisplay}
-                  </a>
-                </div>
-              </address>
-
-              <div className="location-cta-row">
-                <TrackedLink
-                  href={CLINIC.platforms.googleMaps.directionsUrl}
-                  eventName="directions_click"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  Get Directions →
-                </TrackedLink>
-                <a href={`tel:${CLINIC.contact.phone}`} className="btn btn-ghost">
-                  Call Clinic
-                </a>
-              </div>
-            </RevealUp>
-
-            {/* Right: map */}
-            <ImageReveal delay={0.2} className="location-editorial-map">
-              <div className="location-map-frame">
-                <iframe
-                  title="Smile Architects location map — Kattakkayam Road, Pala, Kottayam"
-                  src={CLINIC.platforms.googleMaps.embedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, display: "block", borderRadius: "inherit" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            </ImageReveal>
-
-          </div>
-        </div>
-
-        <style>{`
-          /* Editorial location layout */
-          .location-editorial {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 4rem;
-            align-items: center;
-          }
-          .location-editorial-heading {
-            font-family: var(--font-serif);
-            font-size: clamp(1.875rem, 3vw, 2.75rem);
-            font-weight: 400;
-            color: var(--color-dark-moss);
-            line-height: 1.15;
-            letter-spacing: -0.025em;
-            margin-bottom: 2rem;
-          }
-          /* Address block */
-          .location-address-block {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 2rem;
-          }
-          .location-address-item {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 1rem;
-            padding: 0.875rem 0;
-          }
-          .location-address-label {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--color-olive);
-            font-family: var(--font-utility);
-            padding-top: 2px;
-          }
-          .location-address-value {
-            font-size: 0.9375rem;
-            color: var(--color-dark-moss);
-            font-family: var(--font-sans);
-            font-weight: 400;
-            line-height: 1.6;
-          }
-          .location-address-divider {
-            height: 1px;
-            background: var(--color-tea-green);
-            margin: 0;
-          }
-          .location-phone-link {
-            font-size: 0.9375rem;
-            color: var(--color-dark-moss);
-            font-family: var(--font-sans);
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid var(--color-tea-green);
-            padding-bottom: 1px;
-            transition: border-color 0.2s ease, color 0.2s ease;
-          }
-          .location-phone-link:hover {
-            color: var(--color-olive);
-            border-bottom-color: var(--color-olive);
-          }
-          .location-cta-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-          }
-          /* Map frame */
-          .location-editorial-map {
-            height: 100%;
-          }
-          .location-map-frame {
-            width: 100%;
-            height: clamp(340px, 50vh, 520px);
-            border-radius: 28px;
-            overflow: hidden;
-            border: 1.5px solid var(--color-tea-green);
-            box-shadow: 0 12px 40px rgba(37,78,6,0.09);
-          }
-          @media (max-width: 900px) {
-            .location-editorial {
-              grid-template-columns: 1fr;
-              gap: 2.5rem;
-            }
-            .location-map-frame {
-              height: 320px;
-              border-radius: 20px;
-            }
-          }
-          @media (max-width: 480px) {
-            .location-address-item {
-              grid-template-columns: 1fr;
-              gap: 0.25rem;
-            }
-            .location-map-frame {
-              height: 260px;
-            }
-          }
-        `}</style>
-      </section>
+      <BranchLocationSection />
 
       {/* ── BOOK APPOINTMENT ───────────────────────────────────── */}
       <section aria-labelledby="book-heading" className="section-padding section-dark" style={{ position: "relative", overflow: "hidden" }}>

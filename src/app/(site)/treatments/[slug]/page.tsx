@@ -13,6 +13,11 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion/REVOLQComponents";
+import { TREATMENT_COMMERCIAL } from "@/lib/treatment-commercial";
+import { buildFaqPageSchema } from "@/lib/seo/schema";
+import PremiumFAQ from "@/components/ui/PremiumFAQ";
+import TreatmentContextLinks from "@/components/seo/TreatmentContextLinks";
+import SeoTopicCluster from "@/components/seo/SeoTopicCluster";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -313,24 +318,41 @@ export default async function TreatmentPage({ params }: Props) {
     .map((s) => TREATMENTS.find((t) => t.slug === s))
     .filter(Boolean);
 
+  const commercial = TREATMENT_COMMERCIAL[slug];
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
     name: treatment.title,
     description: details.intro,
-    procedureType: "https://health-lifesci.schema.org/PsychiatricProcedure",
     bodyLocation: "Mouth",
-    followup: `Book a consultation at Smile Architects, Pala — ${CLINIC.contact.phoneDisplay}`,
+    followup: `Book a consultation at Smile Architects — ${CLINIC.contact.phoneDisplay}`,
     recognizingAuthority: {
       "@type": "MedicalOrganization",
       name: "Smile Architects",
       url: CLINIC.seo.siteUrl,
     },
+    ...(commercial
+      ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "INR",
+            description: commercial.costRangeInr,
+          },
+        }
+      : {}),
   };
+
+  const faqSchema = commercial?.faqs.length
+    ? buildFaqPageSchema(commercial.faqs)
+    : null;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      {faqSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      ) : null}
 
       {/* Page header */}
       <div className="section-padding section-warm">
@@ -385,8 +407,72 @@ export default async function TreatmentPage({ params }: Props) {
                     {treatment.title} in Pala, Kottayam
                   </h2>
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75, fontSize: "1rem" }}>{details.intro}</p>
+                  <TreatmentContextLinks slug={slug} />
                 </div>
               </RevealUp>
+
+              {commercial ? (
+                <RevealUp delay={0.04}>
+                  <div className="card-warm" style={{ padding: "1.5rem" }}>
+                    <h2
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "1.5rem",
+                        color: "var(--color-dark-moss)",
+                        fontWeight: 400,
+                        marginBottom: "0.75rem",
+                      }}
+                    >
+                      Cost in Pala &amp; Kottayam District
+                    </h2>
+                    <p style={{ fontSize: "1.125rem", color: "var(--color-dark-moss)", fontWeight: 600, marginBottom: "0.5rem" }}>
+                      {commercial.costRangeInr}
+                    </p>
+                    <p style={{ fontSize: "0.875rem", color: "var(--color-olive)", lineHeight: 1.6, marginBottom: "1rem" }}>
+                      {commercial.costNote}
+                    </p>
+                    <h3 style={{ fontSize: "1rem", color: "var(--color-dark-moss)", marginBottom: "0.5rem" }}>Typical steps</h3>
+                    <ol style={{ margin: "0 0 1rem", paddingLeft: "1.25rem", color: "var(--color-cafe-noir)", lineHeight: 1.65 }}>
+                      {commercial.steps.map((s) => (
+                        <li key={s}>{s}</li>
+                      ))}
+                    </ol>
+                    <p style={{ fontSize: "0.9375rem", color: "var(--color-olive)", marginBottom: "1rem" }}>
+                      <strong>Recovery:</strong> {commercial.recovery}
+                    </p>
+                    <p style={{ fontSize: "0.875rem", color: "var(--color-moss)" }}>
+                      Available at{" "}
+                      {commercial.availableAt.includes("pala") ? (
+                        <Link href="/local/pala">dental clinic in Pala</Link>
+                      ) : null}
+                      {commercial.availableAt.includes("pala") && commercial.availableAt.includes("thrissur") ? " and " : null}
+                      {commercial.availableAt.includes("thrissur") ? (
+                        <Link href="/thrissur">Thrissur branch</Link>
+                      ) : null}
+                      .
+                    </p>
+                  </div>
+                </RevealUp>
+              ) : null}
+
+              {commercial?.faqs.length ? (
+                <RevealUp delay={0.05}>
+                  <div>
+                    <h2
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "1.5rem",
+                        color: "var(--color-dark-moss)",
+                        fontWeight: 400,
+                        marginBottom: "1rem",
+                      }}
+                    >
+                      {treatment.title} — FAQs
+                    </h2>
+                    <PremiumFAQ faqs={commercial.faqs} />
+                  </div>
+                </RevealUp>
+              ) : null}
 
               {/* What's involved */}
               {details.points.length > 0 && (
@@ -529,6 +615,8 @@ export default async function TreatmentPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <SeoTopicCluster pathname={`/treatments/${slug}`} />
 
       {/* Back to treatments + CTA */}
       <section

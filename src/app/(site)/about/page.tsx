@@ -13,6 +13,7 @@ import {
   StaggerItem,
   HoverScale,
 } from "@/components/motion/REVOLQComponents";
+import SeoTopicCluster from "@/components/seo/SeoTopicCluster";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Smile Architects | Dental Clinic in Pala, Kottayam",
@@ -71,19 +72,28 @@ export default function AboutPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75 }}>
                     Smile Architects is a multispeciality dental clinic providing comprehensive dental care
-                    for patients in Pala, Kottayam and the surrounding Meenachil region. The clinic
-                    combines general and preventive dentistry with specialist orthodontic treatment and
-                    advanced cosmetic dental care.
+                    for patients in{" "}
+                    <Link href="/local/pala">Pala, Kottayam</Link> and the surrounding Meenachil region. We
+                    also serve{" "}
+                    <Link href="/local/kottayam">Kottayam District</Link> and operate a{" "}
+                    <Link href="/thrissur">Thrissur branch in Punkunnam</Link>. The clinic combines{" "}
+                    <Link href="/treatments/general-dentistry">general dentistry</Link> with{" "}
+                    <Link href="/orthodontics">orthodontics</Link> and{" "}
+                    <Link href="/treatments/cosmetic-dentistry">cosmetic care</Link>.
                   </p>
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75 }}>
-                    Led by Dr. Jeo Tom Charls — an MDS-qualified orthodontist registered with the Kerala
-                    State Dental Council — the clinical team places patient comfort and accurate diagnosis
-                    at the centre of every consultation. Individual treatment rooms, strict sterilisation
-                    protocols and digital X-ray ensure a safe, professional environment.
+                    Led by{" "}
+                    <Link href="/dentists/dr-jeo-tom-charls">Dr. Jeo Tom Charls, MDS Orthodontics</Link> —
+                    registered with the Kerala State Dental Council — the clinical team places patient comfort
+                    and accurate diagnosis at the centre of every consultation. Explore our{" "}
+                    <Link href="/dentists">MDS specialists</Link> and{" "}
+                    <Link href="/technology">clinic technology</Link>.
                   </p>
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75 }}>
-                    The clinic is located on Kattakkayam Road, near Federal Bank in Pala Town, with ample
-                    car parking and convenient Monday to Saturday hours.
+                    The main centre is on Kattakkayam Road, near Federal Bank in Pala Town (
+                    <Link href="/locations">both clinic addresses</Link>). Ample parking and Mon–Sat hours;{" "}
+                    <Link href="/book-appointment">book online</Link> or read the{" "}
+                    <Link href="/patient-guide">patient guide</Link>.
                   </p>
                 </div>
                 <div style={{ display: "flex", gap: "0.875rem", marginTop: "2rem", flexWrap: "wrap" }}>
@@ -305,6 +315,8 @@ export default function AboutPage() {
           </RevealFade>
         </div>
       </section>
+
+      <SeoTopicCluster pathname="/about" />
 
       {/* ── CTA ────────────────────────────────────────────────── */}
       <section className="section-dark" style={{ padding: "3.5rem 0" }}>

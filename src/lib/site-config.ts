@@ -51,11 +51,17 @@ export const CLINIC = {
     youtube: "",
     whatsapp: "https://wa.me/919446999333",
   },
+  /** Only set review counts when they match live Google data shown on the site */
+  trust: {
+    practicingSince: 2015,
+    googleRating: null as number | null,
+    googleReviewCount: null as number | null,
+  },
   seo: {
     siteName: "Smile Architects",
-    defaultTitle: "Smile Architects | Dental Clinic in Pala, Kottayam",
+    defaultTitle: "Smile Architects | Best Dental Clinic in Pala, Kottayam & Thrissur",
     defaultDescription:
-      "Smile Architects is a multispeciality dental clinic and advanced orthodontic centre in Pala, Kottayam, Kerala. General dentistry, orthodontics, implants, cosmetic dentistry and more. Call +91 9446 999 333.",
+      "Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call +91 9446 999 333.",
     siteUrl: "https://smilearchitectspala.com",
     // [CLINIC TO VERIFY: Replace with final production domain]
     ogImage: "/images/logo.png",

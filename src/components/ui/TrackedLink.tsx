@@ -1,8 +1,11 @@
 "use client";
 
+import { trackEvent } from "@/lib/analytics";
+
 interface TrackedLinkProps {
   href: string;
   eventName: string;
+  eventParams?: Record<string, string>;
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -18,6 +21,7 @@ interface TrackedLinkProps {
 export default function TrackedLink({
   href,
   eventName,
+  eventParams,
   children,
   className,
   style,
@@ -26,9 +30,7 @@ export default function TrackedLink({
   "aria-label": ariaLabel,
 }: TrackedLinkProps) {
   const handleClick = () => {
-    if (typeof window !== "undefined" && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
-      (window as unknown as { gtag: (...a: unknown[]) => void }).gtag("event", eventName);
-    }
+    trackEvent(eventName, eventParams);
   };
 
   return (

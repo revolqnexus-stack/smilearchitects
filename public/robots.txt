@@ -4,9 +4,8 @@ Allow: /
 # Sitemap location
 Sitemap: https://smilearchitectspala.com/sitemap.xml
 
-# Disallow admin/private areas (add as needed)
-# Disallow: /admin
-# Disallow: /_next
+Disallow: /jeotomadmin/
+Disallow: /api/
 
 # Allow common SEO bot access
 User-agent: Googlebot

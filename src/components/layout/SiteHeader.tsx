@@ -22,7 +22,8 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { CLINIC } from "@/lib/site-config";
+import { useBranch } from "@/components/providers/BranchProvider";
+import BranchToggle from "@/components/ui/BranchToggle";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -39,10 +40,17 @@ const NAV_TREATMENTS = [
   { label: "Paediatric Dentistry",href: "/treatments/pediatric-dentistry" },
 ];
 
+const NAV_LOCATIONS = [
+  { label: "Pala — main centre", href: "/local/pala" },
+  { label: "Thrissur branch", href: "/thrissur" },
+  { label: "Both clinics", href: "/locations" },
+];
+
 const NAV_LINKS = [
   { label: "About",           href: "/about" },
   { label: "Our Doctors",     href: "/dentists" },
-  { label: "Treatments",      href: "/treatments", hasDropdown: true },
+  { label: "Locations",       href: "/locations", hasDropdown: true, dropdownKey: "locations" as const },
+  { label: "Treatments",      href: "/treatments", hasDropdown: true, dropdownKey: "treatments" as const },
   { label: "Dental Guides",   href: "/dental-guides" },
   { label: "Patient Stories", href: "/patient-stories" },
   { label: "Contact",         href: "/contact" },
@@ -53,11 +61,14 @@ const EASE_SPRING = [0.16, 1, 0.3, 1] as const;
 // ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 
 export default function SiteHeader() {
+  const { branch } = useBranch();
   const pathname = usePathname();
   const [scrolled, setScrolled]         = useState(false);
   const [mobileOpen, setMobileOpen]     = useState(false);
   const [treatmentOpen, setTreatmentOpen] = useState(false);
+  const [locationsOpen, setLocationsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const locationsDropdownRef = useRef<HTMLDivElement>(null);
 
   /* scroll detection */
   useEffect(() => {
@@ -66,11 +77,13 @@ export default function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* close treatment dropdown on outside click */
+  /* close nav dropdowns on outside click */
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node))
         setTreatmentOpen(false);
+      if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(e.target as Node))
+        setLocationsOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -116,6 +129,8 @@ export default function SiteHeader() {
           left: 0,
           right: 0,
           zIndex: 1000,
+          display: "flex",
+          flexDirection: "column",
           backdropFilter: blurAmount,
           WebkitBackdropFilter: blurAmount,
           borderBottom: "1px solid",
@@ -224,17 +239,43 @@ export default function SiteHeader() {
               justifyContent: "center",
             }}
           >
-            {NAV_LINKS.map((link) =>
-              link.hasDropdown ? (
-                <TreatmentsDropdown
-                  key={link.label}
-                  ref={dropdownRef}
-                  open={treatmentOpen}
-                  onToggle={() => setTreatmentOpen((v) => !v)}
-                  onClose={() => setTreatmentOpen(false)}
-                  isActive={pathname.startsWith("/treatments")}
-                />
-              ) : (
+            {NAV_LINKS.map((link) => {
+              const locationsActive =
+                pathname === "/locations" ||
+                pathname.startsWith("/local/") ||
+                pathname === "/thrissur";
+
+              if (link.dropdownKey === "treatments") {
+                return (
+                  <TreatmentsDropdown
+                    key={link.label}
+                    ref={dropdownRef}
+                    open={treatmentOpen}
+                    onToggle={() => {
+                      setLocationsOpen(false);
+                      setTreatmentOpen((v) => !v);
+                    }}
+                    onClose={() => setTreatmentOpen(false)}
+                    isActive={pathname.startsWith("/treatments")}
+                  />
+                );
+              }
+              if (link.dropdownKey === "locations") {
+                return (
+                  <LocationsDropdown
+                    key={link.label}
+                    ref={locationsDropdownRef}
+                    open={locationsOpen}
+                    onToggle={() => {
+                      setTreatmentOpen(false);
+                      setLocationsOpen((v) => !v);
+                    }}
+                    onClose={() => setLocationsOpen(false)}
+                    isActive={locationsActive}
+                  />
+                );
+              }
+              return (
                 <NavItem
                   key={link.label}
                   href={link.href}
@@ -245,8 +286,8 @@ export default function SiteHeader() {
                       : pathname.startsWith(link.href)
                   }
                 />
-              )
-            )}
+              );
+            })}
           </nav>
 
           {/* ── DESKTOP ACTIONS ──────────────────────────────── */}
@@ -260,9 +301,13 @@ export default function SiteHeader() {
               zIndex: 1,
             }}
           >
+            <div className="navbar-branch-toggle" style={{ flexShrink: 0 }}>
+              <BranchToggle compact />
+            </div>
+
             {/* WhatsApp glass pill */}
             <motion.a
-              href={CLINIC.social.whatsapp}
+              href={branch.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
@@ -376,6 +421,7 @@ export default function SiteHeader() {
         @media (min-width: 1024px) {
           .navbar-nav    { display: flex !important; }
           .navbar-actions { display: flex !important; }
+          .navbar-branch-toggle { display: flex !important; align-items: center; }
           .hamburger-btn { display: none !important; }
           .navbar-logo-text { display: none !important; }
           .navbar-logo-desktop { display: block !important; height: 70px !important; }
@@ -385,6 +431,7 @@ export default function SiteHeader() {
         @media (max-width: 1023px) {
           .navbar-nav     { display: none !important; }
           .navbar-actions { display: none !important; }
+          .navbar-branch-toggle { display: none !important; }
           .hamburger-btn  { display: flex !important; }
           .navbar-logo-text { display: block !important; }
           .navbar-logo-desktop { display: none !important; }
@@ -641,9 +688,129 @@ const TreatmentsDropdown = forwardRef<
   );
 });
 
+const LocationsDropdown = forwardRef<
+  HTMLDivElement,
+  { open: boolean; onToggle: () => void; onClose: () => void; isActive: boolean }
+>(function LocationsDropdown({ open, onToggle, onClose, isActive }, ref) {
+  return (
+    <div ref={ref} style={{ position: "relative" }}>
+      <motion.button
+        onClick={onToggle}
+        aria-haspopup="true"
+        aria-expanded={open}
+        whileHover="hover"
+        initial="rest"
+        animate="rest"
+        style={{
+          position: "relative",
+          padding: "0.4375rem 0.75rem",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
+        }}
+      >
+        <motion.span
+          aria-hidden="true"
+          variants={{
+            rest: { opacity: isActive || open ? 1 : 0 },
+            hover: { opacity: 1 },
+          }}
+          transition={{ duration: 0.18 }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "9999px",
+            backgroundColor: isActive || open
+              ? "rgba(215,227,164,0.55)"
+              : "rgba(215,227,164,0.4)",
+            border: "1px solid rgba(126,132,7,0.2)",
+          }}
+        />
+        <motion.span
+          variants={{ rest: { y: 0 }, hover: { y: -1 } }}
+          transition={{ duration: 0.18 }}
+          style={{
+            position: "relative",
+            fontSize: "0.875rem",
+            fontWeight: isActive || open ? 600 : 500,
+            color: isActive || open ? "var(--color-dark-moss)" : "var(--color-olive)",
+            fontFamily: "var(--font-sans)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Locations
+        </motion.span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.22 }}
+          style={{ position: "relative", display: "flex", alignItems: "center" }}
+        >
+          <ChevronIcon />
+        </motion.span>
+      </motion.button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            initial={{ opacity: 0, y: 10, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.97 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: "absolute",
+              top: "calc(100% + 14px)",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "260px",
+              backgroundColor: "rgba(240,246,228,0.88)",
+              backdropFilter: "blur(28px) saturate(160%)",
+              WebkitBackdropFilter: "blur(28px) saturate(160%)",
+              border: "1px solid rgba(215,227,164,0.6)",
+              borderRadius: "20px",
+              padding: "0.625rem",
+              boxShadow: "0 16px 48px rgba(37,78,6,0.14), inset 0 1px 0 rgba(255,255,255,0.5)",
+              zIndex: 200,
+              backgroundImage: "linear-gradient(170deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 40%)",
+            }}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.04, delayChildren: 0.04 } },
+              }}
+            >
+              {NAV_LOCATIONS.map((item) => (
+                <motion.div
+                  key={item.href}
+                  variants={{
+                    hidden: { opacity: 0, x: -8 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.25 } },
+                  }}
+                >
+                  <Link href={item.href} role="menuitem" onClick={onClose} className="dropdown-item">
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+});
+
 // ─── MOBILE MENU ─────────────────────────────────────────────────────────────
 
 function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
+  const { branch } = useBranch();
+
   return (
     <motion.div
       id="mobile-nav"
@@ -706,12 +873,47 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
         </motion.button>
       </div>
 
+      <div
+        style={{
+          padding: "1.25rem clamp(1.25rem, 6vw, 2rem) 1rem",
+          borderBottom: "1px solid rgba(215,227,164,0.12)",
+        }}
+      >
+        <p
+          style={{
+            margin: "0 0 0.625rem",
+            fontSize: "0.6875rem",
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "rgba(236,245,226,0.55)",
+          }}
+        >
+          Nearest clinic
+        </p>
+        <BranchToggle variant="dark" />
+        <Link
+          href="/locations"
+          onClick={onClose}
+          style={{
+            display: "inline-block",
+            marginTop: "0.875rem",
+            fontSize: "0.875rem",
+            color: "var(--color-jonquil)",
+            fontWeight: 600,
+            textDecoration: "none",
+          }}
+        >
+          Pala &amp; Thrissur addresses →
+        </Link>
+      </div>
+
       {/* Nav links */}
       <nav
         aria-label="Mobile navigation"
         style={{
           flex: 1,
-          padding: "clamp(1.75rem, 5vw, 2.5rem) clamp(1.25rem, 6vw, 2rem)",
+          padding: "clamp(1.25rem, 4vw, 1.75rem) clamp(1.25rem, 6vw, 2rem)",
           display: "flex",
           flexDirection: "column",
           gap: "0",
@@ -723,7 +925,14 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.07, delayChildren: 0.12 } } }}
         >
           {NAV_LINKS.map((link, i) => {
-            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            const isActive =
+              link.href === "/locations"
+                ? pathname === "/locations" ||
+                  pathname.startsWith("/local/") ||
+                  pathname === "/thrissur"
+                : link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
             return (
               <motion.div
                 key={link.label}
@@ -760,6 +969,49 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Clinic location links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.55, duration: 0.4 }}
+          style={{ marginTop: "2rem" }}
+        >
+          <p
+            style={{
+              fontSize: "0.625rem",
+              color: "var(--color-tea-green)",
+              textTransform: "uppercase",
+              letterSpacing: "0.14em",
+              fontFamily: "var(--font-utility)",
+              fontWeight: 600,
+              marginBottom: "1rem",
+              opacity: 0.7,
+            }}
+          >
+            Our clinics
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
+            {NAV_LOCATIONS.map((loc) => (
+              <Link
+                key={loc.href}
+                href={loc.href}
+                onClick={onClose}
+                style={{
+                  fontSize: "1rem",
+                  color: pathname === loc.href ? "var(--color-jonquil)" : "var(--color-honeydew)",
+                  fontFamily: "var(--font-sans)",
+                  fontWeight: pathname === loc.href ? 600 : 500,
+                  textDecoration: "none",
+                  padding: "0.5rem 0",
+                  borderBottom: "1px solid rgba(215,227,164,0.1)",
+                }}
+              >
+                {loc.label}
+              </Link>
+            ))}
+          </div>
         </motion.div>
 
         {/* Treatment chips */}
@@ -844,7 +1096,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
           Book an Appointment <ArrowIcon />
         </Link>
         <a
-          href={`tel:${CLINIC.contact.phone}`}
+          href={`tel:${branch.contact.phone}`}
           style={{
             display: "flex",
             alignItems: "center",
@@ -862,7 +1114,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
             minHeight: "52px",
           }}
         >
-          <PhoneIcon /> Call {CLINIC.contact.phoneDisplay}
+          <PhoneIcon /> Call {branch.contact.phoneDisplay}
         </a>
       </motion.div>
     </motion.div>

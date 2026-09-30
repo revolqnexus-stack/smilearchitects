@@ -7,7 +7,7 @@ import AppointmentForm from "@/components/ui/AppointmentForm";
 import { MapPinIcon, PhoneIcon, ClockIcon, CareIcon, CheckIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Dental & Orthodontic Care for Patients from Thrissur | Smile Architects",
+  title: "Best Dental Clinic in Thrissur | Smile Architects",
   description:
     "Smile Architects is located in Pala, Kottayam District. Explore dental and orthodontic treatments for patients from Thrissur, including treatment information, travel guidance and appointments.",
   canonical: "/areas-served/thrissur",
@@ -44,7 +44,7 @@ const SPECIALIST_TREATMENTS = [
 const FAQS_THRISSUR = [
   {
     question: "Is Smile Architects located in Thrissur?",
-    answer: "No. Smile Architects is located in Pala, Kottayam District. Patients from Thrissur can travel to our Pala clinic for consultation and treatment."
+    answer: "Yes — Smile Architects has a Thrissur branch. Our original multispeciality centre remains in Pala, Kottayam District. Use the Pala | Thrissur toggle at the top of the site or visit /thrissur for the Thrissur location."
   },
   {
     question: "Can I travel from Thrissur for orthodontic treatment?",
@@ -60,7 +60,7 @@ const FAQS_THRISSUR = [
   },
   {
     question: "Where is the clinic located?",
-    answer: "Smile Architects is located at Kattakkayam Road, Pala, Kottayam District, Kerala – 686575. The clinic is near Federal Bank in Pala Town, with ample parking available for patients."
+    answer: "Smile Architects has a Thrissur branch at 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur, Kerala – 680002. Our Pala centre is at Kattakkayam Road, Kottayam District – 686575 (near Federal Bank)."
   },
   {
     question: "How do I get to Smile Architects from Thrissur?",
@@ -106,8 +106,8 @@ export default function ThrissurServicePage() {
               lineHeight: 1.6,
               margin: 0
             }}>
-              Smile Architects does not have a branch in Thrissur. This page provides information for 
-              patients from Thrissur who are considering travelling to our Pala clinic for specialist 
+              Smile Architects serves patients from Thrissur at our Thrissur branch and at our Pala centre. 
+              This page also helps patients who are considering travelling to our Pala clinic for specialist 
               dental or orthodontic treatment.
             </p>
           </div>

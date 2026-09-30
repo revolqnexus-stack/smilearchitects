@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
 import { type Treatment } from '@/lib/supabase/queries';
 import AdminShell from '@/components/admin/AdminShell';
 import ImagePicker from '@/components/admin/ImagePicker';
@@ -37,15 +36,15 @@ export default function EditTreatmentPage() {
 
   const fetchTreatment = async () => {
     try {
-      const { data, error } = await supabase
-        .from('treatments')
-        .select('*')
-        .eq('id', treatmentId)
-        .single();
+      const response = await fetch(`/api/cms/treatments/${treatmentId}`);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch treatment');
+      }
 
-      if (error) throw error;
-
-      const treatment = data as Treatment;
+      const treatment = await response.json();
+      
       if (treatment) {
         setSlug(treatment.slug);
         setTitle(treatment.title);
@@ -63,7 +62,7 @@ export default function EditTreatmentPage() {
       }
     } catch (err) {
       console.error('Error fetching treatment:', err);
-      setError('Failed to load treatment');
+      setError(err instanceof Error ? err.message : 'Failed to load treatment');
     } finally {
       setFetching(false);
     }
@@ -77,10 +76,10 @@ export default function EditTreatmentPage() {
     try {
       const benefitsArray = benefits.split('\n').filter(b => b.trim());
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from('treatments')
-        .update({
+      const response = await fetch(`/api/cms/treatments/${treatmentId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           slug,
           title,
           short_description: shortDescription || null,
@@ -95,10 +94,13 @@ export default function EditTreatmentPage() {
           featured,
           display_order: displayOrder,
           updated_at: new Date().toISOString(),
-        })
-        .eq('id', treatmentId);
+        }),
+      });
 
-      if (updateError) throw updateError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to update treatment');
+      }
 
       router.push('/jeotomadmin/treatments');
     } catch (err: unknown) {
@@ -116,16 +118,18 @@ export default function EditTreatmentPage() {
 
     setLoading(true);
     try {
-      const { error: deleteError } = await supabase
-        .from('treatments')
-        .delete()
-        .eq('id', treatmentId);
+      const response = await fetch(`/api/cms/treatments/${treatmentId}`, {
+        method: 'DELETE',
+      });
 
-      if (deleteError) throw deleteError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete treatment');
+      }
 
       router.push('/jeotomadmin/treatments');
     } catch (err) {
-      setError('Failed to delete treatment');
+      setError(err instanceof Error ? err.message : 'Failed to delete treatment');
       setLoading(false);
       setDeleteConfirm(false);
     }

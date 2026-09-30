@@ -1,14 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { CLINIC } from "@/lib/site-config";
+import { useBranch } from "@/components/providers/BranchProvider";
 import { PhoneIcon, WhatsAppIcon, CalendarIcon } from "@/components/ui/icons";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Floating action pill for mobile — fixed to bottom with proper safe-area.
  * z-index: 40 — above content, below navbar (1000), avoids chat bubbles.
  */
 export default function MobileAppointmentBar() {
+  const { branch } = useBranch();
+
   return (
     <>
       {/* Floating Action Pill */}
@@ -36,7 +39,8 @@ export default function MobileAppointmentBar() {
       >
         {/* Call */}
         <a
-          href={`tel:${CLINIC.contact.phone}`}
+          href={`tel:${branch.contact.phone}`}
+          onClick={() => trackEvent("phone_click", { branch: branch.id, placement: "mobile_bar" })}
           style={{
             flex: 1,
             display: "flex",
@@ -53,7 +57,7 @@ export default function MobileAppointmentBar() {
             fontFamily: "var(--font-sans)",
             minHeight: "44px",
           }}
-          aria-label={`Call ${CLINIC.contact.phoneDisplay}`}
+          aria-label={`Call ${branch.contact.phoneDisplay}`}
         >
           <PhoneIcon size="sm" />
           <span>Call</span>
@@ -61,7 +65,8 @@ export default function MobileAppointmentBar() {
 
         {/* WhatsApp */}
         <a
-          href={CLINIC.social.whatsapp}
+          href={branch.whatsapp}
+          onClick={() => trackEvent("whatsapp_click", { branch: branch.id, placement: "mobile_bar" })}
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -89,7 +94,8 @@ export default function MobileAppointmentBar() {
 
         {/* Book */}
         <Link
-          href="/book-appointment"
+          href={`/book-appointment?branch=${branch.id}`}
+          onClick={() => trackEvent("book_click", { branch: branch.id, placement: "mobile_bar" })}
           style={{
             flex: 1,
             display: "flex",

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CLINIC } from "@/lib/site-config";
-import { PhoneIcon, WhatsAppIcon } from "@/components/ui/icons";
+import { WhatsAppIcon } from "@/components/ui/icons";
 import Aurora from "@/components/ui/Aurora";
+import FooterContactBlock from "@/components/layout/FooterContactBlock";
 
 const FOOTER_TREATMENTS = [
   { label: "General Dentistry", href: "/treatments/general-dentistry" },
@@ -23,9 +24,14 @@ const FOOTER_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Our Doctors", href: "/dentists" },
   { label: "Dental Guides", href: "/dental-guides" },
+  { label: "Patient guide (topics)", href: "/patient-guide" },
+  { label: "Site map", href: "/site-map" },
+  { label: "Our clinics (Pala & Thrissur)", href: "/locations" },
+  { label: "Dental clinic — Pala", href: "/local/pala" },
+  { label: "Dental clinic — Kottayam", href: "/local/kottayam" },
+  { label: "Dental clinic — Thrissur", href: "/local/thrissur" },
   { label: "Areas Served", href: "/areas-served" },
-  { label: "Kottayam District", href: "/areas-served/kottayam" },
-  { label: "Thrissur", href: "/areas-served/thrissur" },
+  { label: "Thrissur branch", href: "/thrissur" },
   { label: "Patient Stories", href: "/patient-stories" },
   { label: "Contact", href: "/contact" },
   { label: "Book Appointment", href: "/book-appointment" },
@@ -150,27 +156,7 @@ export default function SiteFooter() {
             <p style={{ fontSize: "0.75rem", color: "var(--color-jonquil)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1rem", fontWeight: 600 }}>
               Multispeciality Dental Clinic<br />Advanced Orthodontic Centre
             </p>
-            <address style={{ fontStyle: "normal", fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-honeydew)", opacity: 0.8 }}>
-              {CLINIC.address.street}<br />
-              {CLINIC.address.city}, {CLINIC.address.district}<br />
-              {CLINIC.address.state} – {CLINIC.address.pincode}<br />
-              <span style={{ fontSize: "0.8125rem", opacity: 0.7 }}>Near Federal Bank, Pala Town</span>
-            </address>
-            <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <a
-                href={`tel:${CLINIC.contact.phone}`}
-                style={{ fontSize: "0.9rem", color: "var(--color-jonquil)", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem" }}
-              >
-                <PhoneIcon size="sm" color="var(--color-jonquil)" />
-                {CLINIC.contact.phoneDisplay}
-              </a>
-              <a
-                href={`mailto:${CLINIC.contact.email}`}
-                style={{ fontSize: "0.8125rem", color: "var(--color-honeydew)", opacity: 0.7 }}
-              >
-                {CLINIC.contact.email}
-              </a>
-            </div>
+            <FooterContactBlock />
           </div>
 
           {/* Treatments */}

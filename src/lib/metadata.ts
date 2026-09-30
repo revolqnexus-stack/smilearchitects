@@ -8,6 +8,7 @@ interface PageMetaOptions {
   ogImage?: string;
   noIndex?: boolean;
   type?: "website" | "article";
+  keywords?: string[];
 }
 
 export function buildMetadata(options: PageMetaOptions = {}): Metadata {
@@ -18,10 +19,13 @@ export function buildMetadata(options: PageMetaOptions = {}): Metadata {
     ogImage = CLINIC.seo.ogImage,
     noIndex = false,
     type = "website",
+    keywords,
   } = options;
 
   const resolvedTitle = title
-    ? `${title} | ${CLINIC.seo.siteName}`
+    ? title.includes(CLINIC.seo.siteName)
+      ? title
+      : `${title} | ${CLINIC.seo.siteName}`
     : CLINIC.seo.defaultTitle;
 
   const resolvedUrl = canonical
@@ -31,6 +35,7 @@ export function buildMetadata(options: PageMetaOptions = {}): Metadata {
   return {
     title: resolvedTitle,
     description,
+    ...(keywords?.length ? { keywords } : {}),
     metadataBase: new URL(CLINIC.seo.siteUrl),
     alternates: {
       canonical: resolvedUrl,

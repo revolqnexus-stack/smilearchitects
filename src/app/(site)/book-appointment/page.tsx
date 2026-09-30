@@ -153,7 +153,7 @@ export default function BookAppointmentPage() {
                 backdropFilter: "blur(12px)",
               }}
             >
-              <WhatsAppForm darkMode={true} heading="Quick WhatsApp Booking" />
+              <WhatsAppForm darkMode={true} heading="Quick WhatsApp Booking" quick />
             </div>
           </div>
         </div>

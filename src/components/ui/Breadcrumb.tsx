@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CLINIC } from "@/lib/site-config";
 
 interface BreadcrumbItem {
   label: string;
@@ -14,12 +15,12 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://smilearchitectspala.com" },
+      { "@type": "ListItem", position: 1, name: "Home", item: CLINIC.seo.siteUrl },
       ...items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 2,
         name: item.label,
-        ...(item.href ? { item: `https://smilearchitectspala.com${item.href}` } : {}),
+        ...(item.href ? { item: `${CLINIC.seo.siteUrl}${item.href}` } : {}),
       })),
     ],
   };

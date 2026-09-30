@@ -135,6 +135,9 @@
   --section-padding-sm: 3rem;
   --section-padding-md: 5rem;
   --section-padding-lg: 7rem;
+
+  /* Fixed glass header — single row (no extra location strip) */
+  --site-header-offset: clamp(68px, 16vw, 108px);
   
   /* ─── BORDER RADIUS SCALE ───────────────────────────────────────────────── */
   /* Organic, soft rounded containers */
@@ -443,6 +446,23 @@ small, .text-small {
 .section-white > * {
   position: relative;
   z-index: 1;
+}
+
+.site-main {
+  padding-top: var(--site-header-offset);
+}
+
+.contact-both-branches {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-both-branches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Section vertical rhythm - generous spacing */

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
 import { type FAQ } from '@/lib/supabase/queries';
 import AdminShell from '@/components/admin/AdminShell';
 
@@ -28,15 +27,15 @@ export default function EditFAQPage() {
 
   const fetchFAQ = async () => {
     try {
-      const { data, error } = await supabase
-        .from('faqs')
-        .select('*')
-        .eq('id', faqId)
-        .single();
+      const response = await fetch(`/api/cms/faqs/${faqId}`);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch FAQ');
+      }
 
-      if (error) throw error;
-
-      const faq = data as FAQ;
+      const faq = await response.json();
+      
       if (faq) {
         setQuestion(faq.question);
         setAnswer(faq.answer);
@@ -46,7 +45,7 @@ export default function EditFAQPage() {
       }
     } catch (err) {
       console.error('Error fetching FAQ:', err);
-      setError('Failed to load FAQ');
+      setError(err instanceof Error ? err.message : 'Failed to load FAQ');
     } finally {
       setFetching(false);
     }
@@ -58,20 +57,23 @@ export default function EditFAQPage() {
     setLoading(true);
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from('faqs')
-        .update({
+      const response = await fetch(`/api/cms/faqs/${faqId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           question,
           answer,
           category: category || null,
           published,
           display_order: displayOrder,
           updated_at: new Date().toISOString(),
-        })
-        .eq('id', faqId);
+        }),
+      });
 
-      if (updateError) throw updateError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to update FAQ');
+      }
 
       router.push('/jeotomadmin/faqs');
     } catch (err: unknown) {
@@ -89,16 +91,18 @@ export default function EditFAQPage() {
 
     setLoading(true);
     try {
-      const { error: deleteError } = await supabase
-        .from('faqs')
-        .delete()
-        .eq('id', faqId);
+      const response = await fetch(`/api/cms/faqs/${faqId}`, {
+        method: 'DELETE',
+      });
 
-      if (deleteError) throw deleteError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete FAQ');
+      }
 
       router.push('/jeotomadmin/faqs');
     } catch (err) {
-      setError('Failed to delete FAQ');
+      setError(err instanceof Error ? err.message : 'Failed to delete FAQ');
       setLoading(false);
       setDeleteConfirm(false);
     }

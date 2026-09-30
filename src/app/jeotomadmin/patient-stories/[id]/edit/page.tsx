@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
 import { type PatientStory } from '@/lib/supabase/queries';
 import AdminShell from '@/components/admin/AdminShell';
 import ImagePicker from '@/components/admin/ImagePicker';
@@ -32,15 +31,15 @@ export default function EditPatientStoryPage() {
 
   const fetchStory = async () => {
     try {
-      const { data, error } = await supabase
-        .from('patient_stories')
-        .select('*')
-        .eq('id', storyId)
-        .single();
+      const response = await fetch(`/api/cms/patient-stories/${storyId}`);
 
-      if (error) throw error;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch patient story');
+      }
 
-      const patientStory = data as PatientStory;
+      const patientStory = await response.json();
+
       if (patientStory) {
         setTitle(patientStory.title);
         setStory(patientStory.story);
@@ -53,7 +52,7 @@ export default function EditPatientStoryPage() {
       }
     } catch (err) {
       console.error('Error fetching story:', err);
-      setError('Failed to load patient story');
+      setError(err instanceof Error ? err.message : 'Failed to load patient story');
     } finally {
       setFetching(false);
     }
@@ -65,10 +64,10 @@ export default function EditPatientStoryPage() {
     setLoading(true);
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const { error: updateError } = await (supabase as any)
-        .from('patient_stories')
-        .update({
+      const response = await fetch(`/api/cms/patient-stories/${storyId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           title,
           story,
           testimonial: testimonial || null,
@@ -78,10 +77,13 @@ export default function EditPatientStoryPage() {
           featured,
           display_order: displayOrder,
           updated_at: new Date().toISOString(),
-        })
-        .eq('id', storyId);
+        }),
+      });
 
-      if (updateError) throw updateError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to update patient story');
+      }
 
       router.push('/jeotomadmin/patient-stories');
     } catch (err: unknown) {
@@ -99,16 +101,18 @@ export default function EditPatientStoryPage() {
 
     setLoading(true);
     try {
-      const { error: deleteError } = await supabase
-        .from('patient_stories')
-        .delete()
-        .eq('id', storyId);
+      const response = await fetch(`/api/cms/patient-stories/${storyId}`, {
+        method: 'DELETE',
+      });
 
-      if (deleteError) throw deleteError;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to delete patient story');
+      }
 
       router.push('/jeotomadmin/patient-stories');
     } catch (err) {
-      setError('Failed to delete patient story');
+      setError(err instanceof Error ? err.message : 'Failed to delete patient story');
       setLoading(false);
       setDeleteConfirm(false);
     }

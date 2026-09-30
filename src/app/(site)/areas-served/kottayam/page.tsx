@@ -7,7 +7,7 @@ import AppointmentForm from "@/components/ui/AppointmentForm";
 import { MapPinIcon, PhoneIcon, ClockIcon, CareIcon, CheckIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Dental Clinic Serving Kottayam District from Pala | Smile Architects",
+  title: "Best Dental Clinic in Kottayam District | Smile Architects Pala",
   description:
     "Smile Architects is located in Pala, Kottayam District. Comprehensive dental care and orthodontic treatment for patients from Kottayam town and across Kottayam District. MDS Orthodontist, dental implants, lingual braces.",
   canonical: "/areas-served/kottayam",
