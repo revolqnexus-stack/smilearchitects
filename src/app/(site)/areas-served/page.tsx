@@ -108,7 +108,7 @@ export default function AreasServedPage() {
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>
+          <div className="areas-served-two-col">
             {/* Left column */}
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
               
@@ -419,8 +419,8 @@ export default function AreasServedPage() {
       {/* Map and directions */}
       <section className="section-padding section-light">
         <div className="container-xl">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
-            <div>
+          <div className="service-area-grid">
+            <div className="service-area-copy">
               <div className="accent-line" />
               <h2 style={{
                 fontFamily: "var(--font-serif)",

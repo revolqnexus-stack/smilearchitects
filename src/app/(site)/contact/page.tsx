@@ -50,7 +50,7 @@ export default function ContactPage() {
             </p>
             
             {/* Quick contact options */}
-            <div style={{ 
+            <div className="contact-hero-actions" style={{ 
               display: "flex", 
               gap: "1rem", 
               justifyContent: "center", 
@@ -87,19 +87,14 @@ export default function ContactPage() {
         <div className="container-xl">
           <ContactBothBranches />
 
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "1fr 1fr", 
-            gap: "4rem", 
-            alignItems: "start",
-          }}>
+          <div className="contact-page-layout">
             
             <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
               
               <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
 
                 {/* Phone Card */}
-                <div className="card-warm" style={{ padding: "1.75rem", display: "flex", gap: "1rem" }}>
+                <div className="card-warm contact-detail-card" style={{ padding: "1.75rem", display: "flex", gap: "1rem" }}>
                   <div style={{ 
                     flexShrink: 0, 
                     width: "48px", 
@@ -112,7 +107,7 @@ export default function ContactPage() {
                   }}>
                     <PhoneIcon size="md" color="var(--color-dark-moss)" />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <h3 style={{ 
                       fontFamily: "var(--font-sans)", 
                       fontSize: "1rem", 
@@ -141,7 +136,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email Card */}
-                <div className="card-warm" style={{ padding: "1.75rem", display: "flex", gap: "1rem" }}>
+                <div className="card-warm contact-detail-card" style={{ padding: "1.75rem", display: "flex", gap: "1rem" }}>
                   <div style={{ 
                     flexShrink: 0, 
                     width: "48px", 
@@ -154,7 +149,7 @@ export default function ContactPage() {
                   }}>
                     <MailIcon size="md" color="var(--color-dark-moss)" />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <h3 style={{ 
                       fontFamily: "var(--font-sans)", 
                       fontSize: "1rem", 
@@ -181,7 +176,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Hours Card */}
-                <div className="card-warm" style={{ padding: "1.75rem", display: "flex", gap: "1rem" }}>
+                <div className="card-warm contact-detail-card" style={{ padding: "1.75rem", display: "flex", gap: "1rem" }}>
                   <div style={{ 
                     flexShrink: 0, 
                     width: "48px", 
@@ -194,7 +189,7 @@ export default function ContactPage() {
                   }}>
                     <ClockIcon size="md" color="var(--color-dark-moss)" />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <h3 style={{ 
                       fontFamily: "var(--font-sans)", 
                       fontSize: "1rem", 
@@ -245,7 +240,7 @@ export default function ContactPage() {
             For urgent dental emergencies outside office hours, call us directly. 
             We prioritize emergency cases and will do our best to accommodate urgent needs.
           </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="contact-emergency-actions" style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <TrackedLink
               href={`tel:${CLINIC.contact.phone}`}
               eventName="emergency_phone_click"
@@ -270,19 +265,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Mobile Responsive Styles */}
-      <style>{`
-        @media (max-width: 768px) {
-          .container-xl > div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-            gap: 3rem !important;
-          }
-          
-          .card-warm {
-            padding: 1.5rem !important;
-          }
-        }
-      `}</style>
     </>
   );
 }

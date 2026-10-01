@@ -51,7 +51,7 @@ export default function ContactBothBranches() {
               height={180}
               previewLabel={`Map — ${branch.label}`}
             />
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            <div className="contact-branch-actions" style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
               <TrackedLink href={`tel:${branch.contact.phone}`} eventName="phone_click" eventParams={{ branch: branch.id, placement: "contact" }} className="btn btn-primary" style={{ fontSize: "0.8125rem" }}>
                 <PhoneIcon size="sm" />
                 Call

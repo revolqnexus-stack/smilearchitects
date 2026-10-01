@@ -839,8 +839,8 @@ export default function HomePage() {
       {/* ── REGIONAL SERVICE AREA ───────────────────────────── */}
       <section aria-labelledby="service-area-heading" className="section-padding section-warm" style={{ position: "relative", overflow: "hidden", paddingBottom: "clamp(5rem, 10vw, 8rem)" }}>
         <div className="container-xl">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
-            <RevealUp delay={0.05}>
+          <div className="service-area-grid">
+            <RevealUp delay={0.05} className="service-area-copy">
               <div className="accent-line" />
               <StaggerReveal type="eyebrow">
                 <p className="eyebrow">Serving Kottayam District</p>
@@ -880,7 +880,7 @@ export default function HomePage() {
                   { area: "Kottayam town", note: "Approx. 35 km" },
                   { area: "Erattupetta", note: "Approx. 12 km" },
                 ].map((item) => (
-                  <div key={item.area} style={{
+                  <div key={item.area} className="service-area-list-row" style={{
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",

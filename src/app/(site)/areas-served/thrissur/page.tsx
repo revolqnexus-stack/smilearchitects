@@ -140,7 +140,7 @@ export default function ThrissurServicePage() {
 
       <section className="section-padding section-white">
         <div className="container-xl">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>
+          <div className="areas-served-two-col">
             
             {/* Left column */}
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>

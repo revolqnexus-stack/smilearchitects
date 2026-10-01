@@ -465,6 +465,129 @@ small, .text-small {
   }
 }
 
+/* ─── Contact page mobile ─────────────────────────────────────────────────── */
+.contact-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-page-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-detail-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .contact-detail-card > div:first-child {
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-hero-actions,
+  .contact-emergency-actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-hero-actions .btn,
+  .contact-emergency-actions .btn {
+    width: 100%;
+    max-width: 340px;
+    justify-content: center;
+  }
+
+  .contact-branch-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-branch-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ─── Homepage: Serving Kottayam District ─────────────────────────────────── */
+.service-area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+.service-area-grid > * {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .service-area-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .service-area-copy {
+    text-align: center;
+  }
+
+  .service-area-copy .accent-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service-area-copy .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px;
+    width: 100%;
+  }
+
+  .service-area-copy .btn-group .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .service-area-list-row {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.35rem;
+  }
+}
+
+/* Areas served / Kottayam district content pages */
+.areas-served-two-col {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
+}
+
+.areas-served-two-col > * {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .areas-served-two-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 /* Section vertical rhythm - generous spacing */
 .section-padding {
   padding-top: clamp(3rem, 8vw, 7rem);
@@ -1276,10 +1399,8 @@ input[type="checkbox"] {
     width: 100%;
   }
 
-  /* Ensure all form grid containers stack vertically on mobile */
-  .form-grid,
-  [style*="gridTemplateColumns"],
-  [style*="grid-template-columns"] {
+  /* Form grids only — avoid breaking page layouts that use inline grid styles */
+  .form-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
@@ -1301,21 +1422,7 @@ input[type="checkbox"] {
     width: 100%;
   }
 
-  /* Force 1-column stacking for doctor cards and other 3-column grids */
-  [style*="gridTemplateColumns: \"auto 1fr auto\""],
-  [style*="gridTemplateColumns: \"1fr 1fr\""],
-  [style*="gridTemplateColumns: \"repeat(auto-fit"],
-  [style*="gridTemplateColumns: \"1fr auto\""] {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-
-  /* Stack doctor profile buttons below text */
-  .btn.btn-secondary,
-  .btn.btn-secondary.btn-sm {
-    width: 100%;
-    text-align: center;
-  }
+  /* Prefer explicit layout classes (contact-page-layout, service-area-grid) over inline-style hacks */
 
   /* Reduce section padding on mobile */
   .section-padding {
