@@ -163,7 +163,8 @@ export default function SiteHeader() {
             pointerEvents: "none",
           }} aria-hidden="true" />
 
-          {/* ── LOGO ─────────────────────────────────────────── */}
+          {/* ── LOGO (mobile: left slot of balanced bar) ─────── */}
+          <div className="navbar-mobile-side navbar-mobile-side-start">
           <Link
             href="/"
             aria-label="Smile Architects — Home"
@@ -227,6 +228,7 @@ export default function SiteHeader() {
               </span>
             </motion.div>
           </Link>
+          </div>
 
           <span className="navbar-mobile-title" aria-hidden="true">
             Smile Architects
@@ -372,7 +374,8 @@ export default function SiteHeader() {
             </motion.div>
           </div>
 
-          {/* ── HAMBURGER (mobile) ───────────────────────────── */}
+          {/* ── HAMBURGER (mobile: right slot of balanced bar) ─ */}
+          <div className="navbar-mobile-side navbar-mobile-side-end">
           <button
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -384,10 +387,10 @@ export default function SiteHeader() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              gap: "5px",
-              width: "44px",
-              height: "44px",
-              borderRadius: "12px",
+              gap: "4px",
+              width: "38px",
+              height: "38px",
+              borderRadius: "10px",
               background: "rgba(215,227,164,0.4)",
               border: "1px solid rgba(126,132,7,0.2)",
               cursor: "pointer",
@@ -397,21 +400,22 @@ export default function SiteHeader() {
             }}
           >
             <motion.span
-              animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.22 }}
-              style={{ display: "block", width: "18px", height: "1.5px", background: "var(--color-dark-moss)", borderRadius: "2px", transformOrigin: "center" }}
+              style={{ display: "block", width: "17px", height: "1.5px", background: "var(--color-dark-moss)", borderRadius: "2px", transformOrigin: "center" }}
             />
             <motion.span
               animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.18 }}
-              style={{ display: "block", width: "18px", height: "1.5px", background: "var(--color-dark-moss)", borderRadius: "2px" }}
+              style={{ display: "block", width: "17px", height: "1.5px", background: "var(--color-dark-moss)", borderRadius: "2px" }}
             />
             <motion.span
-              animate={mobileOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
               transition={{ duration: 0.22 }}
-              style={{ display: "block", width: "18px", height: "1.5px", background: "var(--color-dark-moss)", borderRadius: "2px", transformOrigin: "center" }}
+              style={{ display: "block", width: "17px", height: "1.5px", background: "var(--color-dark-moss)", borderRadius: "2px", transformOrigin: "center" }}
             />
           </button>
+          </div>
 
         </div>
       </motion.header>
@@ -431,12 +435,14 @@ export default function SiteHeader() {
           .navbar-logo-text { display: none !important; }
           .navbar-logo-desktop { display: block !important; height: 70px !important; }
           .navbar-logo-mobile { display: none !important; }
+          .navbar-mobile-side-start,
+          .navbar-mobile-side-end { display: contents; }
         }
         .navbar-mobile-title {
           display: none;
         }
 
-        /* Mobile/tablet: 3-column bar — logo | centered title | menu */
+        /* Mobile/tablet: equal side slots + title centered on viewport */
         @media (max-width: 1023px) {
           .navbar-nav     { display: none !important; }
           .navbar-actions { display: none !important; }
@@ -444,28 +450,51 @@ export default function SiteHeader() {
           .hamburger-btn  { display: flex !important; }
           .navbar-logo-text { display: none !important; }
           .navbar-logo-desktop { display: none !important; }
-          .navbar-logo-mobile { display: block !important; height: 38px !important; width: auto !important; }
+          .navbar-logo-mobile {
+            display: block !important;
+            height: 36px !important;
+            width: auto !important;
+            max-width: 40px !important;
+            object-fit: contain !important;
+          }
           .navbar-container {
-            display: grid !important;
-            grid-template-columns: 44px minmax(0, 1fr) 44px;
+            display: flex !important;
+            flex-wrap: nowrap;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            position: relative !important;
+            gap: 0 !important;
             width: 100%;
-            justify-content: unset !important;
-            padding: 0.75rem 1rem !important;
+            padding: 0.5rem 1rem !important;
+            min-height: 52px;
+          }
+          .navbar-mobile-side {
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+          }
+          .navbar-mobile-side-start {
+            justify-content: flex-start;
+          }
+          .navbar-mobile-side-end {
+            justify-content: flex-end;
           }
           .navbar-logo-link {
-            grid-column: 1;
-            justify-self: start;
-            min-width: 0;
+            display: flex;
+            align-items: center;
+            min-height: 38px;
           }
           .navbar-logo-wrapper {
             gap: 0 !important;
           }
           .navbar-mobile-title {
             display: block;
-            grid-column: 2;
-            justify-self: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
             font-family: var(--font-serif);
             font-size: clamp(0.9375rem, 4.2vw, 1.125rem);
@@ -476,13 +505,11 @@ export default function SiteHeader() {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 100%;
+            max-width: min(16rem, calc(100% - 6.75rem));
+            padding: 0 0.25rem;
             pointer-events: none;
             user-select: none;
-          }
-          .hamburger-btn {
-            grid-column: 3;
-            justify-self: end;
+            z-index: 1;
           }
         }
         
@@ -494,20 +521,19 @@ export default function SiteHeader() {
         
         @media (max-width: 480px) {
           .navbar-container {
-            padding: 0.625rem 0.875rem !important;
-            grid-template-columns: 40px minmax(0, 1fr) 40px;
+            padding: 0.5rem 0.875rem !important;
+            min-height: 48px;
           }
           .navbar-logo-mobile {
-            height: 34px !important;
-          }
-          .hamburger-btn {
-            width: 40px !important;
-            height: 40px !important;
+            height: 32px !important;
+            max-width: 36px !important;
           }
         }
         
-        /* Ensure links have min tap height */
-        .navbar-root a, .navbar-root button { min-height: 36px; }
+        /* Ensure links have min tap height (desktop; mobile uses slot min-heights) */
+        @media (min-width: 1024px) {
+          .navbar-root a, .navbar-root button { min-height: 36px; }
+        }
       `}</style>
     </>
   );
