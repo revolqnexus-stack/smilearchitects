@@ -47,11 +47,6 @@
 - **Expertise:** Periodontal treatment, scaling & root planing, gum surgery, dental implants, implant-supported restorations, bone grafting
 - **Bio:** MDS specialist managing gum disease and dental implant placement.
 
-#### Dr. Mohamed Riyas — Endodontist
-- **Qualifications:** MDS — Endodontics and Conservative Dentistry
-- **Expertise:** Root canal treatment, re-treatment, single-visit endodontics, composite restorations, ceramic inlays/onlays, crowns
-- **Bio:** MDS specialist focused on saving natural teeth through precise root canal and restorative care.
-
 ### Visiting Consultants
 
 #### Dr. Kishore George — Oral & Maxillofacial Surgeon
@@ -122,7 +117,7 @@ Monday to Saturday, 9:30 AM to 8:00 PM. Closed Sundays.
 Call +91 9446 999 333, WhatsApp, or use the online form on the website.
 
 **Which dentists are available?**
-Core team: Dr. Jeo Tom Charls (MDS Orthodontics), Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology), Dr. Mohamed Riyas (MDS Endodontics). Plus visiting consultants in Surgery, Paediatrics, and Prosthodontics.
+Core team: Dr. Jeo Tom Charls (MDS Orthodontics), Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology). Plus visiting consultants in Surgery, Paediatrics, and Prosthodontics.
 
 **Does the clinic offer parking?**
 Yes, ample car parking is available.
@@ -283,7 +278,6 @@ Completely hidden braces on the inner surface of teeth.
 |---|---|
 | Principal doctor | `/images/dr-jeo-tom-charls.jpg` |
 | Dr. Jom T. Kizhakkel | `/images/team/dr-jom-t-kizhakkel.jpg` |
-| Dr. Mohamed Riyas | `/images/team/dr-mohamed-riyas.jpg` |
 | Dr. Kishore George | `/images/team/dr-kishore-george.jpg` |
 | Dr. Renu Ann Mathew | `/images/team/dr-renu-ann-mathew.jpg` |
 | Dr. Akarsh Babu | `/images/team/dr-akarsh-babu.jpg` |

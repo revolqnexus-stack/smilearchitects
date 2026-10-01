@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
       { source: "/dental-implants-kerala", destination: "/patient-guide/implants-and-smile-design", permanent: true },
       { source: "/braces-pala", destination: "/orthodontics/braces", permanent: true },
       { source: "/sitemap", destination: "/site-map", permanent: true },
+      { source: "/dentists/dr-mohamed-riyas", destination: "/dentists", permanent: true },
     ];
   },
 };

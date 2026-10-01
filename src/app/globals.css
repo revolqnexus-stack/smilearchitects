@@ -452,6 +452,12 @@ small, .text-small {
   padding-top: var(--site-header-offset);
 }
 
+@media (max-width: 1023px) {
+  :root {
+    --site-header-offset: clamp(76px, 19vw, 92px);
+  }
+}
+
 .contact-both-branches {
   display: grid;
   grid-template-columns: 1fr;

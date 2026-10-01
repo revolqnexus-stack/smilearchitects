@@ -122,7 +122,7 @@ export default function SiteHeader() {
           borderBottomColor: borderColor,
         }}
         transition={{ duration: 0.5, ease: EASE_SPRING }}
-        className="navbar-root"
+        className={`navbar-root${scrolled ? " navbar-scrolled" : ""}`}
         style={{
           position: "fixed",
           top: 0,
@@ -195,21 +195,23 @@ export default function SiteHeader() {
                   transition: "height 0.3s cubic-bezier(0.16,1,0.3,1)",
                 }}
               />
-              {/* Logo icon - mobile MOBILE LOGO.png */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/MOBILE LOGO.png"
-                alt=""
-                aria-hidden="true"
-                className="navbar-logo-img navbar-logo-mobile"
-                style={{
-                  height: scrolled ? "36px" : "40px",
-                  width: "auto",
-                  objectFit: "contain",
-                  transition: "height 0.3s cubic-bezier(0.16,1,0.3,1)",
-                  display: "none",
-                }}
-              />
+              {/* Logo icon - mobile (compact mark) */}
+              <span className="navbar-mobile-logo-mark" aria-hidden="true">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/MOBILE LOGO.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="navbar-logo-img navbar-logo-mobile"
+                  style={{
+                    height: scrolled ? "36px" : "40px",
+                    width: "auto",
+                    objectFit: "contain",
+                    transition: "height 0.3s cubic-bezier(0.16,1,0.3,1)",
+                    display: "none",
+                  }}
+                />
+              </span>
               {/* Wordmark - mobile only */}
               <span
                 className="navbar-logo-text"
@@ -388,11 +390,12 @@ export default function SiteHeader() {
               justifyContent: "center",
               alignItems: "center",
               gap: "4px",
-              width: "38px",
-              height: "38px",
-              borderRadius: "10px",
-              background: "rgba(215,227,164,0.4)",
-              border: "1px solid rgba(126,132,7,0.2)",
+              width: "48px",
+              height: "48px",
+              borderRadius: "12px",
+              background: "rgba(215,227,164,0.45)",
+              border: "1px solid rgba(126,132,7,0.18)",
+              boxShadow: "0 1px 3px rgba(37, 78, 6, 0.08)",
               cursor: "pointer",
               flexShrink: 0,
               zIndex: 1,
@@ -441,6 +444,9 @@ export default function SiteHeader() {
         .navbar-mobile-title {
           display: none;
         }
+        .navbar-mobile-logo-mark {
+          display: none;
+        }
 
         /* Mobile/tablet: equal side slots + title centered on viewport */
         @media (max-width: 1023px) {
@@ -450,11 +456,25 @@ export default function SiteHeader() {
           .hamburger-btn  { display: flex !important; }
           .navbar-logo-text { display: none !important; }
           .navbar-logo-desktop { display: none !important; }
+          .navbar-mobile-logo-mark {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            padding: 4px;
+            border-radius: 12px;
+            background: rgba(215, 227, 164, 0.45);
+            border: 1px solid rgba(126, 132, 7, 0.18);
+            box-shadow: 0 1px 3px rgba(37, 78, 6, 0.08);
+            transition: width 0.25s ease, height 0.25s ease, padding 0.25s ease;
+          }
           .navbar-logo-mobile {
             display: block !important;
-            height: 36px !important;
+            height: 40px !important;
             width: auto !important;
-            max-width: 40px !important;
+            max-width: 100% !important;
             object-fit: contain !important;
           }
           .navbar-container {
@@ -465,8 +485,8 @@ export default function SiteHeader() {
             position: relative !important;
             gap: 0 !important;
             width: 100%;
-            padding: 0.5rem 1rem !important;
-            min-height: 52px;
+            padding: 0.75rem 1.125rem !important;
+            min-height: 64px;
           }
           .navbar-mobile-side {
             flex: 1 1 0;
@@ -484,7 +504,11 @@ export default function SiteHeader() {
           .navbar-logo-link {
             display: flex;
             align-items: center;
-            min-height: 38px;
+            min-height: 48px;
+          }
+          .hamburger-btn {
+            width: 48px !important;
+            height: 48px !important;
           }
           .navbar-logo-wrapper {
             gap: 0 !important;
@@ -497,19 +521,41 @@ export default function SiteHeader() {
             transform: translate(-50%, -50%);
             text-align: center;
             font-family: var(--font-serif);
-            font-size: clamp(0.9375rem, 4.2vw, 1.125rem);
-            font-weight: 400;
+            font-size: clamp(1.25rem, 6.4vw, 1.5625rem);
+            font-weight: 500;
             color: var(--color-dark-moss);
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: min(16rem, calc(100% - 6.75rem));
-            padding: 0 0.25rem;
+            max-width: min(19rem, calc(100% - 9.5rem));
+            padding: 0 0.35rem;
             pointer-events: none;
             user-select: none;
             z-index: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+          }
+          .navbar-scrolled .navbar-mobile-logo-mark {
+            width: 44px;
+            height: 44px;
+            padding: 3px;
+          }
+          .navbar-scrolled .navbar-logo-mobile {
+            height: 36px !important;
+          }
+          .navbar-scrolled .navbar-mobile-title {
+            font-size: clamp(1.125rem, 5.8vw, 1.4375rem);
+          }
+          .navbar-scrolled .navbar-container {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            min-height: 56px;
+          }
+          .navbar-scrolled .hamburger-btn {
+            width: 44px !important;
+            height: 44px !important;
           }
         }
         
@@ -517,16 +563,17 @@ export default function SiteHeader() {
           .hamburger-btn:active {
             transform: scale(0.95);
           }
+          .navbar-mobile-logo-mark:active {
+            transform: scale(0.97);
+          }
         }
         
         @media (max-width: 480px) {
           .navbar-container {
-            padding: 0.5rem 0.875rem !important;
-            min-height: 48px;
+            padding: 0.75rem 1rem !important;
           }
-          .navbar-logo-mobile {
-            height: 32px !important;
-            max-width: 36px !important;
+          .navbar-mobile-title {
+            font-size: clamp(1.1875rem, 6.8vw, 1.5rem);
           }
         }
         

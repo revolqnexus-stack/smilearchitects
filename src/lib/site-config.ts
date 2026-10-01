@@ -154,38 +154,6 @@ export const DOCTORS = [
       description: "Dr. Jom T. Kizhakkel — MDS Periodontics & Implantology. Specialist in dental implants and gum treatment at Smile Architects, Pala, Kottayam, Kerala.",
     },
   },
-  {
-    id: "dr-mohamed-riyas",
-    slug: "dr-mohamed-riyas",
-    name: "Dr. Mohamed Riyas",
-    photo: "/images/team/dr-mohamed-riyas.jpg",
-    qualifications: "MDS",
-    specialty: "Endodontics and Conservative Dentistry",
-    roles: ["Endodontist", "Conservative Dentistry Specialist"],
-    visiting: false,
-    registrationBody: "",
-    registrationNumber: "",
-    registrationYear: "",
-    memberships: [],
-    education: [
-      { degree: "MDS — Endodontics and Conservative Dentistry", institution: "", year: "" },
-    ],
-    professionalExperience: ["Smile Architects, Pala"],
-    training: [],
-    areasOfExpertise: [
-      "Root canal treatment",
-      "Re-treatment of root-filled teeth",
-      "Single-visit endodontics",
-      "Tooth-coloured composite restorations",
-      "Ceramic inlays and onlays",
-      "Dental crowns",
-    ],
-    bio: "Dr. Mohamed Riyas is an MDS specialist in Endodontics and Conservative Dentistry at Smile Architects, Pala. He manages root canal treatment and tooth restoration, focusing on saving natural teeth through precise, minimally invasive care.",
-    seo: {
-      title: "Dr. Mohamed Riyas | Endodontist in Pala, Kottayam | Smile Architects",
-      description: "Dr. Mohamed Riyas — MDS Endodontics and Conservative Dentistry. Root canal specialist at Smile Architects, Pala, Kottayam, Kerala.",
-    },
-  },
 
   // ── VISITING CONSULTANTS ───────────────────────────────────────────────────
   {

@@ -48,7 +48,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Which is the best dental clinic in Pala, Kottayam?",
         answer:
-          "Smile Architects in Pala is a multispeciality clinic with MDS specialists including an orthodontist, periodontist, and endodontist. The clinic offers braces, clear aligners, lingual braces, implants, and smile design at Kattakkayam Road, near Federal Bank, Pala Town.",
+          "Smile Architects in Pala is a multispeciality clinic with MDS specialists including an orthodontist and periodontist. The clinic offers braces, clear aligners, lingual braces, implants, root canal treatment, and smile design at Kattakkayam Road, near Federal Bank, Pala Town.",
       },
       {
         question: "Is Smile Architects good for braces in Pala?",
