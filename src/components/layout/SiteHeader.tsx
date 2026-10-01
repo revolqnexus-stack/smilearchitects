@@ -132,7 +132,6 @@ export default function SiteHeader() {
           borderBottomColor: borderColor,
           borderBottomWidth: scrolled ? 1 : 0,
           backdropFilter: glassFilter,
-          WebkitBackdropFilter: glassFilter,
         }}
         transition={{ duration: 0.35, ease: EASE_SPRING }}
         className={`navbar-root${scrolled ? " navbar-scrolled" : ""}`}
@@ -146,6 +145,7 @@ export default function SiteHeader() {
           flexDirection: "column",
           borderBottomStyle: "solid",
           isolation: "isolate",
+          WebkitBackdropFilter: glassFilter,
         }}
       >
         <div
