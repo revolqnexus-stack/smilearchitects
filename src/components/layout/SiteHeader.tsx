@@ -100,13 +100,22 @@ export default function SiteHeader() {
 
   const closeMobile = () => setMobileOpen(false);
 
-  // Glass layer values — crisp, minimal glass effect (NO MUDDY BACKGROUNDS)
-  const bgOpacity   = scrolled ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.35)";
-  const blurAmount  = "blur(16px)";
+  // Glass layer — airy at top, frosted when scrolled
+  const bgOpacity = scrolled
+    ? "rgba(255, 255, 255, 0.68)"
+    : "rgba(245, 248, 234, 0.42)";
+  const glassFilter = scrolled
+    ? "blur(18px) saturate(165%)"
+    : "blur(22px) saturate(175%)";
+  const glassHighlight = scrolled
+    ? "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 100%)"
+    : "linear-gradient(180deg, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.12) 38%, rgba(255,255,255,0) 100%)";
   const shadowValue = scrolled
-    ? "0 4px 6px -1px rgba(0,0,0,0.05)"
-    : "0 2px 4px -1px rgba(0,0,0,0.03)";
-  const borderColor = "rgba(255,255,255,0.6)";
+    ? "0 4px 14px rgba(37, 78, 6, 0.08), inset 0 1px 0 rgba(255,255,255,0.65)"
+    : "0 2px 8px rgba(37, 78, 6, 0.04), inset 0 1px 0 rgba(255,255,255,0.45)";
+  const borderColor = scrolled
+    ? "rgba(255,255,255,0.75)"
+    : "rgba(255,255,255,0.12)";
 
   return (
     <>
@@ -118,10 +127,14 @@ export default function SiteHeader() {
           opacity: 1, 
           y: 0,
           backgroundColor: bgOpacity,
+          backgroundImage: glassHighlight,
           boxShadow: shadowValue,
           borderBottomColor: borderColor,
+          borderBottomWidth: scrolled ? 1 : 0,
+          backdropFilter: glassFilter,
+          WebkitBackdropFilter: glassFilter,
         }}
-        transition={{ duration: 0.5, ease: EASE_SPRING }}
+        transition={{ duration: 0.35, ease: EASE_SPRING }}
         className={`navbar-root${scrolled ? " navbar-scrolled" : ""}`}
         style={{
           position: "fixed",
@@ -131,11 +144,8 @@ export default function SiteHeader() {
           zIndex: 1000,
           display: "flex",
           flexDirection: "column",
-          backdropFilter: blurAmount,
-          WebkitBackdropFilter: blurAmount,
-          borderBottom: "1px solid",
-          // Clean glass highlight layer
-          backgroundImage: "linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%)",
+          borderBottomStyle: "solid",
+          isolation: "isolate",
         }}
       >
         <div
@@ -152,16 +162,20 @@ export default function SiteHeader() {
             position: "relative",
           }}
         >
-          {/* Glass inner highlight - subtle shine */}
-          <div style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: "1px",
-            background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)",
-            pointerEvents: "none",
-          }} aria-hidden="true" />
+          {/* Glass inner highlight — top edge shine */}
+          <div
+            className="navbar-glass-sheen"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "1px",
+              background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%)",
+              pointerEvents: "none",
+            }}
+            aria-hidden="true"
+          />
 
           {/* ── LOGO (mobile: left slot of balanced bar) ─────── */}
           <div className="navbar-mobile-side navbar-mobile-side-start">
@@ -393,9 +407,11 @@ export default function SiteHeader() {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              background: "rgba(215,227,164,0.45)",
-              border: "1px solid rgba(126,132,7,0.18)",
-              boxShadow: "0 1px 3px rgba(37, 78, 6, 0.08)",
+              background: "rgba(255, 255, 255, 0.38)",
+              border: "1px solid rgba(255, 255, 255, 0.52)",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.55), 0 1px 4px rgba(37, 78, 6, 0.07)",
+              backdropFilter: "blur(10px) saturate(160%)",
+              WebkitBackdropFilter: "blur(10px) saturate(160%)",
               cursor: "pointer",
               flexShrink: 0,
               zIndex: 1,
@@ -429,6 +445,11 @@ export default function SiteHeader() {
       </AnimatePresence>
 
       <style>{`
+        .navbar-root {
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
         /* Desktop: show nav + actions, hide hamburger, hide clinic name, larger logo, show desktop logo */
         @media (min-width: 1024px) {
           .navbar-nav    { display: flex !important; }
@@ -465,9 +486,11 @@ export default function SiteHeader() {
             height: 48px;
             padding: 4px;
             border-radius: 12px;
-            background: rgba(215, 227, 164, 0.45);
-            border: 1px solid rgba(126, 132, 7, 0.18);
-            box-shadow: 0 1px 3px rgba(37, 78, 6, 0.08);
+            background: rgba(255, 255, 255, 0.38);
+            border: 1px solid rgba(255, 255, 255, 0.52);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 4px rgba(37, 78, 6, 0.07);
+            backdrop-filter: blur(10px) saturate(160%);
+            -webkit-backdrop-filter: blur(10px) saturate(160%);
             transition: width 0.25s ease, height 0.25s ease, padding 0.25s ease;
           }
           .navbar-logo-mobile {
