@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CLINIC } from "@/lib/site-config";
+import { CLINIC, brandLogoSrc } from "@/lib/site-config";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import Aurora from "@/components/ui/Aurora";
 import FooterContactBlock from "@/components/layout/FooterContactBlock";
@@ -143,13 +143,13 @@ export default function SiteFooter() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/logo.png"
+                src={brandLogoSrc("desktop")}
                 alt="Smile Architects"
                 style={{
-                  height: "24px",
+                  height: "40px",
                   width: "auto",
+                  maxWidth: "240px",
                   objectFit: "contain",
-                  filter: "brightness(0) invert(1)", // Make logo white for dark footer
                 }}
               />
             </Link>

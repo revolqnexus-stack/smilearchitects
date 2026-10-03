@@ -57,6 +57,13 @@ export const CLINIC = {
     googleRating: null as number | null,
     googleReviewCount: null as number | null,
   },
+  brand: {
+    /** Desktop / footer wordmark — `public/images/logo.png` */
+    logo: "/images/logo.png",
+    logoMobile: "/images/MOBILE LOGO.png",
+    /** Increment when replacing logo files (browser cache bust) */
+    logoVersion: 3,
+  },
   seo: {
     siteName: "Smile Architects",
     defaultTitle: "Smile Architects | Best Dental Clinic in Pala, Kottayam & Thrissur",
@@ -68,6 +75,11 @@ export const CLINIC = {
     twitterHandle: "", // [CLINIC TO VERIFY]
   },
 } as const;
+
+export function brandLogoSrc(variant: "desktop" | "mobile" = "desktop"): string {
+  const path = variant === "mobile" ? CLINIC.brand.logoMobile : CLINIC.brand.logo;
+  return `${path}?v=${CLINIC.brand.logoVersion}`;
+}
 
 export const DOCTORS = [
   // ── CORE TEAM ──────────────────────────────────────────────────────────────

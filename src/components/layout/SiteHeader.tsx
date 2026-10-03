@@ -24,6 +24,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBranch } from "@/components/providers/BranchProvider";
 import BranchToggle from "@/components/ui/BranchToggle";
+import { brandLogoSrc } from "@/lib/site-config";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -195,25 +196,18 @@ export default function SiteHeader() {
                 gap: "0.625rem",
               }}
             >
-              {/* Logo icon - desktop logo.png */}
+              {/* PC: public/images/logo.png → /images/logo.png */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/logo.png"
-                alt=""
-                aria-hidden="true"
+                src={brandLogoSrc("desktop")}
+                alt="Smile Architects"
                 className="navbar-logo-img navbar-logo-desktop"
-                style={{
-                  height: scrolled ? "36px" : "40px",
-                  width: "auto",
-                  objectFit: "contain",
-                  transition: "height 0.3s cubic-bezier(0.16,1,0.3,1)",
-                }}
               />
               {/* Logo icon - mobile (compact mark) */}
               <span className="navbar-mobile-logo-mark" aria-hidden="true">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/images/MOBILE LOGO.png"
+                  src={brandLogoSrc("mobile")}
                   alt=""
                   aria-hidden="true"
                   className="navbar-logo-img navbar-logo-mobile"
@@ -457,7 +451,15 @@ export default function SiteHeader() {
           .navbar-branch-toggle { display: flex !important; align-items: center; }
           .hamburger-btn { display: none !important; }
           .navbar-logo-text { display: none !important; }
-          .navbar-logo-desktop { display: block !important; height: 70px !important; }
+          .navbar-logo-desktop {
+            display: block !important;
+            height: 70px !important;
+            width: auto !important;
+            max-width: min(320px, 38vw) !important;
+            object-fit: contain !important;
+            transition: height 0.3s cubic-bezier(0.16,1,0.3,1);
+          }
+          .navbar-scrolled .navbar-logo-desktop { height: 58px !important; }
           .navbar-logo-mobile { display: none !important; }
           .navbar-mobile-side-start,
           .navbar-mobile-side-end { display: contents; }
@@ -986,13 +988,13 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
         <Link href="/" onClick={onClose} style={{ textDecoration: "none" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/logo.png"
+            src={brandLogoSrc("desktop")}
             alt="Smile Architects"
             style={{
-              height: "28px",
+              height: "36px",
               width: "auto",
+              maxWidth: "220px",
               objectFit: "contain",
-              filter: "brightness(0) invert(1)", // Make logo white for dark mobile menu
             }}
           />
         </Link>
