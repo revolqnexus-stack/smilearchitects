@@ -585,8 +585,15 @@ small, .text-small {
 
   .service-area-copy .btn-group .btn {
     width: 100%;
+    max-width: 100%;
     justify-content: center;
     text-align: center;
+    white-space: normal;
+    line-height: 1.35;
+    padding: 0.875rem 1.125rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    box-sizing: border-box;
   }
 
   .service-area-list-row {
@@ -2278,6 +2285,11 @@ input[type="submit"],
     max-width: min(360px, 100%);
     justify-content: center;
     text-align: center;
+    white-space: normal;
+    line-height: 1.35;
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+    box-sizing: border-box;
   }
 }
 

@@ -203,21 +203,13 @@ export default function SiteHeader() {
                 alt="Smile Architects"
                 className="navbar-logo-img navbar-logo-desktop"
               />
-              {/* Logo icon - mobile (compact mark) */}
+              {/* Mobile: same public/images/logo.png, sized for the glass mark */}
               <span className="navbar-mobile-logo-mark" aria-hidden="true">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={brandLogoSrc("mobile")}
-                  alt=""
-                  aria-hidden="true"
+                  src={brandLogoSrc("desktop")}
+                  alt="Smile Architects"
                   className="navbar-logo-img navbar-logo-mobile"
-                  style={{
-                    height: scrolled ? "36px" : "40px",
-                    width: "auto",
-                    objectFit: "contain",
-                    transition: "height 0.3s cubic-bezier(0.16,1,0.3,1)",
-                    display: "none",
-                  }}
                 />
               </span>
               {/* Wordmark - mobile only */}
@@ -484,9 +476,11 @@ export default function SiteHeader() {
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            padding: 4px;
+            width: auto;
+            min-width: 48px;
+            max-width: min(112px, 30vw);
+            height: 44px;
+            padding: 5px 8px;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.38);
             border: 1px solid rgba(255, 255, 255, 0.52);
@@ -497,10 +491,11 @@ export default function SiteHeader() {
           }
           .navbar-logo-mobile {
             display: block !important;
-            height: 40px !important;
+            height: 34px !important;
             width: auto !important;
             max-width: 100% !important;
             object-fit: contain !important;
+            object-position: left center;
           }
           .navbar-container {
             display: flex !important;
@@ -554,7 +549,7 @@ export default function SiteHeader() {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: min(19rem, calc(100% - 9.5rem));
+            max-width: min(19rem, calc(100% - 12.5rem));
             padding: 0 0.35rem;
             pointer-events: none;
             user-select: none;
@@ -563,12 +558,12 @@ export default function SiteHeader() {
             -webkit-font-smoothing: antialiased;
           }
           .navbar-scrolled .navbar-mobile-logo-mark {
-            width: 44px;
-            height: 44px;
-            padding: 3px;
+            max-width: min(100px, 28vw);
+            height: 40px;
+            padding: 4px 7px;
           }
           .navbar-scrolled .navbar-logo-mobile {
-            height: 36px !important;
+            height: 30px !important;
           }
           .navbar-scrolled .navbar-mobile-title {
             font-size: clamp(1.125rem, 5.8vw, 1.4375rem);
