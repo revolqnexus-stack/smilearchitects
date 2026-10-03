@@ -384,7 +384,7 @@ export default async function DoctorProfilePage({ params }: Props) {
           borderTop: "1px solid rgba(236,245,226,0.1)",
         }}
       >
-        <div className="container-xl" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+        <div className="container-xl responsive-cta-bar" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
           <p style={{ fontSize: "0.875rem", color: "var(--color-honeydew)", opacity: 0.75, fontFamily: "var(--font-sans)" }}>
             {doctor.name} practises at Smile Architects · {CLINIC.address.street}, {CLINIC.address.city}, {CLINIC.address.district}
           </p>

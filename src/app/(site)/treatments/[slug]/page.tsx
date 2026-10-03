@@ -627,13 +627,13 @@ export default async function TreatmentPage({ params }: Props) {
         }}
       >
         <div
-          className="container-xl"
+          className="container-xl responsive-cta-bar"
           style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}
         >
           <Link href="/treatments" className="footer-link" style={{ fontWeight: 500 }}>
             ← All treatments
           </Link>
-          <div style={{ display: "flex", gap: "0.875rem", flexWrap: "wrap" }}>
+          <div className="mobile-cta-group" style={{ display: "flex", gap: "0.875rem", flexWrap: "wrap" }}>
             <Link href="/book-appointment" className="btn btn-secondary btn-sm">
               Book Appointment
             </Link>

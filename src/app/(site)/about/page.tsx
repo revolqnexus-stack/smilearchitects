@@ -339,7 +339,7 @@ export default function AboutPage() {
             <p style={{ color: "var(--color-honeydew)", opacity: 0.85, maxWidth: "420px", lineHeight: 1.65, margin: "0 auto" }}>
               Open Monday to Saturday, 9:30 AM to 8:00 PM. No referral needed.
             </p>
-            <div style={{ display: "flex", gap: "0.875rem", flexWrap: "wrap", justifyContent: "center", marginTop: "1rem" }}>
+            <div className="mobile-cta-row" style={{ display: "flex", gap: "0.875rem", flexWrap: "wrap", justifyContent: "center", marginTop: "1rem" }}>
               <HoverScale scale={1.04}>
                 <Link href="/book-appointment" className="btn btn-secondary">Book an Appointment</Link>
               </HoverScale>

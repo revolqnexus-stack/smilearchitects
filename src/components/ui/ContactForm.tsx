@@ -443,7 +443,7 @@ export default function ContactForm({ variant = "light" }: ContactFormProps) {
         </div>
 
         {/* Submit */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start", marginTop: "1rem" }}>
+        <div className="contact-form-actions" style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start", marginTop: "1rem" }}>
           <button
             type="submit"
             disabled={status === "sending" || !form.name || !form.email || !form.message}

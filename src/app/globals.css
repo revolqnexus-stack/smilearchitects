@@ -484,6 +484,27 @@ small, .text-small {
   .contact-page-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    justify-items: stretch;
+  }
+
+  .contact-page-layout > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .contact-both-branches {
+    justify-items: stretch;
+  }
+
+  .contact-both-branches .card-warm {
+    text-align: center;
+  }
+
+  .contact-both-branches .card-warm > div:first-of-type {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
   }
 
   .contact-detail-card {
@@ -506,17 +527,19 @@ small, .text-small {
   .contact-hero-actions .btn,
   .contact-emergency-actions .btn {
     width: 100%;
-    max-width: 340px;
+    max-width: 360px;
     justify-content: center;
   }
 
   .contact-branch-actions {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    width: 100%;
   }
 
   .contact-branch-actions .btn {
     width: 100%;
+    max-width: 360px;
     justify-content: center;
   }
 }
@@ -1462,6 +1485,24 @@ input[type="checkbox"] {
   }
 }
 
+@media (max-width: 768px) {
+  .contact-form-actions {
+    align-items: center !important;
+    width: 100%;
+  }
+
+  .contact-form-actions button[type="submit"] {
+    width: 100%;
+    max-width: min(360px, 100%);
+    justify-content: center;
+  }
+
+  .contact-form-actions p {
+    text-align: center;
+    max-width: 360px;
+  }
+}
+
 /* MOBILE RESPONSIVE FIXES */
 
 /* Force single-column form layout on small screens */
@@ -1752,20 +1793,49 @@ input[type="submit"],
   }
 }
 
+/* Footer / page bars with back link + CTAs — center on mobile */
+@media (max-width: 768px) {
+  .responsive-cta-bar {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .responsive-cta-bar .mobile-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .responsive-cta-bar .mobile-cta-group .btn {
+    width: 100%;
+    max-width: min(360px, 100%);
+    justify-content: center;
+  }
+
+  .mobile-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mobile-cta-row .btn {
+    flex: 1 1 auto;
+    min-width: min(100%, 280px);
+    max-width: min(360px, 100%);
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   /* Tablets and below */
   body {
     background-color: var(--color-honeydew);
-  }
-  
-  /* Keep CTA highly visible */
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .btn-sm {
-    width: auto;
   }
   
   /* Maintain large readable typography */
@@ -2196,13 +2266,16 @@ input[type="submit"],
   flex-wrap: wrap;
 }
 
-/* On mobile, buttons stack and go full-width */
-@media (max-width: 479px) {
+@media (max-width: 768px) {
   .btn-group {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
+
   .btn-group .btn {
     width: 100%;
+    max-width: min(360px, 100%);
     justify-content: center;
     text-align: center;
   }

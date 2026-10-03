@@ -22,7 +22,7 @@ export default function ContactPage() {
       <div className="section-padding section-warm">
         <div className="container-xl">
           <Breadcrumb items={[{ label: "Contact", href: "/contact" }]} />
-          <div style={{ textAlign: "center", maxWidth: "680px", margin: "0 auto" }}>
+          <div className="contact-hero-inner" style={{ textAlign: "center", maxWidth: "680px", margin: "0 auto", width: "100%" }}>
             <h1
               style={{
                 fontFamily: "var(--font-serif)",
