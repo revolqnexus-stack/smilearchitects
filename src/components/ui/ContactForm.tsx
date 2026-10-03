@@ -143,6 +143,7 @@ export default function ContactForm({ variant = "light" }: ContactFormProps) {
 
   return (
     <div
+      className="contact-form-shell"
       style={{
         backgroundColor: cardBg,
         borderRadius: "24px",
@@ -325,18 +326,20 @@ export default function ContactForm({ variant = "light" }: ContactFormProps) {
               name="reason"
               value={form.reason}
               onChange={handleChange}
+              className={`sa-form-select ${!form.reason ? "sa-form-select--placeholder" : ""}`}
               style={{
                 width: "100%",
                 padding: "1rem 1.25rem",
                 backgroundColor: inputBg,
                 border: `2px solid ${inputBorder}`,
                 borderRadius: "12px",
-                color: form.reason ? textPrimary : textSecondary,
+                color: textPrimary,
                 fontSize: "1rem",
                 fontFamily: "var(--font-sans)",
                 outline: "none",
                 transition: "all 0.3s ease",
                 cursor: "pointer",
+                colorScheme: "light",
               }}
               onFocus={(e) => { e.target.style.borderColor = inputFocus; }}
               onBlur={(e) => { e.target.style.borderColor = inputBorder; }}

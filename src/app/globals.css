@@ -594,6 +594,36 @@ small, .text-small {
   }
 }
 
+/* Treatment / doctor / orthodontics — main + sticky booking form */
+.sidebar-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
+}
+
+.sidebar-content-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .sidebar-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sidebar-sticky-form {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .treatment-booking-card {
+    padding: 1.25rem !important;
+  }
+}
+
 /* Section vertical rhythm - generous spacing */
 .section-padding {
   padding-top: clamp(3rem, 8vw, 7rem);
@@ -1389,6 +1419,47 @@ textarea {
 input[type="radio"],
 input[type="checkbox"] {
   accent-color: var(--color-jonquil);
+}
+
+/* Selects — readable on mobile (contact + appointment forms) */
+.sa-form-select {
+  color: var(--color-dark-moss) !important;
+  background-color: var(--color-white) !important;
+  color-scheme: light;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23254E06' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.75rem !important;
+}
+
+.sa-form-select option {
+  color: var(--color-dark-moss);
+  background-color: #ffffff;
+}
+
+.sa-form-select.sa-form-select--placeholder {
+  color: var(--color-olive) !important;
+}
+
+.sa-form-select.sa-form-select--dark {
+  color: var(--color-honeydew) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color-scheme: dark;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ECF5E2' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.sa-form-select.sa-form-select--dark option {
+  color: var(--color-dark-moss);
+  background-color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .contact-form-shell {
+    padding: 1.25rem !important;
+    border-radius: 18px !important;
+  }
 }
 
 /* MOBILE RESPONSIVE FIXES */

@@ -388,9 +388,9 @@ export default async function TreatmentPage({ params }: Props) {
       {/* Main content */}
       <section className="section-padding section-white">
         <div className="container-xl">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>
+          <div className="sidebar-content-grid">
             {/* Left column */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+            <div className="sidebar-main" style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
               {/* Overview */}
               <RevealUp>
                 <div>
@@ -594,8 +594,9 @@ export default async function TreatmentPage({ params }: Props) {
 
             {/* Right column — sticky appointment form */}
             <RevealFade delay={0.1}>
-              <div style={{ position: "sticky", top: "100px" }}>
+              <div className="sidebar-sticky-form" style={{ position: "sticky", top: "100px" }}>
                 <div
+                  className="treatment-booking-card"
                   style={{
                     backgroundColor: "var(--color-white)",
                     borderRadius: "var(--radius-xl)",

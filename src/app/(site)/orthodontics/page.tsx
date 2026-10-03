@@ -157,7 +157,7 @@ export default function OrthodonticsPage() {
 
       <section className="section-padding section-white">
         <div className="container-xl">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>
+          <div className="sidebar-content-grid">
             
             {/* Left column */}
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
@@ -442,7 +442,7 @@ export default function OrthodonticsPage() {
 
             {/* Right column — sticky appointment form */}
             <RevealFade delay={0.1}>
-              <div style={{ position: "sticky", top: "100px" }}>
+              <div className="sidebar-sticky-form" style={{ position: "sticky", top: "100px" }}>
                 <div
                   style={{
                     backgroundColor: "var(--color-white)",

@@ -136,7 +136,12 @@ export default function AppointmentForm({
             <label htmlFor="appt-treatment" style={{ display: "block", fontSize: "0.75rem", color: labelColor, marginBottom: "0.4rem", fontFamily: "var(--font-utility)", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>
               Treatment
             </label>
-            <select id="appt-treatment" name="treatment" value={form.treatment} onChange={handleChange}
+            <select
+              id="appt-treatment"
+              name="treatment"
+              value={form.treatment}
+              onChange={handleChange}
+              className={`sa-form-select ${isDark ? "sa-form-select--dark" : ""} ${!form.treatment ? "sa-form-select--placeholder" : ""}`}
               style={{ ...inputStyle, cursor: "pointer", colorScheme: isDark ? "dark" : "light" }}
               onFocus={(e) => { e.target.style.borderColor = inputFocus; }}
               onBlur={(e)  => { e.target.style.borderColor = inputBorder; }}
