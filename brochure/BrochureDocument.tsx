@@ -155,9 +155,9 @@ const s = StyleSheet.create({
 function Footer({ light = false }: { light?: boolean }) {
   return (
     <View style={s.footer} fixed>
-      <Text style={[s.footerLabel, light && s.footerLabelLight]}>Smile Architects</Text>
+      <Text style={[s.footerLabel, ...(light ? [s.footerLabelLight] : [])]}>Smile Architects</Text>
       <Text
-        style={[s.pageNum, light && s.pageNumLight]}
+        style={[s.pageNum, ...(light ? [s.pageNumLight] : [])]}
         render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
       />
     </View>
@@ -167,7 +167,7 @@ function Footer({ light = false }: { light?: boolean }) {
 const eyebrowLight = StyleSheet.create({ light: { color: colors.jonquil } });
 
 function Eyebrow({ children, light }: { children: string; light?: boolean }) {
-  return <Text style={[s.eyebrow, light && eyebrowLight.light]}>{children}</Text>;
+  return <Text style={[s.eyebrow, ...(light ? [eyebrowLight.light] : [])]}>{children}</Text>;
 }
 
 export function BrochureDocument({ assets }: { assets: BrochureAssets }) {
