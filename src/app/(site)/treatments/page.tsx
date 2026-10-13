@@ -14,23 +14,29 @@ export const metadata: Metadata = buildMetadata({
 
 const TREATMENT_CATEGORIES = [
   {
-    category: "Preventive & General",
-    treatments: ["general-dentistry", "pediatric-dentistry"],
+    category: "Smile design & orthodontics",
+    treatments: [
+      "smile-design",
+      "orthodontics",
+      "braces",
+      "clear-aligners",
+      "lingual-braces",
+    ],
   },
   {
-    category: "Orthodontics",
-    treatments: ["orthodontics", "braces", "clear-aligners", "lingual-braces"],
+    category: "Cosmetic dentistry",
+    treatments: ["cosmetic-dentistry", "veneers"],
   },
   {
-    category: "Restorative & Surgical",
+    category: "Implants, restorative & surgical",
     treatments: ["dental-implants", "root-canal-treatment", "restorative-dentistry", "oral-surgery"],
   },
   {
-    category: "Cosmetic",
-    treatments: ["cosmetic-dentistry", "smile-design", "veneers"],
+    category: "Preventive & general",
+    treatments: ["general-dentistry", "pediatric-dentistry"],
   },
   {
-    category: "Periodontics & Prosthodontics",
+    category: "Periodontics & prosthodontics",
     treatments: ["periodontal-treatment", "prosthodontics", "crowns", "bridges", "dentures"],
   },
 ];
@@ -62,8 +68,8 @@ export default function TreatmentsPage() {
             lineHeight: 1.65,
             fontFamily: "var(--font-sans)"
           }}>
-            Smile Architects offers comprehensive dental care — from routine general dentistry
-            to specialist orthodontics, implants and cosmetic treatments — all in Pala, Kottayam.
+            Advanced orthodontic centre and smile design in Pala — braces, clear aligners,
+            lingual systems and digital smile planning — plus implants, cosmetic care and general dentistry.
           </p>
         </div>
       </div>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Smile Architects — Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --dark-moss: #254E06;
+    --olive: #7E8407;
+    --jonquil: #EAC800;
+    --honeydew: #ECF5E2;
+    --tea-green: #D7E3A4;
+    --vanilla: #F5EAB9;
+    --cafe: #563D23;
+    --moss: #A7A865;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: A4 portrait; margin: 0; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--cafe); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    background: #fff;
+  }
+  .page:last-child { page-break-after: auto; }
+  .pad { padding: 18mm 16mm 22mm; height: 100%; display: flex; flex-direction: column; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 6mm;
+  }
+  .eyebrow.light { color: var(--jonquil); }
+  h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 400; color: var(--dark-moss); line-height: 1.1; }
+  h1 { font-size: 36pt; }
+  h2 { font-size: 22pt; margin-bottom: 4mm; }
+  h3 { font-size: 13pt; margin-bottom: 2mm; }
+  p { font-size: 10pt; line-height: 1.55; }
+  .rule { height: 1px; background: var(--tea-green); margin: 6mm 0; }
+  .rule.light { background: rgba(236,245,226,0.35); }
+  .footer {
+    position: absolute;
+    bottom: 10mm;
+    left: 16mm;
+    right: 16mm;
+    display: flex;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
+  .footer.light { color: var(--tea-green); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+  .bg-honey { background: var(--honeydew); }
+  .bg-vanilla { background: var(--vanilla); }
+  .bg-moss { background: var(--dark-moss); color: var(--honeydew); }
+  .bg-moss p { color: rgba(236,245,226,0.92); }
+  .bg-moss h2 { color: var(--honeydew); }
+  .service { border-top: 1px solid var(--tea-green); padding: 4mm 0; }
+  .service p { font-size: 9pt; color: var(--olive); }
+  .meta { font-family: "IBM Plex Mono", monospace; font-size: 7pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--olive); margin-bottom: 2mm; }
+  .cover-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cover-shade {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 50%;
+    background: rgba(37,78,6,0.9);
+  }
+  .cover-shade-mid {
+    position: absolute; left: 0; right: 0; bottom: 50%; height: 14%;
+    background: rgba(37,78,6,0.45);
+  }
+  .cover-copy { position: absolute; left: 16mm; right: 16mm; bottom: 22mm; z-index: 2; }
+  .cover-copy h1 { color: var(--honeydew); }
+  .cover-copy .tag { color: var(--jonquil); font-family: "Playfair Display", serif; font-size: 13pt; margin-top: 4mm; }
+  .cover-logo { position: absolute; top: 16mm; left: 16mm; width: 22mm; height: 22mm; object-fit: contain; z-index: 2; }
+  .img { width: 100%; object-fit: cover; display: block; }
+  .gallery-split { display: grid; grid-template-columns: 58% 42%; height: 100%; }
+  .gallery-split img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-panel { padding: 16mm 12mm; display: flex; flex-direction: column; justify-content: center; background: var(--dark-moss); color: var(--honeydew); }
+  .gallery-panel p { color: rgba(236,245,226,0.92); font-size: 9pt; line-height: 1.55; }
+  .gallery-panel h2 { color: var(--honeydew); }
+  .gallery-full { height: 100%; display: grid; grid-template-rows: auto 1fr; }
+  .gallery-full .grid4 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2.5mm; height: 100%; min-height: 0; padding: 0 16mm 14mm; }
+  .grid4 img { width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+  .treatment-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 4mm; }
+  .treatment-compact { font-size: 8.5pt; color: var(--olive); line-height: 1.45; }
+  .treatment-compact strong { color: var(--dark-moss); font-weight: 500; }
+  a { color: var(--dark-moss); text-decoration: none; }
+  .bg-moss a { color: var(--jonquil); }
+  .center-back { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16mm; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <img class="cover-img" src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/cover.jpg" alt="" />
+  <div class="cover-shade-mid"></div>
+  <div class="cover-shade"></div>
+  <img class="cover-logo" src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/logo.jpg" alt="" />
+  <div class="cover-copy">
+    <p class="eyebrow light">Multispeciality Dental Clinic</p>
+    <h1>Smile Architects</h1>
+    <p class="tag">Multispeciality Dental Clinic & Advanced Orthodontic Centre</p>
+    <p style="color:var(--tea-green);font-size:9pt;margin-top:5mm;">Pala, Kottayam · Thrissur, Kerala</p>
+  </div>
+</section>
+
+<section class="page bg-honey">
+  <div class="pad">
+    <p class="eyebrow">Introduction</p>
+    <h2>Patient-first dentistry in Pala</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <p>Smile Architects is a multispeciality dental clinic and advanced orthodontic centre on Kattakkayam Road, Pala, Kottayam, Kerala — near Federal Bank in Pala Town.</p>
+        <p style="margin-top:4mm;">The clinic provides comprehensive dental care for patients in Pala and the surrounding Meenachil region, serves Kottayam District, and operates a Thrissur branch in Punkunnam. General dentistry is combined with orthodontics and cosmetic care under one roof.</p>
+        <p style="margin-top:4mm;">Led by Dr. Jeo Tom Charls, MDS Orthodontics — registered with the Kerala State Dental Council — the clinical team places patient comfort and accurate diagnosis at the centre of every consultation.</p>
+      </div>
+      <div>
+        <img class="img" src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/introCare.jpg" alt="" style="height:52mm;" />
+        <p style="font-size:8.5pt;color:var(--olive);margin-top:3mm;">Preventive care, check-ups and routine dental treatment — Smile Architects, Pala.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>02</span></div>
+</section>
+
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">Locations</p>
+    <h2>Two clinics. One team.</h2>
+    <div class="rule"></div>
+    
+    <div style="margin-bottom:8mm;">
+      <p class="meta">Main centre</p>
+      <h2 style="font-size:18pt;">Pala — Pala, Kottayam, Kerala</h2>
+      <p style="margin-top:3mm;">Kattakkayam Road, Pala, Kottayam, Kerala – 686575</p>
+      <p style="font-size:8.5pt;color:var(--olive);margin-top:2mm;">Near Federal Bank, Pala Town</p>
+    </div>
+    <div style="margin-bottom:8mm;">
+      <p class="meta">Branch</p>
+      <h2 style="font-size:18pt;">Thrissur — Punkunnam, Thrissur, Kerala</h2>
+      <p style="margin-top:3mm;">Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur, Kerala – 680002</p>
+      <p style="font-size:8.5pt;color:var(--olive);margin-top:2mm;">Opp. St. Joseph's Church, Punkunnam</p>
+    </div>
+    <div style="background:var(--honeydew);padding:5mm;margin-top:4mm;">
+      <p class="meta">Contact</p>
+      <p>Phone: +91 9446 999 333 · Email: drjeosmilearchitects@gmail.com</p>
+      <p style="margin-top:2mm;"><a href="https://smilearchitectspala.com">https://smilearchitectspala.com</a></p>
+    </div>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>03</span></div>
+</section>
+
+<section class="page bg-vanilla">
+  <div class="pad">
+    <p class="eyebrow">Clinical leadership</p>
+    <h2>Your orthodontic specialist</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <img class="img" src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/drJeo.jpg" alt="" style="height:52mm;width:42mm;" />
+        <p style="font-size:8.5pt;margin-top:3mm;">Dr. Jeo Tom Charls<br/>MDS — Orthodontics and Dentofacial Orthopaedics</p>
+      </div>
+      <div>
+        <p>Dr. Jeo Tom Charls is the principal orthodontist at Smile Architects, Pala. An MDS-qualified specialist in Orthodontics and Dentofacial Orthopaedics, he is a Certified Invisalign and Spark Aligner Provider with advanced training in lingual orthodontics and CAD/CAM bracket systems. His practice spans the full spectrum of orthodontic treatment — from conventional braces to completely hidden lingual systems and clear aligners.</p>
+        <p class="meta" style="margin-top:5mm;">Certifications & training</p>
+        <ul style="font-size:8.5pt;color:var(--olive);padding-left:4mm;line-height:1.5;">
+          <li>Certified Invisalign Provider</li><li>Certified Spark Aligner Provider</li><li>Lingual orthodontics training</li><li>Lingual orthodontics CAD/CAM training</li><li>ClearPath clear-aligner certification workshop</li><li>TMJ considerations in functional orthodontics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>04</span></div>
+</section>
+
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">Our doctors</p>
+    <h2>Multispeciality team</h2>
+    <div class="rule"></div>
+    
+    <div style="margin-bottom:5mm;">
+      <h3>Dr. Jom T. Kizhakkel</h3>
+      <p class="meta">MDS · Periodontics & Implantology</p>
+      <p style="font-size:9.5pt;">Dr. Jom T. Kizhakkel is an MDS specialist in Periodontics and Implantology at Smile Architects, Pala. He manages gum disease treatment and dental implant placement, offering patients a complete solution for tooth loss and periodontal health.</p>
+    </div>
+    <p class="meta" style="margin-top:3mm;">Visiting consultants</p>
+    <p style="font-size:9pt;margin-bottom:2mm;"><strong>Dr. Kishore George</strong> — MDS, Oral & Maxillofacial Surgery</p><p style="font-size:9pt;margin-bottom:2mm;"><strong>Dr. Renu Ann Mathew</strong> — MDS, Paediatric & Preventive Dentistry</p><p style="font-size:9pt;margin-bottom:2mm;"><strong>Dr. Akarsh Babu</strong> — MDS, Prosthodontics</p>
+    <p style="font-size:8.5pt;color:var(--olive);margin-top:4mm;">Smile Architects is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics), supported by Dr. Jintu Joan Jose and Dr. Ann Tresa T. Srambickal (both BDS – Aesthetic & General Dentistry).</p>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>05</span></div>
+</section>
+
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">Treatments</p>
+    <h2>Comprehensive care</h2>
+    <p style="margin-top:3mm;max-width:120mm;">Multispeciality services at Smile Architects, Pala — descriptions from our clinical offerings.</p>
+    <div class="treatment-cols">
+      <div>
+        
+        <div class="service">
+          <h3>General Dentistry</h3>
+          <p>Preventive care, check-ups and routine dental treatment.</p>
+        </div>
+        <div class="service">
+          <h3>Paediatric Dentistry</h3>
+          <p>Dental care tailored for children.</p>
+        </div>
+        <div class="service">
+          <h3>Dental Implants</h3>
+          <p>A permanent solution for missing teeth.</p>
+        </div>
+        <div class="service">
+          <h3>Cosmetic Dentistry</h3>
+          <p>Improving the appearance of teeth and smile.</p>
+        </div>
+        <div class="service">
+          <h3>Smile Design</h3>
+          <p>Digital smile design for complete smile transformation.</p>
+        </div>
+        <div class="service">
+          <h3>Root Canal Treatment</h3>
+          <p>Saving infected or damaged teeth.</p>
+        </div>
+      </div>
+      <div>
+        <p class="meta" style="margin-bottom:4mm;">Additional services</p>
+        <div class="treatment-compact">
+          <p style="margin-bottom:2.5mm;"><strong>Restorative Dentistry</strong> — Restoring teeth damaged by decay or injury.</p><p style="margin-bottom:2.5mm;"><strong>Oral & Maxillofacial Surgery</strong> — Surgical care for the mouth, jaws and related structures.</p><p style="margin-bottom:2.5mm;"><strong>Periodontal Treatment</strong> — Treatment for gum disease and supporting structures.</p><p style="margin-bottom:2.5mm;"><strong>Prosthodontics</strong> — Replacing and restoring missing or damaged teeth.</p><p style="margin-bottom:2.5mm;"><strong>Dental Crowns</strong> — Caps that restore and protect damaged teeth.</p><p style="margin-bottom:2.5mm;"><strong>Dental Bridges</strong> — Fixed replacement for one or more missing teeth.</p><p style="margin-bottom:2.5mm;"><strong>Dentures</strong> — Removable replacements for missing teeth.</p><p style="margin-bottom:2.5mm;"><strong>Dental Veneers</strong> — Thin porcelain or composite shells for smile improvement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>06</span></div>
+</section>
+
+<section class="page bg-honey">
+  <div class="pad">
+    <p class="eyebrow">Orthodontics & smile design</p>
+    <h2>Advanced orthodontic centre</h2>
+    <div class="rule"></div>
+    
+    <div class="service">
+      <h3>Orthodontics</h3>
+      <p>Correcting misaligned teeth and jaw relationships.</p>
+    </div>
+    <div class="service">
+      <h3>Dental Braces</h3>
+      <p>Metal, ceramic and self-ligating brace systems.</p>
+    </div>
+    <div class="service">
+      <h3>Clear Aligners</h3>
+      <p>Transparent removable aligners for discreet treatment.</p>
+    </div>
+    <div class="service">
+      <h3>Lingual Braces</h3>
+      <p>Hidden braces fitted to the inner surface of teeth.</p>
+    </div>
+    <p class="meta" style="margin-top:6mm;">Areas of expertise — Dr. Jeo Tom Charls</p>
+    <p style="font-size:8.5pt;color:var(--olive);line-height:1.5;margin-top:2mm;">
+      · Conventional straight-wire appliances<br/>· Damon / self-ligating brackets<br/>· Ceramic brackets<br/>· Lingual orthodontics / hidden braces<br/>· Invisalign & Spark clear aligners<br/>· Surgical orthodontics<br/>· Orthognathic surgical planning<br/>· Growth modification<br/>
+    </p>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>07</span></div>
+</section>
+
+<section class="page">
+  <div class="pad">
+    <p class="eyebrow">The clinic</p>
+    <h2>What to expect</h2>
+    <div class="rule"></div>
+    <div class="cols">
+      <div>
+        <div style="margin-bottom:4mm;"><h3>Individual Treatment Rooms</h3><p style="font-size:9pt;color:var(--olive);">Private, dedicated treatment rooms for patient comfort and dignity.</p></div><div style="margin-bottom:4mm;"><h3>Sterilisation</h3><p style="font-size:9pt;color:var(--olive);">Strict sterilisation protocols maintained throughout the clinic.</p></div><div style="margin-bottom:4mm;"><h3>Digital X-Ray</h3><p style="font-size:9pt;color:var(--olive);">Modern digital radiography for accurate diagnosis with reduced radiation.</p></div><div style="margin-bottom:4mm;"><h3>Ample Car Parking</h3><p style="font-size:9pt;color:var(--olive);">Convenient parking available for patients.</p></div><div style="margin-bottom:4mm;"><h3>Online & Telephone Booking</h3><p style="font-size:9pt;color:var(--olive);">Book appointments online or by calling +91 9446 999 333.</p></div>
+        <p style="font-size:8.5pt;color:var(--olive);margin-top:3mm;">Appointments recommended. Walk-ins welcome subject to availability.</p>
+      </div>
+      <div>
+        <img class="img" src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/clinic1.jpg" alt="" style="height:42mm;margin-bottom:3mm;" />
+        <img class="img" src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/clinic2.jpg" alt="" style="height:42mm;" />
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>08</span></div>
+</section>
+
+<section class="page" style="padding:0;">
+  <div class="gallery-split">
+    <img src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/clinic3.jpg" alt="" />
+    <div class="gallery-panel">
+      <p class="eyebrow light">Thrissur branch</p>
+      <h2 style="color:var(--honeydew);font-size:20pt;">Modern spaces for considered care</h2>
+      <p style="margin-top:5mm;font-size:9pt;">Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur — same team and phone as our Pala centre.</p>
+    </div>
+  </div>
+  <div class="footer light"><span>Smile Architects</span><span>09</span></div>
+</section>
+
+<section class="page bg-honey">
+  <div class="gallery-full">
+    <p class="eyebrow" style="padding:16mm 16mm 0;">Inside the clinic</p>
+    <div class="grid4">
+      <img src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/clinic4.jpg" alt="" /><img src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/clinic5.jpg" alt="" /><img src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/clinic6.jpg" alt="" /><img src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/thrissurWa.jpg" alt="" />
+    </div>
+  </div>
+  <div class="footer"><span>Smile Architects</span><span>10</span></div>
+</section>
+
+<section class="page bg-moss">
+  <div class="pad" style="justify-content:center;">
+    <p class="eyebrow light">Visit us</p>
+    <h2>Book your appointment</h2>
+    <div class="rule light"></div>
+    <p>Monday – Saturday: 9:30 AM – 8:00 PM</p>
+    <p style="margin-top:2mm;">Sunday: Closed</p>
+    <p style="margin-top:6mm;font-size:11pt;">Call +91 9446 999 333 · WhatsApp · Online form</p>
+    <p style="margin-top:4mm;"><a href="https://wa.me/919446999333">WhatsApp</a></p>
+    <p style="margin-top:2mm;"><a href="https://smilearchitectspala.com/book-appointment">https://smilearchitectspala.com/book-appointment</a></p>
+  </div>
+  <div class="footer light"><span>Smile Architects</span><span>11</span></div>
+</section>
+
+<section class="page bg-honey">
+  <div class="center-back">
+    <img src="file:///C:/Users/eathe/smile%20architects/smile-architects-website/output/brochure-cache/logo.jpg" alt="" style="width:28mm;height:28mm;object-fit:contain;margin-bottom:8mm;" />
+    <h2>Smile Architects</h2>
+    <p style="font-size:9pt;color:var(--olive);margin-top:4mm;max-width:90mm;">Kattakkayam Road, Pala, Kottayam, Kerala – 686575</p>
+    <p style="font-size:9pt;margin-top:5mm;">+91 9446 999 333 · drjeosmilearchitects@gmail.com</p>
+    <p style="margin-top:4mm;"><a href="https://smilearchitectspala.com">https://smilearchitectspala.com</a></p>
+  </div>
+</section>
+
+</body>
+</html>

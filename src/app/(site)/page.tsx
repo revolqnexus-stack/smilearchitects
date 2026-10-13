@@ -520,8 +520,8 @@ export default function HomePage() {
             </StaggerReveal>
             <StaggerReveal type="body">
               <p className="section-body">
-                From routine check-ups to advanced orthodontic treatment and dental implants —
-                all under one roof in Pala, Kottayam.
+                Smile design, braces, clear aligners and lingual orthodontics — plus implants
+                and full general care — under one roof in Pala, Kottayam.
               </p>
             </StaggerReveal>
           </div>

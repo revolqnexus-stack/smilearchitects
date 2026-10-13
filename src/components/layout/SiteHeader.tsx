@@ -29,14 +29,14 @@ import { brandLogoSrc } from "@/lib/site-config";
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const NAV_TREATMENTS = [
-  { label: "General Dentistry",   href: "/treatments/general-dentistry" },
+  { label: "Smile Design",        href: "/treatments/smile-design" },
   { label: "Orthodontics",        href: "/orthodontics" },
   { label: "Braces",              href: "/orthodontics/braces" },
-  { label: "Lingual Braces",      href: "/orthodontics/lingual-braces" },
   { label: "Clear Aligners",      href: "/orthodontics/clear-aligners" },
-  { label: "Dental Implants",     href: "/treatments/dental-implants" },
+  { label: "Lingual Braces",      href: "/orthodontics/lingual-braces" },
   { label: "Cosmetic Dentistry",  href: "/treatments/cosmetic-dentistry" },
-  { label: "Smile Design",        href: "/treatments/smile-design" },
+  { label: "Dental Implants",     href: "/treatments/dental-implants" },
+  { label: "General Dentistry",   href: "/treatments/general-dentistry" },
   { label: "Root Canal",          href: "/treatments/root-canal-treatment" },
   { label: "Paediatric Dentistry",href: "/treatments/pediatric-dentistry" },
 ];
@@ -204,37 +204,17 @@ export default function SiteHeader() {
                 className="navbar-logo-img navbar-logo-desktop"
               />
               {/* Mobile: same public/images/logo.png, sized for the glass mark */}
-              <span className="navbar-mobile-logo-mark" aria-hidden="true">
+              <span className="navbar-mobile-logo-mark">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={brandLogoSrc("desktop")}
-                  alt="Smile Architects"
+                  alt=""
                   className="navbar-logo-img navbar-logo-mobile"
                 />
-              </span>
-              {/* Wordmark - mobile only */}
-              <span
-                className="navbar-logo-text"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: scrolled ? "1.125rem" : "1.25rem",
-                  fontWeight: 400,
-                  color: "var(--color-dark-moss)",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1,
-                  whiteSpace: "nowrap",
-                  transition: "font-size 0.3s cubic-bezier(0.16,1,0.3,1)",
-                }}
-              >
-                Smile Architects
               </span>
             </motion.div>
           </Link>
           </div>
-
-          <span className="navbar-mobile-title" aria-hidden="true">
-            Smile Architects
-          </span>
 
           {/* ── DESKTOP NAV ──────────────────────────────────── */}
           <nav
@@ -442,7 +422,6 @@ export default function SiteHeader() {
           .navbar-actions { display: flex !important; }
           .navbar-branch-toggle { display: flex !important; align-items: center; }
           .hamburger-btn { display: none !important; }
-          .navbar-logo-text { display: none !important; }
           .navbar-logo-desktop {
             display: block !important;
             height: 70px !important;
@@ -456,44 +435,37 @@ export default function SiteHeader() {
           .navbar-mobile-side-start,
           .navbar-mobile-side-end { display: contents; }
         }
-        .navbar-mobile-title {
-          display: none;
-        }
         .navbar-mobile-logo-mark {
           display: none;
         }
 
-        /* Mobile/tablet: equal side slots + title centered on viewport */
+        /* Mobile/tablet: logo (wordmark PNG) + hamburger — no duplicate center title */
         @media (max-width: 1023px) {
           .navbar-nav     { display: none !important; }
           .navbar-actions { display: none !important; }
           .navbar-branch-toggle { display: none !important; }
           .hamburger-btn  { display: flex !important; }
-          .navbar-logo-text { display: none !important; }
           .navbar-logo-desktop { display: none !important; }
           .navbar-mobile-logo-mark {
             display: flex !important;
             align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            width: auto;
-            min-width: 48px;
-            max-width: min(112px, 30vw);
-            height: 44px;
-            padding: 5px 8px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.38);
-            border: 1px solid rgba(255, 255, 255, 0.52);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 1px 4px rgba(37, 78, 6, 0.07);
-            backdrop-filter: blur(10px) saturate(160%);
-            -webkit-backdrop-filter: blur(10px) saturate(160%);
-            transition: width 0.25s ease, height 0.25s ease, padding 0.25s ease;
+            justify-content: flex-start;
+            flex: 1 1 auto;
+            min-width: 0;
+            max-width: 100%;
+            height: auto;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
           }
           .navbar-logo-mobile {
             display: block !important;
-            height: 34px !important;
+            height: clamp(36px, 10vw, 44px) !important;
             width: auto !important;
-            max-width: 100% !important;
+            max-width: min(260px, calc(100vw - 5.5rem)) !important;
             object-fit: contain !important;
             object-position: left center;
           }
@@ -502,80 +474,51 @@ export default function SiteHeader() {
             flex-wrap: nowrap;
             align-items: center;
             justify-content: space-between;
-            position: relative !important;
-            gap: 0 !important;
+            gap: 0.75rem !important;
             width: 100%;
-            padding: 0.75rem 1.125rem !important;
-            min-height: 64px;
+            padding: 0.625rem 1rem !important;
+            min-height: 56px;
           }
-          .navbar-mobile-side {
-            flex: 1 1 0;
+          .navbar-mobile-side-start {
+            flex: 1 1 auto;
             min-width: 0;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+          }
+          .navbar-mobile-side-end {
+            flex: 0 0 auto;
             display: flex;
             align-items: center;
             z-index: 2;
           }
-          .navbar-mobile-side-start {
-            justify-content: flex-start;
-          }
-          .navbar-mobile-side-end {
-            justify-content: flex-end;
-          }
           .navbar-logo-link {
             display: flex;
             align-items: center;
-            min-height: 48px;
+            min-height: 44px;
+            max-width: 100%;
+            min-width: 0;
           }
           .hamburger-btn {
-            width: 48px !important;
-            height: 48px !important;
+            width: 44px !important;
+            height: 44px !important;
           }
           .navbar-logo-wrapper {
             gap: 0 !important;
-          }
-          .navbar-mobile-title {
-            display: block;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-family: var(--font-serif);
-            font-size: clamp(1.25rem, 6.4vw, 1.5625rem);
-            font-weight: 500;
-            color: var(--color-dark-moss);
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: min(19rem, calc(100% - 12.5rem));
-            padding: 0 0.35rem;
-            pointer-events: none;
-            user-select: none;
-            z-index: 1;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-          }
-          .navbar-scrolled .navbar-mobile-logo-mark {
-            max-width: min(100px, 28vw);
-            height: 40px;
-            padding: 4px 7px;
+            min-width: 0;
+            max-width: 100%;
           }
           .navbar-scrolled .navbar-logo-mobile {
-            height: 30px !important;
-          }
-          .navbar-scrolled .navbar-mobile-title {
-            font-size: clamp(1.125rem, 5.8vw, 1.4375rem);
+            height: clamp(32px, 9vw, 38px) !important;
           }
           .navbar-scrolled .navbar-container {
             padding-top: 0.5rem !important;
             padding-bottom: 0.5rem !important;
-            min-height: 56px;
+            min-height: 52px;
           }
           .navbar-scrolled .hamburger-btn {
-            width: 44px !important;
-            height: 44px !important;
+            width: 40px !important;
+            height: 40px !important;
           }
         }
         
@@ -584,16 +527,13 @@ export default function SiteHeader() {
             transform: scale(0.95);
           }
           .navbar-mobile-logo-mark:active {
-            transform: scale(0.97);
+            transform: scale(0.98);
           }
         }
         
         @media (max-width: 480px) {
           .navbar-container {
-            padding: 0.75rem 1rem !important;
-          }
-          .navbar-mobile-title {
-            font-size: clamp(1.1875rem, 6.8vw, 1.5rem);
+            padding: 0.5rem 0.875rem !important;
           }
         }
         

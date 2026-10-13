@@ -5,11 +5,11 @@ import Aurora from "@/components/ui/Aurora";
 import FooterContactBlock from "@/components/layout/FooterContactBlock";
 
 const FOOTER_TREATMENTS = [
-  { label: "General Dentistry", href: "/treatments/general-dentistry" },
-  { label: "Dental Implants", href: "/treatments/dental-implants" },
-  { label: "Cosmetic Dentistry", href: "/treatments/cosmetic-dentistry" },
-  { label: "Root Canal Treatment", href: "/treatments/root-canal-treatment" },
   { label: "Smile Design", href: "/treatments/smile-design" },
+  { label: "Cosmetic Dentistry", href: "/treatments/cosmetic-dentistry" },
+  { label: "Dental Implants", href: "/treatments/dental-implants" },
+  { label: "General Dentistry", href: "/treatments/general-dentistry" },
+  { label: "Root Canal Treatment", href: "/treatments/root-canal-treatment" },
   { label: "View All Treatments", href: "/treatments" },
 ];
 

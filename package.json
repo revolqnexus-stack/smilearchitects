@@ -7,9 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "migrate:cms": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/migrate-to-cms.ts"
+    "migrate:cms": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/migrate-to-cms.ts",
+    "brochure:generate": "tsx scripts/generate-brochure.tsx",
+    "brochure:preview": "tsx scripts/preview-brochure-pages.ts",
+    "brochure:latex:sync": "tsx brochure/latex/sync-images.ts",
+    "brochure:latex:build": "cd brochure/latex && lualatex -interaction=nonstopmode smile-architects-brochure.tex && lualatex -interaction=nonstopmode smile-architects-brochure.tex"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^5.3.0",
+    "@react-pdf/renderer": "^4.9.0",
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.109.0",
     "@tabler/icons-react": "^3.46.0",
@@ -21,8 +27,11 @@
     "next": "16.3.0",
     "next-auth": "^4.24.15",
     "ogl": "^1.0.11",
+    "pdf-to-img": "^6.3.0",
+    "playwright": "^1.63.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -32,6 +41,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

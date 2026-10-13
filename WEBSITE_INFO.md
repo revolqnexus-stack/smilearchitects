@@ -1,5 +1,7 @@
 # Smile Architects — Website Information
 
+> **Full reference:** See [`WEBSITE_COMPLETE_REFERENCE.md`](./WEBSITE_COMPLETE_REFERENCE.md) for every route, branch, doctor, treatment, SEO page, asset path, redirect, and ops detail. This file is a shorter summary.
+
 ---
 
 ## Clinic Overview
