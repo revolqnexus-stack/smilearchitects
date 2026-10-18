@@ -16,7 +16,7 @@ import { MapPinIcon, PhoneIcon, ClockIcon } from "@/components/ui/icons";
 export const metadata: Metadata = buildMetadata({
   title: "Best Dental Clinic in Thrissur | Smile Architects Branch",
   description:
-    "Smile Architects Thrissur — 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Multispeciality dental & orthodontic care. Call +91 9446 999 333.",
+    "Smile Architects Thrissur — 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Multispeciality dental & orthodontic care. Call +91 94469 99333.",
   canonical: "/thrissur",
 });
 

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase/client';
 import AdminShell from '@/components/admin/AdminShell';
+import { WHATSAPP_URL, CLINIC } from '@/lib/site-config';
 
 export default function SettingsPage() {
   const [loading, setLoading] = useState(false);
@@ -12,10 +13,10 @@ export default function SettingsPage() {
 
   // Clinic settings
   const [clinicName, setClinicName] = useState('Smile Architects');
-  const [phone, setPhone] = useState('+919446999333');
-  const [email, setEmail] = useState('drjeosmilearchitects@gmail.com');
-  const [address, setAddress] = useState('Kattakkayam Road, Pala, Kottayam, Kerala – 686575');
-  const [whatsapp, setWhatsapp] = useState('https://wa.me/919446999333');
+  const [phone, setPhone] = useState<string>(CLINIC.contact.phone);
+  const [email, setEmail] = useState<string>(CLINIC.contact.email);
+  const [address, setAddress] = useState<string>(CLINIC.address.full);
+  const [whatsapp, setWhatsapp] = useState<string>(WHATSAPP_URL);
   const [facebook, setFacebook] = useState('');
   const [instagram, setInstagram] = useState('');
 
@@ -244,7 +245,7 @@ export default function SettingsPage() {
                   fontSize: '1rem',
                   boxSizing: 'border-box',
                 }}
-                placeholder="https://wa.me/919446999333"
+                placeholder={WHATSAPP_URL}
               />
             </div>
 

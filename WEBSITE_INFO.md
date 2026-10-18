@@ -14,7 +14,7 @@
 | **Landmark** | Near Federal Bank, Pala Town |
 | **Phone** | +91 9446 999 333 |
 | **Email** | drjeosmilearchitects@gmail.com |
-| **Website** | https://smilearchitectspala.com |
+| **Website** | https://smilearchitectskeralam.com |
 | **WhatsApp** | https://wa.me/919446999333 |
 
 ### Opening Hours

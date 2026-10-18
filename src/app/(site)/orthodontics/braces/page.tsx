@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Braces in Pala, Kottayam District | Smile Architects",
   description:
-    "Metal, ceramic and self-ligating braces at Smile Architects, Pala. Led by Dr. Jeo Tom Charls, MDS Orthodontics. Serving patients from Kottayam District, Kerala. Call +91 9446 999 333.",
+    "Metal, ceramic and self-ligating braces at Smile Architects, Pala. Led by Dr. Jeo Tom Charls, MDS Orthodontics. Serving patients from Kottayam District, Kerala. Call +91 94469 99333.",
   canonical: "/orthodontics/braces",
 });
 

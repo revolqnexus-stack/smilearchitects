@@ -6,6 +6,24 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "smilearchitectspala.com" }],
+        destination: "https://www.smilearchitectskeralam.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.smilearchitectspala.com" }],
+        destination: "https://www.smilearchitectskeralam.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "smilearchitectskeralam.com" }],
+        destination: "https://www.smilearchitectskeralam.com/:path*",
+        permanent: true,
+      },
       { source: "/best-dental-clinic-pala", destination: "/local/pala", permanent: true },
       { source: "/best-dental-clinic-kottayam", destination: "/local/kottayam", permanent: true },
       { source: "/best-dental-clinic-thrissur", destination: "/local/thrissur", permanent: true },

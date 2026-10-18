@@ -39,7 +39,7 @@
 | **Tagline** | Multispeciality Dental Clinic & Advanced Orthodontic Centre |
 | **Full name** | Smile Architects — Multispeciality Dental Clinic & Advanced Orthodontic Centre |
 | **Practising since (trust)** | 2015 |
-| **Production website** | https://smilearchitectspala.com |
+| **Production website** | https://smilearchitectskeralam.com |
 | **Default SEO title** | Smile Architects \| Best Dental Clinic in Pala, Kottayam & Thrissur |
 | **Default meta description** | Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call +91 9446 999 333. |
 
@@ -492,7 +492,7 @@ After changing env vars on Vercel: **redeploy**. Optional one-time seed: visit `
 |------|--------|
 | **Primary git remote (deploy)** | https://github.com/revolqnexus-stack/smilearchitects.git |
 | **Legacy remote name** | `origin` → smile-architects-pala (may still exist locally) |
-| **Production domain (config)** | https://smilearchitectspala.com |
+| **Production domain (config)** | https://smilearchitectskeralam.com |
 | **Vercel project (docs reference)** | smile-architects-pala |
 
 ---

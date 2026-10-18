@@ -11,7 +11,7 @@ import ContactBothBranches from "@/components/contact/ContactBothBranches";
 export const metadata: Metadata = buildMetadata({
   title: "Contact | Pala & Thrissur Dental Clinics",
   description:
-    "Contact Smile Architects — main centre in Pala, Kottayam and branch in Punkunnam, Thrissur. Call +91 9446 999 333, email, or book online. Mon–Sat 9:30 AM–8:00 PM.",
+    "Contact Smile Architects — main centre in Pala, Kottayam and branch in Punkunnam, Thrissur. Call +91 94469 99333, email, or book online. Mon–Sat 9:30 AM–8:00 PM.",
   canonical: "/contact",
 });
 

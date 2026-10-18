@@ -56,7 +56,7 @@ const FAQS_THRISSUR = [
   },
   {
     question: "Can I book a consultation before travelling?",
-    answer: "Yes. You can book appointments by calling +91 9446 999 333 or using the online appointment form. We recommend scheduling in advance to ensure convenient appointment times."
+    answer: "Yes. You can book appointments by calling +91 94469 99333 or using the online appointment form. We recommend scheduling in advance to ensure convenient appointment times."
   },
   {
     question: "Where is the clinic located?",

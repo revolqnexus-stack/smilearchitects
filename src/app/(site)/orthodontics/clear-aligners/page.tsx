@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = buildMetadata({
   title: "Clear Aligners in Pala, Kottayam District | Smile Architects",
   description:
-    "Clear aligner orthodontic treatment at Smile Architects, Pala, Kottayam District. ClearPath certified. Dr. Jeo Tom Charls, MDS Orthodontics. Transparent, removable aligners for adults and teenagers. Call +91 9446 999 333.",
+    "Clear aligner orthodontic treatment at Smile Architects, Pala, Kottayam District. ClearPath certified. Dr. Jeo Tom Charls, MDS Orthodontics. Transparent, removable aligners for adults and teenagers. Call +91 94469 99333.",
   canonical: "/orthodontics/clear-aligners",
 });
 

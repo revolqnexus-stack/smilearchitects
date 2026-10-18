@@ -9,7 +9,7 @@ import SeoTopicCluster from "@/components/seo/SeoTopicCluster";
 export const metadata: Metadata = buildMetadata({
   title: "Clinic Locations — Pala, Kottayam & Thrissur",
   description:
-    "Smile Architects has two clinics: main centre in Pala, Kottayam District and a branch in Punkunnam, Thrissur. Addresses, directions, phone +91 9446 999 333.",
+    "Smile Architects has two clinics: main centre in Pala, Kottayam District and a branch in Punkunnam, Thrissur. Addresses, directions, phone +91 94469 99333.",
   canonical: "/locations",
 });
 

@@ -3,6 +3,17 @@
  * All clinic data lives here. Update this file to propagate changes site-wide.
  */
 
+/** Calls, SMS, and WhatsApp CTAs — India mobile 9446999333 */
+export const CLINIC_PHONE_E164 = "+919446999333" as const;
+export const CLINIC_PHONE_WA_ME = "919446999333" as const;
+export const CLINIC_PHONE_DISPLAY = "+91 94469 99333";
+/** Canonical WhatsApp deep link for every CTA on the site */
+export const WHATSAPP_URL = `https://wa.me/${CLINIC_PHONE_WA_ME}` as const;
+
+/** Live production domain (SEO, sitemap, canonical URLs) — use www (primary in Search Console) */
+export const SITE_PUBLIC_URL = "https://www.smilearchitectskeralam.com" as const;
+export const SITE_PUBLIC_HOST = "www.smilearchitectskeralam.com" as const;
+
 export const CLINIC = {
   name: "Smile Architects",
   tagline: "Multispeciality Dental Clinic & Advanced Orthodontic Centre",
@@ -18,10 +29,10 @@ export const CLINIC = {
     full: "Kattakkayam Road, Pala, Kottayam, Kerala – 686575",
   },
   contact: {
-    phone: "+919446999333",
-    phoneDisplay: "+91 9446 999 333",
+    phone: CLINIC_PHONE_E164,
+    phoneDisplay: CLINIC_PHONE_DISPLAY,
     email: "drjeosmilearchitects@gmail.com",
-    website: "https://smilearchitectspala.com",
+    website: SITE_PUBLIC_URL,
   },
   hours: {
     weekdays: { label: "Monday – Saturday", open: "9:30 AM", close: "8:00 PM" },
@@ -49,7 +60,7 @@ export const CLINIC = {
     facebook: "",
     instagram: "",
     youtube: "",
-    whatsapp: "https://wa.me/919446999333",
+    whatsapp: WHATSAPP_URL,
   },
   /** Only set review counts when they match live Google data shown on the site */
   trust: {
@@ -68,8 +79,8 @@ export const CLINIC = {
     siteName: "Smile Architects",
     defaultTitle: "Smile Architects | Best Dental Clinic in Pala, Kottayam & Thrissur",
     defaultDescription:
-      "Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call +91 9446 999 333.",
-    siteUrl: "https://smilearchitectspala.com",
+      `Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call ${CLINIC_PHONE_DISPLAY}.`,
+    siteUrl: SITE_PUBLIC_URL,
     // [CLINIC TO VERIFY: Replace with final production domain]
     ogImage: "/images/logo.png",
     twitterHandle: "", // [CLINIC TO VERIFY]
@@ -419,7 +430,7 @@ export const FACILITIES = [
   { name: "Sterilisation", description: "Strict sterilisation protocols maintained throughout the clinic." },
   { name: "Digital X-Ray", description: "Modern digital radiography for accurate diagnosis with reduced radiation." },
   { name: "Ample Car Parking", description: "Convenient parking available for patients." },
-  { name: "Online & Telephone Booking", description: "Book appointments online or by calling +91 9446 999 333." },
+  { name: "Online & Telephone Booking", description: `Book appointments online or by calling ${CLINIC_PHONE_DISPLAY}.` },
 ] as const;
 
 export const FAQS_GENERAL = [
@@ -435,7 +446,7 @@ export const FAQS_GENERAL = [
   {
     question: "How do I book an appointment?",
     answer:
-      "You can book an appointment by calling +91 9446 999 333, sending a WhatsApp message, or using the online appointment form on this website.",
+      `You can book an appointment by calling ${CLINIC_PHONE_DISPLAY}, sending a WhatsApp message to the same number, or using the online appointment form on this website.`,
   },
   {
     question: "Which dentists are available at Smile Architects?",

@@ -8,7 +8,7 @@ import WhatsAppForm from "@/components/ui/WhatsAppForm";
 export const metadata: Metadata = buildMetadata({
   title: "Book an Appointment | Dental Clinic in Pala, Kottayam",
   description:
-    "Book an appointment at Smile Architects dental clinic in Pala, Kottayam, Kerala. Call +91 9446 999 333, WhatsApp or complete the online form. Open Mon–Sat 9:30 AM–8:00 PM.",
+    "Book an appointment at Smile Architects dental clinic in Pala, Kottayam, Kerala. Call +91 94469 99333, WhatsApp or complete the online form. Open Mon–Sat 9:30 AM–8:00 PM.",
   canonical: "/book-appointment",
 });
 

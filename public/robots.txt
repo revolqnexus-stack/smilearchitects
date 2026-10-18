@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://smilearchitectspala.com/sitemap.xml
+Sitemap: https://www.smilearchitectskeralam.com/sitemap.xml
 
 Disallow: /jeotomadmin/
 Disallow: /api/

@@ -26,7 +26,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/pala",
     title: "Best Dental Clinic in Pala, Kottayam District",
     description:
-      "Looking for the best dental clinic in Pala or Palai, Kottayam? Smile Architects — MDS orthodontist, implants, braces, lingual braces & smile design. Kattakkayam Road, near Federal Bank. Call +91 9446 999 333.",
+      "Looking for the best dental clinic in Pala or Palai, Kottayam? Smile Architects — MDS orthodontist, implants, braces, lingual braces & smile design. Kattakkayam Road, near Federal Bank. Call +91 94469 99333.",
     h1: "Best dental clinic in Pala, Kottayam District",
     intro:
       "Smile Architects is a multispeciality dental clinic and advanced orthodontic centre in Pala (Palai), Kottayam District — led by Dr. Jeo Tom Charls, MDS Orthodontics. Patients choose us for specialist braces and aligners, dental implants, root canal treatment, cosmetic dentistry, and full-family care under one roof.",
@@ -58,7 +58,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "How do I book a dentist appointment in Pala?",
         answer:
-          "Call +91 9446 999 333, use WhatsApp, or book online at smilearchitectspala.com. The clinic is open Monday to Saturday, 9:30 AM to 8:00 PM.",
+          "Call +91 94469 99333, use WhatsApp, or book online at smilearchitectskeralam.com. The clinic is open Monday to Saturday, 9:30 AM to 8:00 PM.",
       },
       {
         question: "Where exactly is Smile Architects in Pala?",
@@ -72,7 +72,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/kottayam",
     title: "Best Dental Clinic in Kottayam District | Pala Centre",
     description:
-      "Best dental clinic serving Kottayam town & Kottayam District — Smile Architects in Pala. MDS orthodontist, implants, cosmetic dentistry. Patients from Kottayam, Changanassery & Ettumanoor. +91 9446 999 333.",
+      "Best dental clinic serving Kottayam town & Kottayam District — Smile Architects in Pala. MDS orthodontist, implants, cosmetic dentistry. Patients from Kottayam, Changanassery & Ettumanoor. +91 94469 99333.",
     h1: "Best dental clinic serving Kottayam District",
     intro:
       "Patients across Kottayam District — including Kottayam town, Changanassery, Ettumanoor, and surrounding areas — visit Smile Architects in Pala for MDS-led dental and orthodontic treatment. Our Pala centre is the hub for specialist care; we also operate a Thrissur branch for patients in Thrissur city.",
@@ -124,7 +124,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/thrissur",
     title: "Best Dental Clinic in Thrissur | Punkunnam Branch",
     description:
-      "Best dental clinic in Thrissur — Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Orthodontics, implants & smile design. +91 9446 999 333.",
+      "Best dental clinic in Thrissur — Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Orthodontics, implants & smile design. +91 94469 99333.",
     h1: "Best dental clinic in Thrissur",
     intro:
       "Smile Architects Thrissur brings the same specialist-led dental and orthodontic care as our Pala centre — now at Punkunnam, Thrissur. Multispeciality dentistry, braces, aligners, implants, and smile design in a modern clinic setting.",
@@ -147,7 +147,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Which is the best dental clinic in Thrissur?",
         answer:
-          "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam (Opp. St. Joseph's Church) offers multispeciality dental care and advanced orthodontics. Book via +91 9446 999 333 or online.",
+          "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam (Opp. St. Joseph's Church) offers multispeciality dental care and advanced orthodontics. Book via +91 94469 99333 or online.",
       },
       {
         question: "Where is Smile Architects in Thrissur?",
