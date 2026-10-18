@@ -104,7 +104,7 @@ export default function SiteHeader() {
   // Glass layer — airy at top, frosted when scrolled
   const bgOpacity = scrolled
     ? "rgba(255, 255, 255, 0.68)"
-    : "rgba(245, 248, 234, 0.42)";
+    : "rgba(247, 242, 234, 0.55)";
   const glassFilter = scrolled
     ? "blur(18px) saturate(165%)"
     : "blur(22px) saturate(175%)";
@@ -310,7 +310,7 @@ export default function SiteHeader() {
                 padding: "0.5rem 1.125rem",
                 borderRadius: "9999px",
                 border: "1px solid rgba(126,132,7,0.3)",
-                backgroundColor: "rgba(215,227,164,0.35)",
+                backgroundColor: "rgba(223,210,188,0.35)",
                 backdropFilter: "blur(8px)",
                 fontSize: "0.8125rem", // Smaller action buttons (13px)
                 fontWeight: 600,
@@ -578,8 +578,8 @@ function NavItem({
             inset: 0,
             borderRadius: "9999px",
             backgroundColor: isActive
-              ? "rgba(215,227,164,0.55)"
-              : "rgba(215,227,164,0.4)",
+              ? "rgba(223,210,188,0.55)"
+              : "rgba(223,210,188,0.4)",
             border: isActive ? "1px solid rgba(126,132,7,0.3)" : "1px solid rgba(126,132,7,0.18)",
           }}
         />
@@ -645,8 +645,8 @@ const TreatmentsDropdown = forwardRef<
             inset: 0,
             borderRadius: "9999px",
             backgroundColor: isActive || open
-              ? "rgba(215,227,164,0.55)"
-              : "rgba(215,227,164,0.4)",
+              ? "rgba(223,210,188,0.55)"
+              : "rgba(223,210,188,0.4)",
             border: "1px solid rgba(126,132,7,0.2)",
           }}
         />
@@ -691,7 +691,7 @@ const TreatmentsDropdown = forwardRef<
               backgroundColor: "rgba(240,246,228,0.88)",
               backdropFilter: "blur(28px) saturate(160%)",
               WebkitBackdropFilter: "blur(28px) saturate(160%)",
-              border: "1px solid rgba(215,227,164,0.6)",
+              border: "1px solid rgba(223,210,188,0.6)",
               borderRadius: "20px",
               padding: "0.625rem",
               boxShadow: "0 16px 48px rgba(37,78,6,0.14), inset 0 1px 0 rgba(255,255,255,0.5)",
@@ -756,7 +756,7 @@ const TreatmentsDropdown = forwardRef<
           transition: background 0.15s;
         }
         .dropdown-item:hover {
-          background: rgba(215,227,164,0.5);
+          background: rgba(223,210,188,0.5);
           color: var(--color-dark-moss);
         }
         .dropdown-item-all {
@@ -804,8 +804,8 @@ const LocationsDropdown = forwardRef<
             inset: 0,
             borderRadius: "9999px",
             backgroundColor: isActive || open
-              ? "rgba(215,227,164,0.55)"
-              : "rgba(215,227,164,0.4)",
+              ? "rgba(223,210,188,0.55)"
+              : "rgba(223,210,188,0.4)",
             border: "1px solid rgba(126,132,7,0.2)",
           }}
         />
@@ -849,7 +849,7 @@ const LocationsDropdown = forwardRef<
               backgroundColor: "rgba(240,246,228,0.88)",
               backdropFilter: "blur(28px) saturate(160%)",
               WebkitBackdropFilter: "blur(28px) saturate(160%)",
-              border: "1px solid rgba(215,227,164,0.6)",
+              border: "1px solid rgba(223,210,188,0.6)",
               borderRadius: "20px",
               padding: "0.625rem",
               boxShadow: "0 16px 48px rgba(37,78,6,0.14), inset 0 1px 0 rgba(255,255,255,0.5)",
@@ -917,7 +917,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
         alignItems: "center",
         justifyContent: "space-between",
         padding: "clamp(1.25rem, 5vw, 1.75rem) clamp(1.25rem, 6vw, 2rem)",
-        borderBottom: "1px solid rgba(215,227,164,0.12)",
+        borderBottom: "1px solid rgba(223,210,188,0.12)",
         flexShrink: 0,
       }}>
         <Link href="/" onClick={onClose} style={{ textDecoration: "none" }}>
@@ -941,8 +941,8 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
           style={{
             width: "44px", height: "44px",
             borderRadius: "12px",
-            background: "rgba(215,227,164,0.1)",
-            border: "1px solid rgba(215,227,164,0.2)",
+            background: "rgba(223,210,188,0.1)",
+            border: "1px solid rgba(223,210,188,0.2)",
             cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center",
             color: "var(--color-honeydew)",
@@ -956,7 +956,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
       <div
         style={{
           padding: "1.25rem clamp(1.25rem, 6vw, 2rem) 1rem",
-          borderBottom: "1px solid rgba(215,227,164,0.12)",
+          borderBottom: "1px solid rgba(223,210,188,0.12)",
         }}
       >
         <p
@@ -1033,14 +1033,14 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
                     color: isActive ? "var(--color-jonquil)" : "var(--color-honeydew)",
                     fontFamily: "var(--font-serif)",
                     fontWeight: 400,
-                    borderBottom: "1px solid rgba(215,227,164,0.1)",
+                    borderBottom: "1px solid rgba(223,210,188,0.1)",
                     textDecoration: "none",
                     letterSpacing: "-0.02em",
                   }}
                 >
                   {link.label}
                   <span style={{
-                    color: isActive ? "var(--color-jonquil)" : "rgba(215,227,164,0.4)",
+                    color: isActive ? "var(--color-jonquil)" : "rgba(223,210,188,0.4)",
                     transition: "color 0.2s",
                     display: "flex",
                     alignItems: "center",
@@ -1085,7 +1085,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
                   fontWeight: pathname === loc.href ? 600 : 500,
                   textDecoration: "none",
                   padding: "0.5rem 0",
-                  borderBottom: "1px solid rgba(215,227,164,0.1)",
+                  borderBottom: "1px solid rgba(223,210,188,0.1)",
                 }}
               >
                 {loc.label}
@@ -1124,11 +1124,11 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
                   color: "rgba(236,245,226,0.8)",
                   fontFamily: "var(--font-sans)",
                   padding: "0.4375rem 0.875rem",
-                  border: "1px solid rgba(215,227,164,0.22)",
+                  border: "1px solid rgba(223,210,188,0.22)",
                   borderRadius: "9999px",
                   textDecoration: "none",
                   transition: "border-color 0.2s, background 0.2s",
-                  backgroundColor: "rgba(215,227,164,0.05)",
+                  backgroundColor: "rgba(223,210,188,0.05)",
                 }}
               >
                 {t.label}
@@ -1145,7 +1145,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
         transition={{ delay: 0.35, duration: 0.4, ease: [0.16,1,0.3,1] }}
         style={{
           padding: "clamp(1.25rem, 5vw, 1.75rem) clamp(1.25rem, 6vw, 2rem)",
-          borderTop: "1px solid rgba(215,227,164,0.12)",
+          borderTop: "1px solid rgba(223,210,188,0.12)",
           display: "flex",
           flexDirection: "column",
           gap: "0.75rem",
@@ -1190,7 +1190,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
             padding: "0.875rem 1.5rem",
             borderRadius: "9999px",
             textDecoration: "none",
-            border: "1px solid rgba(215,227,164,0.2)",
+            border: "1px solid rgba(223,210,188,0.2)",
             minHeight: "52px",
           }}
         >

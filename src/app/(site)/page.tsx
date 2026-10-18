@@ -96,7 +96,7 @@ export default function HomePage() {
         {/* ── Video-to-page melt — hero bleeds into Services section ── */}
         <div aria-hidden="true" style={{
           position: "absolute", bottom: 0, left: 0, right: 0, height: "160px", zIndex: 2,
-          background: "linear-gradient(to bottom, transparent 0%, #F3F8E9 100%)",
+          background: "linear-gradient(to bottom, transparent 0%, var(--color-honeydew) 100%)",
           pointerEvents: "none",
         }} />
 
@@ -589,9 +589,9 @@ export default function HomePage() {
             position: relative;
             overflow: hidden;
             background:
-              radial-gradient(circle at 88% 15%, rgba(255,255,255,0.75), transparent 28%),
-              radial-gradient(circle at 8%  92%, rgba(210,230,185,0.4),  transparent 32%),
-              #F3F8E9;
+              radial-gradient(circle at 88% 15%, rgba(255,255,255,0.7), transparent 28%),
+              radial-gradient(circle at 8%  92%, rgba(223,210,188,0.45), transparent 32%),
+              var(--color-honeydew);
           }
           .treatments-bg-decor {
             position: absolute; inset: 0;
@@ -602,11 +602,11 @@ export default function HomePage() {
           }
           .treatments-blob-1 {
             width: 520px; height: 520px; top: -140px; right: -100px;
-            background: rgba(215,235,175,0.32);
+            background: rgba(223,210,188,0.35);
           }
           .treatments-blob-2 {
             width: 400px; height: 400px; bottom: -100px; left: -80px;
-            background: rgba(215,227,164,0.28);
+            background: rgba(237,228,211,0.4);
           }
           .treatments-tooth-bg {
             position: absolute; right: 3%; top: 50%; transform: translateY(-50%);

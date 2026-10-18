@@ -56,7 +56,7 @@ export default function PremiumFAQ({ faqs }: PremiumFAQProps) {
               borderRadius: "8px",
             }}
             whileHover={{
-              backgroundColor: "rgba(215, 227, 164, 0.4)",
+              backgroundColor: "rgba(223, 210, 188, 0.55)",
               paddingLeft: "0.75rem",
               paddingRight: "0.75rem",
               scale: 1.01,
@@ -161,7 +161,7 @@ export default function PremiumFAQ({ faqs }: PremiumFAQProps) {
         }
         
         .faq-item-premium:hover {
-          background-color: rgba(215, 227, 164, 0.15);
+          background-color: rgba(223, 210, 188, 0.25);
           border-radius: 12px;
           margin: -4px;
           padding: 4px;

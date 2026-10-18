@@ -51,9 +51,9 @@ export default function BranchToggle({
           borderRadius: "9999px",
           background: isDark
             ? "rgba(0,0,0,0.25)"
-            : "rgba(215,227,164,0.45)",
+            : "rgba(223,210,188,0.45)",
           border: isDark
-            ? "1px solid rgba(215,227,164,0.2)"
+            ? "1px solid rgba(223,210,188,0.2)"
             : "1px solid rgba(126,132,7,0.25)",
           maxWidth: "100%",
         }}
