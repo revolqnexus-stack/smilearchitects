@@ -41,6 +41,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const FEATURED_TREATMENTS = TREATMENTS.filter((t) => t.featured);
+/** Homepage mobile: show top services only; full list lives on /treatments */
+const HOME_SERVICES_MOBILE_MAX = 6;
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -528,22 +530,25 @@ export default function HomePage() {
 
           <StaggerContainer
             stagger={0.07}
-            className="treatments-grid"
+            className="treatments-grid home-services-grid"
           >
-            {FEATURED_TREATMENTS.map((t) => (
-              <StaggerItem key={t.id}>
+            {FEATURED_TREATMENTS.map((t, index) => (
+              <StaggerItem
+                key={t.id}
+                className={index >= HOME_SERVICES_MOBILE_MAX ? "home-services-more" : undefined}
+              >
                 <Link
                   href={`/treatments/${t.slug}`}
                   className="treatment-card-link"
                   aria-label={`Learn about ${t.title}`}
                 >
-                  <div className="card-treatment">
-                    <div style={{ marginBottom: "1.125rem", color: "var(--color-dark-moss)" }}>
+                  <div className="card-treatment home-service-card">
+                    <div className="home-service-card-icon">
                       <TreatmentIconFor slug={t.slug} size="lg" />
                     </div>
                     <h3 className="treatment-card-title">{t.title}</h3>
-                    <p className="treatment-card-body">{t.shortDescription}</p>
-                    <span className="card-learn-more">
+                    <p className="treatment-card-body home-service-card-body">{t.shortDescription}</p>
+                    <span className="card-learn-more home-service-card-cta">
                       Learn more <ArrowRightIcon size="sm" />
                     </span>
                   </div>
@@ -553,9 +558,12 @@ export default function HomePage() {
           </StaggerContainer>
 
           <StaggerReveal type="cta">
-            <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <div className="home-services-footer-cta">
+              <p className="home-services-more-note">
+                {FEATURED_TREATMENTS.length - HOME_SERVICES_MOBILE_MAX} more on the full treatments page — implants, general dentistry, root canal &amp; more.
+              </p>
               <Link href="/treatments" className="btn btn-accent btn-lg">
-                View all treatments
+                View all {TREATMENTS.length} treatments
               </Link>
             </div>
           </StaggerReveal>

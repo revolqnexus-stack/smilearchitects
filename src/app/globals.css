@@ -2181,6 +2181,79 @@ input[type="submit"],
   }
 }
 
+/* Homepage “Our Services” — shorter on mobile (not a 10-card scroll) */
+@media (max-width: 767px) {
+  .home-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .home-services-grid .home-services-more {
+    display: none;
+  }
+
+  .home-services-grid .home-service-card {
+    padding: 1.125rem 1rem;
+    border-radius: var(--radius-lg);
+    border-width: 1px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-services-grid .home-service-card-icon {
+    margin-bottom: 0.625rem;
+    color: var(--color-dark-moss);
+    transform: scale(0.85);
+    transform-origin: left top;
+  }
+
+  .home-services-grid .treatment-card-title {
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+    line-height: 1.25;
+  }
+
+  .home-services-grid .home-service-card-body,
+  .home-services-grid .home-service-card-cta {
+    display: none;
+  }
+
+  .home-services-footer-cta {
+    text-align: center;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .home-services-more-note {
+    margin: 0;
+    max-width: 22rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-olive);
+    font-family: var(--font-sans);
+  }
+}
+
+@media (min-width: 768px) {
+  .home-services-more-note {
+    display: none;
+  }
+
+  .home-services-footer-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .home-service-card-icon {
+    margin-bottom: 1.125rem;
+    color: var(--color-dark-moss);
+  }
+}
+
 .treatment-card-link {
   text-decoration: none;
   display: block;
