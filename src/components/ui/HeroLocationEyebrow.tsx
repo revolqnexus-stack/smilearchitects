@@ -1,10 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useBranch } from "@/components/providers/BranchProvider";
+import { branchDirectionsUrl } from "@/lib/branch-ui";
+import TrackedLink from "@/components/ui/TrackedLink";
 
 export default function HeroLocationEyebrow() {
-  const { branchId } = useBranch();
+  const { branch } = useBranch();
+  const directions = branchDirectionsUrl(branch);
 
   return (
     <p className="hero-eyebrow">
@@ -21,22 +23,22 @@ export default function HeroLocationEyebrow() {
           fill="rgba(255,255,255,0.7)"
         />
       </svg>
-      Clinics in{" "}
-      <Link
-        href="/local/pala"
-        className="hero-eyebrow-link"
-        aria-current={branchId === "pala" ? "page" : undefined}
+      Directions &amp; booking for{" "}
+      <strong style={{ fontWeight: 600, color: "rgba(255,255,255,0.95)" }}>
+        {branch.label}
+      </strong>
+      <span style={{ opacity: 0.85 }}> · {branch.toggleHint}</span>
+      {" — "}
+      <TrackedLink
+        href={directions}
+        eventName="directions_click"
+        eventParams={{ branch: branch.id, placement: "hero_eyebrow" }}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="sa-prose-link sa-prose-link--hero"
       >
-        Pala, Kottayam
-      </Link>
-      {" & "}
-      <Link
-        href="/thrissur"
-        className="hero-eyebrow-link"
-        aria-current={branchId === "thrissur" ? "page" : undefined}
-      >
-        Thrissur
-      </Link>
+        Open map
+      </TrackedLink>
     </p>
   );
 }

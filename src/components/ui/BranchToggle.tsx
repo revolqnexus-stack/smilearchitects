@@ -1,12 +1,15 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
 import { useBranch } from "@/components/providers/BranchProvider";
 import { BRANCH_LIST, type BranchId } from "@/lib/branches";
+import { scrollToBranchLocation } from "@/lib/branch-ui";
+import { trackEvent } from "@/lib/analytics";
 
 type BranchToggleProps = {
   /** Light strip above navbar; dark for mobile menu panel */
   variant?: "light" | "dark";
-  /** Hide "Clinic location" label on very small screens */
+  /** Hide "Your clinic" label on very small screens */
   compact?: boolean;
 };
 
@@ -15,12 +18,37 @@ export default function BranchToggle({
   compact = false,
 }: BranchToggleProps) {
   const { branchId, setBranchId } = useBranch();
+  const pathname = usePathname();
+  const router = useRouter();
   const isDark = variant === "dark";
+
+  const handleSelect = (id: BranchId) => {
+    if (id === branchId) return;
+    setBranchId(id);
+    trackEvent("branch_select", { branch: id, page: pathname });
+
+    if (pathname === "/") {
+      scrollToBranchLocation();
+      return;
+    }
+    if (pathname === "/contact" || pathname === "/book-appointment") {
+      scrollToBranchLocation();
+      return;
+    }
+    if (pathname === "/thrissur" || pathname === "/local/thrissur") {
+      if (id === "pala") router.push("/");
+      return;
+    }
+    if (pathname === "/local/pala" || pathname === "/local/kottayam") {
+      if (id === "thrissur") router.push("/thrissur");
+      return;
+    }
+  };
 
   return (
     <div
       role="group"
-      aria-label="Choose clinic location"
+      aria-label="Choose which clinic you want directions and booking for"
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -41,7 +69,7 @@ export default function BranchToggle({
             whiteSpace: "nowrap",
           }}
         >
-          Clinic
+          Your clinic
         </span>
       )}
       <div
@@ -49,9 +77,7 @@ export default function BranchToggle({
           display: "inline-flex",
           padding: "3px",
           borderRadius: "9999px",
-          background: isDark
-            ? "rgba(0,0,0,0.25)"
-            : "rgba(223,210,188,0.45)",
+          background: isDark ? "rgba(0,0,0,0.25)" : "rgba(223,210,188,0.45)",
           border: isDark
             ? "1px solid rgba(223,210,188,0.2)"
             : "1px solid rgba(126,132,7,0.25)",
@@ -66,7 +92,7 @@ export default function BranchToggle({
               type="button"
               aria-pressed={selected}
               aria-label={`${b.label}, ${b.toggleHint}`}
-              onClick={() => setBranchId(b.id as BranchId)}
+              onClick={() => handleSelect(b.id as BranchId)}
               style={{
                 border: "none",
                 cursor: "pointer",

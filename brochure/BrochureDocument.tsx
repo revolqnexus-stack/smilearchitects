@@ -223,9 +223,9 @@ export function BrochureDocument({ assets }: { assets: BrochureAssets }) {
                 General dentistry is combined with orthodontics and cosmetic care under one roof.
               </Text>
               <Text style={[s.body, { marginTop: 10 }]}>
-                Led by Dr. Jeo Tom Charls, MDS Orthodontics — registered with the Kerala State Dental
-                Council — the clinical team places patient comfort and accurate diagnosis at the centre of
-                every consultation.
+                Our Pala centre is led by Dr. Jeo Tom Charls, MDS Orthodontics — registered with the Kerala
+                State Dental Council. The clinical team places patient comfort and accurate diagnosis at the
+                centre of every consultation.
               </Text>
             </View>
             <View style={s.col}>
@@ -333,9 +333,9 @@ export function BrochureDocument({ assets }: { assets: BrochureAssets }) {
             </View>
           ))}
           <Text style={[s.caption, { marginTop: 8 }]}>
-            Smile Architects is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics),
+            Our Pala centre is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics),
             supported by Dr. Jintu Joan Jose and Dr. Ann Tresa T. Srambickal (both BDS – Aesthetic & General
-            Dentistry).
+            Dentistry). We also have a branch in Thrissur (Punkunnam).
           </Text>
         </View>
         <Footer />
@@ -427,7 +427,7 @@ export function BrochureDocument({ assets }: { assets: BrochureAssets }) {
           </Text>
           <Text style={[s.bodyLight, { marginTop: 12, fontSize: 9 }]}>
             Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph&apos;s Church, Punkunnam,
-            Thrissur — same team and phone as our Pala centre.
+            Thrissur — multispeciality care under the Smile Architects name. Same phone and booking as Pala.
           </Text>
         </View>
         <Footer light />

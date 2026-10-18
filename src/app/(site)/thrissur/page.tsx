@@ -39,7 +39,7 @@ export default function ThrissurBranchPage() {
                 marginBottom: "1rem",
               }}
             >
-              Second location
+              Branch · Punkunnam
             </p>
             <h1
               style={{

@@ -25,6 +25,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useBranch } from "@/components/providers/BranchProvider";
 import BranchToggle from "@/components/ui/BranchToggle";
 import { brandLogoSrc } from "@/lib/site-config";
+import { whatsAppUrl } from "@/lib/analytics";
+import { branchWhatsAppEnquiryMessage } from "@/lib/branch-ui";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -296,10 +298,10 @@ export default function SiteHeader() {
 
             {/* WhatsApp glass pill */}
             <motion.a
-              href={branch.whatsapp}
+              href={whatsAppUrl(branch.contact.phone, branchWhatsAppEnquiryMessage(branch))}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp"
+              aria-label={`Chat on WhatsApp — ${branch.label} clinic`}
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.18 }}
@@ -969,9 +971,19 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
             color: "rgba(236,245,226,0.55)",
           }}
         >
-          Nearest clinic
+          Your clinic
         </p>
         <BranchToggle variant="dark" />
+        <p
+          style={{
+            margin: "0.625rem 0 0",
+            fontSize: "0.8125rem",
+            color: "rgba(236,245,226,0.75)",
+            lineHeight: 1.5,
+          }}
+        >
+          Maps, footer &amp; booking use: {branch.locationLine}
+        </p>
         <Link
           href="/locations"
           onClick={onClose}

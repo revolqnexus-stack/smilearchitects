@@ -43,7 +43,8 @@ export default function ClinicsTwoLocations({
               lineHeight: 1.65,
             }}
           >
-            Same team and phone at both addresses. Pick the clinic closest to you.
+            Same phone and booking line for both addresses. Pala is our main centre; Thrissur is our
+            Punkunnam branch.
           </p>
         </>
       ) : null}
@@ -138,7 +139,11 @@ function ClinicBranchCard({ branch }: { branch: ClinicBranch }) {
               <span style={{ fontSize: "0.75rem", fontWeight: 600, marginLeft: "0.5rem", opacity: 0.9 }}>
                 (main centre)
               </span>
-            ) : null}
+            ) : (
+              <span style={{ fontSize: "0.75rem", fontWeight: 600, marginLeft: "0.5rem", opacity: 0.9 }}>
+                (branch)
+              </span>
+            )}
           </p>
           <p style={{ margin: "0.2rem 0 0", fontSize: "0.8125rem", color: "rgba(255,255,255,0.88)" }}>
             {branch.locationLine}

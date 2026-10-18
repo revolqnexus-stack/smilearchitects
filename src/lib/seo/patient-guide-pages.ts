@@ -48,11 +48,11 @@ export const PATIENT_GUIDE_PAGES: Record<PatientGuideSlug, PatientGuidePage> = {
     slug: "braces-and-aligners",
     title: "Braces & clear aligners in Pala and Thrissur",
     description:
-      "Orthodontic care at Smile Architects — metal and ceramic braces, Damon systems, lingual braces, and clear aligners with Dr. Jeo Tom Charls, MDS. Pala & Thrissur.",
+      "Orthodontic care at Smile Architects — metal and ceramic braces, Damon systems, lingual braces, and clear aligners. MDS-led treatment at Pala; appointments also at our Thrissur branch.",
     h1: "Braces, aligners & orthodontics",
     paragraphs: [
       [
-        { type: "text", value: "Orthodontic treatment is led by " },
+        { type: "text", value: "At our Pala centre, orthodontic treatment is led by " },
         { type: "link", href: "/dentists/dr-jeo-tom-charls", label: "Dr. Jeo Tom Charls, MDS Orthodontics" },
         { type: "text", value: ". Start with our " },
         { type: "link", href: "/orthodontics", label: "orthodontics overview" },
@@ -72,7 +72,7 @@ export const PATIENT_GUIDE_PAGES: Record<PatientGuideSlug, PatientGuidePage> = {
         { type: "text", value: ". Appointments are available in " },
         { type: "link", href: "/local/pala", label: "Pala" },
         { type: "text", value: " and at the " },
-        { type: "link", href: "/thrissur", label: "Thrissur clinic" },
+        { type: "link", href: "/thrissur", label: "Thrissur branch" },
         { type: "text", value: ". " },
         { type: "link", href: "/book-appointment", label: "Book online" },
         { type: "text", value: " or call +91 94469 99333." },

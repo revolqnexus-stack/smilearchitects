@@ -44,7 +44,7 @@ const SPECIALIST_TREATMENTS = [
 const FAQS_THRISSUR = [
   {
     question: "Is Smile Architects located in Thrissur?",
-    answer: "Yes — Smile Architects has a Thrissur branch. Our original multispeciality centre remains in Pala, Kottayam District. Use the Pala | Thrissur toggle at the top of the site or visit /thrissur for the Thrissur location."
+    answer: "Yes — Smile Architects has a Thrissur branch in Punkunnam. Our main multispeciality centre is in Pala, Kottayam District. Use the Pala | Thrissur toggle at the top of the site or visit /thrissur for the Thrissur location."
   },
   {
     question: "Can I travel from Thrissur for orthodontic treatment?",
@@ -60,7 +60,7 @@ const FAQS_THRISSUR = [
   },
   {
     question: "Where is the clinic located?",
-    answer: "Smile Architects has a Thrissur branch at 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur, Kerala – 680002. Our Pala centre is at Kattakkayam Road, Kottayam District – 686575 (near Federal Bank)."
+    answer: "Smile Architects Thrissur is at 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur, Kerala – 680002. Our Pala centre is at Kattakkayam Road, Kottayam District – 686575 (near Federal Bank)."
   },
   {
     question: "How do I get to Smile Architects from Thrissur?",
@@ -97,7 +97,7 @@ export default function ThrissurServicePage() {
                 color: "var(--color-dark-moss)",
                 margin: 0
               }}>
-                Important: Smile Architects is located in Pala, Kottayam District
+                Clinics in Pala &amp; Thrissur
               </p>
             </div>
             <p style={{ 
@@ -106,9 +106,9 @@ export default function ThrissurServicePage() {
               lineHeight: 1.6,
               margin: 0
             }}>
-              Smile Architects serves patients from Thrissur at our Thrissur branch and at our Pala centre. 
-              This page also helps patients who are considering travelling to our Pala clinic for specialist 
-              dental or orthodontic treatment.
+              Smile Architects serves patients from Thrissur at our Punkunnam branch and at our main Pala
+              centre. This page also helps patients who are considering travelling to Pala for MDS-led
+              orthodontic treatment with Dr. Jeo Tom Charls.
             </p>
           </div>
 
@@ -169,9 +169,9 @@ export default function ThrissurServicePage() {
                       Specialist Orthodontic Qualification
                     </h3>
                     <p style={{ color: "var(--color-olive)", fontSize: "1rem", lineHeight: 1.6, marginBottom: "1rem" }}>
-                      Dr. Jeo Tom Charls holds a Master of Dental Surgery (MDS) degree in Orthodontics and 
-                      Dentofacial Orthopaedics — a specialized postgraduate qualification focusing exclusively 
-                      on tooth movement, jaw growth, and bite correction.
+                      At our Pala centre, Dr. Jeo Tom Charls holds a Master of Dental Surgery (MDS) degree in
+                      Orthodontics and Dentofacial Orthopaedics — a specialized postgraduate qualification
+                      focusing exclusively on tooth movement, jaw growth, and bite correction.
                     </p>
                     {leadOrthodontist && (
                       <Link 

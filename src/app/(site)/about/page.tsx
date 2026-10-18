@@ -76,15 +76,15 @@ export default function AboutPage() {
                     <Link href="/local/pala">Pala, Kottayam</Link> and the surrounding Meenachil region. We
                     also serve{" "}
                     <Link href="/local/kottayam">Kottayam District</Link> and operate a{" "}
-                    <Link href="/thrissur">Thrissur branch in Punkunnam</Link>. The clinic combines{" "}
+                    <Link href="/thrissur">Thrissur branch in Punkunnam</Link>. The Pala centre combines{" "}
                     <Link href="/treatments/general-dentistry">general dentistry</Link> with{" "}
                     <Link href="/orthodontics">orthodontics</Link> and{" "}
                     <Link href="/treatments/cosmetic-dentistry">cosmetic care</Link>.
                   </p>
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75 }}>
-                    Led by{" "}
+                    Our Pala centre is led by{" "}
                     <Link href="/dentists/dr-jeo-tom-charls">Dr. Jeo Tom Charls, MDS Orthodontics</Link> —
-                    registered with the Kerala State Dental Council — the clinical team places patient comfort
+                    registered with the Kerala State Dental Council. The clinical team places patient comfort
                     and accurate diagnosis at the centre of every consultation. Explore our{" "}
                     <Link href="/dentists">MDS specialists</Link> and{" "}
                     <Link href="/technology">clinic technology</Link>.

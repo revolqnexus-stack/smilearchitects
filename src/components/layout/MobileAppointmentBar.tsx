@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useBranch } from "@/components/providers/BranchProvider";
 import { PhoneIcon, WhatsAppIcon, CalendarIcon } from "@/components/ui/icons";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, whatsAppUrl } from "@/lib/analytics";
+import { branchWhatsAppEnquiryMessage } from "@/lib/branch-ui";
 
 /**
  * Floating action pill for mobile — fixed to bottom with proper safe-area.
@@ -65,7 +66,7 @@ export default function MobileAppointmentBar() {
 
         {/* WhatsApp */}
         <a
-          href={branch.whatsapp}
+          href={whatsAppUrl(branch.contact.phone, branchWhatsAppEnquiryMessage(branch))}
           onClick={() => trackEvent("whatsapp_click", { branch: branch.id, placement: "mobile_bar" })}
           target="_blank"
           rel="noopener noreferrer"

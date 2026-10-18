@@ -70,12 +70,13 @@ export const LOCAL_INTRO_SEGMENTS: Record<
   thrissur: [
     {
       type: "text",
-      value: "Smile Architects Thrissur brings the same specialist-led care as our ",
+      value:
+        "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam offers multispeciality dental care — alongside our ",
     },
     { type: "link", href: "/local/pala", label: "Pala, Kottayam centre" },
     {
       type: "text",
-      value: " — at Punkunnam, Thrissur. Explore ",
+      value: ", where MDS orthodontist Dr. Jeo Tom Charls leads orthodontic care. Explore ",
     },
     { type: "link", href: "/thrissur", label: "branch photos, map & directions" },
     { type: "text", value: ", or book " },

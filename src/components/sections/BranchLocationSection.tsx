@@ -34,9 +34,10 @@ export default function BranchLocationSection() {
 
   return (
     <section
+      id="branch-location"
       aria-labelledby="location-heading"
       className="section-padding section-white"
-      style={{ position: "relative" }}
+      style={{ position: "relative", scrollMarginTop: "100px" }}
     >
       <div
         aria-hidden="true"

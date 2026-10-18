@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { buildMetadata } from "@/lib/metadata";
 import { CLINIC } from "@/lib/site-config";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AppointmentForm from "@/components/ui/AppointmentForm";
 import WhatsAppForm from "@/components/ui/WhatsAppForm";
+import BookAppointmentBranchSync from "@/components/booking/BookAppointmentBranchSync";
 
 export const metadata: Metadata = buildMetadata({
   title: "Book an Appointment | Dental Clinic in Pala, Kottayam",
@@ -34,6 +36,9 @@ export default function BookAppointmentPage() {
             Call, WhatsApp or complete the form below. The Smile Architects team will confirm your
             appointment as soon as possible.
           </p>
+          <Suspense fallback={null}>
+            <BookAppointmentBranchSync />
+          </Suspense>
         </div>
       </div>
 

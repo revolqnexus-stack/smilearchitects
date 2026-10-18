@@ -75,7 +75,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       "Best dental clinic serving Kottayam town & Kottayam District — Smile Architects in Pala. MDS orthodontist, implants, cosmetic dentistry. Patients from Kottayam, Changanassery & Ettumanoor. +91 94469 99333.",
     h1: "Best dental clinic serving Kottayam District",
     intro:
-      "Patients across Kottayam District — including Kottayam town, Changanassery, Ettumanoor, and surrounding areas — visit Smile Architects in Pala for MDS-led dental and orthodontic treatment. Our Pala centre is the hub for specialist care; we also operate a Thrissur branch for patients in Thrissur city.",
+      "Patients across Kottayam District — including Kottayam town, Changanassery, Ettumanoor, and surrounding areas — visit Smile Architects in Pala for MDS-led dental and orthodontic treatment. Our Pala centre is the hub for specialist care; we also have a Thrissur branch in Punkunnam for patients in Thrissur city.",
     branchId: "pala",
     cities: ["Kottayam", "Kottayam District", "Kottayam town", "Changanassery", "Ettumanoor"],
     parking: "Visit our Pala centre — parking available at the Kattakkayam Road clinic.",
@@ -127,7 +127,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       "Best dental clinic in Thrissur — Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Orthodontics, implants & smile design. +91 94469 99333.",
     h1: "Best dental clinic in Thrissur",
     intro:
-      "Smile Architects Thrissur brings the same specialist-led dental and orthodontic care as our Pala centre — now at Punkunnam, Thrissur. Multispeciality dentistry, braces, aligners, implants, and smile design in a modern clinic setting.",
+      "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam — multispeciality dentistry, braces, aligners, implants, and smile design in a modern setting. MDS orthodontic care is centred at our Pala, Kottayam clinic with Dr. Jeo Tom Charls.",
     branchId: "thrissur",
     cities: ["Thrissur", "Punkunnam", "Thrissur city"],
     parking: "Ephphatha Medical Complex — ask reception for visitor parking guidance.",
@@ -147,7 +147,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Which is the best dental clinic in Thrissur?",
         answer:
-          "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam (Opp. St. Joseph's Church) offers multispeciality dental care and advanced orthodontics. Book via +91 94469 99333 or online.",
+          "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam (Opp. St. Joseph's Church) offers multispeciality dental and orthodontic services. Book via +91 94469 99333 or online.",
       },
       {
         question: "Where is Smile Architects in Thrissur?",
@@ -157,7 +157,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Does Smile Architects in Thrissur offer braces and aligners?",
         answer:
-          "Yes. The Thrissur branch provides orthodontic treatment including braces and clear aligners, alongside general dentistry, implants, and cosmetic procedures.",
+          "Yes. The Thrissur branch provides orthodontic treatment including braces and clear aligners, alongside general dentistry, implants, and cosmetic procedures. Complex or MDS-led plans may be coordinated with our Pala centre.",
       },
       {
         question: "Is Smile Architects also in Pala, Kottayam?",

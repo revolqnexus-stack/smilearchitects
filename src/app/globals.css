@@ -290,6 +290,36 @@ a:hover {
   color: var(--color-jonquil);
 }
 
+/* Inline links in paragraphs (LinkRichText, hero copy) — weight + color, not underlines */
+.sa-prose-link {
+  color: var(--color-dark-moss);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--duration-base) var(--ease-default);
+}
+
+.sa-prose-link:hover {
+  color: var(--color-olive);
+}
+
+.sa-prose-link:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.sa-prose-link--hero {
+  color: var(--color-jonquil);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--duration-base) var(--ease-default), opacity var(--duration-base) var(--ease-default);
+}
+
+.sa-prose-link--hero:hover {
+  color: var(--color-honeydew);
+  opacity: 1;
+}
+
 /* Strong text */
 strong, b {
   font-weight: var(--font-weight-semibold);

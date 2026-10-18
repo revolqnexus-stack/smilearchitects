@@ -48,8 +48,15 @@ export default function SeoTopicCluster({
             lineHeight: 1.6,
           }}
         >
-          Quick links between clinics, treatments, and patient guides — same team in{" "}
-          <Link href="/local/pala">Pala</Link> and <Link href="/thrissur">Thrissur</Link>.
+          Quick links between clinics, treatments, and patient guides —{" "}
+          <Link href="/local/pala" className="sa-prose-link">
+            Pala
+          </Link>{" "}
+          (main centre) and our{" "}
+          <Link href="/thrissur" className="sa-prose-link">
+            Thrissur branch
+          </Link>
+          .
         </p>
 
         <div className="seo-topic-cluster-grid">
@@ -114,8 +121,7 @@ export default function SeoTopicCluster({
           }
         }
         .seo-topic-cluster a:hover {
-          text-decoration: underline;
-          text-underline-offset: 2px;
+          color: var(--color-olive);
         }
       `}</style>
     </section>

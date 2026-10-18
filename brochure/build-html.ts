@@ -140,7 +140,7 @@ export function buildBrochureHtml(assets: BrochureAssets): string {
       <div>
         <p>Smile Architects is a multispeciality dental clinic and advanced orthodontic centre on Kattakkayam Road, Pala, Kottayam, Kerala — near Federal Bank in Pala Town.</p>
         <p style="margin-top:4mm;">The clinic provides comprehensive dental care for patients in Pala and the surrounding Meenachil region, serves Kottayam District, and operates a Thrissur branch in Punkunnam. General dentistry is combined with orthodontics and cosmetic care under one roof.</p>
-        <p style="margin-top:4mm;">Led by Dr. Jeo Tom Charls, MDS Orthodontics — registered with the Kerala State Dental Council — the clinical team places patient comfort and accurate diagnosis at the centre of every consultation.</p>
+        <p style="margin-top:4mm;">Our Pala centre is led by Dr. Jeo Tom Charls, MDS Orthodontics — registered with the Kerala State Dental Council. The clinical team places patient comfort and accurate diagnosis at the centre of every consultation.</p>
       </div>
       <div>
         ${img("introCare") ? `<img class="img" src="${img("introCare")}" alt="" style="height:52mm;" />` : ""}
@@ -213,7 +213,7 @@ export function buildBrochureHtml(assets: BrochureAssets): string {
       .join("")}
     <p class="meta" style="margin-top:3mm;">Visiting consultants</p>
     ${visiting.map((d) => `<p style="font-size:9pt;margin-bottom:2mm;"><strong>${d.name}</strong> — ${d.qualifications}, ${d.specialty}</p>`).join("")}
-    <p style="font-size:8.5pt;color:var(--olive);margin-top:4mm;">Smile Architects is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics), supported by Dr. Jintu Joan Jose and Dr. Ann Tresa T. Srambickal (both BDS – Aesthetic & General Dentistry).</p>
+    <p style="font-size:8.5pt;color:var(--olive);margin-top:4mm;">Our Pala centre is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics), supported by Dr. Jintu Joan Jose and Dr. Ann Tresa T. Srambickal (both BDS – Aesthetic & General Dentistry). We also have a branch in Thrissur (Punkunnam).</p>
   </div>
   <div class="footer"><span>Smile Architects</span><span>05</span></div>
 </section>
@@ -295,7 +295,7 @@ export function buildBrochureHtml(assets: BrochureAssets): string {
     <div class="gallery-panel">
       <p class="eyebrow light">Thrissur branch</p>
       <h2 style="color:var(--honeydew);font-size:20pt;">Modern spaces for considered care</h2>
-      <p style="margin-top:5mm;font-size:9pt;">Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur — same team and phone as our Pala centre.</p>
+      <p style="margin-top:5mm;font-size:9pt;">Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur — multispeciality care under the Smile Architects name. Same phone and booking as Pala.</p>
     </div>
   </div>
   <div class="footer light"><span>Smile Architects</span><span>09</span></div>

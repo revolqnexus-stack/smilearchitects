@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { useBranch } from "@/components/providers/BranchProvider";
 import { TREATMENTS } from "@/lib/site-config";
+import { branchDirectionsUrl } from "@/lib/branch-ui";
 
 interface FormState {
   name: string;
@@ -89,12 +90,36 @@ export default function AppointmentForm({
           {heading}
         </h2>
       )}
+      <div
+        style={{
+          marginBottom: "1.25rem",
+          padding: "0.875rem 1rem",
+          borderRadius: "12px",
+          border: `1px solid ${isDark ? "rgba(236,245,226,0.2)" : "var(--color-tea-green)"}`,
+          background: isDark ? "rgba(255,255,255,0.06)" : "var(--color-vanilla)",
+        }}
+      >
+        <p style={{ margin: 0, fontSize: "0.6875rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: labelColor }}>
+          Preferred clinic
+        </p>
+        <p style={{ margin: "0.35rem 0 0", fontSize: "0.9375rem", color: headingColor, lineHeight: 1.5 }}>
+          {branch.label} — {branch.address.street}, {branch.address.city}
+        </p>
+        <a
+          href={branchDirectionsUrl(branch)}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "inline-block", marginTop: "0.5rem", fontSize: "0.8125rem", color: accentColor, fontWeight: 600 }}
+        >
+          Get directions →
+        </a>
+      </div>
       <p style={{ color: bodyColor, fontSize: "0.9375rem", marginBottom: "1.75rem", lineHeight: 1.65 }}>
-        {branch.label} clinic — call{" "}
+        Call{" "}
         <a href={`tel:${branch.contact.phone}`} style={{ color: accentColor, fontWeight: 600 }}>
           {branch.contact.phoneDisplay}
         </a>{" "}
-        or complete the form and the team will confirm your appointment.
+        or complete the form — the team will confirm your slot at this location.
       </p>
 
       {status === "success" ? (

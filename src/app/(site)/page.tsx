@@ -22,6 +22,7 @@ import {
   ImageReveal,
 } from "@/components/motion/REVOLQComponents";
 import HeroLocationEyebrow from "@/components/ui/HeroLocationEyebrow";
+import HomeHeroCTAs from "@/components/ui/HomeHeroCTAs";
 import BranchLocationSection from "@/components/sections/BranchLocationSection";
 
 export const metadata: Metadata = buildMetadata({
@@ -125,21 +126,19 @@ export default function HomePage() {
               <RevealUp delay={0.25}>
                 <p className="hero-desc">
                   Multispeciality dental clinic &amp; advanced orthodontics in{" "}
-                  <strong style={{ fontWeight: 600 }}>Pala</strong> and{" "}
-                  <Link href="/thrissur" className="hero-desc-link">
-                    Thrissur (Punkunnam branch)
+                  <strong style={{ fontWeight: 600 }}>Pala</strong>, led by{" "}
+                  <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS
+                  — plus our{" "}
+                  <Link href="/thrissur" className="sa-prose-link sa-prose-link--hero">
+                    Thrissur (Punkunnam) branch
                   </Link>
-                  , led by{" "}
-                  <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS.
+                  .
                 </p>
               </RevealUp>
 
               {/* CTAs */}
               <RevealUp delay={0.35}>
-                <div className="hero-cta-row">
-                  <Link href="/treatments" className="hero-btn-primary">Explore Treatments</Link>
-                  <Link href="/book-appointment" className="hero-btn-ghost">Book an Appointment →</Link>
-                </div>
+                <HomeHeroCTAs />
               </RevealUp>
 
               {/* Four feature cards */}
@@ -225,24 +224,7 @@ export default function HomePage() {
             font-family: var(--font-utility);
             margin-bottom: 1.25rem;
           }
-          .hero-eyebrow-link {
-            color: var(--color-jonquil);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            text-decoration-color: rgba(234, 200, 0, 0.45);
-          }
-          .hero-eyebrow-link:hover {
-            text-decoration-color: var(--color-jonquil);
-          }
-          .hero-desc-link {
-            color: var(--color-jonquil);
-            font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-          }
-          .hero-desc-link:hover {
-            opacity: 0.92;
-          }
+          /* hero inline links — see globals .sa-prose-link--hero */
 
           /* ── Headline ── */
           .hero-title {

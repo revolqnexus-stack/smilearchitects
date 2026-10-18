@@ -2,13 +2,21 @@
 
 import Link from "next/link";
 import { BRANCH_LIST } from "@/lib/branches";
+import { useBranch } from "@/components/providers/BranchProvider";
+import { BRANCH_LOCATION_SECTION_ID } from "@/lib/branch-ui";
 import ClickToLoadMap from "@/components/ui/ClickToLoadMap";
 import TrackedLink from "@/components/ui/TrackedLink";
 import { MapPinIcon, PhoneIcon } from "@/components/ui/icons";
 
 export default function ContactBothBranches() {
+  const { branchId } = useBranch();
+
   return (
-    <div className="contact-both-branches">
+    <div
+      id={BRANCH_LOCATION_SECTION_ID}
+      className="contact-both-branches"
+      style={{ scrollMarginTop: "100px" }}
+    >
       {BRANCH_LIST.map((branch) => {
         const detail = branch.id === "pala" ? "/local/pala" : "/thrissur";
         const directions = branch.maps.shareUrl ?? branch.maps.directionsUrl;
@@ -16,7 +24,16 @@ export default function ContactBothBranches() {
           <div
             key={branch.id}
             className="card-warm"
-            style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}
+            style={{
+              padding: "1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+              border:
+                branchId === branch.id
+                  ? "2px solid var(--color-olive)"
+                  : "1px solid var(--color-tea-green)",
+            }}
           >
             <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
               <MapPinIcon size="md" />

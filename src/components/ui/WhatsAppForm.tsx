@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { useBranch } from "@/components/providers/BranchProvider";
 import { BRANCH_LIST, type BranchId, getBranch } from "@/lib/branches";
@@ -22,6 +22,10 @@ export default function WhatsAppForm({
 }: WhatsAppFormProps) {
   const { branchId: contextBranchId } = useBranch();
   const [branchId, setBranchId] = useState<BranchId>(contextBranchId);
+
+  useEffect(() => {
+    setBranchId(contextBranchId);
+  }, [contextBranchId]);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [treatment, setTreatment] = useState("");
