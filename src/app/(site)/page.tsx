@@ -713,6 +713,7 @@ export default function HomePage() {
                     <DoctorBleedCard
                       name={doctor.name}
                       photo={doctor.photo}
+                      photoPosition={doctor.photoPosition}
                       qualifications={doctor.qualifications}
                       specialty={doctor.specialty}
                       role={doctor.roles[0]}

@@ -84,7 +84,12 @@ export default async function DoctorProfilePage({ params }: Props) {
           </RevealFade>
           <RevealUp delay={0.05}>
             <div className="doctor-profile-hero">
-              <DoctorProfilePortrait name={doctor.name} photo={doctor.photo} priority />
+              <DoctorProfilePortrait
+                name={doctor.name}
+                photo={doctor.photo}
+                photoPosition={doctor.photoPosition}
+                priority
+              />
               <div className="doctor-profile-hero__content">
                 {doctor.visiting ? <span className="doctor-team-card__tag">Visiting consultant</span> : null}
                 <h1 className="doctor-profile-hero__title">{doctor.name}</h1>
