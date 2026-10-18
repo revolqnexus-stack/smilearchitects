@@ -6,7 +6,7 @@ import { DOCTORS, CLINIC } from "@/lib/site-config";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AppointmentForm from "@/components/ui/AppointmentForm";
 import { CheckIcon, ArrowRightIcon } from "@/components/ui/icons";
-import DoctorPhoto from "@/components/ui/DoctorPhoto";
+import DoctorProfilePortrait from "@/components/ui/DoctorProfilePortrait";
 import {
   RevealUp,
   RevealFade,
@@ -83,57 +83,27 @@ export default async function DoctorProfilePage({ params }: Props) {
             />
           </RevealFade>
           <RevealUp delay={0.05}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "2rem",
-                marginTop: "2rem",
-                flexWrap: "wrap",
-              }}
-            >
-              {/* Photo placeholder */}
-              {/* Photo */}
-              <DoctorPhoto name={doctor.name} photo={doctor.photo} size="lg" priority />
-              <div>
-                <h1
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "clamp(1.875rem, 4vw, 2.75rem)",
-                    color: "var(--color-dark-moss)",
-                    fontWeight: 400,
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {doctor.name}
-                </h1>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "var(--color-olive)",
-                  fontWeight: 600,
-                  fontFamily: "var(--font-sans)",
-                  marginBottom: "0.75rem",
-                }}>
+            <div className="doctor-profile-hero">
+              <DoctorProfilePortrait name={doctor.name} photo={doctor.photo} priority />
+              <div className="doctor-profile-hero__content">
+                {doctor.visiting ? <span className="doctor-team-card__tag">Visiting consultant</span> : null}
+                <h1 className="doctor-profile-hero__title">{doctor.name}</h1>
+                <p className="doctor-profile-hero__subtitle">
                   {doctor.qualifications} — {doctor.specialty}
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem", marginBottom: "0.75rem" }}>
+                <div className="doctor-profile-hero__tags">
                   {doctor.roles.map((role) => (
-                    <span
-                      key={role}
-                      className="tag"
-                    >
+                    <span key={role} className="tag">
                       {role}
                     </span>
                   ))}
                 </div>
-                <p style={{ fontSize: "0.875rem", color: "var(--color-moss)", fontFamily: "var(--font-sans)" }}>
-                  Smile Architects · Pala, Kottayam, Kerala
-                </p>
-                {doctor.registrationNumber && (
-                  <p style={{ fontSize: "0.8rem", color: "var(--color-moss)", marginTop: "0.375rem", fontFamily: "var(--font-sans)" }}>
+                <p className="doctor-profile-hero__location">Smile Architects · Pala, Kottayam, Kerala</p>
+                {doctor.registrationNumber ? (
+                  <p className="doctor-profile-hero__reg">
                     {doctor.registrationBody} Reg. No. {doctor.registrationNumber} ({doctor.registrationYear})
                   </p>
-                )}
+                ) : null}
               </div>
             </div>
           </RevealUp>
@@ -368,7 +338,7 @@ export default async function DoctorProfilePage({ params }: Props) {
                     boxShadow: "var(--shadow-md)",
                   }}
                 >
-                  <AppointmentForm compact heading={`Book with ${doctor.name.split(" ")[0]}`} />
+                  <AppointmentForm compact heading={`Book with ${doctor.name.split(" ")[0]}`} surface="light" />
                 </div>
               </div>
             </RevealFade>

@@ -5,7 +5,7 @@ import { CLINIC, TREATMENTS, DOCTORS, FAQS_GENERAL, FACILITIES } from "@/lib/sit
 import AppointmentForm from "@/components/ui/AppointmentForm";
 import TrackedLink from "@/components/ui/TrackedLink";
 import FeatureMarquee from "@/components/ui/FeatureMarquee";
-import DoctorPhoto from "@/components/ui/DoctorPhoto";
+import DoctorBleedCard from "@/components/ui/DoctorBleedCard";
 import {
   TreatmentIconFor, CheckIcon, ArrowRightIcon,
   XRayIcon, ClinicIcon, SmileDesignIcon, CareIcon,
@@ -704,17 +704,21 @@ export default function HomePage() {
           <StaggerContainer stagger={0.1} className="doctors-grid">
             {DOCTORS.map((doctor) => (
               <StaggerItem key={doctor.id}>
-                <Link href={`/dentists/${doctor.slug}`} style={{ textDecoration: "none" }} aria-label={`Profile of ${doctor.name}`}>
-                  <HoverScale className="doctor-card">
-                    <DoctorPhoto name={doctor.name} photo={doctor.photo} size="lg" />
-                    <div className="doctor-card-body">
-                      <h3 className="doctor-card-name">{doctor.name}</h3>
-                      <p className="credentials">{doctor.qualifications}</p>
-                      <p className="doctor-card-specialty">{doctor.specialty}</p>
-                    </div>
-                    <span className="card-learn-more">
-                      View profile <ArrowRightIcon size="sm" />
-                    </span>
+                <Link
+                  href={`/dentists/${doctor.slug}`}
+                  className="doctor-team-card-link"
+                  aria-label={`Profile of ${doctor.name}`}
+                >
+                  <HoverScale>
+                    <DoctorBleedCard
+                      name={doctor.name}
+                      photo={doctor.photo}
+                      qualifications={doctor.qualifications}
+                      specialty={doctor.specialty}
+                      role={doctor.roles[0]}
+                      visiting={doctor.visiting}
+                      priority={doctor.id === "dr-jeo-tom-charls"}
+                    />
                   </HoverScale>
                 </Link>
               </StaggerItem>
@@ -1072,7 +1076,7 @@ export default function HomePage() {
         </div>
         <div className="container-xl" style={{ maxWidth: "720px" }}>
           <RevealFade>
-            <AppointmentForm heading="Book an appointment at Smile Architects" />
+            <AppointmentForm heading="Book an appointment at Smile Architects" surface="dark" />
           </RevealFade>
         </div>
       </section>

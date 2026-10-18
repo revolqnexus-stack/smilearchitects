@@ -26,7 +26,7 @@ interface AppointmentFormProps {
 export default function AppointmentForm({
   compact = false,
   heading = "Book an Appointment",
-  surface = "dark",
+  surface = "light",
 }: AppointmentFormProps) {
   const { branch } = useBranch();
   const [form, setForm] = useState<FormState>({ name: "", phone: "", treatment: "", date: "", message: "" });
@@ -57,7 +57,7 @@ export default function AppointmentForm({
 
   // Text
   const headingColor   = isDark ? "var(--color-honeydew)"     : "var(--color-dark-moss)";
-  const labelColor     = isDark ? "var(--color-jonquil)"      : "var(--color-olive)";
+  const labelColor     = isDark ? "var(--color-jonquil)"      : "var(--color-dark-moss)";
   const bodyColor      = isDark ? "rgba(236,245,226,0.75)"    : "var(--color-olive)";
   const captionColor   = isDark ? "rgba(236,245,226,0.55)"    : "var(--color-moss)";
   const accentColor    = isDark ? "var(--color-jonquil)"      : "var(--color-olive)";

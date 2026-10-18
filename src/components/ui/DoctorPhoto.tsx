@@ -13,13 +13,15 @@ interface DoctorPhotoProps {
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
   priority?: boolean;
+  /** Fine-tune crop for tall clinic portraits (default: face-focused) */
+  objectPosition?: string;
 }
 
 const SIZE_MAP = {
-  sm:  { px: 60,  font: "1.125rem", badge: 16, badgeIcon: 8  },
-  md:  { px: 88,  font: "1.625rem", badge: 20, badgeIcon: 10 },
-  lg:  { px: 120, font: "2.25rem",  badge: 24, badgeIcon: 12 },
-  xl:  { px: 200, font: "3rem",     badge: 32, badgeIcon: 16 },
+  sm: { px: 64, font: "1.125rem", badge: 16, badgeIcon: 8, zoom: 1.55 },
+  md: { px: 96, font: "1.625rem", badge: 20, badgeIcon: 10, zoom: 1.65 },
+  lg: { px: 132, font: "2.25rem", badge: 24, badgeIcon: 12, zoom: 1.85 },
+  xl: { px: 200, font: "3rem", badge: 32, badgeIcon: 16, zoom: 1.75 },
 };
 
 export default function DoctorPhoto({
@@ -28,8 +30,9 @@ export default function DoctorPhoto({
   size = "md",
   className = "",
   priority = false,
+  objectPosition = "50% 8%",
 }: DoctorPhotoProps) {
-  const { px, font, badge, badgeIcon } = SIZE_MAP[size];
+  const { px, font, badge, badgeIcon, zoom } = SIZE_MAP[size];
   const initials = name
     .split(" ")
     .map((p) => p.charAt(0).toUpperCase())
@@ -38,7 +41,7 @@ export default function DoctorPhoto({
 
   return (
     <div
-      className={`doctor-photo ${className}`}
+      className={`doctor-photo doctor-photo--${size} ${className}`.trim()}
       style={{
         width: px,
         height: px,
@@ -59,12 +62,17 @@ export default function DoctorPhoto({
           src={photo}
           alt={`Photo of ${name}`}
           fill
-          sizes={`${px}px`}
+          sizes={`(max-width: 768px) 180px, ${px}px`}
           priority={priority}
-          style={{ objectFit: "cover", objectPosition: "top center" }}
+          className="doctor-photo-image"
+          style={{
+            objectFit: "cover",
+            objectPosition,
+            transform: `scale(${zoom})`,
+            transformOrigin: "center center",
+          }}
         />
       ) : (
-        /* Initials fallback */
         <span
           style={{
             fontSize: font,
@@ -79,7 +87,6 @@ export default function DoctorPhoto({
         </span>
       )}
 
-      {/* Verified badge */}
       <div
         aria-hidden="true"
         style={{
@@ -94,6 +101,7 @@ export default function DoctorPhoto({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          zIndex: 1,
         }}
       >
         <svg width={badgeIcon} height={badgeIcon} viewBox="0 0 24 24" fill="none">
