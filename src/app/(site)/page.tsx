@@ -470,7 +470,7 @@ export default function HomePage() {
           "MDS Orthodontist",
           "Digital X-Ray",
           "Individual Treatment Rooms",
-          "Near Federal Bank, Pala",
+          "Lalam Jn., Pala",
           "Clear Aligners",
           "Dental Implants",
           "Lingual Braces",
@@ -869,7 +869,7 @@ export default function HomePage() {
             <RevealFade delay={0.15}>
               <div style={{ display: "grid", gap: "1rem" }}>
                 {[
-                  { area: "Pala (Palai)", note: "Clinic location — Kattakkayam Road, near Federal Bank" },
+                  { area: "Pala (Palai)", note: "Clinic location — Mukkadan Arcade, Lalam Jn." },
                   { area: "Changanassery", note: "Approx. 18 km" },
                   { area: "Ettumanoor", note: "Approx. 25 km" },
                   { area: "Kottayam town", note: "Approx. 35 km" },

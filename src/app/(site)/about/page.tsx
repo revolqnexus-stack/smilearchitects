@@ -46,8 +46,7 @@ export default function AboutPage() {
                 About Smile Architects
               </h1>
               <p style={{ color: "var(--color-cafe-noir)", fontSize: "1.0625rem", maxWidth: "580px", lineHeight: 1.65 }}>
-                A multispeciality dental clinic and advanced orthodontic centre at Kattakkayam Road,
-                Pala, Kottayam, Kerala.
+                A multispeciality dental clinic and invisible orthodontics centre at Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala.
               </p>
             </div>
           </RevealUp>
@@ -90,7 +89,7 @@ export default function AboutPage() {
                     <Link href="/technology">clinic technology</Link>.
                   </p>
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75 }}>
-                    The main centre is on Kattakkayam Road, near Federal Bank in Pala Town (
+                    The main centre is at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala (above KFC / Navya Bakes —{" "}
                     <Link href="/locations">both clinic addresses</Link>). Ample parking and Mon–Sat hours;{" "}
                     <Link href="/book-appointment">book online</Link> or read the{" "}
                     <Link href="/patient-guide">patient guide</Link>.

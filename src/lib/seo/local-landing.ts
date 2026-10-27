@@ -26,13 +26,13 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/pala",
     title: "Best Dental Clinic in Pala, Kottayam District",
     description:
-      "Looking for the best dental clinic in Pala or Palai, Kottayam? Smile Architects — MDS orthodontist, implants, braces, lingual braces & smile design. Kattakkayam Road, near Federal Bank. Call +91 94469 99333.",
+      "Looking for the best dental clinic in Pala or Palai, Kottayam? Smile Architects — MDS orthodontist, implants, braces, lingual braces & smile design. Mukkadan Arcade, Lalam Jn., Pala. Call +91 82899 33331.",
     h1: "Best dental clinic in Pala, Kottayam District",
     intro:
       "Smile Architects is a multispeciality dental clinic and advanced orthodontic centre in Pala (Palai), Kottayam District — led by Dr. Jeo Tom Charls, MDS Orthodontics. Patients choose us for specialist braces and aligners, dental implants, root canal treatment, cosmetic dentistry, and full-family care under one roof.",
     branchId: "pala",
     cities: ["Pala", "Palai", "Kottayam District", "Meenachil"],
-    parking: "Ample car parking on-site — Kattakkayam Road, near Federal Bank, Pala Town.",
+    parking: "Mukkadan Arcade, Lalam Jn., Pala — above KFC / Navya Bakes.",
     branchHighlights: [
       "Main multispeciality centre with full MDS team",
       "Video-documented clinic interiors & digital X-ray",
@@ -48,7 +48,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Which is the best dental clinic in Pala, Kottayam?",
         answer:
-          "Smile Architects in Pala is a multispeciality clinic with MDS specialists including an orthodontist and periodontist. The clinic offers braces, clear aligners, lingual braces, implants, root canal treatment, and smile design at Kattakkayam Road, near Federal Bank, Pala Town.",
+          "Smile Architects in Pala is a multispeciality clinic with MDS specialists including an orthodontist and periodontist. The clinic offers braces, clear aligners, lingual braces, implants, root canal treatment, and smile design at Mukkadan Arcade, Lalam Jn., Pala.",
       },
       {
         question: "Is Smile Architects good for braces in Pala?",
@@ -58,12 +58,12 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "How do I book a dentist appointment in Pala?",
         answer:
-          "Call +91 94469 99333, use WhatsApp, or book online at smilearchitectskeralam.com. The clinic is open Monday to Saturday, 9:30 AM to 8:00 PM.",
+          "Call +91 82899 33331, use WhatsApp, or book online at smilearchitectskeralam.com. The clinic is open Monday to Saturday, 9:30 AM to 8:00 PM.",
       },
       {
         question: "Where exactly is Smile Architects in Pala?",
         answer:
-          "Kattakkayam Road, Pala, Kottayam, Kerala – 686575, near Federal Bank, Pala Town. Ample parking is available.",
+          "2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, Lalam Junction.",
       },
     ],
   },
@@ -78,7 +78,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       "Patients across Kottayam District — including Kottayam town, Changanassery, Ettumanoor, and surrounding areas — visit Smile Architects in Pala for MDS-led dental and orthodontic treatment. Our Pala centre is the hub for specialist care; we also have a Thrissur branch in Punkunnam for patients in Thrissur city.",
     branchId: "pala",
     cities: ["Kottayam", "Kottayam District", "Kottayam town", "Changanassery", "Ettumanoor"],
-    parking: "Visit our Pala centre — parking available at the Kattakkayam Road clinic.",
+    parking: "Visit our Pala centre — Mukkadan Arcade, Lalam Jn., above KFC / Navya Bakes.",
     travelFrom: [
       { from: "Kottayam town", distance: "~35 km", time: "45–60 min", route: "SH-15 / MC Road" },
       { from: "Changanassery", distance: "~18 km", time: "30–40 min", route: "Pala–Changanassery Road" },
@@ -100,7 +100,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "What is the best dental clinic in Kottayam District?",
         answer:
-          "Smile Architects in Pala is widely chosen by patients from across Kottayam District for multispeciality dentistry and MDS orthodontic treatment. The physical clinic is in Pala on Kattakkayam Road — not in Kottayam town — with convenient access via MC Road and NH183.",
+          "Smile Architects in Pala is widely chosen by patients from across Kottayam District for multispeciality dentistry and MDS orthodontic treatment. The clinic is at Mukkadan Arcade, Lalam Jn., Pala — not in Kottayam town — with convenient access via MC Road and NH183.",
       },
       {
         question: "Is there a Smile Architects branch in Kottayam town?",
@@ -124,7 +124,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/thrissur",
     title: "Best Dental Clinic in Thrissur | Punkunnam Branch",
     description:
-      "Best dental clinic in Thrissur — Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Orthodontics, implants & smile design. +91 94469 99333.",
+      "Best dental clinic in Thrissur — Smile Architects, 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Orthodontics, implants & smile design. +91 82899 33331.",
     h1: "Best dental clinic in Thrissur",
     intro:
       "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam — multispeciality dentistry, braces, aligners, implants, and smile design in a modern setting. MDS orthodontic care is centred at our Pala, Kottayam clinic with Dr. Jeo Tom Charls.",
@@ -147,7 +147,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Which is the best dental clinic in Thrissur?",
         answer:
-          "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam (Opp. St. Joseph's Church) offers multispeciality dental and orthodontic services. Book via +91 94469 99333 or online.",
+          "Smile Architects Thrissur at Ephphatha Medical Complex, Punkunnam (Opp. St. Joseph's Church) offers multispeciality dental and orthodontic services. Book via +91 82899 33331 or online.",
       },
       {
         question: "Where is Smile Architects in Thrissur?",
@@ -162,7 +162,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Is Smile Architects also in Pala, Kottayam?",
         answer:
-          "Yes. Our original multispeciality centre is in Pala, Kottayam District (Kattakkayam Road, near Federal Bank). Both locations share the same clinical standards and specialist team network.",
+          "Yes. Our original multispeciality centre is in Pala, Kottayam District (Mukkadan Arcade, Lalam Jn., above KFC / Navya Bakes). Both locations share the same clinical standards and specialist team network.",
       },
     ],
   },

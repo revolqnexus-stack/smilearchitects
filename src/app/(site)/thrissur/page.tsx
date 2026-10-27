@@ -155,7 +155,7 @@ export default function ThrissurBranchPage() {
                 <Link href="/" style={{ color: "var(--color-olive)", fontWeight: 600 }}>
                   Pala, Kottayam
                 </Link>{" "}
-                centre on Kattakkayam Road (near Federal Bank).
+                centre at Mukkadan Arcade, Lalam Jn. (above KFC / Navya Bakes).
               </p>
             </div>
 

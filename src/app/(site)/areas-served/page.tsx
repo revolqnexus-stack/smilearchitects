@@ -315,8 +315,7 @@ export default function AreasServedPage() {
                         Parking & Accessibility
                       </h3>
                       <p style={{ color: "var(--color-cafe-noir)", fontSize: "0.9375rem", lineHeight: 1.6 }}>
-                        Ample car parking is available at the clinic. The facility is located on 
-                        Kattakkayam Road, near Federal Bank in Pala Town.
+                        The clinic is at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala — above KFC / Navya Bakes.
                       </p>
                     </div>
                   </div>

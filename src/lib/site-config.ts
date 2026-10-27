@@ -16,17 +16,17 @@ export const SITE_PUBLIC_HOST = "www.smilearchitectskeralam.com" as const;
 
 export const CLINIC = {
   name: "Smile Architects",
-  tagline: "Multispeciality Dental Clinic & Advanced Orthodontic Centre",
-  fullName: "Smile Architects — Multispeciality Dental Clinic & Advanced Orthodontic Centre",
+  tagline: "Invisible Orthodontics & Multispeciality Dental Clinic",
+  fullName: "Smile Architects — Invisible Orthodontics & Multispeciality Dental Clinic",
   address: {
-    street: "Kattakkayam Road",
+    street: "2nd Floor, Mukkadan Arcade, Lalam Junction",
     city: "Pala",
     district: "Kottayam",
     state: "Kerala",
     pincode: "686575",
     country: "India",
-    landmark: "Near Federal Bank, Pala Town",
-    full: "Kattakkayam Road, Pala, Kottayam, Kerala – 686575",
+    landmark: "Above KFC / Navya Bakes, Lalam Jn.",
+    full: "2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575",
   },
   contact: {
     phone: CLINIC_PHONE_E164,
@@ -49,16 +49,16 @@ export const CLINIC = {
       url: "https://www.justdial.com",
     },
     googleMaps: {
-      // [CLINIC TO VERIFY: Confirm exact Google Maps place ID and coordinates]
-      placeId: "", // e.g. "ChIJ..."
-      embedUrl: "https://maps.google.com/maps?q=Smile+Architects+Pala+Kottayam+Kerala&output=embed",
-      directionsUrl: "https://maps.google.com/?q=Smile+Architects,+Kattakkayam+Road,+Pala,+Kottayam,+Kerala+686575",
+      placeId: "ChIJ7W7OAs3NN0gReVUrODfjCJ0",
+      embedUrl: "https://maps.google.com/maps?q=Smile+Architects+Lalam+Junction+Pala+Kottayam+Kerala&output=embed",
+      directionsUrl: "https://maps.google.com/?q=Smile+Architects,+Mukkadan+Arcade,+Lalam+Jn.,+Pala,+Kottayam,+Kerala+686575",
+      reviewsUrl: "https://maps.app.goo.gl/Pbo5ja5buaCrrgsu6",
     },
   },
   social: {
-    // [CLINIC TO VERIFY: Provide verified social media profile URLs]
     facebook: "",
-    instagram: "",
+    instagram: "https://www.instagram.com/the_smilearchitects",
+    instagramHandle: "@the_smilearchitects",
     youtube: "",
     whatsapp: WHATSAPP_URL,
   },
@@ -79,7 +79,7 @@ export const CLINIC = {
     siteName: "Smile Architects",
     defaultTitle: "Smile Architects | Best Dental Clinic in Pala, Kottayam & Thrissur",
     defaultDescription:
-      `Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call ${CLINIC_PHONE_DISPLAY}.`,
+      `Smile Architects — invisible orthodontics & multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call ${CLINIC_PHONE_DISPLAY}.`,
     siteUrl: SITE_PUBLIC_URL,
     // [CLINIC TO VERIFY: Replace with final production domain]
     ogImage: "/images/logo.png",
@@ -442,7 +442,7 @@ export const FAQS_GENERAL = [
   {
     question: "Where is Smile Architects located?",
     answer:
-      "Smile Architects is located on Kattakkayam Road, Pala, Kottayam, Kerala – 686575, near Federal Bank in Pala Town.",
+      "Smile Architects is located at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, Lalam Junction.",
   },
   {
     question: "What are the clinic's opening hours?",

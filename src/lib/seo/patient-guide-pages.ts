@@ -25,7 +25,7 @@ export const PATIENT_GUIDE_PAGES: Record<PatientGuideSlug, PatientGuidePage> = {
       [
         { type: "text", value: "Smile Architects operates two clinics. The " },
         { type: "link", href: "/local/pala", label: "main multispeciality centre in Pala" },
-        { type: "text", value: " (Kattakkayam Road, near Federal Bank) serves " },
+        { type: "text", value: " (Mukkadan Arcade, Lalam Jn., Pala) serves " },
         { type: "link", href: "/local/kottayam", label: "Kottayam District" },
         { type: "text", value: ", Meenachil, and towns such as Changanassery and Ettumanoor. See " },
         { type: "link", href: "/areas-served/kottayam", label: "areas served — Kottayam" },

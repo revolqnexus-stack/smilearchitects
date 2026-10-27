@@ -854,7 +854,7 @@ export const MIGRATE_PATIENT_STORIES = [
 export const MIGRATE_FAQS = [
   {
     question: "Where is Smile Architects located?",
-    answer: "Smile Architects is located on Kattakkayam Road, Pala, Kottayam, Kerala – 686575, near Federal Bank in Pala Town.",
+    answer: "Smile Architects is located at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, Lalam Junction.",
     category: "General",
     published: true,
     display_order: 1,
@@ -938,7 +938,7 @@ export const MIGRATE_SITE_SETTINGS = {
     tagline: "Multispeciality Dental Clinic & Advanced Orthodontic Centre",
     phone: CLINIC.contact.phone,
     email: CLINIC.contact.email,
-    address: "Kattakkayam Road, Pala, Kottayam, Kerala – 686575",
+    address: "2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575",
     whatsapp: WHATSAPP_URL,
     facebook: "",
     instagram: "",
