@@ -29,7 +29,7 @@ import BranchLocationSection from "@/components/sections/BranchLocationSection";
 export const metadata: Metadata = buildMetadata({
   title: "Best Dental Clinic in Pala & Kottayam District",
   description:
-    "Smile Architects — trusted multispeciality dental clinic in Pala (Palai), Kottayam District & Thrissur branch. MDS orthodontist, implants, braces, lingual braces & smile design. Call +91 94469 99333.",
+    `Smile Architects — invisible orthodontics & multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, implants, braces, lingual braces & smile design. Call ${CLINIC.contact.phoneDisplay}.`,
   canonical: "/",
   keywords: [
     "best dental clinic Pala",

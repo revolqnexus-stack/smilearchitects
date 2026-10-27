@@ -26,6 +26,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/orthodontics/lingual-braces", priority: 0.9, changeFrequency: "monthly" },
   { path: "/dental-guides", priority: 0.8, changeFrequency: "weekly" },
   { path: "/patient-stories", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/pricing", priority: 0.8, changeFrequency: "monthly" },
   { path: "/technology", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.85, changeFrequency: "yearly" },
   { path: "/locations", priority: 0.92, changeFrequency: "monthly" },
