@@ -2,10 +2,11 @@
 
 /**
  * HomeReviews
- * Google rating hero → review cards → "View all on Google" → Instagram strip
- * Shown on the homepage between Facilities and Service Area sections.
+ * Google rating hero → review cards → "View all on Google" → Instagram carousel
  */
 
+import { useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import { CLINIC } from "@/lib/site-config";
 import { RevealUp, RevealFade, StaggerContainer, StaggerItem } from "@/components/motion/REVOLQComponents";
 
@@ -53,6 +54,20 @@ const REVIEWS = [
   },
 ];
 
+/**
+ * Instagram posts — replace src values with real exported images from the clinic's IG.
+ * Place images in /public/instagram/ and update the src paths below.
+ * alt text should describe what's actually in the photo.
+ */
+const IG_POSTS = [
+  { id: 1, src: "/instagram/post-1.jpg", alt: "Smile Architects clinic — patient smile transformation" },
+  { id: 2, src: "/instagram/post-2.jpg", alt: "Orthodontic braces treatment at Smile Architects, Pala" },
+  { id: 3, src: "/instagram/post-3.jpg", alt: "Clear aligners consultation at Smile Architects" },
+  { id: 4, src: "/instagram/post-4.jpg", alt: "Smile Architects dental clinic interior, Lalam Junction Pala" },
+  { id: 5, src: "/instagram/post-5.jpg", alt: "Patient smile result after orthodontic treatment" },
+  { id: 6, src: "/instagram/post-6.jpg", alt: "Dr. Jeo Tom Charls at Smile Architects, Pala" },
+];
+
 /* ─── Sub-components ───────────────────────────────────────────────────────── */
 
 function GoogleG() {
@@ -81,7 +96,186 @@ function Stars({ rating, size = 20 }: { rating: number; size?: number }) {
   );
 }
 
-/* ─── Main component ───────────────────────────────────────────────────────── */
+function IgIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+    </svg>
+  );
+}
+
+/* ─── Instagram Carousel ───────────────────────────────────────────────────── */
+
+function InstagramCarousel() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+
+  const CARD_WIDTH = 300; // px — approximate card + gap
+  const GAP = 20;
+  const STEP = CARD_WIDTH + GAP;
+
+  const updateArrows = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    setCanPrev(el.scrollLeft > 4);
+    setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  const scroll = (dir: "prev" | "next") => {
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir === "next" ? STEP : -STEP, behavior: "smooth" });
+    setTimeout(updateArrows, 350);
+  };
+
+  return (
+    <div style={{ position: "relative" }}>
+      {/* Prev arrow */}
+      <button
+        onClick={() => scroll("prev")}
+        disabled={!canPrev}
+        aria-label="Previous Instagram posts"
+        style={{
+          position: "absolute",
+          left: -20,
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 10,
+          width: 44,
+          height: 44,
+          borderRadius: "50%",
+          backgroundColor: canPrev ? "#ffffff" : "rgba(255,255,255,0.5)",
+          border: "1px solid rgba(0,0,0,0.12)",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.12)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: canPrev ? "pointer" : "default",
+          transition: "opacity 0.2s",
+          opacity: canPrev ? 1 : 0.4,
+        }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+
+      {/* Scrollable track */}
+      <div
+        ref={trackRef}
+        onScroll={updateArrows}
+        style={{
+          display: "flex",
+          gap: `${GAP}px`,
+          overflowX: "auto",
+          scrollSnapType: "x mandatory",
+          scrollbarWidth: "none",
+          WebkitOverflowScrolling: "touch",
+          paddingBottom: "4px", // prevent shadow clip
+        }}
+      >
+        {IG_POSTS.map((post) => (
+          <a
+            key={post.id}
+            href={CLINIC.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={post.alt}
+            style={{
+              flexShrink: 0,
+              width: "clamp(240px, 28vw, 320px)",
+              aspectRatio: "1 / 1",
+              borderRadius: "1rem",
+              overflow: "hidden",
+              scrollSnapAlign: "start",
+              position: "relative",
+              display: "block",
+              backgroundColor: "var(--color-tea-green)",
+            }}
+          >
+            <Image
+              src={post.src}
+              alt={post.alt}
+              fill
+              style={{ objectFit: "cover", transition: "transform 0.35s ease" }}
+              sizes="(max-width: 768px) 60vw, 300px"
+              onError={(e) => {
+                // Hide broken images gracefully — placeholder shows through
+                (e.target as HTMLImageElement).style.display = "none";
+              }}
+            />
+            {/* Hover overlay */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "rgba(0,0,0,0)",
+                transition: "background 0.25s ease",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              className="ig-card-overlay"
+            />
+            {/* Placeholder shown when image not yet loaded */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: -1,
+              }}
+            >
+              <IgIcon size={36} />
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* Next arrow */}
+      <button
+        onClick={() => scroll("next")}
+        disabled={!canNext}
+        aria-label="Next Instagram posts"
+        style={{
+          position: "absolute",
+          right: -20,
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 10,
+          width: 44,
+          height: 44,
+          borderRadius: "50%",
+          backgroundColor: canNext ? "#ffffff" : "rgba(255,255,255,0.5)",
+          border: "1px solid rgba(0,0,0,0.12)",
+          boxShadow: "0 2px 12px rgba(0,0,0,0.12)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: canNext ? "pointer" : "default",
+          transition: "opacity 0.2s",
+          opacity: canNext ? 1 : 0.4,
+        }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+
+      <style>{`
+        div::-webkit-scrollbar { display: none; }
+        .ig-card-overlay:hover { background: rgba(0,0,0,0.15) !important; }
+      `}</style>
+    </div>
+  );
+}
+
+/* ─── Main export ──────────────────────────────────────────────────────────── */
 
 export default function HomeReviews() {
   return (
@@ -140,10 +334,8 @@ export default function HomeReviews() {
                     border: "1px solid rgba(0,0,0,0.06)",
                   }}
                 >
-                  {/* Header row */}
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
                     <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-                      {/* Avatar */}
                       <div
                         style={{
                           width: 42,
@@ -157,12 +349,7 @@ export default function HomeReviews() {
                         }}
                         aria-hidden="true"
                       >
-                        <span style={{
-                          fontFamily: "var(--font-sans)",
-                          fontWeight: 700,
-                          fontSize: "1.0625rem",
-                          color: "var(--color-dark-moss)",
-                        }}>
+                        <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.0625rem", color: "var(--color-dark-moss)" }}>
                           {r.name.charAt(0)}
                         </span>
                       </div>
@@ -177,8 +364,6 @@ export default function HomeReviews() {
                     </div>
                     <Stars rating={r.rating} size={16} />
                   </div>
-
-                  {/* Quote */}
                   <blockquote style={{ margin: 0 }}>
                     <p style={{
                       fontFamily: "var(--font-serif)",
@@ -188,17 +373,7 @@ export default function HomeReviews() {
                       fontStyle: "italic",
                       margin: 0,
                     }}>
-                      <span
-                        style={{
-                          fontSize: "1.75rem",
-                          lineHeight: 0,
-                          verticalAlign: "-0.35em",
-                          marginRight: "0.2em",
-                          color: "var(--color-jonquil)",
-                          fontStyle: "normal",
-                        }}
-                        aria-hidden="true"
-                      >
+                      <span style={{ fontSize: "1.75rem", lineHeight: 0, verticalAlign: "-0.35em", marginRight: "0.2em", color: "var(--color-jonquil)", fontStyle: "normal" }} aria-hidden="true">
                         &ldquo;
                       </span>
                       {r.text}
@@ -228,7 +403,6 @@ export default function HomeReviews() {
                   padding: "0.875rem 1.75rem",
                   borderRadius: "9999px",
                   textDecoration: "none",
-                  transition: "opacity 0.2s ease",
                 }}
                 aria-label="View all Smile Architects reviews on Google"
               >
@@ -242,26 +416,24 @@ export default function HomeReviews() {
         </div>
       </section>
 
-      {/* ── INSTAGRAM STRIP ────────────────────────────────────── */}
+      {/* ── INSTAGRAM CAROUSEL ─────────────────────────────────── */}
       <section
         aria-label="Follow on Instagram"
-        style={{ backgroundColor: "var(--color-honeydew)", padding: "3.5rem 0" }}
+        style={{ backgroundColor: "var(--color-honeydew)", padding: "4rem 0 4.5rem" }}
       >
         <div className="container-xl">
+          {/* Header row — mirrors French Toast layout exactly */}
           <RevealFade>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                flexWrap: "wrap",
-                gap: "1rem",
-                marginBottom: "2rem",
-              }}
-            >
-              {/* Left label */}
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "1rem",
+              marginBottom: "2rem",
+            }}>
+              {/* Left: IG icon + label */}
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                {/* Instagram gradient icon */}
                 <div
                   style={{
                     width: 40,
@@ -275,9 +447,7 @@ export default function HomeReviews() {
                   }}
                   aria-hidden="true"
                 >
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                  </svg>
+                  <IgIcon size={22} />
                 </div>
                 <span style={{
                   fontFamily: "var(--font-serif)",
@@ -285,7 +455,7 @@ export default function HomeReviews() {
                   color: "var(--color-dark-moss)",
                   fontWeight: 400,
                 }}>
-                  Follow us on Instagram
+                  Follow Us on Instagram
                 </span>
               </div>
 
@@ -297,100 +467,28 @@ export default function HomeReviews() {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "0.375rem",
                   backgroundColor: "var(--color-jonquil)",
                   color: "var(--color-dark-moss)",
                   fontFamily: "var(--font-sans)",
                   fontWeight: 700,
                   fontSize: "0.875rem",
-                  padding: "0.5rem 1.125rem",
+                  padding: "0.5rem 1.25rem",
                   borderRadius: "9999px",
                   textDecoration: "none",
-                  transition: "opacity 0.2s ease",
                 }}
                 aria-label="Follow Smile Architects on Instagram"
               >
                 {CLINIC.social.instagramHandle}
               </a>
             </div>
-
-            {/* Prompt card */}
-            <a
-              href={CLINIC.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1.5rem",
-                backgroundColor: "#ffffff",
-                borderRadius: "1.25rem",
-                padding: "1.75rem 2rem",
-                boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-                textDecoration: "none",
-                transition: "box-shadow 0.2s ease, transform 0.2s ease",
-                cursor: "pointer",
-              }}
-              aria-label="Open Smile Architects Instagram profile"
-            >
-              {/* Big IG icon */}
-              <div
-                style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: "16px",
-                  background: "radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-                aria-hidden="true"
-              >
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                </svg>
-              </div>
-
-              <div style={{ flex: 1 }}>
-                <p style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 700,
-                  fontSize: "1rem",
-                  color: "var(--color-dark-moss)",
-                  margin: "0 0 0.25rem",
-                }}>
-                  {CLINIC.social.instagramHandle}
-                </p>
-                <p style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.875rem",
-                  color: "var(--color-cafe-noir)",
-                  margin: 0,
-                  opacity: 0.75,
-                  lineHeight: 1.5,
-                }}>
-                  Treatment results, clinic moments and patient transformations.
-                </p>
-              </div>
-
-              {/* Arrow */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="var(--color-olive)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                style={{ flexShrink: 0 }}
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
           </RevealFade>
+
+          {/* Carousel — padded so arrows don't clip */}
+          <RevealUp delay={0.1}>
+            <div style={{ padding: "0 24px", margin: "0 -24px" }}>
+              <InstagramCarousel />
+            </div>
+          </RevealUp>
         </div>
       </section>
     </>
