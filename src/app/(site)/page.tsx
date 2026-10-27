@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { CLINIC, TREATMENTS, DOCTORS, FAQS_GENERAL, FACILITIES } from "@/lib/site-config";
+import HomeReviews from "@/components/sections/HomeReviews";
 import AppointmentForm from "@/components/ui/AppointmentForm";
 import TrackedLink from "@/components/ui/TrackedLink";
 import FeatureMarquee from "@/components/ui/FeatureMarquee";
@@ -830,6 +831,9 @@ export default function HomePage() {
           }
         `}</style>
       </section>
+
+      {/* ── REVIEWS & INSTAGRAM ────────────────────────────────── */}
+      <HomeReviews />
 
       {/* ── REGIONAL SERVICE AREA ───────────────────────────── */}
       <section aria-labelledby="service-area-heading" className="section-padding section-warm" style={{ position: "relative", overflow: "hidden", paddingBottom: "clamp(5rem, 10vw, 8rem)" }}>
