@@ -33,6 +33,7 @@ const FOOTER_LINKS = [
   { label: "Areas Served", href: "/areas-served" },
   { label: "Thrissur branch", href: "/thrissur" },
   { label: "Patient Stories", href: "/patient-stories" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
   { label: "Book Appointment", href: "/book-appointment" },
 ];

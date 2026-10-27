@@ -56,6 +56,7 @@ const NAV_LINKS = [
   { label: "Treatments",      href: "/treatments", hasDropdown: true, dropdownKey: "treatments" as const },
   { label: "Dental Guides",   href: "/dental-guides" },
   { label: "Patient Stories", href: "/patient-stories" },
+  { label: "Pricing",         href: "/pricing" },
   { label: "Contact",         href: "/contact" },
 ];
 
