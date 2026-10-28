@@ -3,6 +3,7 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { CLINIC, TREATMENTS, DOCTORS, FAQS_GENERAL, FACILITIES } from "@/lib/site-config";
 import HomeReviews from "@/components/sections/HomeReviews";
+import PatientJourneySection from "@/components/sections/PatientJourneySection";
 import AppointmentForm from "@/components/ui/AppointmentForm";
 import TrackedLink from "@/components/ui/TrackedLink";
 import FeatureMarquee from "@/components/ui/FeatureMarquee";
@@ -609,6 +610,9 @@ export default function HomePage() {
           }
         `}</style>
       </section>
+
+      {/* ── PATIENT JOURNEY & GUIDES ───────────────────────────── */}
+      <PatientJourneySection />
 
       {/* ── ORTHODONTICS FEATURE ───────────────────────────────── */}
       <section aria-labelledby="orthodontics-heading" className="section-padding section-white" style={{ position: "relative" }}>

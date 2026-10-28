@@ -31,6 +31,7 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/contact", priority: 0.85, changeFrequency: "yearly" },
   { path: "/locations", priority: 0.92, changeFrequency: "monthly" },
   { path: "/patient-guide", priority: 0.78, changeFrequency: "monthly" },
+  { path: "/patient-guide/international", priority: 0.85, changeFrequency: "monthly" },
   { path: "/site-map", priority: 0.55, changeFrequency: "monthly" },
   { path: "/book-appointment", priority: 0.95, changeFrequency: "yearly" },
   { path: "/areas-served", priority: 0.75, changeFrequency: "monthly" },
