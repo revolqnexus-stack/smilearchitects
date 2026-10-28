@@ -2504,8 +2504,8 @@ input[type="submit"],
   aspect-ratio: 3 / 4;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: linear-gradient(165deg, var(--color-vanilla) 0%, var(--color-tea-green) 55%, var(--color-honeydew) 100%);
-  border: 1px solid rgba(37, 78, 6, 0.1);
+  background: linear-gradient(160deg, #e8eed8 0%, #c8d9a0 45%, #a8bf5b 100%);
+  border: 1px solid rgba(37, 78, 6, 0.12);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset, var(--shadow-sm);
   transition:
     border-color 0.25s var(--ease-editorial),
@@ -2541,29 +2541,46 @@ input[type="submit"],
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
   padding: 1.5rem;
   background: linear-gradient(
-    180deg,
-    rgba(250, 247, 240, 0.95) 0%,
-    rgba(220, 232, 210, 0.92) 100%
+    160deg,
+    var(--color-honeydew) 0%,
+    var(--color-tea-green) 50%,
+    rgba(168, 191, 91, 0.4) 100%
   );
 }
 
+/* Botanical SVG watermark behind the placeholder icon */
+.doctor-team-card__placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 280' fill='none'%3E%3Cpath d='M100 260 Q50 200 55 130 Q60 60 100 30 Q140 60 145 130 Q150 200 100 260Z' stroke='rgba(37,78,6,0.12)' stroke-width='1.5' fill='none'/%3E%3Cpath d='M100 230 Q40 170 48 110' stroke='rgba(37,78,6,0.08)' stroke-width='1.2' fill='none'/%3E%3Cpath d='M100 230 Q160 170 152 110' stroke='rgba(37,78,6,0.08)' stroke-width='1.2' fill='none'/%3E%3Cpath d='M100 190 Q55 155 60 120' stroke='rgba(37,78,6,0.06)' stroke-width='1' fill='none'/%3E%3Cpath d='M100 190 Q145 155 140 120' stroke='rgba(37,78,6,0.06)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-size: 75%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .doctor-team-card__placeholder-icon {
-  width: 2rem;
-  height: 2rem;
-  color: rgba(37, 78, 6, 0.35);
+  width: 2.25rem;
+  height: 2.25rem;
+  color: rgba(37, 78, 6, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
 .doctor-team-card__placeholder-label {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(37, 78, 6, 0.45);
+  color: rgba(37, 78, 6, 0.4);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .doctor-team-card__scrim {
