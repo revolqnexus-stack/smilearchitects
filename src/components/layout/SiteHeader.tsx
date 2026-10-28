@@ -49,15 +49,22 @@ const NAV_LOCATIONS = [
   { label: "Both clinics", href: "/locations" },
 ];
 
-const NAV_LINKS = [
-  { label: "About",           href: "/about" },
-  { label: "Our Doctors",     href: "/dentists" },
-  { label: "Locations",       href: "/locations", hasDropdown: true, dropdownKey: "locations" as const },
-  { label: "Treatments",      href: "/treatments", hasDropdown: true, dropdownKey: "treatments" as const },
-  { label: "Dental Guides",   href: "/dental-guides" },
+/** Items that go into the "More" overflow dropdown */
+const NAV_MORE = [
+  { label: "About", href: "/about" },
   { label: "Patient Stories", href: "/patient-stories" },
-  { label: "Pricing",         href: "/pricing" },
-  { label: "Contact",         href: "/contact" },
+  { label: "Dental Guides", href: "/dental-guides" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Technology", href: "/technology" },
+  { label: "International Patients", href: "/patient-guide/international" },
+];
+
+const NAV_LINKS = [
+  { label: "Our Doctors",  href: "/dentists" },
+  { label: "Locations",    href: "/locations", hasDropdown: true, dropdownKey: "locations" as const },
+  { label: "Treatments",   href: "/treatments", hasDropdown: true, dropdownKey: "treatments" as const },
+  { label: "Contact",      href: "/contact" },
+  { label: "More",         href: "#",           hasDropdown: true, dropdownKey: "more" as const },
 ];
 
 const EASE_SPRING = [0.16, 1, 0.3, 1] as const;
@@ -71,8 +78,10 @@ export default function SiteHeader() {
   const [mobileOpen, setMobileOpen]     = useState(false);
   const [treatmentOpen, setTreatmentOpen] = useState(false);
   const [locationsOpen, setLocationsOpen] = useState(false);
+  const [moreOpen, setMoreOpen]         = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const locationsDropdownRef = useRef<HTMLDivElement>(null);
+  const moreDropdownRef = useRef<HTMLDivElement>(null);
 
   /* scroll detection */
   useEffect(() => {
@@ -88,6 +97,8 @@ export default function SiteHeader() {
         setTreatmentOpen(false);
       if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(e.target as Node))
         setLocationsOpen(false);
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(e.target as Node))
+        setMoreOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -245,6 +256,7 @@ export default function SiteHeader() {
                     open={treatmentOpen}
                     onToggle={() => {
                       setLocationsOpen(false);
+                      setMoreOpen(false);
                       setTreatmentOpen((v) => !v);
                     }}
                     onClose={() => setTreatmentOpen(false)}
@@ -260,10 +272,27 @@ export default function SiteHeader() {
                     open={locationsOpen}
                     onToggle={() => {
                       setTreatmentOpen(false);
+                      setMoreOpen(false);
                       setLocationsOpen((v) => !v);
                     }}
                     onClose={() => setLocationsOpen(false)}
                     isActive={locationsActive}
+                  />
+                );
+              }
+              if (link.dropdownKey === "more") {
+                return (
+                  <MoreDropdown
+                    key={link.label}
+                    ref={moreDropdownRef}
+                    open={moreOpen}
+                    onToggle={() => {
+                      setTreatmentOpen(false);
+                      setLocationsOpen(false);
+                      setMoreOpen((v) => !v);
+                    }}
+                    onClose={() => setMoreOpen(false)}
+                    isActive={NAV_MORE.some((m) => pathname.startsWith(m.href))}
                   />
                 );
               }
@@ -889,6 +918,123 @@ const LocationsDropdown = forwardRef<
   );
 });
 
+// ─── MORE DROPDOWN ───────────────────────────────────────────────────────────
+
+const MoreDropdown = forwardRef<
+  HTMLDivElement,
+  { open: boolean; onToggle: () => void; onClose: () => void; isActive: boolean }
+>(function MoreDropdown({ open, onToggle, onClose, isActive }, ref) {
+  return (
+    <div ref={ref} style={{ position: "relative" }}>
+      <motion.button
+        onClick={onToggle}
+        aria-haspopup="true"
+        aria-expanded={open}
+        whileHover="hover"
+        initial="rest"
+        animate="rest"
+        style={{
+          position: "relative",
+          padding: "0.4375rem 0.75rem",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
+        }}
+      >
+        <motion.span
+          aria-hidden="true"
+          variants={{
+            rest:  { opacity: isActive || open ? 1 : 0 },
+            hover: { opacity: 1 },
+          }}
+          transition={{ duration: 0.18 }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "9999px",
+            backgroundColor: isActive || open ? "rgba(223,210,188,0.55)" : "rgba(223,210,188,0.4)",
+            border: "1px solid rgba(126,132,7,0.2)",
+          }}
+        />
+        <motion.span
+          variants={{ rest: { y: 0 }, hover: { y: -1 } }}
+          transition={{ duration: 0.18 }}
+          style={{
+            position: "relative",
+            fontSize: "0.875rem",
+            fontWeight: isActive || open ? 600 : 500,
+            color: isActive || open ? "var(--color-dark-moss)" : "var(--color-olive)",
+            fontFamily: "var(--font-sans)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          More
+        </motion.span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.22 }}
+          style={{ position: "relative", display: "flex", alignItems: "center" }}
+        >
+          <ChevronIcon />
+        </motion.span>
+      </motion.button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            initial={{ opacity: 0, y: 10, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.97 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: "absolute",
+              top: "calc(100% + 14px)",
+              right: 0,
+              width: "220px",
+              backgroundColor: "rgba(240,246,228,0.88)",
+              backdropFilter: "blur(28px) saturate(160%)",
+              WebkitBackdropFilter: "blur(28px) saturate(160%)",
+              border: "1px solid rgba(223,210,188,0.6)",
+              borderRadius: "20px",
+              padding: "0.625rem",
+              boxShadow: "0 16px 48px rgba(37,78,6,0.14), inset 0 1px 0 rgba(255,255,255,0.5)",
+              zIndex: 200,
+              backgroundImage: "linear-gradient(170deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 40%)",
+            }}
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.04, delayChildren: 0.04 } },
+              }}
+            >
+              {NAV_MORE.map((item) => (
+                <motion.div
+                  key={item.href}
+                  variants={{
+                    hidden:  { opacity: 0, x: -8 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.25 } },
+                  }}
+                >
+                  <Link href={item.href} role="menuitem" onClick={onClose} className="dropdown-item">
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+});
+
 // ─── MOBILE MENU ─────────────────────────────────────────────────────────────
 
 function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
@@ -1017,7 +1163,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
           animate="visible"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.07, delayChildren: 0.12 } } }}
         >
-          {NAV_LINKS.map((link, i) => {
+          {[...NAV_LINKS.filter(l => l.href !== "#"), ...NAV_MORE].map((link, i) => {
             const isActive =
               link.href === "/locations"
                 ? pathname === "/locations" ||
