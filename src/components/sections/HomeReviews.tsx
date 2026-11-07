@@ -63,7 +63,7 @@ const IG_POSTS = [
   { id: 1, src: "/instagram/post-1.jpg", alt: "Smile Architects clinic — patient smile transformation" },
   { id: 2, src: "/instagram/post-2.jpg", alt: "Orthodontic braces treatment at Smile Architects, Pala" },
   { id: 3, src: "/instagram/post-3.jpg", alt: "Clear aligners consultation at Smile Architects" },
-  { id: 4, src: "/instagram/post-4.jpg", alt: "Smile Architects dental clinic interior, Lalam Junction Pala" },
+  { id: 4, src: "/instagram/post-4.jpg", alt: "Smile Architects dental clinic interior, Maharani Jn., Pala" },
   { id: 5, src: "/instagram/post-5.jpg", alt: "Patient smile result after orthodontic treatment" },
   { id: 6, src: "/instagram/post-6.jpg", alt: "Dr. Jeo Tom Charls at Smile Architects, Pala" },
 ];

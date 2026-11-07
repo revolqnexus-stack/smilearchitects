@@ -478,7 +478,7 @@ export default function ThrissurServicePage() {
                         </h3>
                         <p style={{ color: "var(--color-cafe-noir)", fontSize: "0.9375rem", lineHeight: 1.6 }}>
                           Ample car parking is available at the clinic for patients travelling from other 
-                          areas. The facility is located on Kattakkayam Road, near Federal Bank in Pala Town.
+                          areas. The clinic is at Mukkadan Arcade, Maharani Jn., Pala — above KFC / Navya Bakes, near KSRTC.
                         </p>
                       </div>
                     </div>
@@ -554,7 +554,7 @@ export default function ThrissurServicePage() {
 
                 <div className="map-frame" style={{ aspectRatio: "16/10", borderRadius: "var(--radius-lg)" }}>
                   <iframe
-                    title="Smile Architects location — Kattakkayam Road, Pala, Kottayam"
+                    title="Smile Architects location — Maharani Jn., Pala, Kottayam"
                     src={CLINIC.platforms.googleMaps.embedUrl}
                     width="100%" height="100%"
                     style={{ border: 0, display: "block", borderRadius: "inherit" }}

@@ -37,7 +37,6 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/areas-served/kottayam", priority: 0.8, changeFrequency: "monthly" },
   { path: "/areas-served/thrissur", priority: 0.75, changeFrequency: "monthly" },
   { path: "/thrissur", priority: 0.9, changeFrequency: "weekly" },
-  { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
 ];
 
 export function buildSitemapEntries(): MetadataRoute.Sitemap {

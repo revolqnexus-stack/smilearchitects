@@ -172,7 +172,7 @@ export default function BranchLocationSection() {
           <div className="branch-dual-locations-grid branch-dual-locations-grid--two">
             <DualLocationCard
               title="Pala, Kottayam"
-              subtitle="Main centre · Kattakkayam Road"
+              subtitle="Main centre · Maharani Jn., Pala"
               href="/local/pala"
               highlight={branch.id === "pala"}
             />

@@ -431,7 +431,7 @@ export default function AreasServedPage() {
                 Getting to Smile Architects
               </h2>
               <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75, fontSize: "1rem", marginBottom: "1.5rem" }}>
-                We're conveniently located on Kattakkayam Road in Pala, with good road connectivity 
+                We're conveniently located at Mukkadan Arcade, Maharani Jn. in Pala, with good road connectivity 
                 to major towns across Kottayam District.
               </p>
               
@@ -473,7 +473,7 @@ export default function AreasServedPage() {
             <div>
               <div className="map-frame" style={{ aspectRatio: "16/12", borderRadius: "var(--radius-lg)" }}>
                 <iframe
-                  title="Smile Architects location — Kattakkayam Road, Pala, Kottayam"
+                  title="Smile Architects location — Maharani Jn., Pala, Kottayam"
                   src={CLINIC.platforms.googleMaps.embedUrl}
                   width="100%" height="100%"
                   style={{ border: 0, display: "block", borderRadius: "inherit" }}

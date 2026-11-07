@@ -1,4 +1,6 @@
 'use client';
+import type { Metadata } from "next";
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default function TestEnvPage() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

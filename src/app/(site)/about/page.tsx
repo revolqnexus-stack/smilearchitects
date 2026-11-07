@@ -106,26 +106,50 @@ export default function AboutPage() {
               </div>
             </RevealUp>
 
-            {/* Clinic photo placeholder */}
+            {/* Clinic address card — replace with photo once available */}
             <ImageReveal delay={0.15}>
               <div
                 style={{
                   aspectRatio: "4/3",
-                  backgroundColor: "var(--color-tea-green)",
+                  backgroundColor: "var(--color-dark-moss)",
                   borderRadius: "var(--radius-2xl)",
-                  border: "3px solid var(--color-olive)",
                   display: "flex",
+                  flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "var(--color-moss)",
-                  fontSize: "0.875rem",
-                  fontFamily: "var(--font-sans)",
-                  textAlign: "center",
-                  padding: "2rem",
+                  gap: "1.25rem",
+                  padding: "2.5rem",
                   boxShadow: "var(--shadow-lg)",
+                  textAlign: "center",
                 }}
               >
-                <span>Clinic exterior / reception photo<br />(clinic to supply)</span>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-jonquil)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <div>
+                  <p style={{ fontFamily: "var(--font-serif)", fontSize: "1.125rem", color: "var(--color-honeydew)", fontWeight: 400, lineHeight: 1.4, marginBottom: "0.5rem" }}>
+                    2nd Floor, Mukkadan Arcade<br />Maharani Jn., Pala
+                  </p>
+                  <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.8125rem", color: "rgba(237,228,211,0.65)", lineHeight: 1.5 }}>
+                    Above KFC / Navya Bakes · near KSRTC<br />Kottayam, Kerala – 686575
+                  </p>
+                </div>
+                <a
+                  href={`https://maps.app.goo.gl/frSD6Wm9rpiTbtz58`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.8125rem",
+                    fontWeight: 600,
+                    color: "var(--color-jonquil)",
+                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(234,200,0,0.4)",
+                    paddingBottom: "2px",
+                  }}
+                >
+                  Get directions →
+                </a>
               </div>
             </ImageReveal>
           </div>

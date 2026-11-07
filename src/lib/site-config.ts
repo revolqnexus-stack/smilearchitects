@@ -456,7 +456,7 @@ export const FAQS_GENERAL = [
   {
     question: "Which dentists are available at Smile Architects?",
     answer:
-      "Our Pala, Kottayam centre is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics), supported by Dr. Jintu Joan Jose and Dr. Ann Tresa T. Srambickal (both BDS – Aesthetic & General Dentistry). We also have a branch in Thrissur (Punkunnam).",
+      "Smile Architects, Pala is led by Dr. Jeo Tom Charls (MDS – Orthodontics and Dentofacial Orthopaedics). Our specialist team also includes Dr. Jom T. Kizhakkel (MDS – Periodontics & Implantology) and visiting consultants in oral surgery, paediatric dentistry and prosthodontics. We also have a branch in Thrissur (Punkunnam).",
   },
   {
     question: "Does the clinic offer parking?",

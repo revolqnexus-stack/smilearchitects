@@ -68,7 +68,7 @@ export default function KottayamServicePage() {
               margin: 0
             }}>
               This page describes the clinic's regional service area and does not represent a physical 
-              branch in Kottayam town. Our dental clinic is physically located at Kattakkayam Road, Pala.
+              branch in Kottayam town. Our dental clinic is physically located at Mukkadan Arcade, Maharani Jn., Pala.
             </p>
           </div>
 
