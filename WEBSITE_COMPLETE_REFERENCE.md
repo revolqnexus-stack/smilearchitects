@@ -41,7 +41,7 @@
 | **Practising since (trust)** | 2015 |
 | **Production website** | https://smilearchitectskeralam.com |
 | **Default SEO title** | Smile Architects \| Best Dental Clinic in Pala, Kottayam & Thrissur |
-| **Default meta description** | Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call +91 9446 999 333. |
+| **Default meta description** | Smile Architects — multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, dental implants, braces, lingual braces & smile design. Call +91 82899 33331. |
 
 ### Brand assets
 
@@ -101,10 +101,10 @@ Two clinics. Same phone, email, hours, and WhatsApp for both.
 
 | Channel | Value |
 |---------|--------|
-| **Phone (tel)** | +919446999333 |
-| **Phone (display)** | +91 9446 999 333 |
+| **Phone (tel)** | +918289933331 |
+| **Phone (display)** | +91 82899 33331 |
 | **Email** | drjeosmilearchitects@gmail.com |
-| **WhatsApp** | https://wa.me/919446999333 |
+| **WhatsApp** | https://wa.me/918289933331 |
 | **Online booking** | `/book-appointment` |
 
 ### Opening hours
@@ -222,7 +222,7 @@ Long-form treatment copy lives in **CMS** (`treatments` table) and/or **`migrati
 | Sterilisation | Strict sterilisation protocols maintained throughout the clinic. |
 | Digital X-Ray | Modern digital radiography for accurate diagnosis with reduced radiation. |
 | Ample Car Parking | Convenient parking available for patients. |
-| Online & Telephone Booking | Book appointments online or by calling +91 9446 999 333. |
+| Online & Telephone Booking | Book appointments online or by calling +91 82899 33331. |
 
 ---
 
@@ -232,7 +232,7 @@ From `FAQS_GENERAL` in `site-config.ts`:
 
 1. **Where is Smile Architects located?** — Kattakkayam Road, Pala, Kottayam, Kerala – 686575, near Federal Bank, Pala Town.  
 2. **Opening hours?** — Mon–Sat 9:30 AM–8:00 PM; closed Sunday.  
-3. **How to book?** — Call +91 9446 999 333, WhatsApp, or online form.  
+3. **How to book?** — Call +91 82899 33331, WhatsApp, or online form.  
 4. **Which dentists?** — Led by Dr. Jeo Tom Charls (MDS Orthodontics); supported by Dr. Jintu Joan Jose and Dr. Ann Tresa T. Srambickal (BDS — Aesthetic & General Dentistry).  
 5. **Parking?** — Yes, ample car parking.  
 6. **Walk-ins?** — Welcome; appointments recommended.  

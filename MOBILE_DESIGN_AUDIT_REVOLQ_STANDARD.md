@@ -113,7 +113,7 @@ Instead of three boxes at bottom, Smile Architects mobile uses:
   headlineLines={["Multispeciality", "Dental Care", "in Pala"]}
   body="..."
   primaryCTA={{ text: "Book an Appointment", href: "/book-appointment" }}
-  secondaryCTA={{ text: `Call +91 9446 999 333`, href: "tel:..." }}
+  secondaryCTA={{ text: `Call +91 82899 33331`, href: "tel:..." }}
   metaItems={[...]}
 />
 ```

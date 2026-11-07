@@ -868,7 +868,7 @@ export const MIGRATE_FAQS = [
   },
   {
     question: "How do I book an appointment?",
-    answer: "You can book an appointment by calling +91 94469 99333, sending a WhatsApp message, or using the online appointment form on this website.",
+    answer: "You can book an appointment by calling +91 82899 33331, sending a WhatsApp message, or using the online appointment form on this website.",
     category: "General",
     published: true,
     display_order: 3,

@@ -162,7 +162,7 @@ Then actually provide value:
 
 9. **Appointment Process**
    - Online booking form
-   - Phone booking: +91 9446 999 333
+   - Phone booking: +91 82899 33331
    - WhatsApp booking
    - Preferred consultation times
 

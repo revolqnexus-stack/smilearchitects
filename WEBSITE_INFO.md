@@ -12,10 +12,10 @@
 | **Type** | Multispeciality Dental Clinic & Advanced Orthodontic Centre |
 | **Location** | Kattakkayam Road, Pala, Kottayam, Kerala – 686575 |
 | **Landmark** | Near Federal Bank, Pala Town |
-| **Phone** | +91 9446 999 333 |
+| **Phone** | +91 82899 33331 |
 | **Email** | drjeosmilearchitects@gmail.com |
 | **Website** | https://smilearchitectskeralam.com |
-| **WhatsApp** | https://wa.me/919446999333 |
+| **WhatsApp** | https://wa.me/918289933331 |
 
 ### Opening Hours
 | Day | Hours |
@@ -103,7 +103,7 @@
 | Sterilisation | Strict sterilisation protocols throughout the clinic |
 | Digital X-Ray | Modern digital radiography with reduced radiation |
 | Ample Car Parking | Convenient parking available for patients |
-| Online & Telephone Booking | Book online or call +91 9446 999 333 |
+| Online & Telephone Booking | Book online or call +91 82899 33331 |
 
 ---
 
@@ -116,7 +116,7 @@ Kattakkayam Road, Pala, Kottayam, Kerala – 686575, near Federal Bank in Pala T
 Monday to Saturday, 9:30 AM to 8:00 PM. Closed Sundays.
 
 **How do I book an appointment?**
-Call +91 9446 999 333, WhatsApp, or use the online form on the website.
+Call +91 82899 33331, WhatsApp, or use the online form on the website.
 
 **Which dentists are available?**
 Core team: Dr. Jeo Tom Charls (MDS Orthodontics), Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology). Plus visiting consultants in Surgery, Paediatrics, and Prosthodontics.
@@ -159,7 +159,7 @@ Completely hidden braces on the inner surface of teeth.
 |---|---|
 | Practo | https://www.practo.com/pala/clinic/smile-architects-palai |
 | Google Maps | https://maps.google.com/?q=Smile+Architects,+Kattakkayam+Road,+Pala,+Kottayam,+Kerala+686575 |
-| WhatsApp | https://wa.me/919446999333 |
+| WhatsApp | https://wa.me/918289933331 |
 
 ---
 

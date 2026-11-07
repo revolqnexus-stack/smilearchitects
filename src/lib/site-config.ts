@@ -3,10 +3,10 @@
  * All clinic data lives here. Update this file to propagate changes site-wide.
  */
 
-/** Calls, SMS, and WhatsApp CTAs — India mobile 9446999333 */
-export const CLINIC_PHONE_E164 = "+919446999333" as const;
-export const CLINIC_PHONE_WA_ME = "919446999333" as const;
-export const CLINIC_PHONE_DISPLAY = "+91 94469 99333";
+/** Calls, SMS, and WhatsApp CTAs — India mobile 8289933331 */
+export const CLINIC_PHONE_E164 = "+918289933331" as const;
+export const CLINIC_PHONE_WA_ME = "918289933331" as const;
+export const CLINIC_PHONE_DISPLAY = "+91 82899 33331";
 /** Canonical WhatsApp deep link for every CTA on the site */
 export const WHATSAPP_URL = `https://wa.me/${CLINIC_PHONE_WA_ME}` as const;
 

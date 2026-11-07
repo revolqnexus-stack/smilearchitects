@@ -34,7 +34,7 @@ Following the "No Cramped Shit" design principles to ensure the site looks premi
   headlineLines={["Multispeciality", "Dental Care", "in Pala"]}
   body="Smile Architects is a multispeciality dental clinic..."
   primaryCTA={{ text: "Book an Appointment", href: "/book-appointment" }}
-  secondaryCTA={{ text: `Call +91 9446 999 333`, href: "tel:..." }}
+  secondaryCTA={{ text: `Call +91 82899 33331`, href: "tel:..." }}
 />
 ```
 

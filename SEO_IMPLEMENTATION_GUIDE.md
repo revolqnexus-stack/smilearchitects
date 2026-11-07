@@ -216,7 +216,7 @@ Search Query → Treatment Page → Doctor Profile → Book Appointment
   "@type": "Dentist",
   "name": "Smile Architects",
   "address": "Kattakkayam Road, Pala, Kottayam, Kerala – 686575",
-  "telephone": "+919446999333",
+  "telephone": "+918289933331",
   "openingHours": "Mo-Sa 09:30-20:00",
   "priceRange": "$$"
 }

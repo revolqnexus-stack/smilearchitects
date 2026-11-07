@@ -468,7 +468,7 @@ export function BrochureDocument({ assets }: { assets: BrochureAssets }) {
             Call {CLINIC.contact.phoneDisplay} · WhatsApp · Online form at {CLINIC.contact.website}
           </Text>
           <Link src={CLINIC.social.whatsapp} style={{ color: colors.jonquil, fontSize: 10, marginTop: 12 }}>
-            WhatsApp: wa.me/919446999333
+            WhatsApp: wa.me/918289933331
           </Link>
           <Link src={`${CLINIC.contact.website}/book-appointment`} style={{ color: colors.jonquil, fontSize: 10, marginTop: 6 }}>
             Book online →
