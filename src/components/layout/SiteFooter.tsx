@@ -108,7 +108,7 @@ export default function SiteFooter() {
           </h2>
           <p style={{ color: "var(--color-honeydew)", opacity: 0.9, maxWidth: "480px", fontSize: "1rem", lineHeight: 1.6 }}>
             Call or book online. The clinic is open Monday to Saturday, 9:30 AM to 8:00 PM at
-            Kattakkayam Road, Pala — near Federal Bank.
+            Mukkadan Arcade, Maharani Jn., Pala — above KFC / Navya Bakes, near KSRTC.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
             <Link href="/book-appointment" className="btn btn-secondary">
