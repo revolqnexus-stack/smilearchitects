@@ -75,7 +75,7 @@ export const PATIENT_GUIDE_PAGES: Record<PatientGuideSlug, PatientGuidePage> = {
         { type: "link", href: "/thrissur", label: "Thrissur branch" },
         { type: "text", value: ". " },
         { type: "link", href: "/book-appointment", label: "Book online" },
-        { type: "text", value: " or call +91 94469 99333." },
+        { type: "text", value: " or call +91 82899 33331." },
       ],
     ],
   },

@@ -54,7 +54,6 @@ const NAV_MORE = [
   { label: "About", href: "/about" },
   { label: "Patient Stories", href: "/patient-stories" },
   { label: "Dental Guides", href: "/dental-guides" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Technology", href: "/technology" },
   { label: "International Patients", href: "/patient-guide/international" },
 ];

@@ -72,7 +72,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/kottayam",
     title: "Best Dental Clinic in Kottayam District | Pala Centre",
     description:
-      "Best dental clinic serving Kottayam town & Kottayam District — Smile Architects in Pala. MDS orthodontist, implants, cosmetic dentistry. Patients from Kottayam, Changanassery & Ettumanoor. +91 94469 99333.",
+      "Best dental clinic serving Kottayam town & Kottayam District — Smile Architects in Pala. MDS orthodontist, implants, cosmetic dentistry. Patients from Kottayam, Changanassery & Ettumanoor. +91 82899 33331.",
     h1: "Best dental clinic serving Kottayam District",
     intro:
       "Patients across Kottayam District — including Kottayam town, Changanassery, Ettumanoor, and surrounding areas — visit Smile Architects in Pala for MDS-led dental and orthodontic treatment. Our Pala centre is the hub for specialist care; we also have a Thrissur branch in Punkunnam for patients in Thrissur city.",

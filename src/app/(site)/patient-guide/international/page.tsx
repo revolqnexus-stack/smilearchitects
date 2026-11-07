@@ -162,21 +162,6 @@ export default function InternationalPatientGuidePage() {
                 >
                   WhatsApp us your X-rays
                 </a>
-                <Link href="/pricing" style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  border: "1.5px solid rgba(237,228,211,0.35)",
-                  color: "var(--color-honeydew)",
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 600,
-                  fontSize: "0.9375rem",
-                  padding: "0.875rem 1.625rem",
-                  borderRadius: "9999px",
-                  textDecoration: "none",
-                }}>
-                  View pricing
-                </Link>
               </div>
             </div>
           </RevealUp>

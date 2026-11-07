@@ -201,7 +201,7 @@ export const MIGRATE_TREATMENTS = [
       "Oral hygiene instruction tailored to your needs",
     ],
     seo_title: "General Dentistry in Pala, Kottayam | Smile Architects",
-    seo_description: "General Dentistry at Smile Architects — Preventive care, check-ups and routine dental treatment. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "General Dentistry at Smile Architects — Preventive care, check-ups and routine dental treatment. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "pediatric-dentistry",
@@ -222,7 +222,7 @@ export const MIGRATE_TREATMENTS = [
       "Orthodontic assessment and growth monitoring",
     ],
     seo_title: "Paediatric Dentistry in Pala, Kottayam | Smile Architects",
-    seo_description: "Paediatric Dentistry at Smile Architects — Dental care tailored for children. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Paediatric Dentistry at Smile Architects — Dental care tailored for children. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "dental-implants",
@@ -242,7 +242,7 @@ export const MIGRATE_TREATMENTS = [
       "Suitable for patients with healthy gums and adequate bone",
     ],
     seo_title: "Dental Implants in Pala, Kottayam | Smile Architects",
-    seo_description: "Dental Implants at Smile Architects — A permanent solution for missing teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Dental Implants at Smile Architects — A permanent solution for missing teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "cosmetic-dentistry",
@@ -262,7 +262,7 @@ export const MIGRATE_TREATMENTS = [
       "Replacing old metal fillings with tooth-coloured restorations",
     ],
     seo_title: "Cosmetic Dentistry in Pala, Kottayam | Smile Architects",
-    seo_description: "Cosmetic Dentistry at Smile Architects — Improving the appearance of teeth and smile. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Cosmetic Dentistry at Smile Architects — Improving the appearance of teeth and smile. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "smile-design",
@@ -282,7 +282,7 @@ export const MIGRATE_TREATMENTS = [
       "Detailed digital treatment preview and discussion",
     ],
     seo_title: "Smile Design in Pala, Kottayam | Smile Architects",
-    seo_description: "Smile Design at Smile Architects — Digital smile design for complete smile transformation. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Smile Design at Smile Architects — Digital smile design for complete smile transformation. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "root-canal-treatment",
@@ -302,7 +302,7 @@ export const MIGRATE_TREATMENTS = [
       "Re-treatment of previously root-filled teeth",
     ],
     seo_title: "Root Canal Treatment in Pala, Kottayam | Smile Architects",
-    seo_description: "Root Canal Treatment at Smile Architects — Saving infected or damaged teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Root Canal Treatment at Smile Architects — Saving infected or damaged teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "restorative-dentistry",
@@ -322,7 +322,7 @@ export const MIGRATE_TREATMENTS = [
       "Post and core build-ups",
     ],
     seo_title: "Restorative Dentistry in Pala, Kottayam | Smile Architects",
-    seo_description: "Restorative Dentistry at Smile Architects — Restoring teeth damaged by decay or injury. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Restorative Dentistry at Smile Architects — Restoring teeth damaged by decay or injury. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "oral-surgery",
@@ -342,7 +342,7 @@ export const MIGRATE_TREATMENTS = [
       "Pre-implant surgical procedures",
     ],
     seo_title: "Oral & Maxillofacial Surgery in Pala, Kottayam | Smile Architects",
-    seo_description: "Oral & Maxillofacial Surgery at Smile Architects — Surgical care for the mouth, jaws and related structures. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Oral & Maxillofacial Surgery at Smile Architects — Surgical care for the mouth, jaws and related structures. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "orthodontics",
@@ -364,7 +364,7 @@ export const MIGRATE_TREATMENTS = [
       "Retainers and post-treatment monitoring",
     ],
     seo_title: "Orthodontics in Pala, Kottayam | Smile Architects",
-    seo_description: "Orthodontics at Smile Architects — Correcting misaligned teeth and jaw relationships. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Orthodontics at Smile Architects — Correcting misaligned teeth and jaw relationships. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "braces",
@@ -384,7 +384,7 @@ export const MIGRATE_TREATMENTS = [
       "Retainers provided at end of treatment",
     ],
     seo_title: "Dental Braces in Pala, Kottayam | Smile Architects",
-    seo_description: "Dental Braces at Smile Architects — Metal, ceramic and self-ligating brace systems. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Dental Braces at Smile Architects — Metal, ceramic and self-ligating brace systems. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "clear-aligners",
@@ -405,7 +405,7 @@ export const MIGRATE_TREATMENTS = [
       "Retainers on completion",
     ],
     seo_title: "Clear Aligners in Pala, Kottayam | Smile Architects",
-    seo_description: "Clear Aligners at Smile Architects — Transparent removable aligners for discreet treatment. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Clear Aligners at Smile Architects — Transparent removable aligners for discreet treatment. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "lingual-braces",
@@ -425,7 +425,7 @@ export const MIGRATE_TREATMENTS = [
       "Retainers provided on completion",
     ],
     seo_title: "Lingual Braces in Pala, Kottayam | Smile Architects",
-    seo_description: "Lingual Braces at Smile Architects — Hidden braces fitted to the inner surface of teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Lingual Braces at Smile Architects — Hidden braces fitted to the inner surface of teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "periodontal-treatment",
@@ -444,7 +444,7 @@ export const MIGRATE_TREATMENTS = [
       "Referral for advanced surgical periodontal treatment where required",
     ],
     seo_title: "Periodontal Treatment in Pala, Kottayam | Smile Architects",
-    seo_description: "Periodontal Treatment at Smile Architects — Treatment for gum disease and supporting structures. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Periodontal Treatment at Smile Architects — Treatment for gum disease and supporting structures. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "prosthodontics",
@@ -464,7 +464,7 @@ export const MIGRATE_TREATMENTS = [
       "Temporary and immediate prostheses",
     ],
     seo_title: "Prosthodontics in Pala, Kottayam | Smile Architects",
-    seo_description: "Prosthodontics at Smile Architects — Replacing and restoring missing or damaged teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Prosthodontics at Smile Architects — Replacing and restoring missing or damaged teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "crowns",
@@ -484,7 +484,7 @@ export const MIGRATE_TREATMENTS = [
       "Temporary crowns during fabrication",
     ],
     seo_title: "Dental Crowns in Pala, Kottayam | Smile Architects",
-    seo_description: "Dental Crowns at Smile Architects — Caps that restore and protect damaged teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Dental Crowns at Smile Architects — Caps that restore and protect damaged teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "bridges",
@@ -503,7 +503,7 @@ export const MIGRATE_TREATMENTS = [
       "Temporary bridges during fabrication",
     ],
     seo_title: "Dental Bridges in Pala, Kottayam | Smile Architects",
-    seo_description: "Dental Bridges at Smile Architects — Fixed replacement for one or more missing teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Dental Bridges at Smile Architects — Fixed replacement for one or more missing teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "dentures",
@@ -522,7 +522,7 @@ export const MIGRATE_TREATMENTS = [
       "Implant-supported overdentures for greater stability",
     ],
     seo_title: "Dentures in Pala, Kottayam | Smile Architects",
-    seo_description: "Dentures at Smile Architects — Removable replacements for missing teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Dentures at Smile Architects — Removable replacements for missing teeth. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
   {
     slug: "veneers",
@@ -541,7 +541,7 @@ export const MIGRATE_TREATMENTS = [
       "No or minimal tooth reduction for direct composite veneers",
     ],
     seo_title: "Dental Veneers in Pala, Kottayam | Smile Architects",
-    seo_description: "Dental Veneers at Smile Architects — Thin porcelain or composite shells for smile improvement. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 94469 99333.",
+    seo_description: "Dental Veneers at Smile Architects — Thin porcelain or composite shells for smile improvement. Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.",
   },
 ];
 
