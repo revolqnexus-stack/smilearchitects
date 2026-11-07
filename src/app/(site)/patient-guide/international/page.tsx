@@ -60,7 +60,7 @@ const FAQS = [
   },
   {
     q: "How do I get to the clinic from Kochi airport?",
-    a: "Pala is approximately 80 km from Kochi International Airport — about 2 hours by road. Taxis and app cabs are available at the airport. The clinic is at Mukkadan Arcade, Lalam Junction, Pala.",
+    a: "Pala is approximately 80 km from Kochi International Airport — about 2 hours by road. Taxis and app cabs are available at the airport. The clinic is at Mukkadan Arcade, Maharani Junction, Pala.",
   },
   {
     q: "Are costs lower than in the UK, UAE or US?",

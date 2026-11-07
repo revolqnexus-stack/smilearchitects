@@ -472,7 +472,7 @@ export default function HomePage() {
           "MDS Orthodontist",
           "Digital X-Ray",
           "Individual Treatment Rooms",
-          "Lalam Jn., Pala",
+          "Maharani Jn., Pala",
           "Clear Aligners",
           "Dental Implants",
           "Lingual Braces",

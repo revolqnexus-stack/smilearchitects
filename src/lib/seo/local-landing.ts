@@ -26,13 +26,13 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
     canonical: "/local/pala",
     title: "Best Dental Clinic in Pala, Kottayam District",
     description:
-      "Looking for the best dental clinic in Pala or Palai, Kottayam? Smile Architects — MDS orthodontist, implants, braces, lingual braces & smile design. Mukkadan Arcade, Lalam Jn., Pala. Call +91 82899 33331.",
+      "Looking for the best dental clinic in Pala or Palai, Kottayam? Smile Architects — MDS orthodontist, implants, braces, lingual braces & smile design. Mukkadan Arcade, Maharani Jn., Pala. Call +91 82899 33331.",
     h1: "Best dental clinic in Pala, Kottayam District",
     intro:
       "Smile Architects is a multispeciality dental clinic and advanced orthodontic centre in Pala (Palai), Kottayam District — led by Dr. Jeo Tom Charls, MDS Orthodontics. Patients choose us for specialist braces and aligners, dental implants, root canal treatment, cosmetic dentistry, and full-family care under one roof.",
     branchId: "pala",
     cities: ["Pala", "Palai", "Kottayam District", "Meenachil"],
-    parking: "Mukkadan Arcade, Lalam Jn., Pala — above KFC / Navya Bakes.",
+    parking: "Mukkadan Arcade, Maharani Jn., Pala — above KFC / Navya Bakes, near KSRTC.",
     branchHighlights: [
       "Main multispeciality centre with full MDS team",
       "Video-documented clinic interiors & digital X-ray",
@@ -48,7 +48,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Which is the best dental clinic in Pala, Kottayam?",
         answer:
-          "Smile Architects in Pala is a multispeciality clinic with MDS specialists including an orthodontist and periodontist. The clinic offers braces, clear aligners, lingual braces, implants, root canal treatment, and smile design at Mukkadan Arcade, Lalam Jn., Pala.",
+          "Smile Architects in Pala is a multispeciality clinic with MDS specialists including an orthodontist and periodontist. The clinic offers braces, clear aligners, lingual braces, implants, root canal treatment, and smile design at Mukkadan Arcade, Maharani Jn., Pala.",
       },
       {
         question: "Is Smile Architects good for braces in Pala?",
@@ -63,7 +63,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Where exactly is Smile Architects in Pala?",
         answer:
-          "2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, Lalam Junction.",
+          "2nd Floor, Mukkadan Arcade, Maharani Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, near KSRTC.",
       },
     ],
   },
@@ -78,7 +78,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       "Patients across Kottayam District — including Kottayam town, Changanassery, Ettumanoor, and surrounding areas — visit Smile Architects in Pala for MDS-led dental and orthodontic treatment. Our Pala centre is the hub for specialist care; we also have a Thrissur branch in Punkunnam for patients in Thrissur city.",
     branchId: "pala",
     cities: ["Kottayam", "Kottayam District", "Kottayam town", "Changanassery", "Ettumanoor"],
-    parking: "Visit our Pala centre — Mukkadan Arcade, Lalam Jn., above KFC / Navya Bakes.",
+    parking: "Visit our Pala centre — Mukkadan Arcade, Maharani Jn., above KFC / Navya Bakes, near KSRTC.",
     travelFrom: [
       { from: "Kottayam town", distance: "~35 km", time: "45–60 min", route: "SH-15 / MC Road" },
       { from: "Changanassery", distance: "~18 km", time: "30–40 min", route: "Pala–Changanassery Road" },
@@ -100,7 +100,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "What is the best dental clinic in Kottayam District?",
         answer:
-          "Smile Architects in Pala is widely chosen by patients from across Kottayam District for multispeciality dentistry and MDS orthodontic treatment. The clinic is at Mukkadan Arcade, Lalam Jn., Pala — not in Kottayam town — with convenient access via MC Road and NH183.",
+          "Smile Architects in Pala is widely chosen by patients from across Kottayam District for multispeciality dentistry and MDS orthodontic treatment. The clinic is at Mukkadan Arcade, Maharani Jn., Pala — not in Kottayam town — with convenient access via MC Road and NH183.",
       },
       {
         question: "Is there a Smile Architects branch in Kottayam town?",
@@ -162,7 +162,7 @@ export const LOCAL_LANDING_PAGES: Record<LocalLandingSlug, LocalLandingConfig> =
       {
         question: "Is Smile Architects also in Pala, Kottayam?",
         answer:
-          "Yes. Our original multispeciality centre is in Pala, Kottayam District (Mukkadan Arcade, Lalam Jn., above KFC / Navya Bakes). Both locations share the same clinical standards and specialist team network.",
+          "Yes. Our original multispeciality centre is in Pala, Kottayam District (Mukkadan Arcade, Maharani Jn., above KFC / Navya Bakes, near KSRTC). Both locations share the same clinical standards and specialist team network.",
       },
     ],
   },

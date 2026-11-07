@@ -155,7 +155,7 @@ export default function ThrissurBranchPage() {
                 <Link href="/" style={{ color: "var(--color-olive)", fontWeight: 600 }}>
                   Pala, Kottayam
                 </Link>{" "}
-                centre at Mukkadan Arcade, Lalam Jn. (above KFC / Navya Bakes).
+                centre at Mukkadan Arcade, Maharani Jn. (above KFC / Navya Bakes, near KSRTC).
               </p>
             </div>
 

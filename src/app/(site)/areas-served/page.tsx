@@ -315,7 +315,7 @@ export default function AreasServedPage() {
                         Parking & Accessibility
                       </h3>
                       <p style={{ color: "var(--color-cafe-noir)", fontSize: "0.9375rem", lineHeight: 1.6 }}>
-                        The clinic is at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala — above KFC / Navya Bakes.
+                        The clinic is at 2nd Floor, Mukkadan Arcade, Maharani Jn., Pala — above KFC / Navya Bakes, near KSRTC.
                       </p>
                     </div>
                   </div>

@@ -19,14 +19,14 @@ export const CLINIC = {
   tagline: "Invisible Orthodontics & Multispeciality Dental Clinic",
   fullName: "Smile Architects — Invisible Orthodontics & Multispeciality Dental Clinic",
   address: {
-    street: "2nd Floor, Mukkadan Arcade, Lalam Junction",
+    street: "2nd Floor, Mukkadan Arcade, Maharani Junction",
     city: "Pala",
     district: "Kottayam",
     state: "Kerala",
     pincode: "686575",
     country: "India",
-    landmark: "Above KFC / Navya Bakes, Lalam Jn.",
-    full: "2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575",
+    landmark: "Above KFC / Navya Bakes, near KSRTC, Maharani Jn.",
+    full: "2nd Floor, Mukkadan Arcade, Maharani Jn., Pala, Kottayam, Kerala – 686575",
   },
   contact: {
     phone: CLINIC_PHONE_E164,
@@ -50,8 +50,8 @@ export const CLINIC = {
     },
     googleMaps: {
       placeId: "ChIJ7W7OAs3NN0gReVUrODfjCJ0",
-      embedUrl: "https://maps.google.com/maps?q=Smile+Architects+Lalam+Junction+Pala+Kottayam+Kerala&output=embed",
-      directionsUrl: "https://maps.google.com/?q=Smile+Architects,+Mukkadan+Arcade,+Lalam+Jn.,+Pala,+Kottayam,+Kerala+686575",
+      embedUrl: "https://maps.google.com/maps?q=Smile+Architects+Maharani+Junction+Pala+Kottayam+Kerala&output=embed",
+      directionsUrl: "https://maps.app.goo.gl/frSD6Wm9rpiTbtz58",
       reviewsUrl: "https://maps.app.goo.gl/Pbo5ja5buaCrrgsu6",
     },
   },
@@ -442,7 +442,7 @@ export const FAQS_GENERAL = [
   {
     question: "Where is Smile Architects located?",
     answer:
-      "Smile Architects is located at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, Lalam Junction.",
+      "Smile Architects is located at 2nd Floor, Mukkadan Arcade, Maharani Jn., Pala, Kottayam, Kerala – 686575. Above KFC / Navya Bakes, near KSRTC, Maharani Junction.",
   },
   {
     question: "What are the clinic's opening hours?",

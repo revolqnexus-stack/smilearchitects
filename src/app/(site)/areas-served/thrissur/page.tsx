@@ -60,7 +60,7 @@ const FAQS_THRISSUR = [
   },
   {
     question: "Where is the clinic located?",
-    answer: "Smile Architects Thrissur is at 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur, Kerala – 680002. Our Pala centre is at 2nd Floor, Mukkadan Arcade, Lalam Jn., Pala, Kottayam – 686575 (above KFC / Navya Bakes)."
+    answer: "Smile Architects Thrissur is at 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur, Kerala – 680002. Our Pala centre is at 2nd Floor, Mukkadan Arcade, Maharani Jn., Pala, Kottayam – 686575 (above KFC / Navya Bakes, near KSRTC)."
   },
   {
     question: "How do I get to Smile Architects from Thrissur?",
