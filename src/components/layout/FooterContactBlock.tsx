@@ -66,7 +66,7 @@ export default function FooterContactBlock() {
             gap: "0.35rem 0.75rem",
           }}
         >
-          <Link href="/local/pala" className="footer-link">
+          <Link href="/" className="footer-link">
             Pala clinic →
           </Link>
           <Link href="/thrissur" className="footer-link">

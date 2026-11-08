@@ -49,7 +49,7 @@ export default function SeoTopicCluster({
           }}
         >
           Quick links between clinics, treatments, and patient guides —{" "}
-          <Link href="/local/pala" className="sa-prose-link">
+          <Link href="/" className="sa-prose-link">
             Pala
           </Link>{" "}
           (main centre) and our{" "}

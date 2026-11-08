@@ -42,7 +42,7 @@ export default function LocationsPage() {
           <ul className="locations-page-list">
             <li>
               <strong>Pala</strong> — Main centre for Pala, Meenachil, and Kottayam District.{" "}
-              <Link href="/local/pala">About Pala →</Link>
+              <Link href="/">About Pala →</Link>
             </li>
             <li>
               <strong>Thrissur</strong> — Branch at Ephphatha Medical Complex, Opp. St.

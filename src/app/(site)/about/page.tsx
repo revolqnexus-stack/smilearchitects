@@ -72,9 +72,9 @@ export default function AboutPage() {
                   <p style={{ color: "var(--color-cafe-noir)", lineHeight: 1.75 }}>
                     Smile Architects is a multispeciality dental clinic providing comprehensive dental care
                     for patients in{" "}
-                    <Link href="/local/pala">Pala, Kottayam</Link> and the surrounding Meenachil region. We
+                    <Link href="/">Pala, Kottayam</Link> and the surrounding Meenachil region. We
                     also serve{" "}
-                    <Link href="/local/kottayam">Kottayam District</Link> and operate a{" "}
+                    <Link href="/areas-served/kottayam">Kottayam District</Link> and operate a{" "}
                     <Link href="/thrissur">Thrissur branch in Punkunnam</Link>. The Pala centre combines{" "}
                     <Link href="/treatments/general-dentistry">general dentistry</Link> with{" "}
                     <Link href="/orthodontics">orthodontics</Link> and{" "}

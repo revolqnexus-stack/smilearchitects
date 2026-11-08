@@ -35,11 +35,11 @@ export default function BranchToggle({
       scrollToBranchLocation();
       return;
     }
-    if (pathname === "/thrissur" || pathname === "/local/thrissur") {
+    if (pathname === "/thrissur") {
       if (id === "pala") router.push("/");
       return;
     }
-    if (pathname === "/local/pala" || pathname === "/local/kottayam") {
+    if (pathname === "/areas-served/kottayam") {
       if (id === "thrissur") router.push("/thrissur");
       return;
     }

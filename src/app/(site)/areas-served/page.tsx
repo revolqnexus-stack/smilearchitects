@@ -202,7 +202,7 @@ export default function AreasServedPage() {
                     </div>
                   </Link>
 
-                  <Link href="/areas-served/thrissur" style={{ textDecoration: "none" }}>
+                  <Link href="/thrissur" style={{ textDecoration: "none" }}>
                     <div className="card-tea" style={{ 
                       padding: "1.5rem",
                       transition: "all 0.2s ease",

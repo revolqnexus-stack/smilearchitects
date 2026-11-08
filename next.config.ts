@@ -37,6 +37,11 @@ const nextConfig: NextConfig = {
       { source: "/braces-pala", destination: "/orthodontics/braces", permanent: true },
       { source: "/sitemap", destination: "/site-map", permanent: true },
       { source: "/dentists/dr-mohamed-riyas", destination: "/dentists", permanent: true },
+      // Geographic consolidation - fix indexing issues
+      { source: "/local/thrissur", destination: "/thrissur", permanent: true },
+      { source: "/areas-served/thrissur", destination: "/thrissur", permanent: true },
+      { source: "/local/pala", destination: "/", permanent: true },
+      { source: "/local/kottayam", destination: "/areas-served/kottayam", permanent: true },
     ];
   },
 };

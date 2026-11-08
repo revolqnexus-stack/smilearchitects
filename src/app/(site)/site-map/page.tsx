@@ -53,8 +53,8 @@ export default function SiteMapPage() {
             </h1>
             <p style={{ color: "var(--color-olive)", lineHeight: 1.7, marginBottom: "2rem" }}>
               All main pages for Smile Architects —{" "}
-              <Link href="/local/pala">Pala</Link>,{" "}
-              <Link href="/local/thrissur">Thrissur</Link>, treatments, and patient resources.
+              <Link href="/">Pala</Link>,{" "}
+              <Link href="/thrissur">Thrissur</Link>, treatments, and patient resources.
             </p>
           </div>
 
@@ -81,9 +81,7 @@ export default function SiteMapPage() {
                 <li>
                   <Link href="/areas-served/kottayam">/areas-served/kottayam</Link>
                 </li>
-                <li>
-                  <Link href="/areas-served/thrissur">/areas-served/thrissur</Link>
-                </li>
+
               </ul>
             </section>
 

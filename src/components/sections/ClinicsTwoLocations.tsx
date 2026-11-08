@@ -85,7 +85,7 @@ export default function ClinicsTwoLocations({
 }
 
 function ClinicBranchCard({ branch }: { branch: ClinicBranch }) {
-  const detailHref = branch.id === "pala" ? "/local/pala" : "/thrissur";
+  const detailHref = branch.id === "pala" ? "/" : "/thrissur";
   const directions = branch.maps.shareUrl ?? branch.maps.directionsUrl;
 
   return (

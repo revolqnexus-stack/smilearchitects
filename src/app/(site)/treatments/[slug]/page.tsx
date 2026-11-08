@@ -443,7 +443,7 @@ export default async function TreatmentPage({ params }: Props) {
                     <p style={{ fontSize: "0.875rem", color: "var(--color-moss)" }}>
                       Available at{" "}
                       {commercial.availableAt.includes("pala") ? (
-                        <Link href="/local/pala">dental clinic in Pala</Link>
+                        <Link href="/">dental clinic in Pala</Link>
                       ) : null}
                       {commercial.availableAt.includes("pala") && commercial.availableAt.includes("thrissur") ? " and " : null}
                       {commercial.availableAt.includes("thrissur") ? (

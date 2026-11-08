@@ -8,7 +8,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/jeotomadmin/", "/api/"],
+        disallow: [
+          "/jeotomadmin/",
+          "/jeotomadmin/*",
+          "/api/",
+          "/api/*",
+          "/*?secret=*", // Block any URL with secret parameter
+        ],
       },
     ],
     sitemap: `${base}/sitemap.xml`,

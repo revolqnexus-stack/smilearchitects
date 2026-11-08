@@ -35,8 +35,8 @@ const STATIC_ROUTES: { path: string; priority: number; changeFrequency: Metadata
   { path: "/book-appointment", priority: 0.95, changeFrequency: "yearly" },
   { path: "/areas-served", priority: 0.75, changeFrequency: "monthly" },
   { path: "/areas-served/kottayam", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/areas-served/thrissur", priority: 0.75, changeFrequency: "monthly" },
-  { path: "/thrissur", priority: 0.9, changeFrequency: "weekly" },
+  // REMOVED: /areas-served/thrissur - consolidated to /thrissur
+  { path: "/thrissur", priority: 0.92, changeFrequency: "weekly" }, // Increased priority - primary Thrissur page
 ];
 
 export function buildSitemapEntries(): MetadataRoute.Sitemap {

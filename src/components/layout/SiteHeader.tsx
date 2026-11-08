@@ -44,7 +44,7 @@ const NAV_TREATMENTS = [
 ];
 
 const NAV_LOCATIONS = [
-  { label: "Pala — main centre", href: "/local/pala" },
+  { label: "Pala — main centre", href: "/" },
   { label: "Thrissur branch", href: "/thrissur" },
   { label: "Both clinics", href: "/locations" },
 ];

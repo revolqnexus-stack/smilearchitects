@@ -16,9 +16,9 @@ export const metadata: Metadata = buildMetadata({
 
 const hubIntro: LinkSegment[] = [
   { type: "text", value: "This guide connects our main pages for patients researching " },
-  { type: "link", href: "/local/pala", label: "dental care in Pala" },
+  { type: "link", href: "/", label: "dental care in Pala" },
   { type: "text", value: ", " },
-  { type: "link", href: "/local/thrissur", label: "care in Thrissur" },
+  { type: "link", href: "/thrissur", label: "care in Thrissur" },
   { type: "text", value: ", and specialist services such as " },
   { type: "link", href: "/orthodontics", label: "orthodontics" },
   { type: "text", value: " and " },

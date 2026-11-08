@@ -29,12 +29,11 @@ const BranchContext = createContext<BranchContextValue | null>(null);
 function branchFromPath(pathname: string): BranchId | null {
   if (
     pathname === "/thrissur" ||
-    pathname.startsWith("/thrissur/") ||
-    pathname === "/local/thrissur"
+    pathname.startsWith("/thrissur/")
   ) {
     return "thrissur";
   }
-  if (pathname === "/local/pala" || pathname === "/local/kottayam") {
+  if (pathname === "/areas-served/kottayam") {
     return "pala";
   }
   return null;

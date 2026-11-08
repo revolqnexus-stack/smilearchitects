@@ -121,7 +121,7 @@ export default function BranchLocationSection() {
                   View Thrissur branch photos &amp; details →
                 </Link>
               ) : (
-                <Link href="/local/pala" style={{ color: "var(--color-dark-moss)", fontWeight: 600 }}>
+                <Link href="/" style={{ color: "var(--color-dark-moss)", fontWeight: 600 }}>
                   Pala clinic — directions &amp; local info →
                 </Link>
               )}
@@ -173,7 +173,7 @@ export default function BranchLocationSection() {
             <DualLocationCard
               title="Pala, Kottayam"
               subtitle="Main centre · Maharani Jn., Pala"
-              href="/local/pala"
+              href="/"
               highlight={branch.id === "pala"}
             />
             <DualLocationCard

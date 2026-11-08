@@ -18,7 +18,7 @@ export default function ContactBothBranches() {
       style={{ scrollMarginTop: "100px" }}
     >
       {BRANCH_LIST.map((branch) => {
-        const detail = branch.id === "pala" ? "/local/pala" : "/thrissur";
+        const detail = branch.id === "pala" ? "/" : "/thrissur";
         const directions = branch.maps.shareUrl ?? branch.maps.directionsUrl;
         return (
           <div

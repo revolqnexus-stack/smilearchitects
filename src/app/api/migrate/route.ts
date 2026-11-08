@@ -164,7 +164,10 @@ export async function POST(request: NextRequest) {
   };
 
   const hasErrors = Object.values(results).some(r => r.errors.length > 0);
-  return NextResponse.json(summary, { status: hasErrors ? 207 : 200 });
+  
+  const response = NextResponse.json(summary, { status: hasErrors ? 207 : 200 });
+  response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  return response;
 }
 
 // GET: just verify the route is reachable
@@ -173,7 +176,8 @@ export async function GET(request: NextRequest) {
   if (secret !== MIGRATION_SECRET) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  return NextResponse.json({
+  
+  const response = NextResponse.json({
     message: 'Migration endpoint ready. Send POST request to run migration.',
     counts: {
       doctors: MIGRATE_DOCTORS.length,
@@ -183,4 +187,6 @@ export async function GET(request: NextRequest) {
       faqs: MIGRATE_FAQS.length,
     },
   });
+  response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  return response;
 }
