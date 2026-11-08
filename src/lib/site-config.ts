@@ -73,7 +73,7 @@ export const CLINIC = {
     logo: "/images/logo.png",
     logoMobile: "/images/MOBILE LOGO.png",
     /** Increment when replacing logo files (browser cache bust) */
-    logoVersion: 4,
+    logoVersion: 5,
   },
   seo: {
     siteName: "Smile Architects",
