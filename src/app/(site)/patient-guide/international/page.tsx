@@ -168,6 +168,260 @@ export default function InternationalPatientGuidePage() {
         </div>
       </div>
 
+      {/* ── INTERNATIONAL PATIENT CTA BOX ──────────────────────── */}
+      <section className="section-padding section-warm">
+        <div className="container-xl">
+          <RevealUp>
+            <div style={{
+              background: "linear-gradient(135deg, var(--color-dark-moss) 0%, #4a5e2e 100%)",
+              borderRadius: "1.5rem",
+              padding: "clamp(2rem, 5vw, 3.5rem)",
+              border: "3px solid var(--color-jonquil)",
+              boxShadow: "0 12px 40px rgba(0,0,0,0.15)",
+              position: "relative",
+              overflow: "hidden",
+            }}>
+              {/* Decorative elements */}
+              <div aria-hidden="true" style={{
+                position: "absolute",
+                top: -60,
+                right: -60,
+                width: 180,
+                height: 180,
+                borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(234,200,0,0.15), transparent 70%)",
+              }} />
+              <div aria-hidden="true" style={{
+                position: "absolute",
+                bottom: -40,
+                left: -40,
+                width: 140,
+                height: 140,
+                borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(168,191,91,0.1), transparent 70%)",
+              }} />
+
+              <div style={{ position: "relative", zIndex: 1, maxWidth: "820px", margin: "0 auto", textAlign: "center" }}>
+                {/* Badge */}
+                <div style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  backgroundColor: "rgba(234,200,0,0.15)",
+                  border: "1.5px solid var(--color-jonquil)",
+                  borderRadius: "9999px",
+                  padding: "0.5rem 1.125rem",
+                  marginBottom: "1.5rem",
+                }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-jonquil)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  <span style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.8125rem",
+                    fontWeight: 700,
+                    color: "var(--color-jonquil)",
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                  }}>
+                    International Patients Welcome
+                  </span>
+                </div>
+
+                {/* Heading */}
+                <h2 style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
+                  color: "var(--color-honeydew)",
+                  fontWeight: 400,
+                  lineHeight: 1.15,
+                  marginBottom: "1rem",
+                }}>
+                  Get Your Treatment Plan Before You Travel
+                </h2>
+
+                {/* Description */}
+                <p style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "clamp(0.9375rem, 2vw, 1.125rem)",
+                  color: "rgba(237,228,211,0.88)",
+                  lineHeight: 1.7,
+                  marginBottom: "2rem",
+                  maxWidth: "640px",
+                  margin: "0 auto 2rem",
+                }}>
+                  Send us your X-rays, photos, or previous dental reports via WhatsApp. 
+                  Dr. Jeo will review and provide an indicative treatment plan with costs — 
+                  before you book your flights to Kerala.
+                </p>
+
+                {/* Contact boxes */}
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                  gap: "1rem",
+                  marginBottom: "2rem",
+                }}>
+                  {/* WhatsApp */}
+                  <a
+                    href={`https://wa.me/${CLINIC.contact.phone.replace("+", "")}?text=Hello, I'm planning to visit Kerala for dental treatment. Can you review my case?`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: "0.625rem",
+                      backgroundColor: "rgba(255,255,255,0.12)",
+                      backdropFilter: "blur(10px)",
+                      border: "1.5px solid rgba(234,200,0,0.3)",
+                      borderRadius: "1rem",
+                      padding: "1.5rem 1.25rem",
+                      textDecoration: "none",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
+                      e.currentTarget.style.borderColor = "var(--color-jonquil)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)";
+                      e.currentTarget.style.borderColor = "rgba(234,200,0,0.3)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-jonquil)">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <div style={{ textAlign: "center" }}>
+                      <p style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "0.8125rem",
+                        fontWeight: 600,
+                        color: "rgba(237,228,211,0.7)",
+                        marginBottom: "0.25rem",
+                        letterSpacing: "0.04em",
+                        textTransform: "uppercase",
+                      }}>
+                        WhatsApp
+                      </p>
+                      <p style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "1rem",
+                        fontWeight: 700,
+                        color: "var(--color-honeydew)",
+                        margin: 0,
+                      }}>
+                        {CLINIC.contact.phoneDisplay}
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* Email */}
+                  <a
+                    href={`mailto:${CLINIC.contact.email}?subject=International Patient Enquiry`}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: "0.625rem",
+                      backgroundColor: "rgba(255,255,255,0.12)",
+                      backdropFilter: "blur(10px)",
+                      border: "1.5px solid rgba(234,200,0,0.3)",
+                      borderRadius: "1rem",
+                      padding: "1.5rem 1.25rem",
+                      textDecoration: "none",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
+                      e.currentTarget.style.borderColor = "var(--color-jonquil)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.12)";
+                      e.currentTarget.style.borderColor = "rgba(234,200,0,0.3)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-jonquil)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <div style={{ textAlign: "center" }}>
+                      <p style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "0.8125rem",
+                        fontWeight: 600,
+                        color: "rgba(237,228,211,0.7)",
+                        marginBottom: "0.25rem",
+                        letterSpacing: "0.04em",
+                        textTransform: "uppercase",
+                      }}>
+                        Email
+                      </p>
+                      <p style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "0.9375rem",
+                        fontWeight: 700,
+                        color: "var(--color-honeydew)",
+                        margin: 0,
+                        wordBreak: "break-word",
+                      }}>
+                        {CLINIC.contact.email}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+
+                {/* Features */}
+                <div style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "1.25rem",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}>
+                  {[
+                    { icon: "✓", text: "Pre-travel consultation" },
+                    { icon: "✓", text: "Transparent pricing in INR" },
+                    { icon: "✓", text: "Remote aftercare support" },
+                  ].map((item) => (
+                    <div key={item.text} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span style={{
+                        width: 20,
+                        height: 20,
+                        borderRadius: "50%",
+                        backgroundColor: "var(--color-jonquil)",
+                        color: "var(--color-dark-moss)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "0.75rem",
+                        fontWeight: 700,
+                        flexShrink: 0,
+                      }}>
+                        {item.icon}
+                      </span>
+                      <span style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "0.875rem",
+                        color: "var(--color-honeydew)",
+                        fontWeight: 500,
+                      }}>
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </RevealUp>
+        </div>
+      </section>
+
       {/* ── WHY SMILE ARCHITECTS ───────────────────────────────── */}
       <section className="section-padding section-warm">
         <div className="container-xl">
