@@ -28,18 +28,18 @@ import HomeHeroCTAs from "@/components/ui/HomeHeroCTAs";
 import BranchLocationSection from "@/components/sections/BranchLocationSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Best Dental Clinic in Pala & Kottayam District",
+  title: "Orthodontist & Dental Clinic in Pala (Palai), Kottayam District",
   description:
-    `Smile Architects — invisible orthodontics & multispeciality dental clinic in Pala, Kottayam District & Thrissur. MDS orthodontist, implants, braces, lingual braces & smile design. Call ${CLINIC.contact.phoneDisplay}.`,
+    `Smile Architects — orthodontist & multispeciality dental clinic in Pala (Palai), Kottayam District, Kerala. Dr. Jeo Tom Charls, MDS Orthodontics. Invisalign, braces, lingual braces, dental implants & smile design. Call ${CLINIC.contact.phoneDisplay}.`,
   canonical: "/",
   keywords: [
+    "orthodontist Pala",
     "best dental clinic Pala",
+    "dentist Palai Kerala",
     "best dental clinic Kottayam",
-    "best dental clinic Thrissur",
-    "dentist Pala",
-    "orthodontist Kottayam",
-    "dental clinic Palai Kerala",
-    "Smile Architects",
+    "orthodontist Kottayam District",
+    "dental clinic Pala Kottayam",
+    "Smile Architects Pala",
   ],
 });
 
@@ -118,18 +118,18 @@ export default function HomePage() {
               {/* Headline */}
               <RevealUp delay={0.15}>
                 <h1 id="hero-heading" className="hero-title">
-                  <span className="hero-title-white">Advanced Dental<br />Care &amp;</span>
+                  <span className="hero-title-white">Orthodontist &amp;<br />Dental Clinic in</span>
                   <br />
-                  <span className="hero-title-gold">Smile Design</span>
+                  <span className="hero-title-gold">Pala, Kottayam</span>
                 </h1>
               </RevealUp>
 
               {/* Description */}
               <RevealUp delay={0.25}>
                 <p className="hero-desc">
-                  Multispeciality dental clinic &amp; advanced orthodontics in{" "}
-                  <strong style={{ fontWeight: 600 }}>Pala</strong>, led by{" "}
-                  <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS
+                  Advanced orthodontics &amp; multispeciality dental clinic in{" "}
+                  <strong style={{ fontWeight: 600 }}>Pala (Palai)</strong>, Kottayam District, led by{" "}
+                  <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS Orthodontics
                   — plus our{" "}
                   <Link href="/thrissur" className="sa-prose-link sa-prose-link--hero">
                     Thrissur (Punkunnam) branch
@@ -501,13 +501,13 @@ export default function HomePage() {
             </StaggerReveal>
             <StaggerReveal type="heading">
               <h2 id="treatments-heading" className="section-title">
-                Dental treatments in Pala
+                Dental treatments in Pala (Palai)
               </h2>
             </StaggerReveal>
             <StaggerReveal type="body">
               <p className="section-body">
                 Smile design, braces, clear aligners and lingual orthodontics — plus implants
-                and full general care — under one roof in Pala, Kottayam.
+                and full general care — under one roof in Pala, Kottayam District.
               </p>
             </StaggerReveal>
           </div>
@@ -626,7 +626,7 @@ export default function HomePage() {
               </StaggerReveal>
               <StaggerReveal type="heading">
                 <h2 id="orthodontics-heading" className="section-title">
-                  Braces and aligner treatment in Pala
+                  Braces and aligner treatment in Pala, Kottayam
                 </h2>
               </StaggerReveal>
               <StaggerReveal type="body">
