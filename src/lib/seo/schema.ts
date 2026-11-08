@@ -23,6 +23,33 @@ function openingHoursSpec() {
 
 function branchToDentistSchema(branch: ClinicBranch, path: string) {
   const id = `${SITE}${path}#dentist`;
+  
+  // Comprehensive areaServed for AI understanding
+  const palaAreasServed = [
+    { "@type": "City", name: "Pala", "@id": "https://en.wikipedia.org/wiki/Pala,_Kerala" },
+    { "@type": "City", name: "Palai" },
+    { "@type": "City", name: "Kottayam", "@id": "https://en.wikipedia.org/wiki/Kottayam" },
+    { "@type": "City", name: "Erattupetta" },
+    { "@type": "City", name: "Ettumanoor" },
+    { "@type": "City", name: "Changanassery" },
+    { "@type": "City", name: "Vaikom" },
+    { "@type": "City", name: "Thiruvalla" },
+    { "@type": "City", name: "Puthuppally" },
+    { "@type": "AdministrativeArea", name: "Kottayam District", "@id": "https://en.wikipedia.org/wiki/Kottayam_district" },
+    { "@type": "AdministrativeArea", name: "Kerala", "@id": "https://en.wikipedia.org/wiki/Kerala" },
+  ];
+
+  const thrissurAreasServed = [
+    { "@type": "City", name: "Thrissur", "@id": "https://en.wikipedia.org/wiki/Thrissur" },
+    { "@type": "Place", name: "Punkunnam" },
+    { "@type": "City", name: "Guruvayur" },
+    { "@type": "City", name: "Chalakudy" },
+    { "@type": "City", name: "Irinjalakuda" },
+    { "@type": "City", name: "Kodungallur" },
+    { "@type": "AdministrativeArea", name: "Thrissur District", "@id": "https://en.wikipedia.org/wiki/Thrissur_district" },
+    { "@type": "AdministrativeArea", name: "Kerala", "@id": "https://en.wikipedia.org/wiki/Kerala" },
+  ];
+
   return {
     "@type": "Dentist",
     "@id": id,
@@ -34,10 +61,21 @@ function branchToDentistSchema(branch: ClinicBranch, path: string) {
     image: branch.media?.hero
       ? `${SITE}${branch.media.hero}`
       : `${SITE}${CLINIC.seo.ogImage}`,
-    priceRange: "₹",
+    priceRange: "₹₹",
     currenciesAccepted: "INR",
-    paymentAccepted: "Cash, UPI",
-    medicalSpecialty: ["Dentistry", "Orthodontics", "Dental Implants"],
+    paymentAccepted: "Cash, UPI, Credit Card, Debit Card",
+    medicalSpecialty: [
+      "Orthodontics",
+      "Dentofacial Orthopaedics", 
+      "Dental Implants",
+      "Periodontics",
+      "Oral and Maxillofacial Surgery",
+      "Cosmetic Dentistry",
+      "Paediatric Dentistry",
+      "Prosthodontics",
+      "Endodontics",
+      "General Dentistry",
+    ],
     openingHoursSpecification: openingHoursSpec(),
     hasMap: branch.maps.shareUrl ?? branch.maps.directionsUrl,
     address: {
@@ -59,32 +97,91 @@ function branchToDentistSchema(branch: ClinicBranch, path: string) {
           latitude: 10.527,
           longitude: 76.214,
         },
-    areaServed: branch.id === "pala"
-      ? [
-          { "@type": "City", name: "Pala" },
-          { "@type": "City", name: "Palai" },
-          { "@type": "AdministrativeArea", name: "Kottayam District" },
-        ]
-      : [
-          { "@type": "City", name: "Thrissur" },
-          { "@type": "Place", name: "Punkunnam" },
-        ],
+    areaServed: branch.id === "pala" ? palaAreasServed : thrissurAreasServed,
     parentOrganization: { "@id": `${SITE}/#organization` },
+    aggregateRating: branch.id === "pala" && CLINIC.trust.googleRating
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: CLINIC.trust.googleRating.toString(),
+          reviewCount: CLINIC.trust.googleReviewCount?.toString() || "0",
+          bestRating: "5",
+          worstRating: "1",
+        }
+      : undefined,
   };
 }
 
 /** Site-wide JSON-LD @graph: Organization, WebSite, both clinic locations */
 export function buildSiteSchemaGraph() {
+  // Build comprehensive sameAs array for entity disambiguation
+  const sameAsLinks = [
+    CLINIC.social.instagram,
+    CLINIC.platforms.practo.url,
+    CLINIC.platforms.googleMaps.reviewsUrl,
+    CLINIC.platforms.googleMaps.directionsUrl,
+  ].filter(Boolean);
+
   const organization = {
-    "@type": "Organization",
+    "@type": ["Organization", "MedicalOrganization", "Dentist"],
     "@id": `${SITE}/#organization`,
     name: CLINIC.name,
+    alternateName: "Smile Architects Keralam",
+    legalName: "Smile Architects — Invisible Orthodontics & Multispeciality Dental Clinic",
     url: SITE,
     logo: `${SITE}${CLINIC.seo.ogImage}`,
     email: CLINIC.contact.email,
     telephone: CLINIC.contact.phone,
     description: CLINIC.seo.defaultDescription,
-    ...(CLINIC.social.facebook ? { sameAs: [CLINIC.social.facebook, CLINIC.social.instagram].filter(Boolean) } : {}),
+    foundingDate: "2015",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: CLINIC.address.street,
+      addressLocality: CLINIC.address.city,
+      addressRegion: CLINIC.address.state,
+      postalCode: CLINIC.address.pincode,
+      addressCountry: "IN",
+    },
+    areaServed: [
+      { "@type": "City", name: "Pala", "@id": "https://en.wikipedia.org/wiki/Pala,_Kerala" },
+      { "@type": "City", name: "Kottayam", "@id": "https://en.wikipedia.org/wiki/Kottayam" },
+      { "@type": "City", name: "Thrissur", "@id": "https://en.wikipedia.org/wiki/Thrissur" },
+      { "@type": "AdministrativeArea", name: "Kottayam District" },
+      { "@type": "AdministrativeArea", name: "Kerala", "@id": "https://en.wikipedia.org/wiki/Kerala" },
+    ],
+    medicalSpecialty: [
+      "Orthodontics",
+      "Dentofacial Orthopaedics",
+      "Dental Implants",
+      "Periodontics",
+      "Oral Surgery",
+      "Cosmetic Dentistry",
+      "Paediatric Dentistry",
+      "Prosthodontics",
+      "Endodontics",
+    ],
+    knowsAbout: [
+      "Invisalign",
+      "Clear Aligners",
+      "Lingual Braces",
+      "Dental Braces",
+      "Dental Implants",
+      "Smile Design",
+      "Root Canal Treatment",
+      "Teeth Whitening",
+      "Veneers",
+      "Orthodontic Treatment",
+    ],
+    sameAs: sameAsLinks,
+    founder: {
+      "@type": "Person",
+      "@id": `${SITE}/doctors/dr-jeo-tom-charls#person`,
+      name: "Dr. Jeo Tom Charls",
+    },
+    employee: DOCTORS.map(d => ({
+      "@type": "Person",
+      "@id": `${SITE}/doctors/${d.slug}#person`,
+      name: d.name,
+    })),
   };
 
   const website = {
@@ -95,17 +192,48 @@ export function buildSiteSchemaGraph() {
     description: CLINIC.seo.defaultDescription,
     publisher: { "@id": `${SITE}/#organization` },
     inLanguage: "en-IN",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
-  const palaDentist = branchToDentistSchema(BRANCH_PALA, "/local/pala");
-  const thrissurDentist = branchToDentistSchema(BRANCH_THRISSUR, "/local/thrissur");
+  const palaDentist = branchToDentistSchema(BRANCH_PALA, "/");
+  const thrissurDentist = branchToDentistSchema(BRANCH_THRISSUR, "/thrissur");
 
-  const leadDoctors = DOCTORS.slice(0, 4).map((d) => ({
+  // Enhanced Person schemas with full credentials
+  const leadDoctors = DOCTORS.map((d) => ({
     "@type": "Person",
+    "@id": `${SITE}/doctors/${d.slug}#person`,
     name: d.name,
-    jobTitle: d.roles?.[0] ?? "Dentist",
-    hasCredential: d.qualifications,
+    jobTitle: d.specialty,
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: d.qualifications,
+      },
+      ...(d.registrationNumber ? [{
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "professional license",
+        name: `${d.registrationBody} Registration ${d.registrationNumber}`,
+      }] : []),
+    ],
     worksFor: { "@id": `${SITE}/#organization` },
+    knowsAbout: d.areasOfExpertise || [],
+    ...(d.memberships?.length ? {
+      memberOf: d.memberships.map(m => ({
+        "@type": "Organization",
+        name: m,
+      })),
+    } : {}),
+    url: `${SITE}/doctors/${d.slug}`,
+    image: `${SITE}${d.photo}`,
+    description: d.bio,
   }));
 
   return {
