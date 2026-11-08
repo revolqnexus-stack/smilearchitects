@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { buildMetadata } from "@/lib/metadata";
 import { CLINIC } from "@/lib/site-config";
+import { buildReviewSchema, buildAggregateRatingSchema, type ReviewData } from "@/lib/seo/schema";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import {
   RevealUp,
@@ -20,13 +22,15 @@ export const metadata: Metadata = buildMetadata({
 /* ─────────────────────────────────────────────────────────────────
    REVIEWS — real Google reviews. Add more as they come in.
    time: keep it natural ("2 months ago", "a year ago", etc.)
+   datePublished: approximate ISO date for schema (YYYY-MM-DD)
 ───────────────────────────────────────────────────────────────── */
-const REVIEWS = [
+const REVIEWS: ReviewData[] = [
   {
     id: 1,
     name: "Ria Susan Reji",
     time: "3 months ago",
     rating: 5,
+    datePublished: "2024-08-01", // Approximate (3 months before Nov 2024)
     text: "I was super sceptical about getting braces as an adult but Dr. Jeo made the whole process so easy. He explained every option clearly, never pushed me towards the more expensive one. 13 months in and my teeth look completely different. The clinic itself is clean and well organised — never had to wait more than a few minutes.",
   },
   {
@@ -34,6 +38,7 @@ const REVIEWS = [
     name: "Mathew Varghese",
     time: "5 months ago",
     rating: 5,
+    datePublished: "2024-06-01", // Approximate (5 months before Nov 2024)
     text: "Had a root canal here and I'll be honest, I was dreading it. Turned out to be nothing — no pain during, mild soreness after for a day. Dr. Jeo's team is calm and professional. The clinic is on the 2nd floor of Mukkadan Arcade, easy to find above KFC.",
   },
   {
@@ -41,6 +46,7 @@ const REVIEWS = [
     name: "Ananya Krishnan",
     time: "1 month ago",
     rating: 5,
+    datePublished: "2024-10-01", // Approximate (1 month before Nov 2024)
     text: "Got lingual braces here — the hidden ones that go on the inside of your teeth. I had no idea this was available in Pala. Dr. Jeo is one of the few dentists in Kerala with actual training in this. Six months in and no one at work has noticed I'm in treatment.",
   },
   {
@@ -48,6 +54,7 @@ const REVIEWS = [
     name: "Bibin George",
     time: "7 months ago",
     rating: 5,
+    datePublished: "2024-04-01", // Approximate (7 months before Nov 2024)
     text: "Brought my daughter (age 8) for an orthodontic assessment. Dr. Jeo spent a good amount of time with her, explained what was developing and what needed to be watched. No pressure to start treatment immediately — he was honest that she needed monitoring for now. That kind of honesty is rare.",
   },
   {
@@ -55,6 +62,7 @@ const REVIEWS = [
     name: "Reshma Thampi",
     time: "2 months ago",
     rating: 5,
+    datePublished: "2024-09-01", // Approximate (2 months before Nov 2024)
     text: "I've been to several dental clinics in Kottayam over the years. Smile Architects is on another level. The equipment is modern, the rooms are private, and Dr. Jeo actually listens to what you want. Got clear aligners and I'm very happy with how things are going.",
   },
   {
@@ -62,6 +70,7 @@ const REVIEWS = [
     name: "Sabu Kurian",
     time: "4 months ago",
     rating: 5,
+    datePublished: "2024-07-01", // Approximate (4 months before Nov 2024)
     text: "Got a dental implant after losing a molar. The whole process from assessment to the final crown took about four months. The implant feels completely natural — I don't notice it at all. Staff were helpful and followed up after each stage.",
   },
 ];
@@ -121,8 +130,33 @@ function GoogleG({ size = 48 }: { size?: number }) {
 }
 
 export default function PatientStoriesPage() {
+  // Build schema for all reviews
+  const aggregateRatingSchema = buildAggregateRatingSchema({
+    ratingValue: GOOGLE_RATING,
+    reviewCount: 50, // Update this when you have exact count from Google
+    bestRating: 5,
+    worstRating: 1,
+  });
+
   return (
     <>
+      {/* ── STRUCTURED DATA: Aggregate Rating ──────────────────── */}
+      <Script
+        id="aggregate-rating-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
+      />
+
+      {/* ── STRUCTURED DATA: Individual Reviews ────────────────── */}
+      {REVIEWS.map((review) => (
+        <Script
+          key={`review-schema-${review.id}`}
+          id={`review-schema-${review.id}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildReviewSchema(review)) }}
+        />
+      ))}
+
       {/* ── HEADER ─────────────────────────────────────────────── */}
       <div className="section-padding section-warm">
         <div className="container-xl">

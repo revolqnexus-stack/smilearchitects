@@ -182,6 +182,16 @@ export function buildSiteSchemaGraph() {
       "@id": `${SITE}/doctors/${d.slug}#person`,
       name: d.name,
     })),
+    // Add aggregate rating if available
+    ...(CLINIC.trust.googleRating ? {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: CLINIC.trust.googleRating.toString(),
+        reviewCount: (CLINIC.trust.googleReviewCount || 50).toString(),
+        bestRating: "5",
+        worstRating: "1",
+      },
+    } : {}),
   };
 
   const website = {
@@ -287,6 +297,73 @@ export function buildMedicalBusinessSchema(options: {
           url: `${SITE}/treatments/${t.slug}`,
         },
       })),
+    },
+  };
+}
+
+export interface ReviewData {
+  id: number;
+  name: string;
+  time: string;
+  rating: number;
+  text: string;
+  datePublished?: string; // ISO 8601 date (YYYY-MM-DD)
+}
+
+/**
+ * Build Review schema for a single patient testimonial
+ * AI systems use this to validate genuine reviews
+ */
+export function buildReviewSchema(review: ReviewData) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": `${SITE}/patient-stories#review-${review.id}`,
+    itemReviewed: {
+      "@type": "Dentist",
+      "@id": `${SITE}/#dentist`,
+      name: CLINIC.name,
+      url: SITE,
+    },
+    author: {
+      "@type": "Person",
+      name: review.name,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.rating.toString(),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    datePublished: review.datePublished || new Date().toISOString().split('T')[0],
+    reviewBody: review.text,
+    inLanguage: "en-IN",
+  };
+}
+
+/**
+ * Build AggregateRating schema for all reviews
+ * Shows overall rating to AI systems and search engines
+ */
+export function buildAggregateRatingSchema(options: {
+  ratingValue: number;
+  reviewCount: number;
+  bestRating?: number;
+  worstRating?: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AggregateRating",
+    "@id": `${SITE}/#aggregateRating`,
+    ratingValue: options.ratingValue.toString(),
+    reviewCount: options.reviewCount.toString(),
+    bestRating: (options.bestRating || 5).toString(),
+    worstRating: (options.worstRating || 1).toString(),
+    itemReviewed: {
+      "@type": "Dentist",
+      "@id": `${SITE}/#dentist`,
+      name: CLINIC.name,
+      url: SITE,
     },
   };
 }

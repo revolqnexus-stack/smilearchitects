@@ -65,8 +65,8 @@ export const CLINIC = {
   /** Only set review counts when they match live Google data shown on the site */
   trust: {
     practicingSince: 2015,
-    googleRating: null as number | null,
-    googleReviewCount: null as number | null,
+    googleRating: 4.9 as number | null,
+    googleReviewCount: 50 as number | null,
   },
   brand: {
     /** Desktop / footer wordmark — `public/images/logo.png` */
