@@ -6,9 +6,9 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import { TreatmentIconFor, ArrowRightIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Dental Treatments in Pala, Kottayam | Smile Architects",
+  title: "Dental Treatments in Pala, Kottayam | Braces, Implants & Complete Dental Care",
   description:
-    "Dental treatments at Smile Architects, Pala — orthodontics, dental implants, root canal treatment, cosmetic dentistry, smile design, paediatric dentistry and more in Kottayam, Kerala.",
+    "Complete dental treatments at Smile Architects, Pala: orthodontics (braces, clear aligners, lingual braces), dental implants, smile design, root canal treatment, cosmetic dentistry, pediatric dentistry, periodontal treatment, crowns, bridges, dentures, and general dentistry. Led by Dr. Jeo Tom Charls, MDS Orthodontics, at Maharani Junction, Pala, Kottayam District.",
   canonical: "/treatments",
 });
 

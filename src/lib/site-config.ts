@@ -456,6 +456,11 @@ export const FAQS_GENERAL = [
     answer: "The clinic is open Monday to Saturday, 9:30 AM to 8:00 PM. The clinic is closed on Sundays.",
   },
   {
+    question: "Do you provide emergency dental care?",
+    answer:
+      `Yes, Smile Architects provides same-day emergency appointments for dental emergencies including severe toothache, broken teeth, knocked-out teeth, dental abscesses, and bleeding after extractions. Call ${CLINIC_PHONE_DISPLAY} immediately for emergency dental care.`,
+  },
+  {
     question: "How do I book an appointment?",
     answer:
       `You can book an appointment by calling ${CLINIC_PHONE_DISPLAY}, sending a WhatsApp message to the same number, or using the online appointment form on this website.`,
@@ -475,6 +480,22 @@ export const FAQS_GENERAL = [
       "Walk-ins are welcome, though appointments are recommended to avoid waiting times. Call ahead to check availability.",
   },
 ];
+
+export const EMERGENCY_CARE = {
+  enabled: true,
+  phone: CLINIC_PHONE_DISPLAY,
+  note: "For urgent dental emergencies, call us immediately for same-day treatment at our Pala clinic.",
+  symptoms: [
+    "Severe toothache or dental pain",
+    "Broken, chipped, or fractured tooth",
+    "Knocked-out (avulsed) tooth",
+    "Dental abscess or facial swelling",
+    "Uncontrolled bleeding after tooth extraction",
+    "Lost filling or crown causing pain",
+    "Injury to teeth, lips, or gums from trauma",
+  ],
+  guidance: "For dental emergencies, call us immediately. Same-day emergency appointments are available during clinic hours (Monday-Saturday, 9:30 AM - 8:00 PM). If outside clinic hours, please go to the nearest hospital emergency department for urgent care.",
+} as const;
 
 export type DoctorId = typeof DOCTORS[number]["id"];
 export type TreatmentId = typeof TREATMENTS[number]["id"];

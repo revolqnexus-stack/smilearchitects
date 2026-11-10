@@ -56,7 +56,7 @@ const TREATMENT_DETAILS: Record<
 > = {
   "general-dentistry": {
     intro:
-      "General dentistry forms the foundation of good oral health. At Smile Architects, routine dental care includes check-ups, professional cleaning (scaling and polishing), fillings, tooth extractions and preventive advice. Regular visits allow early detection of problems before they become more complex or costly to treat.",
+      "General dentistry at Smile Architects provides the foundation of preventive and routine oral care for patients of all ages in Pala and surrounding Kottayam District. Regular dental checkups allow early detection of problems before they become complex or costly. Our comprehensive general dental services include professional teeth cleaning (scaling and polishing), tooth-colored fillings, simple and surgical extractions, and emergency dental care for pain or trauma. We emphasize preventive advice tailored to your individual needs — including diet guidance, proper brushing technique, and fluoride recommendations.",
     points: [
       "Comprehensive dental examination and oral health assessment",
       "Scaling and polishing (professional cleaning)",
@@ -70,7 +70,7 @@ const TREATMENT_DETAILS: Record<
   },
   "pediatric-dentistry": {
     intro:
-      "Children's dental health requires a gentle, patient-centred approach. The team at Smile Architects is experienced in treating children across all ages — from first tooth check-ups through adolescence — in a calm, reassuring environment. Early dental visits help establish good habits and address issues like tooth decay, spacing or bite development before they worsen.",
+      "Paediatric dentistry at Smile Architects provides specialized dental care for children from infancy through adolescence in a gentle, reassuring environment in Pala, Kottayam. Dr. Renu Ann Mathew (MDS Paediatric & Preventive Dentistry), visiting consultant, treats children across all ages with experience in behavioral management and age-appropriate communication. Early dental visits establish good oral hygiene habits, allow preventive treatments like fluoride and sealants, and address problems like tooth decay or bite development before they worsen. We help make dental visits positive experiences that last into adulthood.",
     points: [
       "First dental visit check-ups for young children",
       "Preventive care: fluoride treatment and fissure sealants",
@@ -85,7 +85,7 @@ const TREATMENT_DETAILS: Record<
   },
   "dental-implants": {
     intro:
-      "A dental implant is a titanium screw surgically placed into the jawbone to replace a missing tooth root. Over several months, the implant integrates with your bone through a process called osseointegration. Once healed, a crown is attached to the implant, giving you a replacement tooth that looks, feels and functions like your natural tooth. Implants can also support bridges or dentures, eliminating the need for removable prosthetics. Treatment is provided by Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology) at our Pala clinic.",
+      "Dental implants are titanium posts surgically placed into the jawbone to replace missing tooth roots, providing the most permanent solution for tooth loss. At Smile Architects, Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology) performs dental implant placement at our Pala clinic using digital X-ray for precise planning. Over 3-6 months, the implant integrates with your bone through osseointegration, after which a crown is attached. Implants can replace single teeth, support bridges, or anchor complete dentures, restoring both function and confidence.",
     points: [
       "Single tooth implant to replace one missing tooth",
       "Multiple implants to support a bridge replacing several teeth",
@@ -102,7 +102,7 @@ const TREATMENT_DETAILS: Record<
   },
   "cosmetic-dentistry": {
     intro:
-      "Cosmetic dentistry improves the appearance of your teeth, gums and smile. At Smile Architects, cosmetic treatments are carried out with attention to natural aesthetics — results should look like a better version of your own smile, not an artificial one. Dr. Jeo Tom Charls has additional training in aesthetic dentistry.",
+      "Cosmetic dentistry at Smile Architects improves the appearance of your teeth, gums, and smile through professional aesthetic treatments in Pala, Kottayam. Dr. Jeo Tom Charls, with additional training in aesthetic dentistry, provides teeth whitening (in-clinic and take-home), composite bonding, porcelain and composite veneers, and gum contouring. Our approach focuses on natural aesthetics — creating results that look like a refined version of your own smile rather than an artificial transformation. All cosmetic work is planned with careful attention to your facial features, tooth proportions, and personal preferences.",
     points: [
       "Teeth whitening (professional in-clinic and take-home)",
       "Tooth-coloured composite bonding",
@@ -116,7 +116,7 @@ const TREATMENT_DETAILS: Record<
   },
   "smile-design": {
     intro:
-      "Digital Smile Design (DSD) is a planning tool that allows you to preview your new smile before any treatment begins. Using photographs, digital design software and detailed clinical measurements, your desired outcome is visualised and agreed upon, then used to guide every step of the actual treatment. It brings together orthodontics, restorative and cosmetic dentistry into a single, coordinated plan.",
+      "Digital Smile Design (DSD) at Smile Architects combines photography, digital simulation software, and detailed clinical measurements to plan your complete smile transformation before any treatment begins. Dr. Jeo Tom Charls leads the smile design process, coordinating orthodontic, restorative, and cosmetic procedures into a single comprehensive plan. You'll see a digital preview of your new smile and approve the design before any permanent work is done. This technology-driven approach eliminates guesswork and ensures your final result matches your expectations.",
     points: [
       "Photographic analysis and digital smile simulation",
       "Combined treatment planning across specialties",
@@ -130,7 +130,7 @@ const TREATMENT_DETAILS: Record<
   },
   "root-canal-treatment": {
     intro:
-      "Root canal treatment (endodontic treatment) relieves pain and saves teeth that would otherwise need to be extracted. When the nerve or pulp inside a tooth becomes infected or irreversibly inflamed — typically due to deep decay, a crack or trauma — the infected tissue is removed, the root canals are cleaned and shaped, and the tooth is sealed and restored. Modern root canal treatment is performed under local anaesthetic and is generally no more uncomfortable than a routine filling.",
+      "Root canal treatment (endodontic treatment) at Smile Architects relieves dental pain and saves teeth that would otherwise require extraction. When the nerve tissue inside a tooth becomes infected or inflamed — typically from deep decay, a crack, or trauma — we remove the infected pulp, clean and shape the root canals, then seal and restore the tooth. Modern root canal treatment under local anaesthetic is generally no more uncomfortable than receiving a routine filling. Our digital X-ray system ensures accurate canal measurement and successful treatment outcomes.",
     points: [
       "Single and multi-visit root canal procedures",
       "Treatment of infected, painful or abscessed teeth",
@@ -143,7 +143,7 @@ const TREATMENT_DETAILS: Record<
   },
   "restorative-dentistry": {
     intro:
-      "Restorative dentistry repairs teeth that have been damaged by decay, wear, trauma or previous unsuccessful treatment. The goal is to restore both the function and appearance of your teeth, allowing you to chew comfortably and smile confidently. Modern restorative materials are predominantly tooth-coloured, meaning that fillings, inlays and onlays can be virtually invisible. The choice of restoration depends on the size and location of the damage, the forces involved in chewing, and aesthetic requirements.",
+      "Restorative dentistry at Smile Architects repairs teeth damaged by decay, wear, trauma, or previous unsuccessful treatment. The goal is restoring both function and appearance so you can chew comfortably and smile confidently. Modern restorative materials are predominantly tooth-colored — composite fillings, ceramic inlays, and onlays blend invisibly with your natural teeth. The restoration choice depends on damage extent, chewing forces involved, and aesthetic requirements. Treatment preserves as much healthy tooth structure as possible while providing long-lasting, natural-looking results.",
     points: [
       "Tooth-coloured composite fillings for front and back teeth",
       "Removal and replacement of old amalgam (metal) fillings",
@@ -157,7 +157,7 @@ const TREATMENT_DETAILS: Record<
   },
   "oral-surgery": {
     intro:
-      "Oral and maxillofacial surgery covers surgical procedures involving the mouth, jaws, face and related structures. At Smile Architects, Dr. Kishore George (MDS Oral & Maxillofacial Surgery) provides oral surgery as a visiting consultant. Common procedures include wisdom tooth extraction, surgical removal of impacted teeth, cyst removal and pre-implant surgery. More complex surgical cases requiring general anaesthesia or hospitalisation are assessed and referred to appropriate specialist facilities.",
+      "Oral and maxillofacial surgery at Smile Architects covers surgical procedures of the mouth, jaws, and facial structures. Dr. Kishore George (MDS Oral & Maxillofacial Surgery), visiting consultant, provides wisdom tooth extraction, surgical removal of impacted teeth, oral cyst removal, and pre-implant surgical assessment at our Pala clinic under local anaesthetic. Simple extractions are performed by our general dental team. Complex surgical cases requiring general anaesthesia or hospital admission are evaluated and referred to appropriate specialist facilities.",
     points: [
       "Simple tooth extractions performed under local anaesthetic",
       "Surgical extractions for broken, impacted or difficult teeth",
@@ -173,7 +173,7 @@ const TREATMENT_DETAILS: Record<
   },
   orthodontics: {
     intro:
-      "Orthodontic treatment corrects misaligned teeth and jaws to improve both function and appearance. At Smile Architects, Dr. Jeo Tom Charls — MDS Orthodontics and Dentofacial Orthopaedics — provides a full range of orthodontic treatment for children, adolescents and adults. A detailed orthodontic assessment determines the most appropriate appliance and treatment duration.",
+      "Orthodontic treatment at Smile Architects in Pala, Kottayam District, is led by Dr. Jeo Tom Charls (MDS Orthodontics and Dentofacial Orthopaedics, Kerala State Dental Council Reg. 9451). We offer the full spectrum of orthodontic care — from conventional metal and ceramic braces through to advanced clear aligner systems and lingual (hidden) braces fitted to the inner tooth surfaces. Treatment corrects misaligned teeth and jaw relationships, improving both function and appearance for children, adolescents, and adults. A comprehensive orthodontic assessment including X-rays and clinical examination determines the most appropriate treatment approach and duration.",
     points: [
       "Comprehensive orthodontic assessment including X-rays and study models",
       "Metal and ceramic fixed appliances (braces)",
@@ -189,7 +189,7 @@ const TREATMENT_DETAILS: Record<
   },
   braces: {
     intro:
-      "Dental braces use a system of brackets, wires and elastic ties to gradually reposition teeth. Smile Architects offers metal braces, ceramic (tooth-coloured) braces and self-ligating systems such as Damon brackets. The choice of appliance depends on your clinical needs, aesthetic preferences and budget. Treatment is led by Dr. Jeo Tom Charls, MDS Orthodontics.",
+      "Dental braces at Smile Architects use brackets, wires, and elastic ties to gradually reposition misaligned teeth over 18-24 months (duration varies by case complexity). Dr. Jeo Tom Charls (MDS Orthodontics, Kerala State Dental Council Reg. 9451) offers metal braces, ceramic (tooth-colored) braces, and self-ligating Damon systems at our Pala clinic. The choice depends on your clinical needs, aesthetic preferences, and budget. All braces treatment includes digital X-rays, regular adjustment appointments every 4-8 weeks, and retainers upon completion to maintain your new smile.",
     points: [
       "Metal braces — durable and cost-effective",
       "Ceramic braces — tooth-coloured brackets for a discreet look",
@@ -203,7 +203,7 @@ const TREATMENT_DETAILS: Record<
   },
   "clear-aligners": {
     intro:
-      "Clear aligners are a series of transparent, removable trays that gradually move teeth to the desired position. They are virtually invisible when worn, can be removed for eating and cleaning, and are a popular choice for adults and older teenagers. Dr. Jeo Tom Charls has completed ClearPath aligner certification training.",
+      "Clear aligners at Smile Architects are transparent, removable trays that gradually straighten teeth without visible metal braces. Dr. Jeo Tom Charls, a ClearPath certified provider, creates custom aligner series for mild to moderate crowding, spacing, and bite concerns. The aligners are virtually invisible when worn, can be removed for eating and oral hygiene, and typically require shorter chair-time than traditional braces. Treatment involves wearing each set of aligners for 1-2 weeks before progressing to the next in the series, with progress check appointments every 6-8 weeks.",
     points: [
       "Custom-fabricated clear aligner series",
       "Suitable for mild to moderate crowding, spacing and bite issues",
@@ -218,7 +218,7 @@ const TREATMENT_DETAILS: Record<
   },
   "lingual-braces": {
     intro:
-      "Lingual braces are fixed orthodontic appliances bonded to the inner (tongue-side) surface of the teeth. When you smile, they are completely hidden. Dr. Jeo Tom Charls has completed dedicated lingual orthodontics training and CAD/CAM lingual bracket training, allowing him to offer this highly specialised treatment at Smile Architects.",
+      "Lingual braces at Smile Architects are fixed orthodontic brackets bonded to the inner (tongue-side) surface of teeth, making them completely invisible from the front even when you smile or speak. Dr. Jeo Tom Charls has dedicated lingual orthodontics training and CAD/CAM lingual bracket training — a specialized skill set rare in Kerala. This advanced treatment option handles the same range of orthodontic problems as conventional braces but remains hidden throughout treatment. Suitable for adults and teenagers concerned about brace visibility during professional, social, or personal situations.",
     points: [
       "Brackets bonded to the inner surface of teeth — invisible from the front",
       "Suitable for the same range of cases as conventional braces",
@@ -232,7 +232,7 @@ const TREATMENT_DETAILS: Record<
   },
   "periodontal-treatment": {
     intro:
-      "Periodontal disease affects the gums and bone supporting your teeth. Early stages (gingivitis) cause bleeding and swelling. Left untreated, the condition progresses to periodontitis — where the bone supporting teeth is lost, eventually leading to tooth loss. Periodontal disease has also been linked to systemic health conditions including diabetes and heart disease. At Smile Architects, Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology) provides comprehensive gum disease treatment and ongoing maintenance care.",
+      "Periodontal treatment at Smile Architects addresses gum disease affecting the soft tissue and bone supporting your teeth. Dr. Jom T. Kizhakkel (MDS Periodontics & Implantology) provides comprehensive gum disease treatment at our Pala clinic, from early-stage gingivitis causing bleeding and swelling through to advanced periodontitis where bone loss threatens tooth stability. Treatment typically involves professional deep cleaning (scaling and root planing), tailored oral hygiene instruction, and regular maintenance appointments to prevent recurrence. Untreated gum disease has been linked to systemic health conditions including diabetes and heart disease.",
     points: [
       "Complete periodontal examination with pocket depth measurements",
       "Professional scaling and root planing (deep cleaning below the gum line)",
@@ -245,9 +245,9 @@ const TREATMENT_DETAILS: Record<
     doctorId: "dr-jom-t-kizhakkel",
     relatedSlugs: ["general-dentistry", "dental-implants", "oral-surgery"],
   },
-  prosthodontics: {
+  "prosthodontics": {
     intro:
-      "Prosthodontics is the dental specialty focused on restoring and replacing missing or damaged teeth. Whether you need a single crown, a bridge to replace missing teeth, or complete dentures, prosthodontic treatment aims to restore your ability to chew comfortably, speak clearly and smile confidently. At Smile Architects, Dr. Akarsh Babu (MDS Prosthodontics) provides specialist prosthodontic care as a visiting consultant, while routine crown and bridge work is also available through the general dental team.",
+      "Prosthodontics at Smile Architects restores and replaces missing or damaged teeth using crowns, bridges, dentures, and implant-supported prostheses. Dr. Akarsh Babu (MDS Prosthodontics), visiting consultant, provides specialist prosthodontic care for complex restorative cases including full-mouth rehabilitation in Pala. Whether you need a single crown to protect a weakened tooth, a bridge to replace missing teeth, or complete dentures for full arch restoration, prosthodontic treatment aims to restore your ability to chew comfortably, speak clearly, and smile confidently.",
     points: [
       "Single and multiple unit dental crowns (ceramic, zirconia, PFM)",
       "Fixed dental bridges to replace one or more missing teeth",
@@ -263,7 +263,7 @@ const TREATMENT_DETAILS: Record<
   },
   crowns: {
     intro:
-      "A dental crown covers and protects a weakened, damaged or heavily restored tooth. Unlike a filling which simply fills a hole, a crown encases the entire visible part of the tooth above the gum line, providing strength and protection. Modern crowns are made from tooth-coloured materials — typically all-ceramic or zirconia — that match your natural teeth in both appearance and function. Crowns are commonly needed after root canal treatment, to restore fractured teeth, or to replace large old fillings that have weakened the tooth structure.",
+      "Dental crowns at Smile Architects cover and protect weakened, damaged, or heavily restored teeth. Unlike fillings that simply fill cavities, a crown encases the entire visible portion of the tooth above the gum line, providing comprehensive strength and protection. Modern crowns are made from tooth-colored materials — all-ceramic or zirconia — that match your natural teeth in appearance and function. Crowns are commonly needed after root canal treatment to prevent fracture, to restore broken teeth, or to replace large old fillings that have weakened tooth structure.",
     points: [
       "All-ceramic crowns — made entirely from porcelain for a natural translucent appearance",
       "Zirconia crowns — strong, durable and highly aesthetic",
@@ -279,7 +279,7 @@ const TREATMENT_DETAILS: Record<
   },
   bridges: {
     intro:
-      "A dental bridge literally bridges the gap created by one or more missing teeth. Unlike dentures which are removable, a bridge is fixed — it is permanently cemented to the teeth (or implants) on either side of the gap. A well-made bridge restores your ability to chew properly, maintains the shape of your face by preventing remaining teeth from drifting into the space, and allows you to speak and smile confidently. The lifespan of a bridge depends on good oral hygiene and the health of the supporting teeth.",
+      "Dental bridges at Smile Architects permanently replace one or more missing teeth by bridging the gap with artificial teeth cemented to adjacent natural teeth or implants. Unlike removable dentures, bridges are fixed prosthetics that restore your ability to chew properly, maintain facial shape by preventing remaining teeth from drifting, and allow you to speak and smile confidently. A well-constructed bridge can last 10-15 years with proper oral hygiene and regular dental checkups. Available in all-ceramic for superior aesthetics or porcelain-fused-to-metal for maximum strength.",
     points: [
       "Three-unit bridges (two supporting teeth, one replacement tooth)",
       "Multi-unit bridges for replacing several adjacent teeth",
@@ -295,7 +295,7 @@ const TREATMENT_DETAILS: Record<
   },
   dentures: {
     intro:
-      "Dentures replace missing teeth with removable prosthetic teeth and gums. Complete dentures are used when all teeth in an arch (upper or lower) are missing. Partial dentures are used when some natural teeth remain. Modern dentures are more comfortable and natural-looking than previous generations. However, because they rest on the gums rather than being anchored to teeth or implants, they require an adjustment period and regular maintenance. Implant-supported overdentures offer significantly improved stability and chewing ability compared to conventional dentures.",
+      "Dentures at Smile Architects replace missing teeth with removable prosthetic teeth and gums. Complete dentures restore full arches when all teeth are lost, while partial dentures fill gaps when some natural teeth remain. Modern dentures are more comfortable and natural-looking than previous generations, though they rest on gums rather than being anchored like implants. Dr. Akarsh Babu (MDS Prosthodontics) provides complete and partial dentures, with implant-supported overdentures available for significantly improved stability and chewing ability at our Pala clinic.",
     points: [
       "Complete acrylic dentures for patients with no remaining teeth",
       "Partial dentures with acrylic or metal framework (cobalt-chrome)",
@@ -311,7 +311,7 @@ const TREATMENT_DETAILS: Record<
   },
   veneers: {
     intro:
-      "Dental veneers are thin shells of porcelain or composite resin bonded to the front surface of teeth to improve their colour, shape, size or length. Porcelain veneers are highly lifelike and stain-resistant. Composite veneers can often be completed in a single visit with minimal tooth preparation.",
+      "Dental veneers at Smile Architects are thin shells of porcelain or composite resin bonded to the front tooth surfaces to improve color, shape, size, or length. Porcelain veneers fabricated in a dental lab are highly lifelike and stain-resistant, while composite veneers can often be completed in a single visit with minimal tooth preparation. Veneers effectively address discoloration resistant to whitening, chips and fractures, small gaps between teeth, and minor misalignment without orthodontic treatment. Digital smile design allows you to preview results before any permanent work begins.",
     points: [
       "Porcelain (ceramic) veneers — lab-fabricated, highly aesthetic",
       "Direct composite veneers — single-visit, minimal preparation",

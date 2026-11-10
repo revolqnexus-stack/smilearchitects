@@ -14,9 +14,9 @@ import {
 } from "@/components/motion/REVOLQComponents";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Orthodontic Treatment in Pala | Orthodontist Kottayam & Thrissur Patients | Smile Architects",
+  title: "Orthodontic Treatment in Pala, Kottayam | Dr. Jeo Tom Charls, MDS | Braces & Aligners",
   description:
-    "Orthodontic treatment at Smile Architects, Pala — Dr. Jeo Tom Charls, MDS Orthodontics. Braces, lingual braces, clear aligners, adult orthodontics. Serving patients from Kottayam District and Thrissur, Kerala.",
+    "Orthodontic treatment in Pala by Dr. Jeo Tom Charls, MDS Orthodontics and Dentofacial Orthopaedics. Metal braces, ceramic braces, Damon self-ligating braces, lingual braces (hidden braces), clear aligners, and surgical orthodontics at Smile Architects, Maharani Junction, Pala, Kottayam District. Book orthodontic consultation.",
   canonical: "/orthodontics",
 });
 

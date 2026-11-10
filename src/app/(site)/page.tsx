@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { CLINIC, TREATMENTS, DOCTORS, FAQS_GENERAL, FACILITIES } from "@/lib/site-config";
+import { CLINIC, TREATMENTS, DOCTORS, FAQS_GENERAL, FACILITIES, EMERGENCY_CARE, WHATSAPP_URL } from "@/lib/site-config";
 import HomeReviews from "@/components/sections/HomeReviews";
 import PatientJourneySection from "@/components/sections/PatientJourneySection";
 import AppointmentForm from "@/components/ui/AppointmentForm";
@@ -28,18 +28,24 @@ import HomeHeroCTAs from "@/components/ui/HomeHeroCTAs";
 import BranchLocationSection from "@/components/sections/BranchLocationSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Orthodontist & Dental Clinic in Pala (Palai), Kottayam District",
+  title: "Best Dentist & Orthodontist in Pala (Palai), Kottayam | Dr. Jeo Tom Charls, MDS",
   description:
-    `Smile Architects — orthodontist & multispeciality dental clinic in Pala (Palai), Kottayam District, Kerala. Dr. Jeo Tom Charls, MDS Orthodontics. Invisalign, braces, lingual braces, dental implants & smile design. Call ${CLINIC.contact.phoneDisplay}.`,
+    `Smile Architects is a multispeciality dental clinic in Pala (Palai), Kottayam District, Kerala, led by Dr. Jeo Tom Charls, MDS Orthodontics. We provide braces, clear aligners, lingual braces, dental implants, smile design, root canal treatment, and emergency dental care. Open Mon–Sat 9:30 AM–8:00 PM at Maharani Junction. Call ${CLINIC.contact.phoneDisplay} for appointments.`,
   canonical: "/",
   keywords: [
+    "best dentist Pala",
     "orthodontist Pala",
-    "best dental clinic Pala",
+    "dental clinic Pala",
     "dentist Palai Kerala",
     "best dental clinic Kottayam",
     "orthodontist Kottayam District",
-    "dental clinic Pala Kottayam",
+    "Dr. Jeo Tom Charls",
+    "MDS Orthodontics Pala",
+    "braces Pala",
+    "dental implants Pala",
+    "emergency dental care Pala",
     "Smile Architects Pala",
+    "Maharani Junction dentist",
   ],
 });
 
@@ -479,6 +485,204 @@ export default function HomePage() {
         ]}
       />
 
+      {/* ── EMERGENCY DENTAL CARE ──────────────────────────────── */}
+      {EMERGENCY_CARE.enabled && (
+        <section aria-labelledby="emergency-heading" className="section-padding emergency-section">
+          <div className="container-xl">
+            <div className="emergency-content">
+              <RevealUp delay={0.05}>
+                <div className="emergency-header">
+                  <div className="emergency-icon">
+                    <PhoneIcon size={28} />
+                  </div>
+                  <div>
+                    <p className="eyebrow" style={{ marginBottom: "0.5rem", color: "var(--color-olive)" }}>
+                      Emergency Dental Care
+                    </p>
+                    <h2 id="emergency-heading" className="emergency-title">
+                      Need urgent dental help in Pala?
+                    </h2>
+                    <p className="emergency-desc">
+                      Severe toothache, broken teeth, dental trauma or swelling? Call us immediately for same-day emergency care at our Pala clinic.
+                    </p>
+                  </div>
+                </div>
+              </RevealUp>
+
+              <div className="emergency-grid">
+                <RevealUp delay={0.15}>
+                  <div className="emergency-symptoms">
+                    <h3 className="emergency-subtitle">Common dental emergencies we treat:</h3>
+                    <ul className="emergency-list">
+                      {EMERGENCY_CARE.symptoms.map((symptom, idx) => (
+                        <li key={idx} className="emergency-list-item">
+                          <span className="emergency-check">
+                            <CheckIcon size={16} />
+                          </span>
+                          {symptom}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </RevealUp>
+
+                <RevealUp delay={0.25}>
+                  <div className="emergency-cta-card">
+                    <div className="emergency-cta-content">
+                      <p className="emergency-cta-label">Emergency Contact</p>
+                      <p className="emergency-cta-number">{EMERGENCY_CARE.phone}</p>
+                      <p className="emergency-cta-note">{EMERGENCY_CARE.note}</p>
+                      <a href={`tel:${CLINIC.contact.phone}`} className="btn btn-primary btn-lg emergency-cta-btn">
+                        <PhoneIcon size={18} />
+                        Call Now for Emergency
+                      </a>
+                      <a href={WHATSAPP_URL} className="btn btn-ghost btn-sm" style={{ marginTop: "0.75rem" }}>
+                        Or message on WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </RevealUp>
+              </div>
+            </div>
+          </div>
+
+          <style>{`
+            .emergency-section {
+              background: linear-gradient(135deg, #fef9f0 0%, #fff 100%);
+              border-top: 1px solid rgba(37,78,6,0.08);
+              border-bottom: 1px solid rgba(37,78,6,0.08);
+            }
+            .emergency-content {
+              max-width: 900px;
+              margin: 0 auto;
+            }
+            .emergency-header {
+              display: flex;
+              gap: 1.5rem;
+              margin-bottom: 2.5rem;
+              align-items: flex-start;
+            }
+            .emergency-icon {
+              flex-shrink: 0;
+              width: 64px;
+              height: 64px;
+              background: linear-gradient(135deg, var(--color-jonquil) 0%, #f0d000 100%);
+              border-radius: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--color-dark-moss);
+              box-shadow: 0 4px 16px rgba(234,200,0,0.25);
+            }
+            .emergency-title {
+              font-family: var(--font-serif);
+              font-size: clamp(1.75rem, 3vw, 2.25rem);
+              font-weight: 500;
+              color: var(--color-dark-moss);
+              margin-bottom: 0.75rem;
+              line-height: 1.2;
+            }
+            .emergency-desc {
+              font-size: 1rem;
+              color: var(--color-olive);
+              line-height: 1.6;
+              font-family: var(--font-sans);
+            }
+            .emergency-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              align-items: start;
+            }
+            .emergency-subtitle {
+              font-family: var(--font-sans);
+              font-size: 1rem;
+              font-weight: 700;
+              color: var(--color-dark-moss);
+              margin-bottom: 1rem;
+            }
+            .emergency-list {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 0.625rem;
+            }
+            .emergency-list-item {
+              display: flex;
+              align-items: flex-start;
+              gap: 0.625rem;
+              font-size: 0.9375rem;
+              color: var(--color-olive);
+              font-family: var(--font-sans);
+              line-height: 1.5;
+            }
+            .emergency-check {
+              flex-shrink: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 22px;
+              height: 22px;
+              background: rgba(234,200,0,0.15);
+              border-radius: 6px;
+              color: var(--color-dark-moss);
+              margin-top: 1px;
+            }
+            .emergency-cta-card {
+              background: white;
+              border: 1px solid rgba(37,78,6,0.12);
+              border-radius: 20px;
+              padding: 2rem;
+              box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            }
+            .emergency-cta-content {
+              text-align: center;
+            }
+            .emergency-cta-label {
+              font-size: 0.8125rem;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              color: var(--color-olive);
+              font-family: var(--font-utility);
+              margin-bottom: 0.5rem;
+            }
+            .emergency-cta-number {
+              font-family: var(--font-serif);
+              font-size: 1.75rem;
+              font-weight: 600;
+              color: var(--color-dark-moss);
+              margin-bottom: 0.5rem;
+            }
+            .emergency-cta-note {
+              font-size: 0.875rem;
+              color: var(--color-olive);
+              margin-bottom: 1.5rem;
+              line-height: 1.5;
+            }
+            .emergency-cta-btn {
+              width: 100%;
+            }
+
+            @media (max-width: 768px) {
+              .emergency-header {
+                flex-direction: column;
+                gap: 1rem;
+              }
+              .emergency-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+              }
+              .emergency-cta-card {
+                padding: 1.5rem;
+              }
+            }
+          `}</style>
+        </section>
+      )}
+
       {/* ── TREATMENTS ─────────────────────────────────────────── */}
       <section aria-labelledby="treatments-heading" className="section-padding treatments-section">
         {/* Organic background decorations */}
@@ -700,9 +904,16 @@ export default function HomePage() {
               <p className="eyebrow">Our Team</p>
             </StaggerReveal>
             <StaggerReveal type="heading">
-              <h2 id="doctors-heading" className="section-title" style={{ maxWidth: "520px", margin: "0 auto" }}>
-                Meet the dentists
+              <h2 id="doctors-heading" className="section-title" style={{ maxWidth: "600px", margin: "0 auto" }}>
+                Expert dental specialists in Pala & Thrissur
               </h2>
+            </StaggerReveal>
+            <StaggerReveal type="body">
+              <p className="section-body" style={{ maxWidth: "640px", margin: "0 auto" }}>
+                Our clinic is led by <strong>Dr. Jeo Tom Charls, MDS Orthodontics</strong>, 
+                supported by specialist consultants in oral surgery, periodontics, and pediatric dentistry. 
+                Each specialist brings advanced training and clinical expertise to deliver comprehensive dental care.
+              </p>
             </StaggerReveal>
           </div>
 

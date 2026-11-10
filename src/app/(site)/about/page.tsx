@@ -16,9 +16,9 @@ import {
 import SeoTopicCluster from "@/components/seo/SeoTopicCluster";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Smile Architects | Dental Clinic in Pala, Kottayam",
+  title: "About Smile Architects | Best Dental Clinic in Pala, Kottayam | Dr. Jeo Tom Charls",
   description:
-    "About Smile Architects — multispeciality dental clinic and advanced orthodontic centre in Pala, Kottayam, Kerala. Patient-first care led by Dr. Jeo Tom Charls, MDS Orthodontics.",
+    "Smile Architects is a multispeciality dental clinic in Pala (Palai), Kottayam District, Kerala, founded and led by Dr. Jeo Tom Charls, MDS Orthodontics. We specialize in invisible orthodontics, braces, clear aligners, lingual braces, dental implants, and comprehensive dental care at Maharani Junction, Pala. Advanced technology, individual treatment rooms, and patient-first approach since our establishment.",
   canonical: "/about",
 });
 
