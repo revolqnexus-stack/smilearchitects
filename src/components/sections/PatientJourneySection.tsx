@@ -408,7 +408,31 @@ export default function PatientJourneySection() {
         }
 
         @media (max-width: 640px) {
-          /* Guide cards single column on very small screens */
+          /* Guide cards: force single column on very small screens */
+          .journey-card {
+            width: 100% !important;
+          }
+
+          /* Walkthrough: stack number badge above content on very narrow screens */
+          .walkthrough-steps {
+            gap: 2.5rem !important;
+          }
+          .walkthrough-step {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.75rem !important;
+            padding-right: 0 !important;
+          }
+          .walkthrough-step > div:first-child {
+            grid-row: auto !important;
+            margin-bottom: 0 !important;
+            align-self: start !important;
+            width: 48px !important;
+            flex-shrink: 0 !important;
+          }
+          .walkthrough-connector {
+            display: none !important;
+          }
         }
       `}</style>
     </section>
