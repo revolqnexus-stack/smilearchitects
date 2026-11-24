@@ -970,12 +970,12 @@ small, .text-small {
   border-radius: var(--radius-xl);
   padding: 2.5rem;
   border: 2px solid var(--color-tea-green);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .card-treatment:hover {
   border-color: var(--color-jonquil);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* ─── Hover Scale Effects ──────────────────────────────────────────────────── */
@@ -1224,7 +1224,7 @@ small, .text-small {
 }
 .treatment-card-link:hover .card-treatment {
   border-color: var(--color-jonquil);
-  box-shadow: 0 12px 32px -8px rgba(37, 78, 6, 0.13);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-5px);
 }
 /* Icon lifts slightly inside card on hover */
