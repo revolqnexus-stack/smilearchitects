@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { TREATMENTS } from "@/lib/site-config";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import { TreatmentIconFor, ArrowRightIcon } from "@/components/ui/icons";
 import TreatmentsBentoGrid from "@/components/sections/TreatmentsBentoGrid";
 
 export const metadata: Metadata = buildMetadata({
@@ -12,35 +10,6 @@ export const metadata: Metadata = buildMetadata({
     "Complete dental treatments at Smile Architects, Pala, Kottayam District: orthodontics (braces, clear aligners, lingual braces), dental implants, smile design, root canal treatment, cosmetic dentistry, pediatric dentistry, periodontal treatment, crowns, bridges, dentures, and general dentistry. Led by Dr. Jeo Tom Charls, MDS Orthodontics, at Maharani Junction, Pala.",
   canonical: "/treatments",
 });
-
-const TREATMENT_CATEGORIES = [
-  {
-    category: "Smile design & orthodontics",
-    treatments: [
-      "smile-design",
-      "orthodontics",
-      "braces",
-      "clear-aligners",
-      "lingual-braces",
-    ],
-  },
-  {
-    category: "Cosmetic dentistry",
-    treatments: ["cosmetic-dentistry", "veneers"],
-  },
-  {
-    category: "Implants, restorative & surgical",
-    treatments: ["dental-implants", "root-canal-treatment", "restorative-dentistry", "oral-surgery"],
-  },
-  {
-    category: "Preventive & general",
-    treatments: ["general-dentistry", "pediatric-dentistry"],
-  },
-  {
-    category: "Periodontics & prosthodontics",
-    treatments: ["periodontal-treatment", "prosthodontics", "crowns", "bridges", "dentures"],
-  },
-];
 
 export default function TreatmentsPage() {
   return (
@@ -100,49 +69,6 @@ export default function TreatmentsPage() {
             </p>
           </div>
           <TreatmentsBentoGrid />
-        </div>
-      </section>
-
-      {/* Treatment categories — light background with botanical cards */}
-      <section className="section-padding section-light">
-        <div className="container-xl">
-          {TREATMENT_CATEGORIES.map((cat, categoryIndex) => {
-            const catTreatments = cat.treatments
-              .map((id) => TREATMENTS.find((t) => t.id === id))
-              .filter(Boolean);
-            return (
-              <div key={cat.category} style={{ marginBottom: categoryIndex === TREATMENT_CATEGORIES.length - 1 ? 0 : "4rem" }}>
-                <div className="accent-line" />
-                <p className="eyebrow" style={{ marginBottom: "1.25rem" }}>
-                  {cat.category}
-                </p>
-                <div className="treatments-grid">
-                  {catTreatments.map((t) =>
-                    t ? (
-                      <Link
-                        key={t.id}
-                        href={`/treatments/${t.slug}`}
-                        className="treatment-card-link"
-                        aria-label={`Learn about ${t.title} in Pala`}
-                      >
-                        <div className="card-treatment">
-                          {/* Treatment icon */}
-                          <div style={{ marginBottom: "1.125rem", color: "var(--color-dark-moss)" }}>
-                            <TreatmentIconFor slug={t.slug} size="lg" />
-                          </div>
-                          <h3 className="treatment-card-title">{t.title}</h3>
-                          <p className="treatment-card-body">{t.shortDescription}</p>
-                          <span className="card-learn-more">
-                            Learn more <ArrowRightIcon size="sm" />
-                          </span>
-                        </div>
-                      </Link>
-                    ) : null
-                  )}
-                </div>
-              </div>
-            );
-          })}
         </div>
       </section>
 
