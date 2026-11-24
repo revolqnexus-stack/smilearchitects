@@ -32,6 +32,7 @@ const GUIDE_CARDS = [
     blurb: "Travelling from the Gulf, UK or abroad for treatment? Everything you need — costs, logistics, what to bring.",
     href: "/patient-guide/international",
     highlight: true,
+    hasLink: true,
   },
   {
     icon: (
@@ -43,10 +44,11 @@ const GUIDE_CARDS = [
         <polyline points="10 9 9 9 8 9"/>
       </svg>
     ),
-    label: "Your First Visit",
-    blurb: "What to expect at your first appointment — how long it takes, what we assess, and how treatment is planned.",
-    href: "/patient-guide",
+    label: "First Consultation",
+    blurb: "60–90 minute appointment with clinical assessment, X-rays, photographs. Dr. Jeo walks you through all options and costs.",
+    href: null,
     highlight: false,
+    hasLink: false,
   },
   {
     icon: (
@@ -55,34 +57,11 @@ const GUIDE_CARDS = [
         <path d="M8 21h8M12 17v4"/>
       </svg>
     ),
-    label: "Equipment & Technology",
-    blurb: "Digital X-ray, CAD/CAM lingual brackets, ClearPath aligners and digital smile design tools.",
-    href: "/technology",
+    label: "Advanced Equipment",
+    blurb: "Digital X-ray, CAD/CAM lingual brackets, ClearPath aligners and digital smile design tools in-house.",
+    href: null,
     highlight: false,
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-      </svg>
-    ),
-    label: "Team of Specialists",
-    blurb: "MDS orthodontist, periodontist and visiting consultants in surgery, prosthodontics and paediatrics.",
-    href: "/dentists",
-    highlight: false,
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-      </svg>
-    ),
-    label: "Patient Reviews",
-    blurb: "What patients say about their experience — orthodontics, implants, smile design and routine care.",
-    href: "/patient-stories",
-    highlight: false,
+    hasLink: false,
   },
 ];
 
@@ -185,69 +164,69 @@ export default function PatientJourneySection() {
             marginBottom: "4.5rem",
           }}
         >
-          {GUIDE_CARDS.map((card) => (
-            <StaggerItem key={card.label}>
-              <Link href={card.href} style={{ textDecoration: "none", display: "block", height: "100%" }}>
-                <div
-                  style={{
-                    backgroundColor: card.highlight
-                      ? "rgba(234,200,0,0.12)"
-                      : "rgba(255,255,255,0.05)",
-                    border: card.highlight
-                      ? "1.5px solid rgba(234,200,0,0.4)"
-                      : "1.5px solid rgba(255,255,255,0.1)",
-                    borderRadius: "1.125rem",
-                    padding: "1.75rem",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.875rem",
-                    transition: "background 0.2s ease, border-color 0.2s ease, transform 0.2s ease",
-                    cursor: "pointer",
-                  }}
-                  className="journey-card"
-                >
-                  {/* Icon */}
-                  <div style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: "0.875rem",
-                    backgroundColor: card.highlight
-                      ? "rgba(234,200,0,0.18)"
-                      : "rgba(255,255,255,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: card.highlight ? "var(--color-jonquil)" : "rgba(237,228,211,0.8)",
-                    flexShrink: 0,
+          {GUIDE_CARDS.map((card) => {
+            const CardContent = (
+              <div
+                style={{
+                  backgroundColor: card.highlight
+                    ? "rgba(234,200,0,0.12)"
+                    : "rgba(255,255,255,0.05)",
+                  border: card.highlight
+                    ? "1.5px solid rgba(234,200,0,0.4)"
+                    : "1.5px solid rgba(255,255,255,0.1)",
+                  borderRadius: "1.125rem",
+                  padding: "1.75rem",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.875rem",
+                  transition: card.hasLink ? "background 0.2s ease, border-color 0.2s ease, transform 0.2s ease" : "none",
+                  cursor: card.hasLink ? "pointer" : "default",
+                }}
+                className={card.hasLink ? "journey-card" : ""}
+              >
+                {/* Icon */}
+                <div style={{
+                  width: 52,
+                  height: 52,
+                  borderRadius: "0.875rem",
+                  backgroundColor: card.highlight
+                    ? "rgba(234,200,0,0.18)"
+                    : "rgba(255,255,255,0.08)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: card.highlight ? "var(--color-jonquil)" : "rgba(237,228,211,0.8)",
+                  flexShrink: 0,
+                }}>
+                  {card.icon}
+                </div>
+
+                {/* Text */}
+                <div style={{ flex: 1 }}>
+                  <p style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "1.0625rem",
+                    fontWeight: 500,
+                    color: card.highlight ? "var(--color-jonquil)" : "var(--color-honeydew)",
+                    marginBottom: "0.5rem",
+                    lineHeight: 1.3,
                   }}>
-                    {card.icon}
-                  </div>
+                    {card.label}
+                  </p>
+                  <p style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.875rem",
+                    color: "rgba(237,228,211,0.65)",
+                    lineHeight: 1.65,
+                    margin: 0,
+                  }}>
+                    {card.blurb}
+                  </p>
+                </div>
 
-                  {/* Text */}
-                  <div style={{ flex: 1 }}>
-                    <p style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: "1.0625rem",
-                      fontWeight: 500,
-                      color: card.highlight ? "var(--color-jonquil)" : "var(--color-honeydew)",
-                      marginBottom: "0.5rem",
-                      lineHeight: 1.3,
-                    }}>
-                      {card.label}
-                    </p>
-                    <p style={{
-                      fontFamily: "var(--font-sans)",
-                      fontSize: "0.875rem",
-                      color: "rgba(237,228,211,0.65)",
-                      lineHeight: 1.65,
-                      margin: 0,
-                    }}>
-                      {card.blurb}
-                    </p>
-                  </div>
-
-                  {/* Arrow */}
+                {/* Arrow - only for linked cards */}
+                {card.hasLink && (
                   <div style={{
                     display: "flex",
                     alignItems: "center",
@@ -257,15 +236,27 @@ export default function PatientJourneySection() {
                     fontSize: "0.8125rem",
                     fontWeight: 600,
                   }}>
-                    Explore
+                    Read guide
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </div>
-                </div>
-              </Link>
-            </StaggerItem>
-          ))}
+                )}
+              </div>
+            );
+
+            return (
+              <StaggerItem key={card.label}>
+                {card.hasLink && card.href ? (
+                  <Link href={card.href} style={{ textDecoration: "none", display: "block", height: "100%" }}>
+                    {CardContent}
+                  </Link>
+                ) : (
+                  CardContent
+                )}
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
 
         {/* ── Walkthrough ─────────────────────────────────────── */}
