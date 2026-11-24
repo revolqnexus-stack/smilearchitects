@@ -125,14 +125,14 @@ export default function HeroSection({
           transition={{ duration: 1.1, delay: 0.5, ease: EASE }}
         >
           {/* Main image frame */}
-          <div className="hero-image-frame" aria-label="Smile Architects dental clinic in Pala, Kottayam">
+          <div className="hero-image-frame" aria-label="Smile Architects dental clinic in Pala">
             <div className="hero-image-content">
               {/* Clinic emblem */}
               <div className="hero-image-emblem">
                 <ToothIcon size={48} color="var(--color-dark-moss)" stroke={1.5} />
               </div>
               <p className="hero-image-title">Smile Architects</p>
-              <p className="hero-image-sub">Multispeciality Dental Clinic<br />Pala, Kottayam</p>
+              <p className="hero-image-sub">Multispeciality Dental Clinic<br />Pala, Kerala</p>
               <ul className="hero-image-features">
                 <li><CheckIcon size="sm" color="var(--color-jonquil)" stroke={2} /> MDS Orthodontist</li>
                 <li><CheckIcon size="sm" color="var(--color-jonquil)" stroke={2} /> Digital X-Ray</li>

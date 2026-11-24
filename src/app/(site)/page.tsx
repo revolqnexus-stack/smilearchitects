@@ -29,17 +29,17 @@ import BranchLocationSection from "@/components/sections/BranchLocationSection";
 import TreatmentsBentoGrid from "@/components/sections/TreatmentsBentoGrid";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Best Dentist & Orthodontist in Pala (Palai), Kottayam | Dr. Jeo Tom Charls, MDS",
+  title: "Best Dentist & Orthodontist in Pala (Palai) | Dr. Jeo Tom Charls, MDS",
   description:
-    `Smile Architects is a multispeciality dental clinic in Pala (Palai), Kottayam District, Kerala, led by Dr. Jeo Tom Charls, MDS Orthodontics. We provide braces, clear aligners, lingual braces, dental implants, smile design, root canal treatment, and emergency dental care. Open Mon–Sat 9:30 AM–8:00 PM at Maharani Junction. Call ${CLINIC.contact.phoneDisplay} for appointments.`,
+    `Smile Architects is a multispeciality dental clinic in Pala (Palai), Kerala, led by Dr. Jeo Tom Charls, MDS Orthodontics. We provide braces, clear aligners, lingual braces, dental implants, smile design, root canal treatment, and emergency dental care. Open Mon–Sat 9:30 AM–8:00 PM at Maharani Junction. Call ${CLINIC.contact.phoneDisplay} for appointments.`,
   canonical: "/",
   keywords: [
     "best dentist Pala",
     "orthodontist Pala",
     "dental clinic Pala",
     "dentist Palai Kerala",
-    "best dental clinic Kottayam",
-    "orthodontist Kottayam District",
+    "dental clinic Meenachil",
+    "orthodontist near Pala",
     "Dr. Jeo Tom Charls",
     "MDS Orthodontics Pala",
     "braces Pala",
@@ -127,7 +127,7 @@ export default function HomePage() {
                 <h1 id="hero-heading" className="hero-title">
                   <span className="hero-title-white">Orthodontist &amp;<br />Dental Clinic in</span>
                   <br />
-                  <span className="hero-title-gold">Pala, Kottayam</span>
+                  <span className="hero-title-gold">Pala, Kerala</span>
                 </h1>
               </RevealUp>
 
@@ -135,7 +135,7 @@ export default function HomePage() {
               <RevealUp delay={0.25}>
                 <p className="hero-desc">
                   Advanced orthodontics &amp; multispeciality dental clinic in{" "}
-                  <strong style={{ fontWeight: 600 }}>Pala (Palai)</strong>, Kottayam District, led by{" "}
+                  <strong style={{ fontWeight: 600 }}>Pala (Palai)</strong>, Kerala, led by{" "}
                   <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS Orthodontics
                   — plus our{" "}
                   <Link href="/thrissur" className="sa-prose-link sa-prose-link--hero">
@@ -801,7 +801,7 @@ export default function HomePage() {
               </StaggerReveal>
               <StaggerReveal type="heading">
                 <h2 id="orthodontics-heading" className="section-title">
-                  Braces and aligner treatment in Pala, Kottayam
+                  Braces and aligner treatment in Pala
                 </h2>
               </StaggerReveal>
               <StaggerReveal type="body">

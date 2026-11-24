@@ -16,7 +16,7 @@ import { MapPinIcon, PhoneIcon, ClockIcon } from "@/components/ui/icons";
 export const metadata: Metadata = buildMetadata({
   title: "Thrissur Branch Opening Soon | Smile Architects Punkunnam",
   description:
-    "Smile Architects Thrissur branch opening soon at Punkunnam (2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church). Meanwhile, visit our main clinic in Pala, Kottayam. Call +91 82899 33331.",
+    "Smile Architects Thrissur branch opening soon at Punkunnam (2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church). Meanwhile, visit our main clinic in Pala. Call +91 82899 33331.",
   canonical: "/thrissur",
 });
 
@@ -194,7 +194,7 @@ export default function ThrissurBranchPage() {
               <p style={{ fontSize: "0.875rem", color: "var(--color-moss)", lineHeight: 1.6 }}>
                 Also visit our{" "}
                 <Link href="/" style={{ color: "var(--color-olive)", fontWeight: 600 }}>
-                  Pala, Kottayam
+                  Pala
                 </Link>{" "}
                 centre at Mukkadan Arcade, Maharani Jn. (above KFC / Navya Bakes, near KSRTC).
               </p>

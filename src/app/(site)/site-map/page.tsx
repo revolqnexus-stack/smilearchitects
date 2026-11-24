@@ -10,7 +10,7 @@ import { TREATMENTS } from "@/lib/site-config";
 export const metadata: Metadata = buildMetadata({
   title: "Site Map | Smile Architects",
   description:
-    "HTML site map for Smile Architects dental clinics — Pala, Kottayam, Thrissur, treatments, orthodontics, patient guides, and booking.",
+    "HTML site map for Smile Architects dental clinics — Pala, Thrissur, treatments, orthodontics, patient guides, and booking.",
   canonical: "/site-map",
 });
 

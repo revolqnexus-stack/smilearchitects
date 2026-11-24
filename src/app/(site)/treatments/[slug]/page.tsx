@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = slug === "orthodontics" ? "/orthodontics" : isOrthodontic && slug !== "orthodontics" ? `/orthodontics/${slug}` : `/treatments/${slug}`;
 
   return buildMetadata({
-    title: `${treatment.title} in Pala, Kottayam | Smile Architects`,
-    description: `${treatment.title} at Smile Architects — ${treatment.shortDescription} Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.`,
+    title: `${treatment.title} in Pala | Smile Architects`,
+    description: `${treatment.title} at Smile Architects — ${treatment.shortDescription} Multispeciality dental clinic in Pala, Kerala. Call +91 82899 33331.`,
     canonical: `/treatments/${treatment.slug}`,
   });
 }

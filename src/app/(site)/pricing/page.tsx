@@ -7,7 +7,7 @@ import PricingTables from "@/components/sections/PricingTables";
 import Link from "next/link";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Dental Treatment Prices in Pala, Kottayam | Smile Architects",
+  title: "Dental Treatment Prices in Pala | Smile Architects",
   description:
     "Indicative dental treatment prices at Smile Architects, Pala — orthodontics, implants, root canal, crowns, braces and clear aligners. Confirm exact costs at consultation.",
   canonical: "/pricing",
