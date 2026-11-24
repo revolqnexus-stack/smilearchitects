@@ -9,53 +9,52 @@ import { useState, useEffect, useRef } from "react";
 /* ─────────────────────────────────────────────────────────────────
    TREATMENT IMAGES MAP
    
-   Maps treatment slug to image path + alt text.
-   PLACEHOLDER IMAGES: Using Unsplash dental/medical photography.
-   Replace these with actual clinic photos when available.
+   Real clinic photography for all treatments.
+   Images optimized in WebP format for best performance.
 ───────────────────────────────────────────────────────────────── */
 const TREATMENT_IMAGES: Record<
   string,
   { imagePath: string; alt: string }
 > = {
   "smile-design": {
-    imagePath: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&h=800&fit=crop&q=80",
-    alt: "Woman smiling showing beautiful teeth - digital smile design",
+    imagePath: "/images/treatments/01-smile-design.webp",
+    alt: "Digital smile design transformation at Smile Architects",
   },
   orthodontics: {
-    imagePath: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=800&fit=crop&q=80",
-    alt: "Close-up of metal braces on teeth - orthodontic treatment",
+    imagePath: "/images/treatments/02-orthodontics.webp",
+    alt: "Orthodontic treatment with braces at Smile Architects Pala",
   },
   braces: {
-    imagePath: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=800&fit=crop&q=80",
-    alt: "Dental braces with colored bands - orthodontic care",
+    imagePath: "/images/treatments/03-braces.webp",
+    alt: "Dental braces treatment - metal and ceramic options",
   },
   "clear-aligners": {
-    imagePath: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&h=600&fit=crop&q=80",
-    alt: "Clear aligner tray in hand - invisible orthodontic treatment",
+    imagePath: "/images/treatments/04-clear-aligners.webp",
+    alt: "Clear aligner treatment - invisible orthodontics",
   },
   "lingual-braces": {
-    imagePath: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=800&fit=crop&q=80",
-    alt: "Dental examination showing lingual braces placement",
+    imagePath: "/images/treatments/05-lingual-braces.webp",
+    alt: "Lingual braces - hidden orthodontic treatment",
   },
   "cosmetic-dentistry": {
-    imagePath: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=800&fit=crop&q=80",
-    alt: "Perfect white smile - cosmetic dentistry results",
+    imagePath: "/images/treatments/06-cosmetic-dentistry.webp",
+    alt: "Cosmetic dentistry and smile enhancement services",
   },
   "dental-implants": {
-    imagePath: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=1200&h=800&fit=crop&q=80",
-    alt: "Dental implant model showing tooth replacement",
+    imagePath: "/images/treatments/07-dental-implants.webp",
+    alt: "Dental implants - permanent tooth replacement solution",
   },
   "general-dentistry": {
-    imagePath: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop&q=80",
-    alt: "Dental checkup and preventive care examination",
+    imagePath: "/images/treatments/08-general-dentistry.webp",
+    alt: "General dentistry and preventive dental care",
   },
   "pediatric-dentistry": {
-    imagePath: "https://images.unsplash.com/photo-1626736985932-cbba43631356?w=800&h=800&fit=crop&q=80",
-    alt: "Happy child during pediatric dental visit",
+    imagePath: "/images/treatments/09-pediatric-dentistry.webp",
+    alt: "Pediatric dentistry - gentle dental care for children",
   },
   "root-canal-treatment": {
-    imagePath: "https://images.unsplash.com/photo-1598531228433-d9f0bdc0ce2c?w=800&h=600&fit=crop&q=80",
-    alt: "Endodontic root canal treatment procedure",
+    imagePath: "/images/treatments/10-root-canal-treatment.webp",
+    alt: "Root canal treatment - saving infected teeth",
   },
 };
 
@@ -191,7 +190,6 @@ function TreatmentTile({ treatment, size, index }: TreatmentTileProps) {
         className="treatment-tile-image"
         style={{ objectFit: "cover" }}
         loading={index > 2 ? "lazy" : "eager"}
-        unoptimized={imageData.imagePath.startsWith("http")}
       />
 
       {/* Gradient scrim for text legibility */}
