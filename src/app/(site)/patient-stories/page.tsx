@@ -20,63 +20,189 @@ export const metadata: Metadata = buildMetadata({
 });
 
 /* ─────────────────────────────────────────────────────────────────
-   REVIEWS — real Google reviews. Add more as they come in.
-   time: keep it natural ("2 months ago", "a year ago", etc.)
-   datePublished: approximate ISO date for schema (YYYY-MM-DD)
+   PRACTO REVIEWS — real verified patient reviews from Practo
+   These are authentic patient testimonials from the Practo platform
 ───────────────────────────────────────────────────────────────── */
-const REVIEWS: ReviewData[] = [
+const PRACTO_REVIEWS: ReviewData[] = [
   {
     id: 1,
-    name: "Ria Susan Reji",
-    time: "3 months ago",
+    name: "GREESHMA ANGELOSE",
+    time: "6 years ago",
     rating: 5,
-    datePublished: "2024-08-01", // Approximate (3 months before Nov 2024)
-    text: "I was super sceptical about getting braces as an adult but Dr. Jeo made the whole process so easy. He explained every option clearly, never pushed me towards the more expensive one. 13 months in and my teeth look completely different. The clinic itself is clean and well organised — never had to wait more than a few minutes.",
+    datePublished: "2020-11-01",
+    text: "I've never had such an awesome experience in any hospitals. The ambience and doctors of the clinic are really superb. I felt like being in a home rather than being in a hospital set up. The treatment is effective and cost effective. I would recommend this place to all of my Kith and kin.",
   },
   {
     id: 2,
-    name: "Mathew Varghese",
-    time: "5 months ago",
+    name: "Renjan sreejith",
+    time: "3 years ago",
     rating: 5,
-    datePublished: "2024-06-01", // Approximate (5 months before Nov 2024)
-    text: "Had a root canal here and I'll be honest, I was dreading it. Turned out to be nothing — no pain during, mild soreness after for a day. Dr. Jeo's team is calm and professional. The clinic is on the 2nd floor of Mukkadan Arcade, easy to find above KFC.",
+    datePublished: "2023-11-01",
+    text: "Very friendly approach and he explained everything properly. Nice behavior proper guidence from him.",
   },
   {
     id: 3,
-    name: "Ananya Krishnan",
-    time: "1 month ago",
+    name: "ANEES LESLY DEVASSY",
+    time: "3 years ago",
     rating: 5,
-    datePublished: "2024-10-01", // Approximate (1 month before Nov 2024)
-    text: "Got lingual braces here — the hidden ones that go on the inside of your teeth. I had no idea this was available in Pala. Dr. Jeo is one of the few dentists in Kerala with actual training in this. Six months in and no one at work has noticed I'm in treatment.",
+    datePublished: "2023-11-01",
+    text: "Excellent experience. The doctor explains everything in very details. Overall Friendly atmosphere and thanks to the team.",
   },
   {
     id: 4,
-    name: "Bibin George",
-    time: "7 months ago",
+    name: "Joseph jacob",
+    time: "3 years ago",
     rating: 5,
-    datePublished: "2024-04-01", // Approximate (7 months before Nov 2024)
-    text: "Brought my daughter (age 8) for an orthodontic assessment. Dr. Jeo spent a good amount of time with her, explained what was developing and what needed to be watched. No pressure to start treatment immediately — he was honest that she needed monitoring for now. That kind of honesty is rare.",
+    datePublished: "2023-11-01",
+    text: "Reminders given on previously days is very effective I felt. There will be no delay once we reach at the clinic as they maintain the correct time schedule. Staffs are very patient and caring. Good experience within the doctor too. 👌",
   },
   {
     id: 5,
-    name: "Reshma Thampi",
-    time: "2 months ago",
+    name: "LUCY JOHN",
+    time: "2 years ago",
     rating: 5,
-    datePublished: "2024-09-01", // Approximate (2 months before Nov 2024)
-    text: "I've been to several dental clinics in Kottayam over the years. Smile Architects is on another level. The equipment is modern, the rooms are private, and Dr. Jeo actually listens to what you want. Got clear aligners and I'm very happy with how things are going.",
+    datePublished: "2024-11-01",
+    text: "Very good behaviour, and friendly. No waiting, and everything on time. I am very satisfied with the treatment.",
   },
   {
     id: 6,
-    name: "Sabu Kurian",
-    time: "4 months ago",
+    name: "CELINAMMA STEPHEN",
+    time: "3 years ago",
     rating: 5,
-    datePublished: "2024-07-01", // Approximate (4 months before Nov 2024)
-    text: "Got a dental implant after losing a molar. The whole process from assessment to the final crown took about four months. The implant feels completely natural — I don't notice it at all. Staff were helpful and followed up after each stage.",
+    datePublished: "2023-11-01",
+    text: "Thank you so much for your kind and thoughtful concern in regard to my health and providing me with excellent medical and physical care. I am most grateful for your kindness whenever I see you.",
+  },
+  {
+    id: 7,
+    name: "ASHISH M.M",
+    time: "5 years ago",
+    rating: 5,
+    datePublished: "2021-11-01",
+    text: "Doctor is very friendly and compassionate. I was Very comfortable. Sterile Articles are using for the procedure. Cleanliness is one of the best thing I have experienced in this clinic. Overall it was a great experience.",
+  },
+  {
+    id: 8,
+    name: "Jose p manuel",
+    time: "2 years ago",
+    rating: 5,
+    datePublished: "2024-11-01",
+    text: "This was a 12-15 yr old cap replacement. I live abroad. When ever I come to India, usually visit smile dental clinic. Flexibility is the major reason. Always happy 😊. Thanks",
+  },
+  {
+    id: 9,
+    name: "Verified Patient",
+    time: "1 year ago",
+    rating: 5,
+    datePublished: "2025-11-01",
+    text: "Dr. Jeo Tom Charls From the moment I walked in, their entire team made me feel comfortable. Dr. Jeo Tom Charls has a incredibly gentle touch and explained every step of my procedure in a way that was easy to understand, alleviating all my anxieties. I'm thrilled with the results and truly appreciate their patience and skill.",
+  },
+  {
+    id: 10,
+    name: "Verified Patient",
+    time: "5 years ago",
+    rating: 5,
+    datePublished: "2021-11-01",
+    text: "He is so polite. He frankly said about the consequences that I had to face when I change to other hospital if I get college admission in another state. So he suggested to think it over whether I want to do it here or any other places where I am getting my college admission.",
+  },
+  {
+    id: 11,
+    name: "DIYA ANN JUSTINE",
+    time: "3 years ago",
+    rating: 5,
+    datePublished: "2023-11-01",
+    text: "I had crooked teeth and it was then I approached Dr.Jeo Tom Charles. After I had my braces on, I was checked by the doctor each month. He was so nice, that he explained everything in detail, so that we could understand. Right now my teeth are right in shape... Well Recommeded Doctor🙂",
+  },
+  {
+    id: 12,
+    name: "Devassia",
+    time: "3 years ago",
+    rating: 5,
+    datePublished: "2023-11-01",
+    text: "Explained regarding the possible complications and better treatment options. Explained prior to do the procedure.",
+  },
+  {
+    id: 13,
+    name: "T P AYUSH",
+    time: "4 years ago",
+    rating: 5,
+    datePublished: "2022-11-01",
+    text: "Simplicity and very friendly way of expressing the factual course of treatment to be availed alongwith the time taken & the cost involved on treatment.",
+  },
+  {
+    id: 14,
+    name: "ROSAMMA MATHEW",
+    time: "3 years ago",
+    rating: 5,
+    datePublished: "2023-11-01",
+    text: "My experience with Dr jeo Tom Charles was great, doctor managed to Pluck the tooth upper and lower jaw without any pain and shake, very good approach and great explanation.",
+  },
+  {
+    id: 15,
+    name: "Bobin James",
+    time: "6 years ago",
+    rating: 5,
+    datePublished: "2020-11-01",
+    text: "Doctor managed to pluck the tooth from upper right corner, without pain and Shake even though slight complication was there. He adviced about the do's and don'ts in detail.",
+  },
+  {
+    id: 16,
+    name: "Deepu Krishnan",
+    time: "5 years ago",
+    rating: 5,
+    datePublished: "2021-11-01",
+    text: "I strongly recommend. Last week my wife's took veneer treatment, the result was awesome. Doctor is so friendly and informative.",
+  },
+  {
+    id: 17,
+    name: "AMITH VIJAY",
+    time: "5 years ago",
+    rating: 5,
+    datePublished: "2021-11-01",
+    text: "We can see the Dr at the correct booking time. Everything will be explained. Dr is good friendly nature.",
+  },
+  {
+    id: 18,
+    name: "MANU SOORYA",
+    time: "6 years ago",
+    rating: 5,
+    datePublished: "2020-11-01",
+    text: "Doctor takes his time answering and explaining all your doubts. Friendly and calm doctor.",
+  },
+  {
+    id: 19,
+    name: "Malavika k",
+    time: "5 years ago",
+    rating: 5,
+    datePublished: "2021-11-01",
+    text: "Doctor has explained the cause of teeth disorder and honestly suggested the prompt remedy.",
+  },
+  {
+    id: 20,
+    name: "PAVAN S",
+    time: "5 years ago",
+    rating: 5,
+    datePublished: "2021-11-01",
+    text: "The doctor was very friendly and I am satisfied with the treatment. And also, I'm satisfied with the explanation of the health issue.",
+  },
+  {
+    id: 21,
+    name: "BINOY JOSEPH",
+    time: "6 years ago",
+    rating: 5,
+    datePublished: "2020-11-01",
+    text: "I really appreciate Dr.Jeo because of his attitude and his service is very very much better than other clinic Doctors. It's my life experiences. onece I give him thanks alots of. I wish all the very best in his career.",
   },
 ];
 
 /* ─────────────────────────────────────────────────────────────────
-   GOOGLE RATING — update when Google shows a different figure.
+   PRACTO INFO — Smile Architects Practo profile
+   Reviews come from: https://www.practo.com/kottayam/clinic/smile-architects-pala-town
+───────────────────────────────────────────────────────────────── */
+const PRACTO_PROFILE_URL = "https://www.practo.com/kottayam/clinic/smile-architects-pala-town";
+const PRACTO_REVIEW_COUNT = "219+"; // As of Nov 2026
+
+/* ─────────────────────────────────────────────────────────────────
+   GOOGLE RATING — displayed at top for credibility
    Link goes to the Maps listing.
 ───────────────────────────────────────────────────────────────── */
 const GOOGLE_RATING = 4.9;
@@ -148,7 +274,7 @@ export default function PatientStoriesPage() {
       />
 
       {/* ── STRUCTURED DATA: Individual Reviews ────────────────── */}
-      {REVIEWS.map((review) => (
+      {PRACTO_REVIEWS.map((review) => (
         <Script
           key={`review-schema-${review.id}`}
           id={`review-schema-${review.id}`}
@@ -177,8 +303,8 @@ export default function PatientStoriesPage() {
               What patients say
             </h1>
             <p style={{ color: "var(--color-cafe-noir)", fontSize: "1.0625rem", maxWidth: "540px", lineHeight: 1.65 }}>
-              Real reviews from patients at Smile Architects, Pala — across orthodontics, implants,
-              smile design and everyday dental care.
+              Verified patient reviews from Practo — across orthodontics, implants,
+              smile design and everyday dental care at Smile Architects, Pala.
             </p>
           </RevealUp>
         </div>
@@ -211,11 +337,44 @@ export default function PatientStoriesPage() {
         </div>
       </section>
 
-      {/* ── REVIEWS ────────────────────────────────────────────── */}
-      <section className="section-padding section-white" style={{ paddingTop: "1rem" }} aria-label="Patient reviews">
+      {/* ── REVIEWS FROM PRACTO ────────────────────────────────── */}
+      <section className="section-padding section-white" style={{ paddingTop: "1rem" }} aria-label="Patient reviews from Practo">
         <div className="container-xl" style={{ maxWidth: "780px" }}>
+          
+          {/* Practo source label */}
+          <div style={{ 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center",
+            gap: "0.75rem",
+            marginBottom: "2rem",
+          }}>
+            <div style={{
+              padding: "0.625rem 1.25rem",
+              background: "linear-gradient(135deg, #1abc9c 0%, #16a085 100%)",
+              borderRadius: "999px",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
+              </svg>
+              <span style={{ 
+                color: "white", 
+                fontFamily: "var(--font-sans)", 
+                fontWeight: 700,
+                fontSize: "0.875rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}>
+                Verified on Practo
+              </span>
+            </div>
+          </div>
+
           <StaggerContainer stagger={0.08} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-            {REVIEWS.map((review) => (
+            {PRACTO_REVIEWS.map((review) => (
               <StaggerItem key={review.id}>
                 <article
                   style={{
@@ -280,19 +439,27 @@ export default function PatientStoriesPage() {
             ))}
           </StaggerContainer>
 
-          {/* View all on Google */}
+          {/* View all on Practo */}
           <RevealUp delay={0.1}>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
+              <p style={{ 
+                color: "var(--color-olive)", 
+                fontSize: "0.9375rem",
+                fontFamily: "var(--font-sans)",
+                textAlign: "center",
+              }}>
+                Showing 21 of {PRACTO_REVIEW_COUNT} verified reviews
+              </p>
               <a
-                href={GOOGLE_REVIEWS_URL}
+                href={PRACTO_PROFILE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.5rem",
-                  backgroundColor: "var(--color-dark-moss)",
-                  color: "var(--color-honeydew)",
+                  backgroundColor: "#1abc9c",
+                  color: "white",
                   fontFamily: "var(--font-sans)",
                   fontWeight: 600,
                   fontSize: "0.9375rem",
@@ -301,9 +468,9 @@ export default function PatientStoriesPage() {
                   textDecoration: "none",
                   transition: "opacity 0.2s ease",
                 }}
-                aria-label="View all Smile Architects reviews on Google"
+                aria-label="View all Smile Architects reviews on Practo"
               >
-                View all reviews on Google
+                View all reviews on Practo
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
