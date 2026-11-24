@@ -7,7 +7,7 @@
  * Horizontal on desktop, vertical on mobile
  */
 
-import { RevealUp, RevealFade, StaggerContainer, StaggerItem } from "@/components/motion/REVOLQComponents";
+import { RevealUp } from "@/components/motion/REVOLQComponents";
 
 const STEPS = [
   {
@@ -108,30 +108,26 @@ export default function PatientJourneySection() {
 
         {/* Timeline */}
         <div className="journey-timeline">
-          <StaggerContainer stagger={0.1} style={{ display: "contents" }}>
-            {STEPS.map((step, i) => (
-              <StaggerItem key={step.number}>
-                <div className="journey-step">
-                  {/* Connector line */}
-                  {i < STEPS.length - 1 && (
-                    <div className="journey-connector" aria-hidden="true" />
-                  )}
+          {STEPS.map((step, i) => (
+            <div key={step.number} className="journey-step">
+              {/* Connector line */}
+              {i < STEPS.length - 1 && (
+                <div className="journey-connector" aria-hidden="true" />
+              )}
 
-                  {/* Icon circle */}
-                  <div className="journey-icon">
-                    {step.icon}
-                  </div>
+              {/* Icon circle */}
+              <div className="journey-icon">
+                {step.icon}
+              </div>
 
-                  {/* Content */}
-                  <div className="journey-content">
-                    <div className="journey-number">{step.number}</div>
-                    <h3 className="journey-title">{step.title}</h3>
-                    <p className="journey-body">{step.body}</p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              {/* Content */}
+              <div className="journey-content">
+                <div className="journey-number">{step.number}</div>
+                <h3 className="journey-title">{step.title}</h3>
+                <p className="journey-body">{step.body}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>
