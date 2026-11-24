@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
+import { TREATMENTS } from "@/lib/site-config";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import { TreatmentIconFor, ArrowRightIcon } from "@/components/ui/icons";
 import TreatmentsBentoGrid from "@/components/sections/TreatmentsBentoGrid";
 
 export const metadata: Metadata = buildMetadata({
@@ -69,6 +71,56 @@ export default function TreatmentsPage() {
             </p>
           </div>
           <TreatmentsBentoGrid />
+        </div>
+      </section>
+
+      {/* All Treatments — Simple cards for complete list */}
+      <section className="section-padding section-light">
+        <div className="container-xl">
+          <div style={{ marginBottom: "2.5rem", textAlign: "center" }}>
+            <div className="accent-line" style={{ margin: "0 auto 1rem" }} />
+            <h2 style={{ 
+              fontFamily: "var(--font-serif)", 
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)", 
+              color: "var(--color-dark-moss)", 
+              fontWeight: 400,
+              marginBottom: "0.5rem"
+            }}>
+              All treatments
+            </h2>
+            <p style={{ 
+              color: "var(--color-olive)", 
+              fontSize: "1rem", 
+              maxWidth: "520px",
+              margin: "0 auto",
+              lineHeight: 1.65
+            }}>
+              Complete range of dental services at Smile Architects, Pala
+            </p>
+          </div>
+
+          <div className="treatments-grid">
+            {TREATMENTS.map((treatment) => (
+              <Link
+                key={treatment.id}
+                href={`/treatments/${treatment.slug}`}
+                className="treatment-card-link"
+                aria-label={`Learn about ${treatment.title} in Pala`}
+              >
+                <div className="card-treatment">
+                  {/* Treatment icon */}
+                  <div style={{ marginBottom: "1.125rem", color: "var(--color-dark-moss)" }}>
+                    <TreatmentIconFor slug={treatment.slug} size="lg" />
+                  </div>
+                  <h3 className="treatment-card-title">{treatment.title}</h3>
+                  <p className="treatment-card-body">{treatment.shortDescription}</p>
+                  <span className="card-learn-more">
+                    Learn more <ArrowRightIcon size="sm" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
