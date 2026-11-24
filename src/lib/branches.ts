@@ -12,6 +12,8 @@ export interface ClinicBranch {
   locationLine: string;
   isPrimary: boolean;
   landingPath: string;
+  /** Is this branch opening soon (not yet operational)? */
+  comingSoon?: boolean;
   address: {
     street: string;
     city: string;
@@ -76,6 +78,7 @@ export const BRANCH_THRISSUR: ClinicBranch = {
   toggleHint: "Punkunnam",
   locationLine: "Punkunnam, Thrissur, Kerala",
   isPrimary: false,
+  comingSoon: true,
   landingPath: "/thrissur",
   address: {
     street: "2nd Floor, Ephphatha Medical Complex",

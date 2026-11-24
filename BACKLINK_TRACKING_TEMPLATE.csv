@@ -1,0 +1,71 @@
+Prospect ID,Prospect Name,Domain,Category,Location,Relevance (1-10),Authority,Target Page,Link Type,Priority,Difficulty,Contact Name,Contact Email,Contact Phone,Outreach Date,Outreach Method,Follow-up Date,Response Status,Link Status,Live Link URL,Anchor Text,Link Attribute,Date Acquired,Date Verified,Notes
+001,IDA Kerala,idakerala.org.in,Healthcare Directory,Kerala,10,High,Homepage,Directory,High,Low,Membership Coordinator,,,,,,,,,,,,,Verify Dr. Jeo's membership is active
+002,IDA Dentist Directory,dentist.ida.org.in,Healthcare Directory,National,9,High,Homepage,Directory,High,Low,,,,,,,,,,,,,Register clinic profile
+003,Kerala Dental Council,dentalcouncil.kerala.gov.in,Government,Kerala,10,High,Homepage,Registration,High,Low,Registrar,,,,,,,,,,,,,Verify current registration
+004,Practo,practo.com,Healthcare Directory,National,9,High,Homepage,Directory,High,Low,,,,,,,,,,,,,Claim existing listing
+005,Justdial,justdial.com,Business Directory,National,7,High,Contact,Directory,High,Low,,,,,,,,,,,,,Claim or create listing
+006,Lybrate,lybrate.com,Healthcare Directory,National,8,Medium,Homepage,Directory,Medium,Low,,,,,,,,,,,,,Create doctor profiles
+007,Kottayam.Today,kottayam.today,Local Media,Kottayam,10,Medium,Homepage,Editorial,High,Medium,Editor,,,,,,,,,,,,,Pitch local health initiative story
+008,Onmanorama,onmanorama.com,Regional Media,Kerala,9,High,Homepage,Editorial,High,Medium,Health Section,,,,,,,,,,,,,Expert commentary offer
+009,Malayala Manorama,manoramaonline.com,Regional Media,Kerala,10,High,Homepage,Editorial,High,High,Health Editor,,,,,,,,,,,,,Major daily - high value target
+010,The Hindu Kerala,thehindu.com,National Media,Kerala,9,High,Homepage,Editorial,High,High,Kottayam Bureau,,,,,,,,,,,,,National daily with local coverage
+011,Times of India Kochi,timesofindia.indiatimes.com,National Media,Kerala,8,High,Homepage,Editorial,Medium,High,Kochi Desk,,,,,,,,,,,,,National daily
+012,Deepika Daily,deepika.com,Regional Media,Kottayam,9,Medium,Homepage,Editorial,Medium,Medium,Editorial Office,,,,,,,,,,,,,Kottayam-based daily
+013,Mangalam Daily,mangalam.com,Regional Media,Kerala,8,Medium,Homepage,Editorial,Medium,Medium,Health Section,,,,,,,,,,,,,Malayalam daily
+014,Mathrubhumi,mathrubhumi.com,Regional Media,Kerala,9,High,Homepage,Editorial,High,High,Health Section,,,,,,,,,,,,,Major Malayalam daily
+015,Govt Dental College Kottayam,Check via dme.kerala.gov.in,Education,Kottayam,9,High,Homepage,Partnership,High,High,Principal,,,,,,,,,,,,,Academic partnership
+016,Govt Dental College Thrissur,Check via dme.kerala.gov.in,Education,Thrissur,9,High,Thrissur Location,Partnership,Medium,High,Principal,,,,,,,,,,,,,Near Thrissur branch
+017,St. Thomas College Pala,Check local,Education,Pala,8,Medium,Homepage,Partnership,High,Medium,Principal,,,,,,,,,,,,,Local college - health programs
+018,Schools in Pala - School 1,[To be identified],Education,Pala,7,Low,Homepage,Partnership,High,Low,Principal,,,,,,,,,,,,,School dental health camp
+019,Schools in Pala - School 2,[To be identified],Education,Pala,7,Low,Homepage,Partnership,High,Low,Principal,,,,,,,,,,,,,School dental health camp
+020,Schools in Pala - School 3,[To be identified],Education,Pala,7,Low,Homepage,Partnership,High,Low,Principal,,,,,,,,,,,,,School dental health camp
+021,Schools in Pala - School 4,[To be identified],Education,Pala,7,Low,Homepage,Partnership,High,Low,Principal,,,,,,,,,,,,,School dental health camp
+022,Schools in Pala - School 5,[To be identified],Education,Pala,7,Low,Homepage,Partnership,High,Low,Principal,,,,,,,,,,,,,School dental health camp
+023,Rotary Club of Pala,[Find website],Community,Pala,8,Low,Homepage,Partnership,High,Low,Club President,,,,,,,,,,,,,Free dental camp partnership
+024,Lions Club Kottayam,[Find website],Community,Kottayam,8,Low,Homepage,Partnership,Medium,Low,Club Secretary,,,,,,,,,,,,,Community health initiatives
+025,Kerala Business Chamber,[Find website],Business Assoc,Kerala,7,Medium,Contact,Directory,Medium,Low,Membership,,,,,,,,,,,,,Member directory listing
+026,Kottayam Chamber of Commerce,[Find website],Business Assoc,Kottayam,7,Medium,Contact,Directory,Medium,Low,Membership,,,,,,,,,,,,,Local business credibility
+027,Pala Municipality,[Find official website],Government,Pala,9,Medium,Homepage,Partnership,Medium,Medium,Health Officer,,,,,,,,,,,,,Community health initiatives
+028,Sulekha,sulekha.com,Business Directory,National,6,Medium,Contact,Directory,Medium,Low,,,,,,,,,,,,,Business listing
+029,IndianYellowPages,indianyellowpages.com,Business Directory,National,6,Medium,Contact,Directory,Low,Low,,,,,,,,,,,,,Business listing
+030,ResearchGate,researchgate.net,Academic,International,7,High,Homepage,Profile,Low,Low,,,,,,,,,,,,,If Dr. Jeo has publications
+031,Google Scholar,scholar.google.com,Academic,International,7,High,Homepage,Profile,Low,Low,,,,,,,,,,,,,If Dr. Jeo has publications
+032,LinkedIn - Dr. Jeo Profile,linkedin.com,Professional,International,6,High,Homepage,Profile,Medium,Low,,,,,,,,,,,,,Optimize professional profile
+033,MediBuddy,medibuddy.in,Healthcare Platform,National,7,Medium,Homepage,Directory,Low,Medium,Provider Network,,,,,,,,,,,,,Healthcare services platform
+034,1mg,1mg.com,Healthcare Platform,National,7,High,Homepage,Directory,Low,Medium,,,,,,,,,,,,,If doctor directory available
+035,PharmEasy,pharmeasy.in,Healthcare Platform,National,7,Medium,Homepage,Directory,Low,Medium,,,,,,,,,,,,,If doctor directory available
+036,Local Pala Blog 1,[Research needed],Local Blog,Pala,6,Low,Homepage,Guest Post,Low,Medium,Blogger,,,,,,,,,,,,,Health/lifestyle blogger
+037,Local Pala Blog 2,[Research needed],Local Blog,Pala,6,Low,Homepage,Guest Post,Low,Medium,Blogger,,,,,,,,,,,,,Community blogger
+038,Kerala Parenting Blog 1,[Research needed],Lifestyle Blog,Kerala,7,Low,Homepage,Guest Post,Medium,Medium,Blogger,,,,,,,,,,,,,Pediatric dental content
+039,Kerala Parenting Blog 2,[Research needed],Lifestyle Blog,Kerala,7,Low,Homepage,Guest Post,Medium,Medium,Blogger,,,,,,,,,,,,,Children's oral health
+040,Kerala Health Podcast 1,[Research needed],Podcast,Kerala,8,Low,Homepage,Guest Feature,Medium,Medium,Host,,,,,,,,,,,,,Expert guest appearance
+041,Quora - Kerala Health Topics,quora.com,Q&A Platform,International,5,High,Various,Content Marketing,Low,Low,,,,,,,,,,,,,Answer dental health questions
+042,Reddit r/Kerala,reddit.com/r/Kerala,Community,Kerala,5,Medium,Various,Community Engagement,Low,Low,,,,,,,,,,,,,Authentic participation only
+043,Facebook - Pala Community Groups,[Various],Social,Pala,5,Low,Homepage,Community Engagement,Low,Low,,,,,,,,,,,,,Genuine engagement - no spam
+044,Pala Diocese Health Ministry,[Research needed],Religious,Pala,7,Low,Homepage,Partnership,Medium,Low,Health Coordinator,,,,,,,,,,,,,Church community outreach
+045,Anganwadi Network Kottayam,[Via health dept],Government,Kottayam,8,Medium,Homepage,Partnership,Medium,High,District Coordinator,,,,,,,,,,,,,Children's dental screening
+046,National Health Mission Kerala,nhm.kerala.gov.in,Government,Kerala,9,High,Homepage,Partnership,Low,High,Program Officer,,,,,,,,,,,,,State health programs
+047,Kerala Health Dept,dhs.kerala.gov.in,Government,Kerala,9,High,Homepage,Partnership,Low,High,Director,,,,,,,,,,,,,Official health sector
+048,Nursing College Kottayam 1,[Research needed],Education,Kottayam,7,Low,Homepage,Partnership,Low,Medium,Principal,,,,,,,,,,,,,Interdisciplinary education
+049,Nursing College Kottayam 2,[Research needed],Education,Kottayam,7,Low,Homepage,Partnership,Low,Medium,Principal,,,,,,,,,,,,,Healthcare education
+050,PRNewswire India,prnewswire.co.in,Press Release,National,6,High,Homepage,Editorial,Low,High,,,,,,,,,,,$$$ Paid service - use only for major news
+051,Business Wire India,businesswireindia.com,Press Release,National,6,High,Homepage,Editorial,Low,High,,,,,,,,,,,$$$ Paid service - major announcements only
+052,Kerala Tourism Medical,keralatourism.org,Tourism,Kerala,6,Medium,Homepage,Feature,Low,Medium,,,,,,,,,,,,,Dental tourism angle
+053,IDA Annual Conference,[Check ida.org.in],Professional Event,National,8,Medium,Homepage,Conference,Low,Medium,,,,,,,,,,,,,Speaking/sponsorship opportunity
+054,Kerala Dental Conference,[Research dates],Professional Event,Kerala,9,Medium,Homepage,Conference,Medium,Medium,,,,,,,,,,,,,Local conference participation
+055,Orthodontic Society Meetings,[Research],Professional Event,National,8,Medium,Orthodontics,Association,Low,Medium,,,,,,,,,,,,,Specialist organization
+056,Yelp India,yelp.co.in,Review Platform,International,5,Medium,Contact,Directory,Low,Low,,,,,,,,,,,,,Business listing
+057,Foursquare,foursquare.com,Location Platform,International,5,Medium,Contact,Directory,Low,Low,,,,,,,,,,,,,Location-based listing
+058,MapMyIndia,mapmyindia.com,Mapping,National,6,Medium,Contact,Directory,Low,Low,,,,,,,,,,,,,Mapping service
+059,AskLaila,asklaila.com,Local Search,National,5,Low,Contact,Directory,Low,Low,,,,,,,,,,,,,Local search platform
+060,GetWork,getwork.com,Services,National,5,Low,Contact,Directory,Low,Low,,,,,,,,,,,,,Service directory
+061,QuikrServices,quikr.com,Classifieds,National,5,Low,Contact,Directory,Low,Low,,,,,,,,,,,,,Classified platform
+062,Local Lifestyle Magazine 1,[Research Kerala magazines],Lifestyle,Kerala,7,Low,Homepage,Feature,Low,Medium,Editor,,,,,,,,,,,,,Health & wellness section
+063,Local Lifestyle Magazine 2,[Research Kerala magazines],Lifestyle,Kerala,7,Low,Homepage,Feature,Low,Medium,Editor,,,,,,,,,,,,,Lifestyle publication
+064,School Sports Meet Sponsor,[Annual events],Event,Kottayam,6,Low,Homepage,Sponsorship,Low,Low,Organizer,,,,,,,,,,,,,Health awareness booth
+065,College Tech Fest Partner,[Research colleges],Event,Kottayam,6,Low,Homepage,Sponsorship,Low,Low,Organizer,,,,,,,,,,,,,Healthcare stall
+066,Pala Festival Sponsor,[Check local events],Event,Pala,7,Low,Homepage,Sponsorship,Low,Low,Organizer,,,,,,,,,,,,,Community event visibility
+067,Corporate Wellness - Company 1,[Research Pala companies],Corporate,Pala,6,Low,Homepage,Partnership,Low,Medium,HR Manager,,,,,,,,,,,,,Employee dental health program
+068,Corporate Wellness - Company 2,[Research Pala companies],Corporate,Pala,6,Low,Homepage,Partnership,Low,Medium,HR Manager,,,,,,,,,,,,,Workplace wellness
+069,Local Hospital Partnership,[Research Pala hospitals],Healthcare,Pala,8,Medium,Homepage,Partnership,Medium,Medium,Administration,,,,,,,,,,,,,Referral partnership
+070,Medical College Alumni Assoc,[If Dr. Jeo is member],Professional,Kerala,7,Low,Homepage,Directory,Low,Low,Secretary,,,,,,,,,,,,,Alumni network

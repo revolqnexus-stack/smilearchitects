@@ -9,9 +9,9 @@ import { PhoneIcon, MailIcon, ClockIcon, WhatsAppIcon } from "@/components/ui/ic
 import ContactBothBranches from "@/components/contact/ContactBothBranches";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Smile Architects | Pala & Thrissur Dental Clinic | Emergency Care",
+  title: "Contact Smile Architects | Pala Dental Clinic & Thrissur (Opening Soon)",
   description:
-    `Contact Smile Architects dental clinic in Pala, Kottayam (Maharani Junction) and Thrissur (Punkunnam). Call ${CLINIC.contact.phoneDisplay} for appointments or emergency dental care. Email: ${CLINIC.contact.email}. Open Mon–Sat 9:30 AM–8:00 PM. Same-day emergency treatment available for severe toothache, dental trauma, and broken teeth.`,
+    `Contact Smile Architects dental clinic in Pala, Kottayam (Maharani Junction). Thrissur branch opening soon at Punkunnam. Call ${CLINIC.contact.phoneDisplay} for appointments or emergency dental care. Email: ${CLINIC.contact.email}. Open Mon–Sat 9:30 AM–8:00 PM. Same-day emergency treatment available.`,
   canonical: "/contact",
 });
 
@@ -42,10 +42,10 @@ export default function ContactPage() {
               lineHeight: 1.6,
               marginBottom: "2rem",
             }}>
-              Two clinics in Kerala — <strong>Pala</strong> (Kottayam District) and{" "}
-              <strong>Thrissur</strong> (Punkunnam). Same team and phone for both.{" "}
+              Two clinics in Kerala — <strong>Pala</strong> (Kottayam District) now open, and{" "}
+              <strong>Thrissur</strong> (Punkunnam) opening soon. Same team and phone for both.{" "}
               <Link href="/locations" style={{ color: "var(--color-dark-moss)", fontWeight: 600 }}>
-                View both addresses →
+                View locations →
               </Link>
             </p>
             

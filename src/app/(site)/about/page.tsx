@@ -74,8 +74,8 @@ export default function AboutPage() {
                     for patients in{" "}
                     <Link href="/">Pala, Kottayam</Link> and the surrounding Meenachil region. We
                     also serve{" "}
-                    <Link href="/areas-served/kottayam">Kottayam District</Link> and operate a{" "}
-                    <Link href="/thrissur">Thrissur branch in Punkunnam</Link>. The Pala centre combines{" "}
+                    <Link href="/areas-served/kottayam">Kottayam District</Link> and have a{" "}
+                    <Link href="/thrissur">Thrissur branch opening soon in Punkunnam</Link>. The Pala centre combines{" "}
                     <Link href="/treatments/general-dentistry">general dentistry</Link> with{" "}
                     <Link href="/orthodontics">orthodontics</Link> and{" "}
                     <Link href="/treatments/cosmetic-dentistry">cosmetic care</Link>.

@@ -138,7 +138,7 @@ export default function HomePage() {
                   <span style={{ color: "var(--color-jonquil)", fontWeight: 500 }}>Dr. Jeo Tom Charls</span>, MDS Orthodontics
                   — plus our{" "}
                   <Link href="/thrissur" className="sa-prose-link sa-prose-link--hero">
-                    Thrissur (Punkunnam) branch
+                    Thrissur (Punkunnam) branch opening soon
                   </Link>
                   .
                 </p>

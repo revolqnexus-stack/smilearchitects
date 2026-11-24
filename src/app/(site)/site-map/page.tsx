@@ -19,7 +19,7 @@ const STATIC_PAGES: { href: string; label: string }[] = [
   { href: "/about", label: "About" },
   { href: "/dentists", label: "Our doctors" },
   { href: "/locations", label: "Clinic locations" },
-  { href: "/thrissur", label: "Thrissur branch" },
+  { href: "/thrissur", label: "Thrissur branch (opening soon)" },
   { href: "/contact", label: "Contact" },
   { href: "/book-appointment", label: "Book appointment" },
   { href: "/treatments", label: "Treatments" },

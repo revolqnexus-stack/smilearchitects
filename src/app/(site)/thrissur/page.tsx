@@ -14,9 +14,9 @@ import { LOCAL_INTRO_SEGMENTS } from "@/lib/seo/internal-links";
 import { MapPinIcon, PhoneIcon, ClockIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Best Dental Clinic in Thrissur | Smile Architects Branch",
+  title: "Thrissur Branch Opening Soon | Smile Architects Punkunnam",
   description:
-    "Smile Architects Thrissur — 2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church, Punkunnam, Thrissur 680002. Multispeciality dental & orthodontic care. Call +91 82899 33331.",
+    "Smile Architects Thrissur branch opening soon at Punkunnam (2nd Floor, Ephphatha Medical Complex, Opp. St. Joseph's Church). Meanwhile, visit our main clinic in Pala, Kottayam. Call +91 82899 33331.",
   canonical: "/thrissur",
 });
 
@@ -29,6 +29,23 @@ export default function ThrissurBranchPage() {
         <div className="container-xl">
           <Breadcrumb items={[{ label: "Thrissur Branch", href: "/thrissur" }]} />
           <div style={{ maxWidth: "720px", margin: "2rem auto 0", textAlign: "center" }}>
+            
+            {/* Coming Soon Badge */}
+            <div style={{ 
+              display: "inline-block",
+              padding: "0.5rem 1.25rem",
+              background: "var(--color-jonquil)",
+              color: "var(--color-dark-moss)",
+              borderRadius: "999px",
+              fontSize: "0.875rem",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              marginBottom: "1.5rem",
+            }}>
+              Opening Soon
+            </div>
+
             <p
               style={{
                 fontSize: "0.75rem",
@@ -55,8 +72,32 @@ export default function ThrissurBranchPage() {
             </h1>
             <LinkRichText
               segments={LOCAL_INTRO_SEGMENTS.thrissur}
-              style={{ color: "var(--color-olive)", fontSize: "1.0625rem", lineHeight: 1.65, marginBottom: "1.5rem" }}
+              style={{ color: "var(--color-olive)", fontSize: "1.0625rem", lineHeight: 1.65, marginBottom: "1rem" }}
             />
+            
+            {/* Coming Soon Message */}
+            <div style={{
+              padding: "1.5rem",
+              background: "rgba(234,200,0,0.1)",
+              borderRadius: "12px",
+              marginBottom: "1.5rem",
+            }}>
+              <p style={{ 
+                color: "var(--color-dark-moss)", 
+                fontSize: "1rem",
+                fontWeight: 500,
+                marginBottom: "0.5rem",
+              }}>
+                Our Thrissur branch is opening soon at Punkunnam
+              </p>
+              <p style={{ 
+                color: "var(--color-olive)", 
+                fontSize: "0.9375rem",
+              }}>
+                Meanwhile, visit our main clinic in Pala or call us for appointments at both locations.
+              </p>
+            </div>
+
             <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
               <BranchToggle />
             </div>
@@ -65,8 +106,8 @@ export default function ThrissurBranchPage() {
                 <PhoneIcon size="sm" />
                 {branch.contact.phoneDisplay}
               </TrackedLink>
-              <Link href="/book-appointment" className="btn btn-secondary">
-                Book appointment
+              <Link href="/" className="btn btn-secondary">
+                Visit Pala Branch
               </Link>
             </div>
           </div>

@@ -472,7 +472,7 @@ export default async function TreatmentPage({ params }: Props) {
                       ) : null}
                       {commercial.availableAt.includes("pala") && commercial.availableAt.includes("thrissur") ? " and " : null}
                       {commercial.availableAt.includes("thrissur") ? (
-                        <Link href="/thrissur">Thrissur branch</Link>
+                        <Link href="/thrissur">Thrissur branch (opening soon)</Link>
                       ) : null}
                       .
                     </p>

@@ -23,7 +23,7 @@ export default function LocationsPage() {
             <h1 className="locations-page-title">Our clinics</h1>
             <p className="locations-page-lead">
               {CLINIC.name} in <strong>Pala, Kottayam District</strong> (main centre) and a{" "}
-              <strong>Thrissur branch in Punkunnam</strong>. Same phone for both:{" "}
+              <strong>Thrissur branch opening soon in Punkunnam</strong>. Same phone for both:{" "}
               <a href={`tel:${CLINIC.contact.phone}`}>{CLINIC.contact.phoneDisplay}</a>.
             </p>
           </div>
@@ -45,10 +45,10 @@ export default function LocationsPage() {
               <Link href="/">About Pala →</Link>
             </li>
             <li>
-              <strong>Thrissur</strong> — Branch at Ephphatha Medical Complex, Opp. St.
+              <strong>Thrissur (Opening Soon)</strong> — Branch at Ephphatha Medical Complex, Opp. St.
               Joseph&apos;s Church, Punkunnam.{" "}
               <Link href="/thrissur" style={{ fontWeight: 700 }}>
-                Open Thrissur branch page (photos &amp; map) →
+                Open Thrissur branch page (details &amp; map) →
               </Link>
             </li>
           </ul>

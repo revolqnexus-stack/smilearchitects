@@ -1,4 +1,4 @@
-# AI Query-to-Page Mapping — Smile Architects
+ # AI Query-to-Page Mapping — Smile Architects
 ## Search Intent → Target URL Strategy
 
 **Document Purpose**: Map every priority search query to its optimal target page to avoid keyword cannibalization and ensure clear content purpose.
