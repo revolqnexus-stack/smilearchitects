@@ -243,7 +243,7 @@ export default function SiteFooter() {
           }}
         >
           <p style={{ fontSize: "0.75rem", color: "var(--color-honeydew)", opacity: 0.7 }}>
-            © {year} Smile Architects, Pala, Kerala. All rights reserved.
+            © {year} Smile Architects, Pala, Kottayam District, Kerala. All rights reserved.
           </p>
           <p style={{ fontSize: "0.75rem", color: "var(--color-honeydew)", opacity: 0.7, maxWidth: "580px", lineHeight: 1.5 }}>
             The information on this website is for general informational purposes only and is not a

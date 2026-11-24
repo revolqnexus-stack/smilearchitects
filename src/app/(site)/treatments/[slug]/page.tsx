@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildMetadata({
     title: `${treatment.title} in Pala | Smile Architects`,
-    description: `${treatment.title} at Smile Architects — ${treatment.shortDescription} Multispeciality dental clinic in Pala, Kerala. Call +91 82899 33331.`,
+    description: `${treatment.title} at Smile Architects — ${treatment.shortDescription} Multispeciality dental clinic in Pala, Kottayam District, Kerala. Call +91 82899 33331.`,
     canonical: `/treatments/${treatment.slug}`,
   });
 }

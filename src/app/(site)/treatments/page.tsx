@@ -8,7 +8,7 @@ import { TreatmentIconFor, ArrowRightIcon } from "@/components/ui/icons";
 export const metadata: Metadata = buildMetadata({
   title: "Dental Treatments in Pala | Braces, Implants & Complete Dental Care",
   description:
-    "Complete dental treatments at Smile Architects, Pala: orthodontics (braces, clear aligners, lingual braces), dental implants, smile design, root canal treatment, cosmetic dentistry, pediatric dentistry, periodontal treatment, crowns, bridges, dentures, and general dentistry. Led by Dr. Jeo Tom Charls, MDS Orthodontics, at Maharani Junction, Pala.",
+    "Complete dental treatments at Smile Architects, Pala, Kottayam District: orthodontics (braces, clear aligners, lingual braces), dental implants, smile design, root canal treatment, cosmetic dentistry, pediatric dentistry, periodontal treatment, crowns, bridges, dentures, and general dentistry. Led by Dr. Jeo Tom Charls, MDS Orthodontics, at Maharani Junction, Pala.",
   canonical: "/treatments",
 });
 
