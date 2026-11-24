@@ -75,7 +75,7 @@ export default function PatientJourneySection() {
 
         {/* Header */}
         <RevealUp>
-          <div style={{ textAlign: "center", marginBottom: "clamp(3rem, 6vw, 4.5rem)", maxWidth: "640px", margin: "0 auto 4rem" }}>
+          <div style={{ textAlign: "center", marginBottom: "clamp(2rem, 4vw, 3rem)", maxWidth: "640px", margin: "0 auto 3rem" }}>
             <div style={{ 
               width: 48, 
               height: 3, 
@@ -106,6 +106,88 @@ export default function PatientJourneySection() {
           </div>
         </RevealUp>
 
+        {/* International Patient Guide Card */}
+        <RevealUp delay={0.1}>
+          <a
+            href="/patient-guide/international"
+            style={{
+              display: "block",
+              maxWidth: "720px",
+              margin: "0 auto 4rem",
+              backgroundColor: "white",
+              borderRadius: "1.5rem",
+              padding: "2rem 2.5rem",
+              border: "2px solid var(--color-jonquil)",
+              boxShadow: "0 4px 24px rgba(234,200,0,0.12)",
+              textDecoration: "none",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+            }}
+            className="international-guide-card"
+          >
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "1.5rem" }}>
+              {/* Icon */}
+              <div style={{
+                width: 56,
+                height: 56,
+                borderRadius: "1rem",
+                background: "linear-gradient(135deg, var(--color-jonquil) 0%, #d4b000 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "white",
+                flexShrink: 0,
+              }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h4M18 12h4M12 2v4M12 18v4"/>
+                  <path d="M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M6.3 17.7l2.8-2.8M14.9 9.1l2.8-2.8"/>
+                </svg>
+              </div>
+
+              {/* Content */}
+              <div style={{ flex: 1 }}>
+                <h3 style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "1.5rem",
+                  fontWeight: 500,
+                  color: "var(--color-dark-moss)",
+                  marginBottom: "0.5rem",
+                  lineHeight: 1.3,
+                }}>
+                  International Patient Guide
+                </h3>
+                <p style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "1rem",
+                  color: "var(--color-cafe-noir)",
+                  lineHeight: 1.65,
+                  margin: 0,
+                  opacity: 0.8,
+                }}>
+                  Travelling from the Gulf, UK or abroad for treatment? Everything you need — costs, logistics, what to bring, and how to plan your visit.
+                </p>
+              </div>
+
+              {/* Arrow */}
+              <div style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                backgroundColor: "var(--color-tea-green)",
+                flexShrink: 0,
+                color: "var(--color-dark-moss)",
+              }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </RevealUp>
+
         {/* Timeline */}
         <div className="journey-timeline">
           {STEPS.map((step, i) => (
@@ -133,6 +215,21 @@ export default function PatientJourneySection() {
       </div>
 
       <style>{`
+        .international-guide-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 32px rgba(234,200,0,0.2) !important;
+        }
+
+        @media (max-width: 640px) {
+          .international-guide-card > div {
+            flex-direction: column !important;
+            text-align: center !important;
+          }
+          .international-guide-card > div > div:last-child {
+            display: none !important;
+          }
+        }
+
         /* Desktop — horizontal timeline */
         .journey-timeline {
           display: grid;
