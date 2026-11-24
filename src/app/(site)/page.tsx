@@ -26,6 +26,7 @@ import {
 import HeroLocationEyebrow from "@/components/ui/HeroLocationEyebrow";
 import HomeHeroCTAs from "@/components/ui/HomeHeroCTAs";
 import BranchLocationSection from "@/components/sections/BranchLocationSection";
+import TreatmentsBentoGrid from "@/components/sections/TreatmentsBentoGrid";
 
 export const metadata: Metadata = buildMetadata({
   title: "Best Dentist & Orthodontist in Pala (Palai), Kottayam | Dr. Jeo Tom Charls, MDS",
@@ -716,40 +717,10 @@ export default function HomePage() {
             </StaggerReveal>
           </div>
 
-          <StaggerContainer
-            stagger={0.07}
-            className="treatments-grid home-services-grid"
-          >
-            {FEATURED_TREATMENTS.map((t, index) => (
-              <StaggerItem
-                key={t.id}
-                className={index >= HOME_SERVICES_MOBILE_MAX ? "home-services-more" : undefined}
-              >
-                <Link
-                  href={`/treatments/${t.slug}`}
-                  className="treatment-card-link"
-                  aria-label={`Learn about ${t.title}`}
-                >
-                  <div className="card-treatment home-service-card">
-                    <div className="home-service-card-icon">
-                      <TreatmentIconFor slug={t.slug} size="lg" />
-                    </div>
-                    <h3 className="treatment-card-title">{t.title}</h3>
-                    <p className="treatment-card-body home-service-card-body">{t.shortDescription}</p>
-                    <span className="card-learn-more home-service-card-cta">
-                      Learn more <ArrowRightIcon size="sm" />
-                    </span>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <TreatmentsBentoGrid />
 
           <StaggerReveal type="cta">
             <div className="home-services-footer-cta">
-              <p className="home-services-more-note">
-                {FEATURED_TREATMENTS.length - HOME_SERVICES_MOBILE_MAX} more on the full treatments page — implants, general dentistry, root canal &amp; more.
-              </p>
               <Link href="/treatments" className="btn btn-accent btn-lg">
                 View all {TREATMENTS.length} treatments
               </Link>

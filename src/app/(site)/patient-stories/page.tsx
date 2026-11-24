@@ -373,16 +373,22 @@ export default function PatientStoriesPage() {
             </div>
           </div>
 
-          <StaggerContainer stagger={0.08} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-            {PRACTO_REVIEWS.map((review) => (
-              <StaggerItem key={review.id}>
+          {/* Horizontal animated carousel */}
+          <div className="reviews-carousel-wrapper">
+            <div className="reviews-carousel">
+              {/* Render reviews twice for seamless loop */}
+              {[...PRACTO_REVIEWS, ...PRACTO_REVIEWS].map((review, idx) => (
                 <article
+                  key={`${review.id}-${idx}`}
+                  className="review-card"
                   style={{
                     backgroundColor: "var(--color-white)",
                     borderRadius: "var(--radius-xl)",
                     padding: "2rem 2.25rem",
                     boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
                     border: "1px solid rgba(0,0,0,0.06)",
+                    minWidth: "420px",
+                    maxWidth: "420px",
                   }}
                 >
                   {/* Top row */}
@@ -435,9 +441,60 @@ export default function PatientStoriesPage() {
                     </p>
                   </blockquote>
                 </article>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              ))}
+            </div>
+          </div>
+
+          <style>{`
+            .reviews-carousel-wrapper {
+              overflow: hidden;
+              width: 100%;
+              margin: 0 auto;
+            }
+            
+            .reviews-carousel {
+              display: flex;
+              gap: 1.25rem;
+              animation: scroll-left 60s linear infinite;
+              will-change: transform;
+            }
+            
+            .reviews-carousel:hover {
+              animation-play-state: paused;
+            }
+            
+            @keyframes scroll-left {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(calc(-420px * ${PRACTO_REVIEWS.length} - 1.25rem * ${PRACTO_REVIEWS.length}));
+              }
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+              .reviews-carousel {
+                animation: none;
+              }
+            }
+            
+            @media (max-width: 768px) {
+              .review-card {
+                min-width: 340px !important;
+                max-width: 340px !important;
+                padding: 1.5rem 1.75rem !important;
+              }
+              
+              @keyframes scroll-left {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(calc(-340px * ${PRACTO_REVIEWS.length} - 1.25rem * ${PRACTO_REVIEWS.length}));
+                }
+              }
+            }
+          `}</style>
 
           {/* View all on Practo */}
           <RevealUp delay={0.1}>
