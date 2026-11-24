@@ -10,53 +10,52 @@ import { useState, useEffect, useRef } from "react";
    TREATMENT IMAGES MAP
    
    Maps treatment slug to image path + alt text.
-   Where no image exists, we render a gradient fallback with the icon.
-   
-   To add real images later: just update the imagePath value.
+   PLACEHOLDER IMAGES: Using Unsplash dental/medical photography.
+   Replace these with actual clinic photos when available.
 ───────────────────────────────────────────────────────────────── */
 const TREATMENT_IMAGES: Record<
   string,
-  { imagePath: string | null; alt: string }
+  { imagePath: string; alt: string }
 > = {
   "smile-design": {
-    imagePath: null,
-    alt: "Digital smile design consultation",
+    imagePath: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&h=800&fit=crop&q=80",
+    alt: "Woman smiling showing beautiful teeth - digital smile design",
   },
   orthodontics: {
-    imagePath: null,
-    alt: "Orthodontic treatment with braces",
+    imagePath: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=800&fit=crop&q=80",
+    alt: "Close-up of metal braces on teeth - orthodontic treatment",
   },
   braces: {
-    imagePath: null,
-    alt: "Metal and ceramic dental braces",
+    imagePath: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=800&fit=crop&q=80",
+    alt: "Dental braces with colored bands - orthodontic care",
   },
   "clear-aligners": {
-    imagePath: null,
-    alt: "Clear aligner treatment",
+    imagePath: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&h=600&fit=crop&q=80",
+    alt: "Clear aligner tray in hand - invisible orthodontic treatment",
   },
   "lingual-braces": {
-    imagePath: null,
-    alt: "Lingual braces fitted behind teeth",
+    imagePath: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=800&fit=crop&q=80",
+    alt: "Dental examination showing lingual braces placement",
   },
   "cosmetic-dentistry": {
-    imagePath: null,
-    alt: "Cosmetic dentistry smile transformation",
+    imagePath: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=800&fit=crop&q=80",
+    alt: "Perfect white smile - cosmetic dentistry results",
   },
   "dental-implants": {
-    imagePath: null,
-    alt: "Dental implant procedure",
+    imagePath: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=1200&h=800&fit=crop&q=80",
+    alt: "Dental implant model showing tooth replacement",
   },
   "general-dentistry": {
-    imagePath: "/images/general dentistry.png",
-    alt: "General dental care and check-ups",
+    imagePath: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop&q=80",
+    alt: "Dental checkup and preventive care examination",
   },
   "pediatric-dentistry": {
-    imagePath: null,
-    alt: "Paediatric dental care for children",
+    imagePath: "https://images.unsplash.com/photo-1626736985932-cbba43631356?w=800&h=800&fit=crop&q=80",
+    alt: "Happy child during pediatric dental visit",
   },
   "root-canal-treatment": {
-    imagePath: null,
-    alt: "Root canal treatment procedure",
+    imagePath: "https://images.unsplash.com/photo-1598531228433-d9f0bdc0ce2c?w=800&h=600&fit=crop&q=80",
+    alt: "Endodontic root canal treatment procedure",
   },
 };
 
@@ -134,10 +133,13 @@ interface TreatmentTileProps {
 
 function TreatmentTile({ treatment, size, index }: TreatmentTileProps) {
   const imageData = TREATMENT_IMAGES[treatment.slug];
-  const hasImage = imageData?.imagePath;
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const tileRef = useRef<HTMLAnchorElement>(null);
+
+  // Get total count of featured treatments
+  const totalCount = 10;
+  const displayNumber = (index + 1).toString().padStart(2, "0");
 
   // Intersection observer for stagger animation
   useEffect(() => {
@@ -163,8 +165,6 @@ function TreatmentTile({ treatment, size, index }: TreatmentTileProps) {
     };
   }, [index]);
 
-  const showDescription = size !== "small" || isHovered;
-
   return (
     <Link
       ref={tileRef}
@@ -182,37 +182,30 @@ function TreatmentTile({ treatment, size, index }: TreatmentTileProps) {
       onBlur={() => setIsHovered(false)}
       aria-label={`Learn about ${treatment.title}`}
     >
-      {/* Background: Image or gradient fallback */}
-      {hasImage ? (
-        <Image
-          src={imageData.imagePath!}
-          alt={imageData.alt}
-          fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="treatment-tile-image"
-          style={{ objectFit: "cover" }}
-          loading={index > 2 ? "lazy" : "eager"}
-        />
-      ) : (
-        <>
-          {/* Gradient fallback */}
-          <div className="treatment-tile-gradient" aria-hidden="true" />
-          {/* Icon fallback */}
-          <div className="treatment-tile-icon-fallback" aria-hidden="true">
-            <TreatmentIconFor slug={treatment.slug} size="xl" />
-          </div>
-        </>
-      )}
+      {/* Background Image */}
+      <Image
+        src={imageData.imagePath}
+        alt={imageData.alt}
+        fill
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        className="treatment-tile-image"
+        style={{ objectFit: "cover" }}
+        loading={index > 2 ? "lazy" : "eager"}
+        unoptimized={imageData.imagePath.startsWith("http")}
+      />
 
       {/* Gradient scrim for text legibility */}
       <div className="treatment-tile-scrim" aria-hidden="true" />
 
+      {/* Number badge */}
+      <div className="treatment-tile-badge" aria-hidden="true">
+        {displayNumber} / {totalCount}
+      </div>
+
       {/* Content */}
       <div className="treatment-tile-content">
         <h3 className="treatment-tile-title">{treatment.title}</h3>
-        {showDescription && (
-          <p className="treatment-tile-description">{treatment.shortDescription}</p>
-        )}
+        <p className="treatment-tile-description">{treatment.shortDescription}</p>
         <span className="treatment-tile-cta">
           LEARN MORE <ArrowRightIcon size="sm" />
         </span>
@@ -260,12 +253,12 @@ export default function TreatmentsBentoGrid() {
         .treatment-tile {
           position: relative;
           overflow: hidden;
-          border-radius: var(--radius-2xl, 24px);
+          border-radius: 20px;
           display: block;
           text-decoration: none;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
             box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
           opacity: 0;
           transform: translateY(20px);
         }
@@ -278,7 +271,7 @@ export default function TreatmentsBentoGrid() {
         .treatment-tile:hover,
         .treatment-tile:focus-visible {
           transform: translateY(-4px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
         }
 
         .treatment-tile:focus-visible {
@@ -292,41 +285,19 @@ export default function TreatmentsBentoGrid() {
         }
 
         .treatment-tile:hover .treatment-tile-image {
-          transform: scale(1.04);
+          transform: scale(1.05);
         }
 
-        /* Gradient fallback */
-        .treatment-tile-gradient {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            135deg,
-            var(--color-dark-moss) 0%,
-            var(--color-olive) 50%,
-            var(--color-tea-green) 100%
-          );
-          opacity: 0.9;
-        }
-
-        .treatment-tile-icon-fallback {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: rgba(255, 255, 255, 0.25);
-          font-size: 4rem;
-        }
-
-        /* Gradient scrim for text */
+        /* Darker gradient scrim - matches reference */
         .treatment-tile-scrim {
           position: absolute;
           inset: 0;
           background: linear-gradient(
             to top,
-            rgba(37, 78, 6, 0.85) 0%,
-            rgba(37, 78, 6, 0.4) 50%,
-            rgba(37, 78, 6, 0.1) 100%
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.4) 40%,
+            rgba(0, 0, 0, 0.1) 70%,
+            transparent 100%
           );
           transition: background 0.3s ease;
         }
@@ -334,16 +305,36 @@ export default function TreatmentsBentoGrid() {
         .treatment-tile:hover .treatment-tile-scrim {
           background: linear-gradient(
             to top,
-            rgba(37, 78, 6, 0.92) 0%,
-            rgba(37, 78, 6, 0.5) 50%,
-            rgba(37, 78, 6, 0.15) 100%
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.5) 40%,
+            rgba(0, 0, 0, 0.15) 70%,
+            transparent 100%
           );
         }
 
-        /* Content */
+        /* Number badge - top left corner */
+        .treatment-tile-badge {
+          position: absolute;
+          top: 1.25rem;
+          left: 1.25rem;
+          font-family: var(--font-utility);
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.75);
+          letter-spacing: 0.05em;
+          z-index: 2;
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(8px);
+          padding: 0.375rem 0.75rem;
+          border-radius: 6px;
+        }
+
+        /* Content - bottom left positioning */
         .treatment-tile-content {
           position: absolute;
-          inset: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
@@ -353,28 +344,19 @@ export default function TreatmentsBentoGrid() {
 
         .treatment-tile-title {
           font-family: var(--font-serif);
-          font-size: 1.5rem;
-          font-weight: 500;
-          color: var(--color-honeydew);
+          font-size: 1.75rem;
+          font-weight: 400;
+          color: #ffffff;
           margin: 0 0 0.5rem 0;
-          line-height: 1.2;
+          line-height: 1.15;
         }
 
         .treatment-tile-description {
           font-family: var(--font-sans);
           font-size: 0.9375rem;
-          color: rgba(254, 250, 224, 0.88);
+          color: rgba(255, 255, 255, 0.85);
           line-height: 1.5;
-          margin: 0 0 0.75rem 0;
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .treatment-tile:hover .treatment-tile-description,
-        .treatment-tile:focus-visible .treatment-tile-description {
-          opacity: 1;
-          transform: translateY(0);
+          margin: 0 0 1rem 0;
         }
 
         .treatment-tile-cta {
@@ -386,26 +368,28 @@ export default function TreatmentsBentoGrid() {
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          color: var(--color-jonquil);
-          transition: gap 0.3s ease;
+          color: var(--color-olive);
+          transition: gap 0.3s ease, color 0.3s ease;
+          padding: 0.5rem 0;
         }
 
         .treatment-tile:hover .treatment-tile-cta,
         .treatment-tile:focus-visible .treatment-tile-cta {
           gap: 0.75rem;
+          color: var(--color-jonquil);
         }
 
         /* Size-specific adjustments */
         .treatment-tile-hero .treatment-tile-title {
-          font-size: 2rem;
+          font-size: 2.25rem;
         }
 
         .treatment-tile-medium .treatment-tile-title {
-          font-size: 1.375rem;
+          font-size: 1.5rem;
         }
 
         .treatment-tile-small .treatment-tile-title {
-          font-size: 1.125rem;
+          font-size: 1.25rem;
         }
 
         .treatment-tile-small .treatment-tile-content {
@@ -414,13 +398,14 @@ export default function TreatmentsBentoGrid() {
 
         .treatment-tile-small .treatment-tile-description {
           font-size: 0.875rem;
+          margin-bottom: 0.75rem;
         }
 
-        /* Hero tiles: always show description */
-        .treatment-tile-hero .treatment-tile-description,
-        .treatment-tile-medium .treatment-tile-description {
-          opacity: 1;
-          transform: translateY(0);
+        .treatment-tile-small .treatment-tile-badge {
+          top: 1rem;
+          left: 1rem;
+          font-size: 0.6875rem;
+          padding: 0.3125rem 0.625rem;
         }
 
         /* Tablet: 6 columns */
@@ -443,11 +428,15 @@ export default function TreatmentsBentoGrid() {
             .join("")}
 
           .treatment-tile-title {
-            font-size: 1.25rem;
+            font-size: 1.375rem;
           }
 
           .treatment-tile-hero .treatment-tile-title {
-            font-size: 1.75rem;
+            font-size: 1.875rem;
+          }
+
+          .treatment-tile-content {
+            padding: 1.5rem;
           }
         }
 
@@ -455,7 +444,7 @@ export default function TreatmentsBentoGrid() {
         @media (max-width: 639px) {
           .treatments-bento-grid {
             grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: minmax(200px, auto);
+            grid-auto-rows: minmax(220px, auto);
             gap: 10px;
           }
 
@@ -483,17 +472,19 @@ export default function TreatmentsBentoGrid() {
           }
 
           .treatment-tile-description {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
+            margin-bottom: 0.75rem;
           }
 
           .treatment-tile-cta {
             font-size: 0.6875rem;
           }
 
-          /* Mobile: show descriptions on touch-friendly tiles */
-          .treatment-tile-description {
-            opacity: 1;
-            transform: translateY(0);
+          .treatment-tile-badge {
+            font-size: 0.625rem;
+            padding: 0.25rem 0.5rem;
+            top: 0.875rem;
+            left: 0.875rem;
           }
         }
 
@@ -501,7 +492,6 @@ export default function TreatmentsBentoGrid() {
         @media (prefers-reduced-motion: reduce) {
           .treatment-tile,
           .treatment-tile-image,
-          .treatment-tile-description,
           .treatment-tile-cta {
             transition: none;
           }
