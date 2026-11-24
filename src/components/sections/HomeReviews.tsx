@@ -8,7 +8,7 @@
 import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { CLINIC } from "@/lib/site-config";
-import { RevealUp, RevealFade, StaggerContainer, StaggerItem } from "@/components/motion/REVOLQComponents";
+import { RevealUp, RevealFade } from "@/components/motion/REVOLQComponents";
 
 /* ─── Data ─────────────────────────────────────────────────────────────────── */
 
@@ -316,22 +316,28 @@ export default function HomeReviews() {
         </div>
       </section>
 
-      {/* ── REVIEW CARDS ───────────────────────────────────────── */}
+      {/* ── REVIEW CARDS — Horizontal Animated Carousel ───────── */}
       <section
         aria-label="Patient reviews"
-        style={{ backgroundColor: "#ffffff", padding: "1.5rem 0 3rem" }}
+        style={{ backgroundColor: "#ffffff", padding: "2rem 0 3rem" }}
       >
-        <div className="container-xl" style={{ maxWidth: "820px" }}>
-          <StaggerContainer stagger={0.08} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            {REVIEWS.map((r) => (
-              <StaggerItem key={r.id}>
+        <div className="container-xl">
+          {/* Horizontal animated carousel */}
+          <div className="reviews-carousel-wrapper">
+            <div className="reviews-carousel">
+              {/* Render reviews twice for seamless loop */}
+              {[...REVIEWS, ...REVIEWS].map((review, idx) => (
                 <article
+                  key={`${review.id}-${idx}`}
+                  className="review-card"
                   style={{
                     backgroundColor: "#ffffff",
                     borderRadius: "1.25rem",
                     padding: "1.75rem 2rem",
                     boxShadow: "0 2px 20px rgba(0,0,0,0.07)",
                     border: "1px solid rgba(0,0,0,0.06)",
+                    minWidth: "420px",
+                    maxWidth: "420px",
                   }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
@@ -350,19 +356,19 @@ export default function HomeReviews() {
                         aria-hidden="true"
                       >
                         <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "1.0625rem", color: "var(--color-dark-moss)" }}>
-                          {r.name.charAt(0)}
+                          {review.name.charAt(0)}
                         </span>
                       </div>
                       <div>
                         <p style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.9375rem", color: "var(--color-dark-moss)", margin: 0 }}>
-                          {r.name}
+                          {review.name}
                         </p>
                         <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.8125rem", color: "var(--color-cafe-noir)", margin: 0, opacity: 0.65 }}>
-                          {r.time}
+                          {review.time}
                         </p>
                       </div>
                     </div>
-                    <Stars rating={r.rating} size={16} />
+                    <Stars rating={review.rating} size={16} />
                   </div>
                   <blockquote style={{ margin: 0 }}>
                     <p style={{
@@ -376,17 +382,68 @@ export default function HomeReviews() {
                       <span style={{ fontSize: "1.75rem", lineHeight: 0, verticalAlign: "-0.35em", marginRight: "0.2em", color: "var(--color-jonquil)", fontStyle: "normal" }} aria-hidden="true">
                         &ldquo;
                       </span>
-                      {r.text}
+                      {review.text}
                     </p>
                   </blockquote>
                 </article>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              ))}
+            </div>
+          </div>
+
+          <style>{`
+            .reviews-carousel-wrapper {
+              overflow: hidden;
+              width: 100%;
+              margin: 0 auto;
+            }
+            
+            .reviews-carousel {
+              display: flex;
+              gap: 1.25rem;
+              animation: scroll-left 60s linear infinite;
+              will-change: transform;
+            }
+            
+            .reviews-carousel:hover {
+              animation-play-state: paused;
+            }
+            
+            @keyframes scroll-left {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(calc(-420px * ${REVIEWS.length} - 1.25rem * ${REVIEWS.length}));
+              }
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+              .reviews-carousel {
+                animation: none;
+              }
+            }
+            
+            @media (max-width: 768px) {
+              .review-card {
+                min-width: 340px !important;
+                max-width: 340px !important;
+                padding: 1.5rem 1.75rem !important;
+              }
+              
+              @keyframes scroll-left {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(calc(-340px * ${REVIEWS.length} - 1.25rem * ${REVIEWS.length}));
+                }
+              }
+            }
+          `}</style>
 
           {/* View all CTA */}
           <RevealUp delay={0.1}>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem" }}>
               <a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
