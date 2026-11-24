@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { TREATMENTS } from "@/lib/site-config";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { TreatmentIconFor, ArrowRightIcon } from "@/components/ui/icons";
+import TreatmentsBentoGrid from "@/components/sections/TreatmentsBentoGrid";
 
 export const metadata: Metadata = buildMetadata({
   title: "Dental Treatments in Pala | Braces, Implants & Complete Dental Care",
@@ -73,6 +74,34 @@ export default function TreatmentsPage() {
           </p>
         </div>
       </div>
+
+      {/* Bento Grid — Editorial photo gallery */}
+      <section className="section-padding section-white">
+        <div className="container-xl">
+          <div style={{ marginBottom: "2.5rem", textAlign: "center" }}>
+            <div className="accent-line" style={{ margin: "0 auto 1rem" }} />
+            <h2 style={{ 
+              fontFamily: "var(--font-serif)", 
+              fontSize: "clamp(1.75rem, 3vw, 2.5rem)", 
+              color: "var(--color-dark-moss)", 
+              fontWeight: 400,
+              marginBottom: "0.5rem"
+            }}>
+              Featured treatments
+            </h2>
+            <p style={{ 
+              color: "var(--color-olive)", 
+              fontSize: "1rem", 
+              maxWidth: "520px",
+              margin: "0 auto",
+              lineHeight: 1.65
+            }}>
+              Real patient transformations and clinical photography from our Pala clinic
+            </p>
+          </div>
+          <TreatmentsBentoGrid />
+        </div>
+      </section>
 
       {/* Treatment categories — light background with botanical cards */}
       <section className="section-padding section-light">
