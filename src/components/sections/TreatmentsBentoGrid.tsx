@@ -197,10 +197,7 @@ function TreatmentTile({ treatment, size, index }: TreatmentTileProps) {
         loading={index > 2 ? "lazy" : "eager"}
       />
 
-      {/* Green tint overlay */}
-      <div className="treatment-tile-tint" aria-hidden="true" />
-
-      {/* Gradient scrim for text legibility */}
+      {/* Minimal bottom gradient scrim for text legibility */}
       <div className="treatment-tile-scrim" aria-hidden="true" />
 
       {/* Number badge - hidden on small tiles */}
@@ -432,27 +429,17 @@ export default function TreatmentsBentoGrid() {
         }
 
         .treatment-tile:hover .treatment-tile-image {
-          transform: scale(1.05);
+          transform: scale(1.04);
         }
 
-        /* Green tint overlay (~18% opacity) */
-        .treatment-tile-tint {
-          position: absolute;
-          inset: 0;
-          background: rgba(31, 58, 20, 0.18);
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        /* Gradient scrim for legibility */
+        /* Minimal bottom gradient scrim - neutral dark, text area only */
         .treatment-tile-scrim {
           position: absolute;
           inset: 0;
           background: linear-gradient(
             to top,
-            rgba(31, 58, 20, 0.92) 0%,
-            rgba(31, 58, 20, 0.65) 40%,
-            rgba(31, 58, 20, 0.15) 75%,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.25) 45%,
             transparent 100%
           );
           transition: background 0.3s ease;
@@ -460,12 +447,50 @@ export default function TreatmentsBentoGrid() {
           z-index: 2;
         }
 
+        /* Hero tiles - slightly taller gradient (50%) */
+        .treatment-tile-hero .treatment-tile-scrim {
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.25) 50%,
+            transparent 100%
+          );
+        }
+
+        /* Small tiles - taller gradient (55%) for better readability */
+        .treatment-tile-small .treatment-tile-scrim {
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.25) 55%,
+            transparent 100%
+          );
+        }
+
+        /* Hover - deepen gradient slightly */
         .treatment-tile:hover .treatment-tile-scrim {
           background: linear-gradient(
             to top,
-            rgba(31, 58, 20, 0.95) 0%,
-            rgba(31, 58, 20, 0.72) 40%,
-            rgba(31, 58, 20, 0.2) 75%,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.3) 45%,
+            transparent 100%
+          );
+        }
+
+        .treatment-tile-hero:hover .treatment-tile-scrim {
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            transparent 100%
+          );
+        }
+
+        .treatment-tile-small:hover .treatment-tile-scrim {
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.3) 55%,
             transparent 100%
           );
         }
@@ -531,7 +556,7 @@ export default function TreatmentsBentoGrid() {
           color: var(--color-honeydew);
           margin: 0 0 0.375rem 0;
           line-height: 1.1;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+          text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
@@ -574,7 +599,7 @@ export default function TreatmentsBentoGrid() {
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.5;
           margin: 0 0 0.75rem 0;
-          text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+          text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
