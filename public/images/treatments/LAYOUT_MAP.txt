@@ -1,0 +1,116 @@
+BENTO GRID LAYOUT - Treatment Images Position Map
+=================================================
+
+Desktop Layout (1024px+)
+------------------------
+
+┌─────────────────────────────┬──────────────┬──────────────┐
+│                             │              │              │
+│   01. SMILE DESIGN          │ 02. ORTHO    │ 03. BRACES   │
+│   (HERO - 6×4 units)        │ (3×2 units)  │ (3×2 units)  │
+│   1200×800px                │ 800×800px    │ 800×800px    │
+│   "Beautiful smile          │ "Metal       │ "Braces with │
+│    transformation"          │  braces"     │  bands"      │
+│                             ├──────────────┴──────────────┤
+│                             │                             │
+├──────┬──────┬──────┬────────┤  04. CLEAR ALIGNERS         │
+│      │      │      │        │  (Wide 6×2 units)           │
+│ 06.  │ 05.  │ 08.  │        │  1200×600px                 │
+│COSM. │LING. │GEN.  │        │  "Person holding aligner"   │
+│(2×4) │(2×2) │(2×2) │        ├─────────────────────────────┤
+│400×  │400×  │400×  │        │                             │
+│800px │400px │400px │        │  07. DENTAL IMPLANTS        │
+│      ├──────┼──────┤        │  (HERO - 6×4 units)         │
+│      │      │      │        │  1200×800px                 │
+│      │ 09.  │ 10.  │        │  "Implant restoration"      │
+│      │PAED. │ROOT  │        │                             │
+│      │(2×2) │(2×2) │        │                             │
+│      │400×  │400×  │        │                             │
+│      │400px │400px │        │                             │
+└──────┴──────┴──────┴────────┴─────────────────────────────┘
+
+Grid: 12 columns × 8 rows (96px per row, 16px gap)
+
+
+IMAGE FILE ORDER (how they appear, top to bottom, left to right):
+==================================================================
+
+TOP ROW:
+  01-smile-design.jpg     (LEFT - BIG HERO)
+  02-orthodontics.jpg     (TOP-MIDDLE)
+  03-braces.jpg           (TOP-RIGHT)
+
+SECOND ROW:
+  04-clear-aligners.jpg   (WIDE PANORAMIC)
+
+BOTTOM SECTION LEFT:
+  06-cosmetic-dentistry.jpg  (TALL PORTRAIT)
+  05-lingual-braces.jpg      (SMALL)
+  08-general-dentistry.jpg   (SMALL)
+  09-pediatric-dentistry.jpg (SMALL)
+  10-root-canal-treatment.jpg (SMALL)
+
+BOTTOM SECTION RIGHT:
+  07-dental-implants.jpg  (RIGHT - BIG HERO)
+
+
+TILE SIZES SUMMARY:
+===================
+
+HERO TILES (biggest impact):
+  • 01-smile-design.jpg → 1200×800px (3:2 ratio)
+  • 07-dental-implants.jpg → 1200×800px (3:2 ratio)
+
+WIDE TILE:
+  • 04-clear-aligners.jpg → 1200×600px (2:1 ratio)
+
+TALL TILE:
+  • 06-cosmetic-dentistry.jpg → 400×800px (1:2 ratio)
+
+MEDIUM TILES:
+  • 02-orthodontics.jpg → 800×800px (1:1 ratio)
+  • 03-braces.jpg → 800×800px (1:1 ratio)
+
+SMALL TILES:
+  • 05-lingual-braces.jpg → 400×400px (1:1 ratio)
+  • 08-general-dentistry.jpg → 400×400px (1:1 ratio)
+  • 09-pediatric-dentistry.jpg → 400×400px (1:1 ratio)
+  • 10-root-canal-treatment.jpg → 400×400px (1:1 ratio)
+
+
+VISUAL PRIORITY (what visitors see first):
+===========================================
+
+1. 👁️ SMILE DESIGN (biggest, top-left) - MAXIMUM IMPACT
+2. 👁️ DENTAL IMPLANTS (big, bottom-right) - STRONG IMPACT
+3. CLEAR ALIGNERS (wide tile, middle) - GOOD VISIBILITY
+4. ORTHODONTICS (top-middle) - HIGH VISIBILITY
+5. BRACES (top-right) - HIGH VISIBILITY
+6. COSMETIC (tall, left side) - MODERATE VISIBILITY
+7-10. Small tiles (less prominent but still visible)
+
+
+MOBILE LAYOUT (< 640px):
+=========================
+
+2-column grid:
+
+┌──────────────────────────┐  Full width (2 cols)
+│  01. SMILE DESIGN        │  
+├──────────────┬───────────┤  Half width each
+│ 02. ORTHO    │ 03. BRAC. │
+├──────────────┴───────────┤  Full width
+│  04. CLEAR ALIGNERS      │
+├──────────────┬───────────┤  Half width each
+│ 05. LINGUAL  │ 06. COSM. │
+├──────────────┼───────────┤  Half width each
+│ 08. GENERAL  │ 09. PAED. │
+├──────────────┴───────────┤  Full width
+│  07. DENTAL IMPLANTS     │
+├──────────────────────────┤  Full width
+│  10. ROOT CANAL          │
+└──────────────────────────┘
+
+
+Remember: All images will be cropped to fit their tile shape automatically!
+Focus on clear subject matter and good composition.
