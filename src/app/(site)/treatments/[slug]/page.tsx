@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { TREATMENTS, CLINIC, DOCTORS } from "@/lib/site-config";
 import Breadcrumb from "@/components/ui/Breadcrumb";
@@ -18,6 +19,62 @@ import { buildFaqPageSchema } from "@/lib/seo/schema";
 import PremiumFAQ from "@/components/ui/PremiumFAQ";
 import TreatmentContextLinks from "@/components/seo/TreatmentContextLinks";
 import SeoTopicCluster from "@/components/seo/SeoTopicCluster";
+
+/* ─────────────────────────────────────────────────────────────────
+   TREATMENT COVER IMAGES — Real clinic photography
+───────────────────────────────────────────────────────────────── */
+const TREATMENT_IMAGES: Record<string, { imagePath: string; alt: string; objectPosition?: string }> = {
+  "smile-design": {
+    imagePath: "/images/treatments/01-smile-design.webp",
+    alt: "Digital smile design transformation at Smile Architects",
+    objectPosition: "center 30%",
+  },
+  orthodontics: {
+    imagePath: "/images/treatments/02-orthodontics.webp",
+    alt: "Orthodontic treatment with braces at Smile Architects Pala",
+    objectPosition: "center center",
+  },
+  braces: {
+    imagePath: "/images/treatments/03-braces.webp",
+    alt: "Dental braces treatment - metal and ceramic options",
+    objectPosition: "center center",
+  },
+  "clear-aligners": {
+    imagePath: "/images/treatments/04-clear-aligners.webp",
+    alt: "Clear aligner treatment - invisible orthodontics",
+    objectPosition: "center 40%",
+  },
+  "lingual-braces": {
+    imagePath: "/images/treatments/05-lingual-braces.webp",
+    alt: "Lingual braces - hidden orthodontic treatment",
+    objectPosition: "center center",
+  },
+  "cosmetic-dentistry": {
+    imagePath: "/images/treatments/06-cosmetic-dentistry.webp",
+    alt: "Cosmetic dentistry and smile enhancement services",
+    objectPosition: "center 35%",
+  },
+  "dental-implants": {
+    imagePath: "/images/treatments/07-dental-implants.webp",
+    alt: "Dental implants - permanent tooth replacement solution",
+    objectPosition: "center center",
+  },
+  "general-dentistry": {
+    imagePath: "/images/treatments/08-general-dentistry.webp",
+    alt: "General dentistry and preventive dental care",
+    objectPosition: "center center",
+  },
+  "pediatric-dentistry": {
+    imagePath: "/images/treatments/09-pediatric-dentistry.webp",
+    alt: "Pediatric dentistry - gentle dental care for children",
+    objectPosition: "center 35%",
+  },
+  "root-canal-treatment": {
+    imagePath: "/images/treatments/10-root-canal-treatment.webp",
+    alt: "Root canal treatment - saving infected teeth",
+    objectPosition: "center center",
+  },
+};
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -409,6 +466,32 @@ export default async function TreatmentPage({ params }: Props) {
           </RevealUp>
         </div>
       </div>
+
+      {/* Cover Image */}
+      {TREATMENT_IMAGES[slug] && (
+        <div style={{ position: "relative", width: "100%", height: "clamp(300px, 40vw, 480px)", overflow: "hidden" }}>
+          <Image
+            src={TREATMENT_IMAGES[slug].imagePath}
+            alt={TREATMENT_IMAGES[slug].alt}
+            fill
+            priority
+            style={{ 
+              objectFit: "cover",
+              objectPosition: TREATMENT_IMAGES[slug].objectPosition || "center center"
+            }}
+            sizes="100vw"
+          />
+          {/* Gradient overlay for better text legibility if needed */}
+          <div 
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)",
+            }}
+            aria-hidden="true"
+          />
+        </div>
+      )}
 
       {/* Main content */}
       <section className="section-padding section-white">

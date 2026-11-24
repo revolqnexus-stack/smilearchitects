@@ -16,41 +16,77 @@ const GOOGLE_RATING = 4.9;
 const GOOGLE_REVIEW_COUNT = "50+";
 const GOOGLE_REVIEWS_URL = CLINIC.platforms.googleMaps.reviewsUrl;
 
+// Practo verified patient reviews — top 10 from patient stories page
 const REVIEWS = [
   {
     id: 1,
-    name: "Ria Susan Reji",
-    time: "3 months ago",
+    name: "GREESHMA ANGELOSE",
+    time: "6 years ago",
     rating: 5,
-    text: "I was super sceptical about getting braces as an adult but Dr. Jeo made the whole process so easy. He explained every option clearly, never pushed me towards the more expensive one. 13 months in and my teeth look completely different.",
+    text: "I've never had such an awesome experience in any hospitals. The ambience and doctors of the clinic are really superb. I felt like being in a home rather than being in a hospital set up. The treatment is effective and cost effective. I would recommend this place to all of my Kith and kin.",
   },
   {
     id: 2,
-    name: "Mathew Varghese",
-    time: "5 months ago",
+    name: "Renjan sreejith",
+    time: "3 years ago",
     rating: 5,
-    text: "Had a root canal here and I'll be honest, I was dreading it. Turned out to be nothing — no pain during, mild soreness after for a day. Dr. Jeo's team is calm and professional throughout.",
+    text: "Very friendly approach and he explained everything properly. Nice behavior proper guidence from him.",
   },
   {
     id: 3,
-    name: "Ananya Krishnan",
-    time: "1 month ago",
+    name: "ANEES LESLY DEVASSY",
+    time: "3 years ago",
     rating: 5,
-    text: "Got lingual braces here — the hidden ones that go on the inside of your teeth. I had no idea this was available in Pala. Six months in and no one at work has even noticed I'm in treatment.",
+    text: "Excellent experience. The doctor explains everything in very details. Overall Friendly atmosphere and thanks to the team.",
   },
   {
     id: 4,
-    name: "Bibin George",
-    time: "7 months ago",
+    name: "Joseph jacob",
+    time: "3 years ago",
     rating: 5,
-    text: "Brought my daughter (age 8) for an assessment. Dr. Jeo was honest that she only needed monitoring for now — no pressure to start treatment. That kind of straightforwardness is rare from a specialist.",
+    text: "Reminders given on previously days is very effective I felt. There will be no delay once we reach at the clinic as they maintain the correct time schedule. Staffs are very patient and caring. Good experience within the doctor too. 👌",
   },
   {
     id: 5,
-    name: "Reshma Thampi",
-    time: "2 months ago",
+    name: "LUCY JOHN",
+    time: "2 years ago",
     rating: 5,
-    text: "I've been to several dental clinics in Kottayam. Smile Architects is on another level — modern equipment, private rooms, and Dr. Jeo actually listens. Got clear aligners and very happy with progress.",
+    text: "Very good behaviour, and friendly. No waiting, and everything on time. I am very satisfied with the treatment.",
+  },
+  {
+    id: 6,
+    name: "CELINAMMA STEPHEN",
+    time: "3 years ago",
+    rating: 5,
+    text: "Thank you so much for your kind and thoughtful concern in regard to my health and providing me with excellent medical and physical care. I am most grateful for your kindness whenever I see you.",
+  },
+  {
+    id: 7,
+    name: "ASHISH M.M",
+    time: "5 years ago",
+    rating: 5,
+    text: "Doctor is very friendly and compassionate. I was Very comfortable. Sterile Articles are using for the procedure. Cleanliness is one of the best thing I have experienced in this clinic. Overall it was a great experience.",
+  },
+  {
+    id: 8,
+    name: "Jose p manuel",
+    time: "2 years ago",
+    rating: 5,
+    text: "This was a 12-15 yr old cap replacement. I live abroad. When ever I come to India, usually visit smile dental clinic. Flexibility is the major reason. Always happy 😊. Thanks",
+  },
+  {
+    id: 9,
+    name: "Verified Patient",
+    time: "1 year ago",
+    rating: 5,
+    text: "Dr. Jeo Tom Charls From the moment I walked in, their entire team made me feel comfortable. Dr. Jeo Tom Charls has a incredibly gentle touch and explained every step of my procedure in a way that was easy to understand, alleviating all my anxieties. I'm thrilled with the results and truly appreciate their patience and skill.",
+  },
+  {
+    id: 10,
+    name: "DIYA ANN JUSTINE",
+    time: "3 years ago",
+    rating: 5,
+    text: "I had crooked teeth and it was then I approached Dr.Jeo Tom Charles. After I had my braces on, I was checked by the doctor each month. He was so nice, that he explained everything in detail, so that we could understand. Right now my teeth are right in shape... Well Recommeded Doctor🙂",
   },
 ];
 
@@ -322,6 +358,34 @@ export default function HomeReviews() {
         style={{ backgroundColor: "#ffffff", padding: "2rem 0 3rem" }}
       >
         <div className="container-xl">
+          {/* Practo badge */}
+          <RevealFade>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.5rem" }}>
+              <div style={{
+                padding: "0.625rem 1.25rem",
+                background: "linear-gradient(135deg, #1abc9c 0%, #16a085 100%)",
+                borderRadius: "999px",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"/>
+                </svg>
+                <span style={{ 
+                  color: "white", 
+                  fontFamily: "var(--font-sans)", 
+                  fontWeight: 700,
+                  fontSize: "0.875rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                }}>
+                  Verified on Practo
+                </span>
+              </div>
+            </div>
+          </RevealFade>
+
           {/* Horizontal animated carousel */}
           <div className="reviews-carousel-wrapper">
             <div className="reviews-carousel">
@@ -443,7 +507,31 @@ export default function HomeReviews() {
 
           {/* View all CTA */}
           <RevealUp delay={0.1}>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem", gap: "1rem", flexWrap: "wrap" }}>
+              <a
+                href="https://www.practo.com/kottayam/clinic/smile-architects-pala-town"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  backgroundColor: "#1abc9c",
+                  color: "white",
+                  fontFamily: "var(--font-sans)",
+                  fontWeight: 600,
+                  fontSize: "0.9375rem",
+                  padding: "0.875rem 1.75rem",
+                  borderRadius: "9999px",
+                  textDecoration: "none",
+                }}
+                aria-label="View all Smile Architects reviews on Practo"
+              >
+                View 219+ reviews on Practo
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
               <a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
@@ -463,7 +551,7 @@ export default function HomeReviews() {
                 }}
                 aria-label="View all Smile Architects reviews on Google"
               >
-                View all reviews on Google
+                View on Google
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
